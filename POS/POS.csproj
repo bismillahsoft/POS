@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenericEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenericEntry.Designer.cs">
+      <DependentUpon>GenericEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
