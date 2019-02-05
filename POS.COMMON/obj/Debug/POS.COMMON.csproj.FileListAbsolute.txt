@@ -1,0 +1,5 @@
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.COMMON\obj\Debug\POS.COMMON.csprojResolveAssemblyReference.cache
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.COMMON\bin\Debug\POS.COMMON.dll
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.COMMON\bin\Debug\POS.COMMON.pdb
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.COMMON\obj\Debug\POS.COMMON.dll
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.COMMON\obj\Debug\POS.COMMON.pdb

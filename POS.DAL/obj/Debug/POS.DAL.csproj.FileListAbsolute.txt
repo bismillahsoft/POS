@@ -1,0 +1,11 @@
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\obj\Debug\POS.DAL.csprojResolveAssemblyReference.cache
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\bin\Debug\POS.DAL.dll
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\bin\Debug\POS.DAL.pdb
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\bin\Debug\POS.BO.dll
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\bin\Debug\POS.COMMON.dll
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\bin\Debug\POS.IDAL.dll
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\bin\Debug\POS.BO.pdb
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\bin\Debug\POS.COMMON.pdb
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\bin\Debug\POS.IDAL.pdb
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\obj\Debug\POS.DAL.dll
+E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.DAL\obj\Debug\POS.DAL.pdb
