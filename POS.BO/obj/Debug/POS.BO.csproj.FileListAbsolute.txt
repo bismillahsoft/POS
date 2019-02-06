@@ -6,3 +6,8 @@ F:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.dll
 F:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.pdb
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.dll
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.pdb
+E:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.dll
+E:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.pdb
+E:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.csprojResolveAssemblyReference.cache
+E:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.dll
+E:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.pdb
