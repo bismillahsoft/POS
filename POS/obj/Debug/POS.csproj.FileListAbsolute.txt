@@ -33,3 +33,6 @@ F:\Git_Repository\BPOS\POS\obj\Debug\POS.Properties.Resources.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.exe
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.pdb
+E:\Git_Repository\BPOS\POS\bin\Debug\POS.exe.config
+E:\Git_Repository\BPOS\POS\obj\Debug\POS.exe
+E:\Git_Repository\BPOS\POS\obj\Debug\POS.pdb
