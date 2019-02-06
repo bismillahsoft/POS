@@ -44,6 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrandEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrandEntry.Designer.cs">
+      <DependentUpon>BrandEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenericEntry.Designer.cs">
+      <DependentUpon>GenericEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BrandEntry.resx">
+      <DependentUpon>BrandEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
