@@ -66,7 +66,7 @@
             // 
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = global::POS.Properties.Resources.Report;
-            this.btnReport.Location = new System.Drawing.Point(696, 549);
+            this.btnReport.Location = new System.Drawing.Point(644, 383);
             this.btnReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(208, 215);
@@ -80,7 +80,7 @@
             // 
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.Image = global::POS.Properties.Resources.Inventory;
-            this.btnInventory.Location = new System.Drawing.Point(908, 549);
+            this.btnInventory.Location = new System.Drawing.Point(856, 383);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(208, 215);
@@ -94,7 +94,7 @@
             // 
             this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSales.Image = global::POS.Properties.Resources.Sales;
-            this.btnSales.Location = new System.Drawing.Point(696, 326);
+            this.btnSales.Location = new System.Drawing.Point(644, 160);
             this.btnSales.Margin = new System.Windows.Forms.Padding(2);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(208, 215);
@@ -108,7 +108,7 @@
             // 
             this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.Image = global::POS.Properties.Resources.Product;
-            this.btnProduct.Location = new System.Drawing.Point(908, 326);
+            this.btnProduct.Location = new System.Drawing.Point(856, 160);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(208, 215);
@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 984);
+            this.ClientSize = new System.Drawing.Size(1262, 882);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPosSystem);
