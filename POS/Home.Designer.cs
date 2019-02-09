@@ -30,11 +30,11 @@
         {
             this.Logout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPosSystem = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
-            this.lblPosSystem = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,60 +59,8 @@
             this.panel1.Location = new System.Drawing.Point(-336, -73);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1643, 654);
+            this.panel1.Size = new System.Drawing.Size(1597, 1060);
             this.panel1.TabIndex = 3;
-            // 
-            // btnReport
-            // 
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.Location = new System.Drawing.Point(637, 398);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(267, 224);
-            this.btnReport.TabIndex = 4;
-            this.btnReport.Text = "Report";
-            this.btnReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnReport.UseVisualStyleBackColor = true;
-            // 
-            // btnInventory
-            // 
-            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventory.Location = new System.Drawing.Point(908, 398);
-            this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(267, 224);
-            this.btnInventory.TabIndex = 3;
-            this.btnInventory.Text = "Inventory";
-            this.btnInventory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnInventory.UseVisualStyleBackColor = true;
-            // 
-            // btnSales
-            // 
-            this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSales.Location = new System.Drawing.Point(637, 170);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(267, 224);
-            this.btnSales.TabIndex = 2;
-            this.btnSales.Text = "Sales";
-            this.btnSales.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSales.UseVisualStyleBackColor = true;
-            // 
-            // btnProduct
-            // 
-            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduct.Location = new System.Drawing.Point(908, 170);
-            this.btnProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(267, 224);
-            this.btnProduct.TabIndex = 0;
-            this.btnProduct.Text = "Product";
-            this.btnProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnProduct.UseVisualStyleBackColor = true;
             // 
             // lblPosSystem
             // 
@@ -126,11 +74,67 @@
             this.lblPosSystem.TabIndex = 4;
             this.lblPosSystem.Text = "Pos System";
             // 
+            // btnReport
+            // 
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Image = global::POS.Properties.Resources.Report;
+            this.btnReport.Location = new System.Drawing.Point(696, 549);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(208, 215);
+            this.btnReport.TabIndex = 4;
+            this.btnReport.Text = "Report";
+            this.btnReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnReport.UseVisualStyleBackColor = true;
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventory.Image = global::POS.Properties.Resources.Inventory;
+            this.btnInventory.Location = new System.Drawing.Point(908, 549);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(208, 215);
+            this.btnInventory.TabIndex = 3;
+            this.btnInventory.Text = "Inventory";
+            this.btnInventory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnInventory.UseVisualStyleBackColor = true;
+            // 
+            // btnSales
+            // 
+            this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSales.Image = global::POS.Properties.Resources.Sales;
+            this.btnSales.Location = new System.Drawing.Point(696, 326);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(208, 215);
+            this.btnSales.TabIndex = 2;
+            this.btnSales.Text = "Sales";
+            this.btnSales.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSales.UseVisualStyleBackColor = true;
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.Image = global::POS.Properties.Resources.Product;
+            this.btnProduct.Location = new System.Drawing.Point(908, 326);
+            this.btnProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Size = new System.Drawing.Size(208, 215);
+            this.btnProduct.TabIndex = 0;
+            this.btnProduct.Text = "Product";
+            this.btnProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProduct.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 558);
+            this.ClientSize = new System.Drawing.Size(1262, 984);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPosSystem);

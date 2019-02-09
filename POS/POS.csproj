@@ -91,11 +91,20 @@
     <EmbeddedResource Include="BrandEntry.resx">
       <DependentUpon>BrandEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenericEntry.resx">
+      <DependentUpon>GenericEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PackSizeEntry.resx">
+      <DependentUpon>PackSizeEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductEntry.resx">
+      <DependentUpon>ProductEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,6 +142,12 @@
       <Project>{7b471c2c-fd29-45f8-8819-a0ad242378d5}</Project>
       <Name>POS.IDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon\Inventory.png" />
+    <Content Include="Icon\Product.png" />
+    <Content Include="Icon\Report.png" />
+    <Content Include="Icon\Sales.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
