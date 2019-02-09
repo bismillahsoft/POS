@@ -4,6 +4,7 @@ E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.BO\obj\Debug\P
 E:\Project_Document\Project Work(2016-10-31)\Project Work\POS\POS.BO\obj\Debug\POS.BO.pdb
 F:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.dll
 F:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.pdb
+F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.csprojResolveAssemblyReference.cache
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.dll
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.pdb
 E:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.dll

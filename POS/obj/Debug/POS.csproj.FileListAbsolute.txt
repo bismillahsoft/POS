@@ -53,3 +53,7 @@ E:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 E:\Git_Repository\BPOS\POS\obj\Debug\POS.GenericEntry.resources
 E:\Git_Repository\BPOS\POS\obj\Debug\POS.PackSizeEntry.resources
 E:\Git_Repository\BPOS\POS\obj\Debug\POS.ProductEntry.resources
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.BrandEntry.resources
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.GenericEntry.resources
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.PackSizeEntry.resources
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.ProductEntry.resources
