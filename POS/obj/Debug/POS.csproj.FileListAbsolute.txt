@@ -37,3 +37,4 @@ F:\Git_Repository\BPOS\POS\obj\Debug\POS.BrandEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.GenericEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.PackSizeEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.ProductEntry.resources
+E:\Git_Repository\BPOS\POS\bin\Debug\POS.exe.config
