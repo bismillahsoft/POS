@@ -35,6 +35,7 @@
             this.btnSales = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.lblPosSystem = new System.Windows.Forms.Label();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnlogout);
             this.panel1.Controls.Add(this.btnReport);
             this.panel1.Controls.Add(this.btnInventory);
             this.panel1.Controls.Add(this.btnSales);
@@ -130,6 +132,18 @@
             this.lblPosSystem.TabIndex = 4;
             this.lblPosSystem.Text = "Pos System";
             // 
+            // btnlogout
+            // 
+            this.btnlogout.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnlogout.Location = new System.Drawing.Point(1155, 101);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(89, 30);
+            this.btnlogout.TabIndex = 5;
+            this.btnlogout.Text = "Logout";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,5 +170,6 @@
         private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Label lblPosSystem;
+        private System.Windows.Forms.Button btnlogout;
     }
 }
