@@ -62,6 +62,8 @@
             this.txtPro_Name = new System.Windows.Forms.TextBox();
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
+            this.S = new System.Windows.Forms.TextBox();
+            this.lblBatchNo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -98,6 +100,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.S);
+            this.groupBox1.Controls.Add(this.lblBatchNo);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.txtVat);
             this.groupBox1.Controls.Add(this.label1);
@@ -124,7 +128,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(773, 496);
+            this.groupBox1.Size = new System.Drawing.Size(773, 564);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
@@ -141,7 +145,7 @@
             this.PPrice,
             this.TPrice,
             this.Vat});
-            this.dataGridView1.Location = new System.Drawing.Point(31, 327);
+            this.dataGridView1.Location = new System.Drawing.Point(31, 391);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
@@ -205,7 +209,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(83, 220);
+            this.label1.Location = new System.Drawing.Point(420, 223);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
@@ -214,7 +218,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(188, 220);
+            this.txtDescription.Location = new System.Drawing.Point(525, 223);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -244,7 +248,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(422, 225);
+            this.btnReset.Location = new System.Drawing.Point(423, 316);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(125, 41);
@@ -283,7 +287,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(555, 225);
+            this.btnSave.Location = new System.Drawing.Point(556, 316);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(125, 41);
@@ -390,6 +394,25 @@
             this.lblBrand.TabIndex = 12;
             this.lblBrand.Text = "Brand :";
             // 
+            // S
+            // 
+            this.S.Location = new System.Drawing.Point(188, 223);
+            this.S.Margin = new System.Windows.Forms.Padding(2);
+            this.S.Name = "S";
+            this.S.Size = new System.Drawing.Size(157, 29);
+            this.S.TabIndex = 24;
+            // 
+            // lblBatchNo
+            // 
+            this.lblBatchNo.AutoSize = true;
+            this.lblBatchNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBatchNo.Location = new System.Drawing.Point(83, 223);
+            this.lblBatchNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBatchNo.Name = "lblBatchNo";
+            this.lblBatchNo.Size = new System.Drawing.Size(72, 13);
+            this.lblBatchNo.TabIndex = 25;
+            this.lblBatchNo.Text = "Batch No  :";
+            // 
             // ProductEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,5 +468,7 @@
         private System.Windows.Forms.TextBox txtPro_Name;
         private System.Windows.Forms.Label lblPackSize;
         private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.TextBox S;
+        private System.Windows.Forms.Label lblBatchNo;
     }
 }
