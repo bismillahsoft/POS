@@ -16,5 +16,10 @@ namespace POS
         {
             InitializeComponent();
         }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
