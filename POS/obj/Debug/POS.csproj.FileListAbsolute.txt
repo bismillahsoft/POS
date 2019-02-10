@@ -58,3 +58,4 @@ F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.exe
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.pdb
 E:\Git_Repository\BPOS\POS\obj\Debug\POS.BatchEntry.resources
+E:\Git_Repository\BPOS\POS\obj\Debug\POS.ProductCategory.resources

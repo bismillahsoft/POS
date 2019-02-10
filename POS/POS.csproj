@@ -80,6 +80,12 @@
     <Compile Include="PackSizeEntry.Designer.cs">
       <DependentUpon>PackSizeEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductCategory.Designer.cs">
+      <DependentUpon>ProductCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PackSizeEntry.resx">
       <DependentUpon>PackSizeEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductCategory.resx">
+      <DependentUpon>ProductCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductEntry.resx">
       <DependentUpon>ProductEntry.cs</DependentUpon>
