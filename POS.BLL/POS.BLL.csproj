@@ -39,6 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BBrand.cs" />
+    <Compile Include="BProduct.cs" />
+    <Compile Include="BProductBatch.cs" />
+    <Compile Include="BProductCategory.cs" />
+    <Compile Include="BProductGeneric.cs" />
+    <Compile Include="BProductPackSize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
