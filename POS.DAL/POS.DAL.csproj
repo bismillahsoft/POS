@@ -39,6 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBrand.cs" />
+    <Compile Include="DProduct.cs" />
+    <Compile Include="DProductBatch.cs" />
+    <Compile Include="DProductCategory.cs" />
+    <Compile Include="DProductGeneric.cs" />
+    <Compile Include="DProductPackSize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
