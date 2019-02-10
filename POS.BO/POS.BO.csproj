@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Brand.cs" />
     <Compile Include="GenericName.cs" />
+    <Compile Include="BatchNo.cs" />
     <Compile Include="ProductEntry.cs" />
     <Compile Include="PackSize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

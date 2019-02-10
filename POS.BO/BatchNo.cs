@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace POS.BO
 {
-    public class PackSize
+    public class BatchNo
     {
         private int ID { get; set; }
-        private string Pack_Size { get; set; }
+        private string BatchID { get; set; }
         private string Description { get; set; }
     }
 }
