@@ -149,6 +149,7 @@
             this.Controls.Add(grBox);
             this.Name = "BatchEntry";
             this.Text = "BatchEntry";
+            this.Load += new System.EventHandler(this.BatchEntry_Load);
             grBox.ResumeLayout(false);
             grBox.PerformLayout();
             this.ResumeLayout(false);

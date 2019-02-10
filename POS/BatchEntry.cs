@@ -41,5 +41,10 @@ namespace POS
         {
 
         }
+
+        private void BatchEntry_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
