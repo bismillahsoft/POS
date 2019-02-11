@@ -36,6 +36,7 @@
             this.grBox = new System.Windows.Forms.GroupBox();
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.txtBrndDescription = new System.Windows.Forms.TextBox();
+            this.lblMessageBox = new System.Windows.Forms.Label();
             this.grBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             this.btnReset.TabIndex = 12;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_);
             // 
             // btnSave
             // 
@@ -60,6 +62,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblBrndDescription
             // 
@@ -125,11 +128,21 @@
             this.txtBrndDescription.Size = new System.Drawing.Size(138, 59);
             this.txtBrndDescription.TabIndex = 4;
             // 
+            // lblMessageBox
+            // 
+            this.lblMessageBox.AutoSize = true;
+            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Location = new System.Drawing.Point(253, 386);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
+            this.lblMessageBox.TabIndex = 14;
+            // 
             // BrandEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 459);
+            this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblBrndDescription);
@@ -155,5 +168,6 @@
         private System.Windows.Forms.GroupBox grBox;
         private System.Windows.Forms.TextBox txtBrand;
         private System.Windows.Forms.TextBox txtBrndDescription;
+        private System.Windows.Forms.Label lblMessageBox;
     }
 }

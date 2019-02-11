@@ -36,6 +36,7 @@
             this.txtGenericName = new System.Windows.Forms.TextBox();
             this.lblGenericName = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
+            this.lblMessageBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnGene_Reset
@@ -48,6 +49,7 @@
             this.btnGene_Reset.TabIndex = 14;
             this.btnGene_Reset.Text = "Reset";
             this.btnGene_Reset.UseVisualStyleBackColor = true;
+            this.btnGene_Reset.Click += new System.EventHandler(this.btnGene_Reset_Click);
             // 
             // btnGene_Save
             // 
@@ -59,6 +61,7 @@
             this.btnGene_Save.TabIndex = 13;
             this.btnGene_Save.Text = "Save";
             this.btnGene_Save.UseVisualStyleBackColor = true;
+            this.btnGene_Save.Click += new System.EventHandler(this.btnGene_Save_Click);
             // 
             // lblGenericNameEntry
             // 
@@ -123,11 +126,21 @@
             this.grBox.TabIndex = 15;
             this.grBox.TabStop = false;
             // 
+            // lblMessageBox
+            // 
+            this.lblMessageBox.AutoSize = true;
+            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Location = new System.Drawing.Point(177, 417);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
+            this.lblMessageBox.TabIndex = 16;
+            // 
             // GenericEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 480);
+            this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.btnGene_Reset);
             this.Controls.Add(this.btnGene_Save);
             this.Controls.Add(this.lblGenericNameEntry);
@@ -153,5 +166,6 @@
         private System.Windows.Forms.TextBox txtGenericName;
         private System.Windows.Forms.Label lblGenericName;
         private System.Windows.Forms.GroupBox grBox;
+        private System.Windows.Forms.Label lblMessageBox;
     }
 }

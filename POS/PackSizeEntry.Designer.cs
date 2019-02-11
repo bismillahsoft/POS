@@ -36,6 +36,7 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtPackSize = new System.Windows.Forms.TextBox();
+            this.lblMessageBox = new System.Windows.Forms.Label();
             this.grBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +100,7 @@
             this.bntSave.TabIndex = 3;
             this.bntSave.Text = "Save";
             this.bntSave.UseVisualStyleBackColor = true;
+            this.bntSave.Click += new System.EventHandler(this.bntSave_Click);
             // 
             // txtDescription
             // 
@@ -119,6 +121,7 @@
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // txtPackSize
             // 
@@ -128,11 +131,21 @@
             this.txtPackSize.Size = new System.Drawing.Size(138, 20);
             this.txtPackSize.TabIndex = 5;
             // 
+            // lblMessageBox
+            // 
+            this.lblMessageBox.AutoSize = true;
+            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Location = new System.Drawing.Point(227, 389);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
+            this.lblMessageBox.TabIndex = 17;
+            // 
             // PackSizeEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 450);
+            this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.lblPack);
             this.Controls.Add(this.grBox);
             this.Name = "PackSizeEntry";
@@ -154,5 +167,6 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtPackSize;
+        private System.Windows.Forms.Label lblMessageBox;
     }
 }

@@ -36,6 +36,7 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
+            this.lblMessageBox = new System.Windows.Forms.Label();
             this.grBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             // grBox
             // 
             this.grBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grBox.Controls.Add(this.lblMessageBox);
             this.grBox.Controls.Add(this.lblPCategoryName);
             this.grBox.Controls.Add(this.lblDescription);
             this.grBox.Controls.Add(this.bntSave);
@@ -99,6 +101,7 @@
             this.bntSave.TabIndex = 3;
             this.bntSave.Text = "Save";
             this.bntSave.UseVisualStyleBackColor = true;
+            this.bntSave.Click += new System.EventHandler(this.bntSave_Click);
             // 
             // txtDescription
             // 
@@ -128,6 +131,15 @@
             this.txtCategoryName.Size = new System.Drawing.Size(138, 20);
             this.txtCategoryName.TabIndex = 5;
             // 
+            // lblMessageBox
+            // 
+            this.lblMessageBox.AutoSize = true;
+            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Location = new System.Drawing.Point(75, 16);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
+            this.lblMessageBox.TabIndex = 17;
+            // 
             // ProductCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,5 +166,6 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtCategoryName;
+        private System.Windows.Forms.Label lblMessageBox;
     }
 }

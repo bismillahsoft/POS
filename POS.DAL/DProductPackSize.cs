@@ -18,10 +18,11 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductPackSize";
+                da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_ProductPackSize]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
-                da.SelectCommand.Parameters.Add("@PackSize", System.Data.SqlDbType.VarChar, 50).Value = objProductPackSize.PackSize;
+                da.SelectCommand.Parameters.Add("@PackSizeName", SqlDbType.VarChar, 100).Value = objProductPackSize.PackSize;
+                da.SelectCommand.Parameters.Add("@PackSizeDescription", SqlDbType.VarChar, 500).Value = objProductPackSize.PackSizeDescription;
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();

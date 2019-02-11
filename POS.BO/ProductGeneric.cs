@@ -21,6 +21,9 @@ namespace POS.BO
             get { return _PGenericName; }
             set { _PGenericName = value; }
         }
+       
+        
+        
         private Boolean _IsActive;
         public Boolean IsActive
         {
@@ -32,6 +35,19 @@ namespace POS.BO
         {
             get { return _LastUpdate; }
             set { _LastUpdate = value; }
+        }
+        private String _GenericDescription;
+        public string GenericDescription
+        {
+            get
+            {
+                return _GenericDescription;
+            }
+
+            set
+            {
+                _GenericDescription = value;
+            }
         }
     }
 }

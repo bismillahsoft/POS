@@ -142,6 +142,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\POS.BLL\POS.BLL.csproj">
+      <Project>{9043faf3-36d0-4e85-9efd-9f2aed5809a3}</Project>
+      <Name>POS.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\POS.BO\POS.BO.csproj">
       <Project>{38d47371-e2f2-474b-8877-2bdfbbf8b35f}</Project>
       <Name>POS.BO</Name>

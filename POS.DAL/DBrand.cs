@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using POS.DAL;
 using System.Data.SqlClient;
 using System.Data;
 using POS.COMMON;
@@ -22,14 +20,12 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "DCR_SP_INSERT_Brand";
+                da.SelectCommand.CommandText = "POS_SET_SP_INSERT_SET_Brand";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
-                da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int);
-                da.SelectCommand.Parameters["@BrandID"].Direction = ParameterDirection.Output;
-                da.SelectCommand.Parameters.Add("@BrandName", System.Data.SqlDbType.VarChar, 200).Value = objBrand.BrandName;
-                da.SelectCommand.Parameters.Add("@BrandDescription", System.Data.SqlDbType.VarChar, 500).Value = objBrand.BrandDescription;
-                da.SelectCommand.Parameters.Add("@GenericID", System.Data.SqlDbType.Int).Value = objBrand.GenericID;
+                da.SelectCommand.Parameters.Add("@BrandName", SqlDbType.VarChar, 100).Value = objBrand.BrandName;
+                da.SelectCommand.Parameters.Add("@BrandDescription", SqlDbType.VarChar, 500).Value = objBrand.BrandDescription;
+                //da.SelectCommand.Parameters.Add("@GenericID", System.Data.SqlDbType.Int).Value = objBrand.GenericID;
 
                 if (con.State == ConnectionState.Closed)
                 {

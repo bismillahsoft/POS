@@ -32,6 +32,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblP_Entry = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.S = new System.Windows.Forms.TextBox();
+            this.lblBatchNo = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,8 +64,7 @@
             this.txtPro_Name = new System.Windows.Forms.TextBox();
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
-            this.S = new System.Windows.Forms.TextBox();
-            this.lblBatchNo = new System.Windows.Forms.Label();
+            this.lblMessageBox = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +132,25 @@
             this.groupBox1.Size = new System.Drawing.Size(773, 564);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
+            // 
+            // S
+            // 
+            this.S.Location = new System.Drawing.Point(188, 223);
+            this.S.Margin = new System.Windows.Forms.Padding(2);
+            this.S.Name = "S";
+            this.S.Size = new System.Drawing.Size(157, 29);
+            this.S.TabIndex = 24;
+            // 
+            // lblBatchNo
+            // 
+            this.lblBatchNo.AutoSize = true;
+            this.lblBatchNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBatchNo.Location = new System.Drawing.Point(83, 223);
+            this.lblBatchNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBatchNo.Name = "lblBatchNo";
+            this.lblBatchNo.Size = new System.Drawing.Size(72, 13);
+            this.lblBatchNo.TabIndex = 25;
+            this.lblBatchNo.Text = "Batch No  :";
             // 
             // dataGridView1
             // 
@@ -394,30 +414,21 @@
             this.lblBrand.TabIndex = 12;
             this.lblBrand.Text = "Brand :";
             // 
-            // S
+            // lblMessageBox
             // 
-            this.S.Location = new System.Drawing.Point(188, 223);
-            this.S.Margin = new System.Windows.Forms.Padding(2);
-            this.S.Name = "S";
-            this.S.Size = new System.Drawing.Size(157, 29);
-            this.S.TabIndex = 24;
-            // 
-            // lblBatchNo
-            // 
-            this.lblBatchNo.AutoSize = true;
-            this.lblBatchNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBatchNo.Location = new System.Drawing.Point(83, 223);
-            this.lblBatchNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBatchNo.Name = "lblBatchNo";
-            this.lblBatchNo.Size = new System.Drawing.Size(72, 13);
-            this.lblBatchNo.TabIndex = 25;
-            this.lblBatchNo.Text = "Batch No  :";
+            this.lblMessageBox.AutoSize = true;
+            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Location = new System.Drawing.Point(318, 418);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
+            this.lblMessageBox.TabIndex = 32;
             // 
             // ProductEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 644);
+            this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblP_Entry);
@@ -470,5 +481,6 @@
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.TextBox S;
         private System.Windows.Forms.Label lblBatchNo;
+        private System.Windows.Forms.Label lblMessageBox;
     }
 }
