@@ -21,10 +21,11 @@ namespace POS.DAL
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.Parameters.Add("@GenericName", System.Data.SqlDbType.VarChar, 300).Value = objProductGeneric.GenericName;
+                da.SelectCommand.Parameters.Add("@GenericName", SqlDbType.VarChar, 100).Value = objProductGeneric.GenericName;
+                da.SelectCommand.Parameters.Add("@GenericDescription", SqlDbType.VarChar, 500).Value = objProductGeneric.GenericDescription;
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
-                da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductGeneric";
+                da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_ProductGeneric]";
 
                 if (con.State == ConnectionState.Closed)
                 {

@@ -8,32 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using POS.IDAL;
-
 namespace POS
 {
-    public partial class BatchEntry : Form
+    public partial class ProductCategory : Form
     {
-        #region Global Declaration
-        private IProductBatch IProductBatch = null;
-        #endregion
-        public BatchEntry()
+        private IProductCategory IProductCategory = null;
+        public ProductCategory()
         {
             InitializeComponent();
-            IProductBatch = new BLL.BProductBatch();
+            IProductCategory = new BLL.BProductCategory();
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void Reset()
+        {
+            txtCategoryName.Text = "";
+            txtDescription.Text = "";
+        }
+        private void btnReset_Click(object sender, EventArgs e)
         {
             try
             {
-                BO.ProductBatch ObjProductBatch = new BO.ProductBatch();
+                Reset();
+            }
+            catch (Exception ex) { throw ex; }
+        }
 
-                ObjProductBatch.BatchNo = txtBatchNo.Text;
-                ObjProductBatch.BatchName = txtBatchName.Text;
-                ObjProductBatch.BatchDescription = txtBrndDescription.Text;
-                if (ObjProductBatch.BatchNo != "" && ObjProductBatch.BatchName != "")
+        private void bntSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BO.ProductCategory ObjProductCategory = new BO.ProductCategory();
+                ObjProductCategory.Name = txtCategoryName.Text;
+                ObjProductCategory.Description = txtDescription.Text;
+
+                if (ObjProductCategory.Name != "")
                 {
-                    if (IProductBatch.Insert(ObjProductBatch) > 0)
+                    if (IProductCategory.Insert(ObjProductCategory) > 0)
                     {
                         lblMessageBox.Text = "Operation Success";
                         lblMessageBox.ForeColor = Color.Green;
@@ -58,19 +67,10 @@ namespace POS
                 throw ex;
             }
         }
-        private void Reset()
+
+        private void ProductCategory_Load(object sender, EventArgs e)
         {
-            txtBatchNo.Text = "";
-            txtBatchName.Text = "";
-            txtBrndDescription.Text = "";
-        }
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Reset();
-            }
-            catch (Exception ex) { throw ex; }
+
         }
     }
 }

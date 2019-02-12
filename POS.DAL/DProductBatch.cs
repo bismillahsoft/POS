@@ -17,11 +17,12 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductBatch";
+                da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_ProductBatch]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
-                da.SelectCommand.Parameters.Add("@BatchNo", System.Data.SqlDbType.VarChar, 500).Value = objProductBatch.BatchNo;
-                da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 5).Value = objProductBatch.ProductCode;
+                da.SelectCommand.Parameters.Add("@BatchCode", SqlDbType.VarChar, 500).Value = objProductBatch.BatchNo;
+                da.SelectCommand.Parameters.Add("@BatchName", SqlDbType.VarChar, 500).Value = objProductBatch.BatchName;
+                da.SelectCommand.Parameters.Add("@Description", SqlDbType.VarChar, 500).Value = objProductBatch.BatchDescription;
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();

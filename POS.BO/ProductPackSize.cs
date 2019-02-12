@@ -43,5 +43,6 @@ namespace POS.BO
         public bool IsDelete { get; set; }
 
         public bool IsInsert { get; set; }
+        public string PackSizeDescription { get; set; }
     }
 }

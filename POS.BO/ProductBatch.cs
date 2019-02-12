@@ -47,5 +47,7 @@ namespace POS.BO
         public string ProductName { get; set; }
 
         public string ProductCode { get; set; }
+        public string BatchDescription { get; set; }
+        public string BatchName { get; set; }
     }
 }

@@ -32,7 +32,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblP_Entry = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.S = new System.Windows.Forms.TextBox();
+            this.lblBatchNo = new System.Windows.Forms.Label();
+            this.grvProduct = new System.Windows.Forms.DataGridView();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,10 +64,9 @@
             this.txtPro_Name = new System.Windows.Forms.TextBox();
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
-            this.S = new System.Windows.Forms.TextBox();
-            this.lblBatchNo = new System.Windows.Forms.Label();
+            this.lblMessageBox = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -102,7 +103,7 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.S);
             this.groupBox1.Controls.Add(this.lblBatchNo);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.grvProduct);
             this.groupBox1.Controls.Add(this.txtVat);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDescription);
@@ -132,10 +133,29 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
-            // dataGridView1
+            // S
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.S.Location = new System.Drawing.Point(188, 223);
+            this.S.Margin = new System.Windows.Forms.Padding(2);
+            this.S.Name = "S";
+            this.S.Size = new System.Drawing.Size(157, 29);
+            this.S.TabIndex = 24;
+            // 
+            // lblBatchNo
+            // 
+            this.lblBatchNo.AutoSize = true;
+            this.lblBatchNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBatchNo.Location = new System.Drawing.Point(83, 223);
+            this.lblBatchNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBatchNo.Name = "lblBatchNo";
+            this.lblBatchNo.Size = new System.Drawing.Size(72, 13);
+            this.lblBatchNo.TabIndex = 25;
+            this.lblBatchNo.Text = "Batch No  :";
+            // 
+            // grvProduct
+            // 
+            this.grvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sln,
             this.ProductName,
             this.ProductCode,
@@ -145,12 +165,12 @@
             this.PPrice,
             this.TPrice,
             this.Vat});
-            this.dataGridView1.Location = new System.Drawing.Point(31, 391);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(708, 122);
-            this.dataGridView1.TabIndex = 23;
+            this.grvProduct.Location = new System.Drawing.Point(31, 391);
+            this.grvProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.grvProduct.Name = "grvProduct";
+            this.grvProduct.RowTemplate.Height = 24;
+            this.grvProduct.Size = new System.Drawing.Size(708, 122);
+            this.grvProduct.TabIndex = 23;
             // 
             // Sln
             // 
@@ -394,30 +414,21 @@
             this.lblBrand.TabIndex = 12;
             this.lblBrand.Text = "Brand :";
             // 
-            // S
+            // lblMessageBox
             // 
-            this.S.Location = new System.Drawing.Point(188, 223);
-            this.S.Margin = new System.Windows.Forms.Padding(2);
-            this.S.Name = "S";
-            this.S.Size = new System.Drawing.Size(157, 29);
-            this.S.TabIndex = 24;
-            // 
-            // lblBatchNo
-            // 
-            this.lblBatchNo.AutoSize = true;
-            this.lblBatchNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBatchNo.Location = new System.Drawing.Point(83, 223);
-            this.lblBatchNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBatchNo.Name = "lblBatchNo";
-            this.lblBatchNo.Size = new System.Drawing.Size(72, 13);
-            this.lblBatchNo.TabIndex = 25;
-            this.lblBatchNo.Text = "Batch No  :";
+            this.lblMessageBox.AutoSize = true;
+            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Location = new System.Drawing.Point(318, 418);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
+            this.lblMessageBox.TabIndex = 32;
             // 
             // ProductEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 644);
+            this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblP_Entry);
@@ -426,7 +437,7 @@
             this.Text = "ProductEntry";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,7 +449,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblP_Entry;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grvProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductCode;
@@ -470,5 +481,6 @@
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.TextBox S;
         private System.Windows.Forms.Label lblBatchNo;
+        private System.Windows.Forms.Label lblMessageBox;
     }
 }
