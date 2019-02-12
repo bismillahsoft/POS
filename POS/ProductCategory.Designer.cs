@@ -30,14 +30,19 @@
         {
             this.lblPCategory = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
+            this.grvPCategory = new System.Windows.Forms.DataGridView();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMessageBox = new System.Windows.Forms.Label();
             this.lblPCategoryName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.bntSave = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
-            this.lblMessageBox = new System.Windows.Forms.Label();
             this.grBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grvPCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPCategory
@@ -54,6 +59,7 @@
             // grBox
             // 
             this.grBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grBox.Controls.Add(this.grvPCategory);
             this.grBox.Controls.Add(this.lblMessageBox);
             this.grBox.Controls.Add(this.lblPCategoryName);
             this.grBox.Controls.Add(this.lblDescription);
@@ -61,19 +67,56 @@
             this.grBox.Controls.Add(this.txtDescription);
             this.grBox.Controls.Add(this.btnReset);
             this.grBox.Controls.Add(this.txtCategoryName);
-            this.grBox.Location = new System.Drawing.Point(79, 76);
+            this.grBox.Location = new System.Drawing.Point(80, 76);
             this.grBox.Margin = new System.Windows.Forms.Padding(2);
             this.grBox.Name = "grBox";
             this.grBox.Padding = new System.Windows.Forms.Padding(2);
-            this.grBox.Size = new System.Drawing.Size(314, 251);
+            this.grBox.Size = new System.Drawing.Size(392, 410);
             this.grBox.TabIndex = 11;
             this.grBox.TabStop = false;
+            // 
+            // grvPCategory
+            // 
+            this.grvPCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvPCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sln,
+            this.CategoryName,
+            this.Description});
+            this.grvPCategory.Location = new System.Drawing.Point(22, 293);
+            this.grvPCategory.Name = "grvPCategory";
+            this.grvPCategory.Size = new System.Drawing.Size(343, 87);
+            this.grvPCategory.TabIndex = 18;
+            // 
+            // Sln
+            // 
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.HeaderText = "Category Name";
+            this.CategoryName.Name = "CategoryName";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            // 
+            // lblMessageBox
+            // 
+            this.lblMessageBox.AutoSize = true;
+            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Location = new System.Drawing.Point(114, 15);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(57, 13);
+            this.lblMessageBox.TabIndex = 17;
+            this.lblMessageBox.Text = "Massage";
             // 
             // lblPCategoryName
             // 
             this.lblPCategoryName.AutoSize = true;
             this.lblPCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCategoryName.Location = new System.Drawing.Point(20, 41);
+            this.lblPCategoryName.Location = new System.Drawing.Point(58, 48);
             this.lblPCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPCategoryName.Name = "lblPCategoryName";
             this.lblPCategoryName.Size = new System.Drawing.Size(101, 13);
@@ -84,7 +127,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(20, 84);
+            this.lblDescription.Location = new System.Drawing.Point(58, 91);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(79, 13);
@@ -94,7 +137,7 @@
             // bntSave
             // 
             this.bntSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntSave.Location = new System.Drawing.Point(157, 171);
+            this.bntSave.Location = new System.Drawing.Point(195, 178);
             this.bntSave.Margin = new System.Windows.Forms.Padding(2);
             this.bntSave.Name = "bntSave";
             this.bntSave.Size = new System.Drawing.Size(124, 41);
@@ -105,7 +148,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(144, 81);
+            this.txtDescription.Location = new System.Drawing.Point(182, 88);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -115,7 +158,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(22, 171);
+            this.btnReset.Location = new System.Drawing.Point(60, 178);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(124, 41);
@@ -125,32 +168,25 @@
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(144, 37);
+            this.txtCategoryName.Location = new System.Drawing.Point(182, 44);
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(138, 20);
             this.txtCategoryName.TabIndex = 5;
             // 
-            // lblMessageBox
-            // 
-            this.lblMessageBox.AutoSize = true;
-            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessageBox.Location = new System.Drawing.Point(75, 16);
-            this.lblMessageBox.Name = "lblMessageBox";
-            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
-            this.lblMessageBox.TabIndex = 17;
-            // 
             // ProductCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 379);
+            this.ClientSize = new System.Drawing.Size(560, 527);
             this.Controls.Add(this.lblPCategory);
             this.Controls.Add(this.grBox);
             this.Name = "ProductCategory";
             this.Text = "ProductCategory";
+            this.Load += new System.EventHandler(this.ProductCategory_Load);
             this.grBox.ResumeLayout(false);
             this.grBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grvPCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +203,9 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Label lblMessageBox;
+        private System.Windows.Forms.DataGridView grvPCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }

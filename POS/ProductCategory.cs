@@ -67,5 +67,10 @@ namespace POS
                 throw ex;
             }
         }
+
+        private void ProductCategory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

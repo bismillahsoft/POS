@@ -67,14 +67,14 @@ namespace POS.DAL
             return new List<POS.BO.ProductCategory>();
         }
 
-        public IList<POS.BO.ProductCategory> GetProductCategoryList()
+        public IList<BO.ProductCategory> GetProductCategoryList()
         {
             try
             {
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "DCR_SP_GET_ProductCategory";
+                da.SelectCommand.CommandText = "[POS_SP_GET_SET_ProductCategory]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
 
@@ -94,8 +94,8 @@ namespace POS.DAL
                 foreach (DataRow row in dt.Rows)
                 {
                     obj = new BO.ProductCategory();
-                    obj.Id = Convert.ToInt32(row["Id"]);
-                    obj.Name = row["Name"].ToString();
+                    obj.Id = Convert.ToInt32(row["ProductCategoryID"]);
+                    obj.Name = row["CategoryName"].ToString();
                     obj.Description = row["Description"].ToString();
                     objDoctorList.Add(obj);
                 }
