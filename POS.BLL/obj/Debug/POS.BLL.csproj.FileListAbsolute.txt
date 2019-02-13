@@ -21,7 +21,9 @@ F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BO.pdb
 F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.COMMON.pdb
 F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.DAL.pdb
 F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.IDAL.pdb
-F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csprojResolveAssemblyReference.cache
+F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csprojAssemblyReference.cache
+F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csproj.CoreCompileInputs.cache
+F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csproj.CopyComplete
 F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.dll
 F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.pdb
 E:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BLL.dll
