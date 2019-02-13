@@ -2,7 +2,7 @@ using System;
 
 namespace POS.BO
 {
-    public class ProductCategory
+    public class ProductCategory : BaseClass
     {
         private int _Id;
 

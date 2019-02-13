@@ -12,16 +12,18 @@ namespace POS
 {
     public partial class ProductCategory : Form
     {
-        private IProductCategory IProductCategory = null;
+        private IProductCategory _IProductCategory = null;
         public ProductCategory()
         {
             InitializeComponent();
-            IProductCategory = new BLL.BProductCategory();
+            _IProductCategory = new BLL.BProductCategory();
+            Reset();
         }
         private void Reset()
         {
             txtCategoryName.Text = "";
             txtDescription.Text = "";
+            GetProductCategory();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -29,7 +31,10 @@ namespace POS
             {
                 Reset();
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void bntSave_Click(object sender, EventArgs e)
@@ -42,7 +47,7 @@ namespace POS
 
                 if (ObjProductCategory.Name != "")
                 {
-                    if (IProductCategory.Insert(ObjProductCategory) > 0)
+                    if (_IProductCategory.Insert(ObjProductCategory) > 0)
                     {
                         lblMessageBox.Text = "Operation Success";
                         lblMessageBox.ForeColor = Color.Green;
@@ -72,5 +77,14 @@ namespace POS
         {
 
         }
+
+        private void GetProductCategory()
+        {
+            List<BO.ProductCategory> productCategories = new List<BO.ProductCategory>();
+            productCategories = _IProductCategory.GetProductCategoryList().ToList();
+            grvPCategory.AutoGenerateColumns = false;
+            grvPCategory.DataSource = productCategories;
+        }
+
     }
 }
