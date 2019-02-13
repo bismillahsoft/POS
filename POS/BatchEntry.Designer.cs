@@ -139,10 +139,12 @@
             this.BatchNo,
             this.BatchName,
             this.Description});
+            this.grvBatchEntry.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grvBatchEntry.Location = new System.Drawing.Point(48, 290);
             this.grvBatchEntry.Name = "grvBatchEntry";
             this.grvBatchEntry.Size = new System.Drawing.Size(444, 150);
             this.grvBatchEntry.TabIndex = 18;
+            this.grvBatchEntry.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBatchEntry_CellContentClick);
             // 
             // txtBatchName
             // 

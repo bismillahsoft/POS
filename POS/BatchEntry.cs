@@ -82,13 +82,17 @@ namespace POS
             grvBatchEntry.AutoGenerateColumns = false;
             grvBatchEntry.DataSource = productBatches;
         }
-
         private void txtBatchNo_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 txtBatchName.Focus();
             }
+        }
+
+        private void grvBatchEntry_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

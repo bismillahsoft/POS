@@ -77,15 +77,17 @@
             // 
             // grvPCategory
             // 
+            this.grvPCategory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.grvPCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvPCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sln,
             this.CategoryName,
             this.Description});
+            this.grvPCategory.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grvPCategory.Location = new System.Drawing.Point(88, 263);
             this.grvPCategory.Name = "grvPCategory";
             this.grvPCategory.Size = new System.Drawing.Size(346, 170);
-            this.grvPCategory.TabIndex = 18;
+            this.grvPCategory.TabIndex = 5;
             // 
             // lblMessageBox
             // 
@@ -137,7 +139,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(138, 56);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.TabIndex = 2;
             // 
             // btnReset
             // 
@@ -156,7 +158,7 @@
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(138, 20);
-            this.txtCategoryName.TabIndex = 5;
+            this.txtCategoryName.TabIndex = 1;
             // 
             // Sln
             // 

@@ -1,5 +1,7 @@
 ﻿using POS.IDAL;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace POS
@@ -65,6 +67,13 @@ namespace POS
             {
                 throw ex;
             }
+        }
+        private void GetBrand()
+        {
+            List<BO.Brand> brand = new List<BO.Brand>();
+            brand = IBrand.GetBrandList().ToList();
+            grvBrand.AutoGenerateColumns = false;
+            grvBrand.DataSource = brand;
         }
     }
 }
