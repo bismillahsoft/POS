@@ -34,16 +34,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.S = new System.Windows.Forms.TextBox();
             this.lblBatchNo = new System.Windows.Forms.Label();
-            this.grvProduct = new System.Windows.Forms.DataGridView();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtVat = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -66,7 +56,6 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -103,7 +92,6 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.S);
             this.groupBox1.Controls.Add(this.lblBatchNo);
-            this.groupBox1.Controls.Add(this.grvProduct);
             this.groupBox1.Controls.Add(this.txtVat);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDescription);
@@ -151,71 +139,6 @@
             this.lblBatchNo.Size = new System.Drawing.Size(72, 13);
             this.lblBatchNo.TabIndex = 25;
             this.lblBatchNo.Text = "Batch No  :";
-            // 
-            // grvProduct
-            // 
-            this.grvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Sln,
-            this.ProductName,
-            this.ProductCode,
-            this.PackSize,
-            this.Brand,
-            this.GName,
-            this.PPrice,
-            this.TPrice,
-            this.Vat});
-            this.grvProduct.Location = new System.Drawing.Point(31, 391);
-            this.grvProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.grvProduct.Name = "grvProduct";
-            this.grvProduct.RowTemplate.Height = 24;
-            this.grvProduct.Size = new System.Drawing.Size(708, 122);
-            this.grvProduct.TabIndex = 23;
-            // 
-            // Sln
-            // 
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            // 
-            // ProductName
-            // 
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.Name = "ProductName";
-            // 
-            // ProductCode
-            // 
-            this.ProductCode.HeaderText = "Product Code";
-            this.ProductCode.Name = "ProductCode";
-            // 
-            // PackSize
-            // 
-            this.PackSize.HeaderText = "Pack Size";
-            this.PackSize.Name = "PackSize";
-            // 
-            // Brand
-            // 
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            // 
-            // GName
-            // 
-            this.GName.HeaderText = "G.Name";
-            this.GName.Name = "GName";
-            // 
-            // PPrice
-            // 
-            this.PPrice.HeaderText = "P.Price";
-            this.PPrice.Name = "PPrice";
-            // 
-            // TPrice
-            // 
-            this.TPrice.HeaderText = "T.Price";
-            this.TPrice.Name = "TPrice";
-            // 
-            // Vat
-            // 
-            this.Vat.HeaderText = "Vat";
-            this.Vat.Name = "Vat";
             // 
             // txtVat
             // 
@@ -437,7 +360,6 @@
             this.Text = "ProductEntry";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,16 +371,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblP_Entry;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView grvProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PackSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vat;
         private System.Windows.Forms.TextBox txtVat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescription;

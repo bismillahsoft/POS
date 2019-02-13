@@ -31,9 +31,6 @@
             this.lblPCategory = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
             this.grvPCategory = new System.Windows.Forms.DataGridView();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.lblPCategoryName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -41,6 +38,9 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvPCategory)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +71,7 @@
             this.grBox.Margin = new System.Windows.Forms.Padding(2);
             this.grBox.Name = "grBox";
             this.grBox.Padding = new System.Windows.Forms.Padding(2);
-            this.grBox.Size = new System.Drawing.Size(392, 410);
+            this.grBox.Size = new System.Drawing.Size(552, 456);
             this.grBox.TabIndex = 11;
             this.grBox.TabStop = false;
             // 
@@ -84,23 +84,8 @@
             this.Description});
             this.grvPCategory.Location = new System.Drawing.Point(22, 293);
             this.grvPCategory.Name = "grvPCategory";
-            this.grvPCategory.Size = new System.Drawing.Size(343, 87);
+            this.grvPCategory.Size = new System.Drawing.Size(466, 130);
             this.grvPCategory.TabIndex = 18;
-            // 
-            // Sln
-            // 
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.HeaderText = "Category Name";
-            this.CategoryName.Name = "CategoryName";
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
             // 
             // lblMessageBox
             // 
@@ -174,11 +159,29 @@
             this.txtCategoryName.Size = new System.Drawing.Size(138, 20);
             this.txtCategoryName.TabIndex = 5;
             // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "Name";
+            this.CategoryName.HeaderText = "Category Name";
+            this.CategoryName.Name = "CategoryName";
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            // 
             // ProductCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 527);
+            this.ClientSize = new System.Drawing.Size(734, 527);
             this.Controls.Add(this.lblPCategory);
             this.Controls.Add(this.grBox);
             this.Name = "ProductCategory";

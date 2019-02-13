@@ -803,7 +803,6 @@ namespace POS.DAL
 
         public IList<BO.Product> getProductIDByPackSizeID(int packsizeID)
         {
-            long ProductID = 0;
             List<BO.Product> objProductID = new List<BO.Product>();
             POS.BO.Product obj = null;
             querry = @"SELECT ProductID FROM ProductWisePackSize where
@@ -903,7 +902,6 @@ namespace POS.DAL
 
         public IList<BO.Product> GetProductListLikeBrand(string brandName)
         {
-            long ProductID = 0;
             List<BO.Product> objProductList = new List<BO.Product>();
             POS.BO.Product obj = null;
             querry = @"select ProductID,BrandID from product where ProductName Like '" + brandName + "%'";
