@@ -89,11 +89,13 @@ namespace POS.DAL
                     con.Close();
                 }
                 DataTable dt = ds.Tables[0];
-                List<POS.BO.ProductCategory> objDoctorList = new List<POS.BO.ProductCategory>();
+                List<BO.ProductCategory> objDoctorList = new List<POS.BO.ProductCategory>();
+                int index = 1;
                 POS.BO.ProductCategory obj = null;
                 foreach (DataRow row in dt.Rows)
                 {
                     obj = new BO.ProductCategory();
+                    obj.Sln = index++;
                     obj.Id = Convert.ToInt32(row["ProductCategoryID"]);
                     obj.Name = row["CategoryName"].ToString();
                     obj.Description = row["Description"].ToString();

@@ -19,7 +19,9 @@ namespace POS
         public BatchEntry()
         {
             InitializeComponent();
+            txtBatchNo.Focus();
             IProductBatch = new BLL.BProductBatch();
+            Reset();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -63,6 +65,7 @@ namespace POS
             txtBatchNo.Text = "";
             txtBatchName.Text = "";
             txtBrndDescription.Text = "";
+            GetProductBatch();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -71,6 +74,21 @@ namespace POS
                 Reset();
             }
             catch (Exception ex) { throw ex; }
+        }
+        private void GetProductBatch()
+        {
+            List<BO.ProductBatch> productBatches = new List<BO.ProductBatch>();
+            productBatches = IProductBatch.GetProductBatchList().ToList();
+            grvBatchEntry.AutoGenerateColumns = false;
+            grvBatchEntry.DataSource = productBatches;
+        }
+
+        private void txtBatchNo_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBatchName.Focus();
+            }
         }
     }
 }

@@ -12,5 +12,4 @@ E:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.dll
 E:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.pdb
 E:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.dll
 E:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.pdb
-E:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.csprojResolveAssemblyReference.cache
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.csprojResolveAssemblyReference.cache

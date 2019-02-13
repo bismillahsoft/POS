@@ -82,26 +82,25 @@
             this.Sln,
             this.CategoryName,
             this.Description});
-            this.grvPCategory.Location = new System.Drawing.Point(22, 293);
+            this.grvPCategory.Location = new System.Drawing.Point(88, 263);
             this.grvPCategory.Name = "grvPCategory";
-            this.grvPCategory.Size = new System.Drawing.Size(466, 130);
+            this.grvPCategory.Size = new System.Drawing.Size(346, 170);
             this.grvPCategory.TabIndex = 18;
             // 
             // lblMessageBox
             // 
             this.lblMessageBox.AutoSize = true;
             this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessageBox.Location = new System.Drawing.Point(114, 15);
+            this.lblMessageBox.Location = new System.Drawing.Point(196, 15);
             this.lblMessageBox.Name = "lblMessageBox";
-            this.lblMessageBox.Size = new System.Drawing.Size(57, 13);
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 17;
-            this.lblMessageBox.Text = "Massage";
             // 
             // lblPCategoryName
             // 
             this.lblPCategoryName.AutoSize = true;
             this.lblPCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCategoryName.Location = new System.Drawing.Point(58, 48);
+            this.lblPCategoryName.Location = new System.Drawing.Point(125, 48);
             this.lblPCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPCategoryName.Name = "lblPCategoryName";
             this.lblPCategoryName.Size = new System.Drawing.Size(101, 13);
@@ -112,7 +111,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(58, 91);
+            this.lblDescription.Location = new System.Drawing.Point(125, 91);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(79, 13);
@@ -122,7 +121,7 @@
             // bntSave
             // 
             this.bntSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntSave.Location = new System.Drawing.Point(195, 178);
+            this.bntSave.Location = new System.Drawing.Point(262, 178);
             this.bntSave.Margin = new System.Windows.Forms.Padding(2);
             this.bntSave.Name = "bntSave";
             this.bntSave.Size = new System.Drawing.Size(124, 41);
@@ -133,7 +132,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(182, 88);
+            this.txtDescription.Location = new System.Drawing.Point(249, 88);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -143,7 +142,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(60, 178);
+            this.btnReset.Location = new System.Drawing.Point(127, 178);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(124, 41);
@@ -153,7 +152,7 @@
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(182, 44);
+            this.txtCategoryName.Location = new System.Drawing.Point(249, 44);
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(138, 20);
@@ -173,7 +172,7 @@
             // 
             // Description
             // 
-            this.Description.DataPropertyName = "Description";
+            this.Description.DataPropertyName = "BatchDescription";
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             // 
@@ -181,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 527);
+            this.ClientSize = new System.Drawing.Size(734, 609);
             this.Controls.Add(this.lblPCategory);
             this.Controls.Add(this.grBox);
             this.Name = "ProductCategory";

@@ -75,7 +75,7 @@ namespace POS
 
         private void ProductCategory_Load(object sender, EventArgs e)
         {
-
+            txtCategoryName.Focus();
         }
 
         private void GetProductCategory()
