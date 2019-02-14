@@ -41,6 +41,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.txtPackSize = new System.Windows.Forms.TextBox();
             this.lblMessageBox = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.grBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvPackSize)).BeginInit();
             this.SuspendLayout();
@@ -176,11 +177,23 @@
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 17;
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 18;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // PackSizeEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 740);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.lblPack);
             this.Controls.Add(this.grBox);
@@ -209,5 +222,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn PackSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.Button btnBack;
     }
 }

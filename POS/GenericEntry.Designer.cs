@@ -36,11 +36,12 @@
             this.txtGenericName = new System.Windows.Forms.TextBox();
             this.lblGenericName = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
-            this.grvGeneric = new System.Windows.Forms.DataGridView();
             this.lblMessageBox = new System.Windows.Forms.Label();
+            this.grvGeneric = new System.Windows.Forms.DataGridView();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenericName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBack = new System.Windows.Forms.Button();
             this.grBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvGeneric)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +137,15 @@
             this.grBox.TabIndex = 15;
             this.grBox.TabStop = false;
             // 
+            // lblMessageBox
+            // 
+            this.lblMessageBox.AutoSize = true;
+            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Location = new System.Drawing.Point(183, 15);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
+            this.lblMessageBox.TabIndex = 16;
+            // 
             // grvGeneric
             // 
             this.grvGeneric.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -147,15 +157,6 @@
             this.grvGeneric.Name = "grvGeneric";
             this.grvGeneric.Size = new System.Drawing.Size(350, 150);
             this.grvGeneric.TabIndex = 15;
-            // 
-            // lblMessageBox
-            // 
-            this.lblMessageBox.AutoSize = true;
-            this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessageBox.Location = new System.Drawing.Point(183, 15);
-            this.lblMessageBox.Name = "lblMessageBox";
-            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
-            this.lblMessageBox.TabIndex = 16;
             // 
             // Sln
             // 
@@ -175,11 +176,23 @@
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 16;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // GenericEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 739);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblGenericNameEntry);
             this.Controls.Add(this.txtGenericDescription);
             this.Controls.Add(this.lblGenericDescription);
@@ -211,5 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn GenericName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.Button btnBack;
     }
 }

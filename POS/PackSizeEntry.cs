@@ -68,5 +68,11 @@ namespace POS
             grvPackSize.AutoGenerateColumns = false;
             grvPackSize.DataSource = productPackSize;
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new Homeproduct().Show();
+            this.Hide();
+        }
     }
 }

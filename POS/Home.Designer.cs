@@ -30,12 +30,12 @@
         {
             this.Logout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.lblPosSystem = new System.Windows.Forms.Label();
-            this.btnlogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 1024);
             this.panel1.TabIndex = 3;
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnlogout.Location = new System.Drawing.Point(1155, 101);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(89, 30);
+            this.btnlogout.TabIndex = 5;
+            this.btnlogout.Text = "Logout";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // btnReport
             // 
@@ -119,6 +131,7 @@
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // lblPosSystem
             // 
@@ -131,18 +144,6 @@
             this.lblPosSystem.Size = new System.Drawing.Size(127, 29);
             this.lblPosSystem.TabIndex = 4;
             this.lblPosSystem.Text = "Pos System";
-            // 
-            // btnlogout
-            // 
-            this.btnlogout.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnlogout.Location = new System.Drawing.Point(1155, 101);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(89, 30);
-            this.btnlogout.TabIndex = 5;
-            this.btnlogout.Text = "Logout";
-            this.btnlogout.UseVisualStyleBackColor = true;
-            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // Home
             // 

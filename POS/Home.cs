@@ -19,7 +19,14 @@ namespace POS
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
-            Close();
+            new Login().Show();
+            this.Hide();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            new Homeproduct().Show();
+            this.Hide(); 
         }
     }
 }

@@ -16,5 +16,11 @@ namespace POS
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new Homeproduct().Show();
+            this.Hide();
+        }
     }
 }

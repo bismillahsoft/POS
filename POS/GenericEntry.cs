@@ -73,5 +73,11 @@ namespace POS
             grvGeneric.DataSource = productGenerics; 
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new Homeproduct().Show();
+            this.Hide();
+        }
     }
 }

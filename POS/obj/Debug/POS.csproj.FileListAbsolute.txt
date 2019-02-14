@@ -66,3 +66,4 @@ E:\Git_Repository\BPOS\POS\bin\Debug\POS.IDAL.pdb
 E:\Git_Repository\BPOS\POS\bin\Debug\POS.DAL.pdb
 E:\Git_Repository\BPOS\POS\obj\Debug\POS.exe
 E:\Git_Repository\BPOS\POS\obj\Debug\POS.pdb
+E:\Git_Repository\BPOS\POS\obj\Debug\POS.Homeproduct.resources

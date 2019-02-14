@@ -55,6 +55,7 @@
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
             this.lblMessageBox = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@
             // 
             this.lblP_Entry.AutoSize = true;
             this.lblP_Entry.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblP_Entry.Location = new System.Drawing.Point(42, 17);
+            this.lblP_Entry.Location = new System.Drawing.Point(181, 48);
             this.lblP_Entry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblP_Entry.Name = "lblP_Entry";
             this.lblP_Entry.Size = new System.Drawing.Size(115, 22);
@@ -113,7 +114,7 @@
             this.groupBox1.Controls.Add(this.lblPackSize);
             this.groupBox1.Controls.Add(this.lblBrand);
             this.groupBox1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(40, 46);
+            this.groupBox1.Location = new System.Drawing.Point(183, 81);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -346,11 +347,23 @@
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 32;
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 33;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // ProductEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 644);
+            this.ClientSize = new System.Drawing.Size(1091, 793);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
@@ -394,5 +407,6 @@
         private System.Windows.Forms.TextBox S;
         private System.Windows.Forms.Label lblBatchNo;
         private System.Windows.Forms.Label lblMessageBox;
+        private System.Windows.Forms.Button btnBack;
     }
 }
