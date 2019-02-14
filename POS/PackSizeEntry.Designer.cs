@@ -30,6 +30,10 @@
         {
             this.lblPack = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
+            this.grvPackSize = new System.Windows.Forms.DataGridView();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.bntSave = new System.Windows.Forms.Button();
@@ -38,6 +42,7 @@
             this.txtPackSize = new System.Windows.Forms.TextBox();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.grBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grvPackSize)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPack
@@ -54,6 +59,7 @@
             // grBox
             // 
             this.grBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grBox.Controls.Add(this.grvPackSize);
             this.grBox.Controls.Add(this.lblPackSize);
             this.grBox.Controls.Add(this.lblDescription);
             this.grBox.Controls.Add(this.bntSave);
@@ -64,15 +70,45 @@
             this.grBox.Margin = new System.Windows.Forms.Padding(2);
             this.grBox.Name = "grBox";
             this.grBox.Padding = new System.Windows.Forms.Padding(2);
-            this.grBox.Size = new System.Drawing.Size(314, 251);
+            this.grBox.Size = new System.Drawing.Size(496, 499);
             this.grBox.TabIndex = 9;
             this.grBox.TabStop = false;
+            // 
+            // grvPackSize
+            // 
+            this.grvPackSize.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvPackSize.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sln,
+            this.PackSize,
+            this.Description});
+            this.grvPackSize.Location = new System.Drawing.Point(75, 294);
+            this.grvPackSize.Name = "grvPackSize";
+            this.grvPackSize.Size = new System.Drawing.Size(343, 150);
+            this.grvPackSize.TabIndex = 7;
+            // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            // 
+            // PackSize
+            // 
+            this.PackSize.DataPropertyName = "PackSize";
+            this.PackSize.HeaderText = "Pack Size";
+            this.PackSize.Name = "PackSize";
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "PackSizeDescription";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
             // 
             // lblPackSize
             // 
             this.lblPackSize.AutoSize = true;
             this.lblPackSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPackSize.Location = new System.Drawing.Point(20, 41);
+            this.lblPackSize.Location = new System.Drawing.Point(74, 41);
             this.lblPackSize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPackSize.Name = "lblPackSize";
             this.lblPackSize.Size = new System.Drawing.Size(72, 13);
@@ -83,7 +119,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(20, 84);
+            this.lblDescription.Location = new System.Drawing.Point(74, 84);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(79, 13);
@@ -93,10 +129,10 @@
             // bntSave
             // 
             this.bntSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntSave.Location = new System.Drawing.Point(157, 171);
+            this.bntSave.Location = new System.Drawing.Point(260, 171);
             this.bntSave.Margin = new System.Windows.Forms.Padding(2);
             this.bntSave.Name = "bntSave";
-            this.bntSave.Size = new System.Drawing.Size(124, 41);
+            this.bntSave.Size = new System.Drawing.Size(160, 50);
             this.bntSave.TabIndex = 3;
             this.bntSave.Text = "Save";
             this.bntSave.UseVisualStyleBackColor = true;
@@ -104,20 +140,20 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(144, 81);
+            this.txtDescription.Location = new System.Drawing.Point(198, 81);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(138, 56);
+            this.txtDescription.Size = new System.Drawing.Size(219, 56);
             this.txtDescription.TabIndex = 6;
             // 
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(22, 171);
+            this.btnReset.Location = new System.Drawing.Point(76, 171);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(124, 41);
+            this.btnReset.Size = new System.Drawing.Size(160, 50);
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -125,10 +161,10 @@
             // 
             // txtPackSize
             // 
-            this.txtPackSize.Location = new System.Drawing.Point(144, 37);
+            this.txtPackSize.Location = new System.Drawing.Point(198, 37);
             this.txtPackSize.Margin = new System.Windows.Forms.Padding(2);
             this.txtPackSize.Name = "txtPackSize";
-            this.txtPackSize.Size = new System.Drawing.Size(138, 20);
+            this.txtPackSize.Size = new System.Drawing.Size(219, 20);
             this.txtPackSize.TabIndex = 5;
             // 
             // lblMessageBox
@@ -144,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 450);
+            this.ClientSize = new System.Drawing.Size(800, 740);
             this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.lblPack);
             this.Controls.Add(this.grBox);
@@ -152,6 +188,7 @@
             this.Text = "PackSizeEntry";
             this.grBox.ResumeLayout(false);
             this.grBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grvPackSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +205,9 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtPackSize;
         private System.Windows.Forms.Label lblMessageBox;
+        private System.Windows.Forms.DataGridView grvPackSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PackSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }

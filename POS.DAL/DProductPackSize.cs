@@ -139,7 +139,7 @@ namespace POS.DAL
                 da.SelectCommand.CommandText = "DCR_SP_GET_ProductPackSize";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
-                da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = PackSizeID;
+             //   da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = PackSizeID;
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -160,6 +160,7 @@ namespace POS.DAL
                     obj.Sln = index++;
                     obj.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
                     obj.PackSize = row["PackSize"].ToString();
+                    obj.PackSizeDescription = row["Description"].ToString();
                     objDoctorList.Add(obj);
                 }
                 return objDoctorList;

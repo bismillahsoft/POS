@@ -35,12 +35,12 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
             this.grvBrand = new System.Windows.Forms.DataGridView();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.txtBrndDescription = new System.Windows.Forms.TextBox();
             this.lblMessageBox = new System.Windows.Forms.Label();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvBrand)).BeginInit();
             this.SuspendLayout();
@@ -129,24 +129,6 @@
             this.grvBrand.Size = new System.Drawing.Size(350, 150);
             this.grvBrand.TabIndex = 5;
             // 
-            // Sln
-            // 
-            this.Sln.DataPropertyName = "Sln";
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "Brand";
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            // 
             // txtBrand
             // 
             this.txtBrand.Location = new System.Drawing.Point(181, 37);
@@ -172,6 +154,24 @@
             this.lblMessageBox.Name = "lblMessageBox";
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 14;
+            // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "BrandName";
+            this.Brand.HeaderText = "Brand";
+            this.Brand.Name = "Brand";
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "BrandDescription";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
             // 
             // BrandEntry
             // 

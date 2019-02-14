@@ -1,5 +1,7 @@
 ﻿using System.Windows.Forms;
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using POS.IDAL;
 using System.Drawing;
 
@@ -8,12 +10,13 @@ namespace POS
     public partial class PackSizeEntry : Form
     {
         #region Global Declaration
-        private IProductPackSize IProductPackSize = null;
+        private IProductPackSize _IProductPackSize = null;
         #endregion
         public PackSizeEntry()
         {
             InitializeComponent();
-            IProductPackSize = new BLL.BProductPackSize();
+            _IProductPackSize = new BLL.BProductPackSize();
+            Reset();
         }
         private void bntSave_Click(object sender, EventArgs e)
         {
@@ -25,7 +28,7 @@ namespace POS
                 ObjProductPackSize.PackSizeDescription = txtDescription.Text;
 
 
-                if (IProductPackSize.Insert(ObjProductPackSize) > 0)
+                if (_IProductPackSize.Insert(ObjProductPackSize) > 0)
                 {
                     lblMessageBox.Text = "Operation Success";
                     lblMessageBox.ForeColor = Color.Green;
@@ -48,6 +51,7 @@ namespace POS
         {
             txtPackSize.Text = "";
             txtDescription.Text = "";
+            GetPackSizeList();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -56,6 +60,13 @@ namespace POS
                 Reset();
             }
             catch (Exception ex) { throw ex; }
+        }
+        private void GetPackSizeList()
+        {
+            List<BO.ProductPackSize> productPackSize = new List<BO.ProductPackSize>();
+            productPackSize = _IProductPackSize.GetProductPackSizeList().ToList();
+            grvPackSize.AutoGenerateColumns = false;
+            grvPackSize.DataSource = productPackSize;
         }
     }
 }

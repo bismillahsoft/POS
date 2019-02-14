@@ -9,7 +9,7 @@ namespace POS
     public partial class BrandEntry : Form
     {
         #region Global Declaration
-        private IBrand IBrand = null;
+        private IBrand _IBrand = null;
 
 
         #endregion
@@ -17,7 +17,8 @@ namespace POS
         {
             InitializeComponent();
             
-           IBrand = new BLL.BBrand();
+           _IBrand = new BLL.BBrand();
+            Reset();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace POS
                
 
 
-                if (IBrand.Insert(ObjBrand) > 0)
+                if (_IBrand.Insert(ObjBrand) > 0)
                 {
                     lblMessageBox.Text = "Operation Success";
                     lblMessageBox.ForeColor = System.Drawing.Color.Green;
@@ -55,6 +56,7 @@ namespace POS
         {
             txtBrand.Text = "";
             txtBrndDescription.Text = "";
+            GetBrand();
         }
 
         protected void btnReset_Click_(object sender, EventArgs e)
@@ -70,10 +72,11 @@ namespace POS
         }
         private void GetBrand()
         {
-            List<BO.Brand> brand = new List<BO.Brand>();
-            brand = IBrand.GetBrandList().ToList();
+
+            List<BO.Brand> brands = new List<BO.Brand>();
+            brands = _IBrand.GetBrandList().ToList();
             grvBrand.AutoGenerateColumns = false;
-            grvBrand.DataSource = brand;
+            grvBrand.DataSource = brands;
         }
     }
 }
