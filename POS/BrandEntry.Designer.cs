@@ -35,12 +35,13 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
             this.grvBrand = new System.Windows.Forms.DataGridView();
-            this.txtBrand = new System.Windows.Forms.TextBox();
-            this.txtBrndDescription = new System.Windows.Forms.TextBox();
-            this.lblMessageBox = new System.Windows.Forms.Label();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.txtBrndDescription = new System.Windows.Forms.TextBox();
+            this.lblMessageBox = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.grBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvBrand)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +96,7 @@
             // 
             this.lblBrand.AutoSize = true;
             this.lblBrand.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrand.Location = new System.Drawing.Point(103, 56);
+            this.lblBrand.Location = new System.Drawing.Point(124, 56);
             this.lblBrand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBrand.Name = "lblBrand";
             this.lblBrand.Size = new System.Drawing.Size(102, 22);
@@ -109,7 +110,7 @@
             this.grBox.Controls.Add(this.txtBrand);
             this.grBox.Controls.Add(this.txtBrndDescription);
             this.grBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.grBox.Location = new System.Drawing.Point(106, 80);
+            this.grBox.Location = new System.Drawing.Point(128, 80);
             this.grBox.Margin = new System.Windows.Forms.Padding(2);
             this.grBox.Name = "grBox";
             this.grBox.Padding = new System.Windows.Forms.Padding(2);
@@ -128,6 +129,24 @@
             this.grvBrand.Name = "grvBrand";
             this.grvBrand.Size = new System.Drawing.Size(350, 150);
             this.grvBrand.TabIndex = 5;
+            // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "BrandName";
+            this.Brand.HeaderText = "Brand";
+            this.Brand.Name = "Brand";
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "BrandDescription";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
             // 
             // txtBrand
             // 
@@ -155,29 +174,23 @@
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 14;
             // 
-            // Sln
+            // btnBack
             // 
-            this.Sln.DataPropertyName = "Sln";
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "BrandName";
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "BrandDescription";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // BrandEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 604);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
@@ -210,5 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.Button btnBack;
     }
 }

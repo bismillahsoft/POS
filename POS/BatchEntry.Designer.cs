@@ -36,14 +36,15 @@
             System.Windows.Forms.GroupBox grBox;
             System.Windows.Forms.Label lblBatchName;
             this.grvBatchEntry = new System.Windows.Forms.DataGridView();
-            this.txtBatchName = new System.Windows.Forms.TextBox();
-            this.txtBatchNo = new System.Windows.Forms.TextBox();
-            this.txtBrndDescription = new System.Windows.Forms.TextBox();
-            this.lblMessageBox = new System.Windows.Forms.Label();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BatchNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BatchName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBatchName = new System.Windows.Forms.TextBox();
+            this.txtBatchNo = new System.Windows.Forms.TextBox();
+            this.txtBrndDescription = new System.Windows.Forms.TextBox();
+            this.lblMessageBox = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             btnReset = new System.Windows.Forms.Button();
             btnSave = new System.Windows.Forms.Button();
             lblBrndDescription = new System.Windows.Forms.Label();
@@ -107,7 +108,7 @@
             // 
             lblBatch.AutoSize = true;
             lblBatch.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblBatch.Location = new System.Drawing.Point(95, 27);
+            lblBatch.Location = new System.Drawing.Point(140, 27);
             lblBatch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblBatch.Name = "lblBatch";
             lblBatch.Size = new System.Drawing.Size(98, 22);
@@ -123,7 +124,7 @@
             grBox.Controls.Add(this.txtBatchNo);
             grBox.Controls.Add(this.txtBrndDescription);
             grBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            grBox.Location = new System.Drawing.Point(98, 51);
+            grBox.Location = new System.Drawing.Point(147, 51);
             grBox.Margin = new System.Windows.Forms.Padding(2);
             grBox.Name = "grBox";
             grBox.Padding = new System.Windows.Forms.Padding(2);
@@ -146,6 +147,30 @@
             this.grvBatchEntry.TabIndex = 18;
             this.grvBatchEntry.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBatchEntry_CellContentClick);
             // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            // 
+            // BatchNo
+            // 
+            this.BatchNo.DataPropertyName = "BatchNo";
+            this.BatchNo.HeaderText = "Batch No";
+            this.BatchNo.Name = "BatchNo";
+            // 
+            // BatchName
+            // 
+            this.BatchName.DataPropertyName = "BatchName";
+            this.BatchName.HeaderText = "Batch Name";
+            this.BatchName.Name = "BatchName";
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "BatchDescription";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            // 
             // txtBatchName
             // 
             this.txtBatchName.Location = new System.Drawing.Point(265, 85);
@@ -159,7 +184,7 @@
             lblBatchName.AutoSize = true;
             lblBatchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblBatchName.ForeColor = System.Drawing.Color.Black;
-            lblBatchName.Location = new System.Drawing.Point(144, 88);
+            lblBatchName.Location = new System.Drawing.Point(96, 88);
             lblBatchName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblBatchName.Name = "lblBatchName";
             lblBatchName.Size = new System.Drawing.Size(100, 13);
@@ -193,35 +218,23 @@
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 20;
             // 
-            // Sln
+            // btnBack
             // 
-            this.Sln.DataPropertyName = "Sln";
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            // 
-            // BatchNo
-            // 
-            this.BatchNo.DataPropertyName = "BatchNo";
-            this.BatchNo.HeaderText = "Batch No";
-            this.BatchNo.Name = "BatchNo";
-            // 
-            // BatchName
-            // 
-            this.BatchName.DataPropertyName = "BatchName";
-            this.BatchName.HeaderText = "Batch Name";
-            this.BatchName.Name = "BatchName";
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "BatchDescription";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 21;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // BatchEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 651);
+            this.ClientSize = new System.Drawing.Size(941, 651);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(btnReset);
             this.Controls.Add(btnSave);
@@ -249,5 +262,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BatchNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn BatchName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.Button btnBack;
     }
 }
