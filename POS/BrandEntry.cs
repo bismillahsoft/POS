@@ -29,22 +29,28 @@ namespace POS
 
                 ObjBrand.BrandName = txtBrand.Text;
                 ObjBrand.BrandDescription = txtBrndDescription.Text;
-
-               
-
-
-                if (_IBrand.Insert(ObjBrand) > 0)
+                if (txtBrand.Text!="")
                 {
-                    lblMessageBox.Text = "Operation Success";
-                    lblMessageBox.ForeColor = System.Drawing.Color.Green;
-                    // GetBrand();
-                    Reset();
+                    if (_IBrand.Insert(ObjBrand) > 0)
+                    {
+                        MessageBox.Show("Operation Success");
+                        
+
+                       // lblMessageBox.Text = "Operation Success";
+                      //  lblMessageBox.ForeColor = System.Drawing.Color.Green;
+                        // GetBrand();
+                        Reset();
+                    }
+                    else
+                    {
+                        lblMessageBox.Text = "Operation Failed";
+                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        // lblMessageBox.Font.Bold = true;
+                    }
                 }
                 else
                 {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = System.Drawing.Color.Red;
-                   // lblMessageBox.Font.Bold = true;
+                    MessageBox.Show("Please Fill Up Required Fill..!");
                 }
             }
             catch (Exception ex)

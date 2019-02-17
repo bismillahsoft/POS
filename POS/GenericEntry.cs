@@ -31,19 +31,21 @@ namespace POS
                 ObjProductGeneric.GenericName = txtGenericName.Text;
                 ObjProductGeneric.GenericDescription = txtGenericDescription.Text;
 
-
-                if(_IProductGeneric.Insert(ObjProductGeneric)>0)
+                if (ObjProductGeneric.GenericName!="")
                 {
-                    lblMessageBox.Text = "Operation Success";
-                    lblMessageBox.ForeColor = Color.Green;
-                    // GetBrand();
-                    Reset();
-                }
-                else
-                {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = System.Drawing.Color.Red;
-                    // lblMessageBox.Font.Bold = true;
+                    if (_IProductGeneric.Insert(ObjProductGeneric) > 0)
+                    {
+                        lblMessageBox.Text = "Operation Success";
+                        lblMessageBox.ForeColor = Color.Green;
+                        // GetBrand();
+                        Reset();
+                    }
+                    else
+                    {
+                        lblMessageBox.Text = "Operation Failed";
+                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        // lblMessageBox.Font.Bold = true;
+                    }
                 }
             }
                 catch (Exception ex)
@@ -78,6 +80,22 @@ namespace POS
         {
             new Homeproduct().Show();
             this.Hide();
+        }
+
+        private void txtGenericName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtGenericDescription.Focus();
+            }
+        }
+
+        private void txtGenericDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnGene_Save.Focus();
+            }
         }
     }
 }

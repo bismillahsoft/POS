@@ -14,13 +14,13 @@ namespace POS
     public partial class BatchEntry : Form
     {
         #region Global Declaration
-        private IProductBatch IProductBatch = null;
+        private IProductBatch _IProductBatch = null;
         #endregion
         public BatchEntry()
         {
             InitializeComponent();
             txtBatchNo.Focus();
-            IProductBatch = new BLL.BProductBatch();
+            _IProductBatch = new BLL.BProductBatch();
             Reset();
         }
 
@@ -32,10 +32,10 @@ namespace POS
 
                 ObjProductBatch.BatchNo = txtBatchNo.Text;
                 ObjProductBatch.BatchName = txtBatchName.Text;
-                ObjProductBatch.BatchDescription = txtBrndDescription.Text;
+                ObjProductBatch.BatchDescription = txtBatchDescription.Text;
                 if (ObjProductBatch.BatchNo != "" && ObjProductBatch.BatchName != "")
                 {
-                    if (IProductBatch.Insert(ObjProductBatch) > 0)
+                    if (_IProductBatch.Insert(ObjProductBatch) > 0)
                     {
                         lblMessageBox.Text = "Operation Success";
                         lblMessageBox.ForeColor = Color.Green;
@@ -64,7 +64,7 @@ namespace POS
         {
             txtBatchNo.Text = "";
             txtBatchName.Text = "";
-            txtBrndDescription.Text = "";
+            txtBatchDescription.Text = "";
             GetProductBatch();
         }
         private void btnReset_Click(object sender, EventArgs e)
@@ -78,9 +78,18 @@ namespace POS
         private void GetProductBatch()
         {
             List<BO.ProductBatch> productBatches = new List<BO.ProductBatch>();
-            productBatches = IProductBatch.GetProductBatchList().ToList();
+            productBatches = _IProductBatch.GetProductBatchList().ToList();
             grvBatchEntry.AutoGenerateColumns = false;
             grvBatchEntry.DataSource = productBatches;
+        }
+        private void grvBatchEntry_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new Homeproduct().Show();
+            this.Hide();
         }
         private void txtBatchNo_KeyUp(object sender, KeyEventArgs e)
         {
@@ -89,16 +98,30 @@ namespace POS
                 txtBatchName.Focus();
             }
         }
-
-        private void grvBatchEntry_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtBatchName_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+           
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
+        private void txtBatchName_KeyUp(object sender, KeyEventArgs e)
         {
-            new Homeproduct().Show();
-            this.Hide();
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBatchDescription.Focus();
+            }
+        }
+        private void txtBatchDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBatchDescription.Focus();
+            }
+        }
+        private void btnSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBack.Focus();
+            }
         }
     }
 }

@@ -80,6 +80,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MsgBow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBow.Designer.cs">
+      <DependentUpon>MsgBow.cs</DependentUpon>
+    </Compile>
     <Compile Include="PackSizeEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBow.en.resx">
+      <DependentUpon>MsgBow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBow.resx">
+      <DependentUpon>MsgBow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PackSizeEntry.resx">
       <DependentUpon>PackSizeEntry.cs</DependentUpon>

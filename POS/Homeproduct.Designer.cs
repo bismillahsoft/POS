@@ -136,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1262, 882);
+            this.ClientSize = new System.Drawing.Size(1433, 831);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSubPackSize);
             this.Controls.Add(this.btnSubCategory);
@@ -147,6 +147,7 @@
             this.Controls.Add(this.btnSubBrand);
             this.Name = "Homeproduct";
             this.Text = "Homeproduct";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

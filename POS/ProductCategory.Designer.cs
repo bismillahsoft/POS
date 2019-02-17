@@ -50,7 +50,7 @@
             // 
             this.lblPCategory.AutoSize = true;
             this.lblPCategory.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCategory.Location = new System.Drawing.Point(165, 52);
+            this.lblPCategory.Location = new System.Drawing.Point(497, 284);
             this.lblPCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPCategory.Name = "lblPCategory";
             this.lblPCategory.Size = new System.Drawing.Size(187, 22);
@@ -60,6 +60,8 @@
             // grBox
             // 
             this.grBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grBox.Controls.Add(this.lblPCategory);
+            this.grBox.Controls.Add(this.btnBack);
             this.grBox.Controls.Add(this.grvPCategory);
             this.grBox.Controls.Add(this.lblMessageBox);
             this.grBox.Controls.Add(this.lblPCategoryName);
@@ -68,11 +70,11 @@
             this.grBox.Controls.Add(this.txtDescription);
             this.grBox.Controls.Add(this.btnReset);
             this.grBox.Controls.Add(this.txtCategoryName);
-            this.grBox.Location = new System.Drawing.Point(168, 76);
+            this.grBox.Location = new System.Drawing.Point(0, 0);
             this.grBox.Margin = new System.Windows.Forms.Padding(2);
             this.grBox.Name = "grBox";
             this.grBox.Padding = new System.Windows.Forms.Padding(2);
-            this.grBox.Size = new System.Drawing.Size(611, 456);
+            this.grBox.Size = new System.Drawing.Size(1431, 839);
             this.grBox.TabIndex = 11;
             this.grBox.TabStop = false;
             // 
@@ -85,9 +87,10 @@
             this.CategoryName,
             this.Description});
             this.grvPCategory.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grvPCategory.Location = new System.Drawing.Point(130, 263);
+            this.grvPCategory.Location = new System.Drawing.Point(152, 324);
+            this.grvPCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grvPCategory.Name = "grvPCategory";
-            this.grvPCategory.Size = new System.Drawing.Size(346, 170);
+            this.grvPCategory.Size = new System.Drawing.Size(404, 209);
             this.grvPCategory.TabIndex = 5;
             // 
             // Sln
@@ -112,7 +115,7 @@
             // 
             this.lblMessageBox.AutoSize = true;
             this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessageBox.Location = new System.Drawing.Point(196, 15);
+            this.lblMessageBox.Location = new System.Drawing.Point(229, 18);
             this.lblMessageBox.Name = "lblMessageBox";
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 17;
@@ -121,7 +124,7 @@
             // 
             this.lblPCategoryName.AutoSize = true;
             this.lblPCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCategoryName.Location = new System.Drawing.Point(167, 48);
+            this.lblPCategoryName.Location = new System.Drawing.Point(195, 59);
             this.lblPCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPCategoryName.Name = "lblPCategoryName";
             this.lblPCategoryName.Size = new System.Drawing.Size(101, 13);
@@ -132,7 +135,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(167, 91);
+            this.lblDescription.Location = new System.Drawing.Point(195, 112);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(79, 13);
@@ -142,10 +145,10 @@
             // bntSave
             // 
             this.bntSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntSave.Location = new System.Drawing.Point(304, 178);
+            this.bntSave.Location = new System.Drawing.Point(355, 219);
             this.bntSave.Margin = new System.Windows.Forms.Padding(2);
             this.bntSave.Name = "bntSave";
-            this.bntSave.Size = new System.Drawing.Size(124, 41);
+            this.bntSave.Size = new System.Drawing.Size(145, 50);
             this.bntSave.TabIndex = 3;
             this.bntSave.Text = "Save";
             this.bntSave.UseVisualStyleBackColor = true;
@@ -153,38 +156,39 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(291, 88);
+            this.txtDescription.Location = new System.Drawing.Point(339, 108);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(138, 56);
+            this.txtDescription.Size = new System.Drawing.Size(160, 68);
             this.txtDescription.TabIndex = 2;
             // 
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(169, 178);
+            this.btnReset.Location = new System.Drawing.Point(197, 219);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(124, 41);
+            this.btnReset.Size = new System.Drawing.Size(145, 50);
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(291, 44);
+            this.txtCategoryName.Location = new System.Drawing.Point(339, 54);
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(138, 20);
+            this.txtCategoryName.Size = new System.Drawing.Size(160, 22);
             this.txtCategoryName.TabIndex = 1;
             // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Location = new System.Drawing.Point(27, 240);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.Size = new System.Drawing.Size(114, 66);
             this.btnBack.TabIndex = 12;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -192,20 +196,21 @@
             // 
             // ProductCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 609);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.lblPCategory);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1433, 831);
             this.Controls.Add(this.grBox);
+            this.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductCategory";
             this.Text = "ProductCategory";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProductCategory_Load);
             this.grBox.ResumeLayout(false);
             this.grBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvPCategory)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -18,7 +18,7 @@ namespace POS
             _IProductPackSize = new BLL.BProductPackSize();
             Reset();
         }
-        private void bntSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
@@ -27,19 +27,32 @@ namespace POS
                 ObjProductPackSize.PackSize = txtPackSize.Text;
                 ObjProductPackSize.PackSizeDescription = txtDescription.Text;
 
-
-                if (_IProductPackSize.Insert(ObjProductPackSize) > 0)
+                if (txtPackSize.Text != "")
                 {
-                    lblMessageBox.Text = "Operation Success";
-                    lblMessageBox.ForeColor = Color.Green;
-                    // GetBrand();
-                    Reset();
+
+                    if (_IProductPackSize.Insert(ObjProductPackSize) > 0)
+                    {
+                        MessageBox.Show("Operation Success");
+                        //lblMessageBox.Text = "Operation Success";
+                        //lblMessageBox.ForeColor = Color.Green;
+                        // GetBrand();
+                        Reset();
+                    }
+                    else
+                    {
+                        lblMessageBox.Text = "Operation Failed";
+                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        // lblMessageBox.Font.Bold = true;
+                    }
                 }
                 else
                 {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = System.Drawing.Color.Red;
-                    // lblMessageBox.Font.Bold = true;
+                    MsgBox msgbox = new MsgBox();
+                    msgbox.Show();
+                  //  MessageBox.Show("Please Fill Up Require Fill..!");
+                    txtPackSize.Focus();
+                    //lblMessageBox.Text = "Please Fill Up Require Fill..!";
+                    //lblMessageBox.ForeColor = Color.Blue;
                 }
             }
             catch (Exception ex)
@@ -73,6 +86,18 @@ namespace POS
         {
             new Homeproduct().Show();
             this.Hide();
+        }
+
+        private void txtPackSize_KeyUp(object sender, KeyEventArgs e)
+        {
+           if( e.KeyCode == Keys.Enter)
+            txtDescription.Focus();
+        }
+
+        private void txtDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSave.Focus();
         }
     }
 }

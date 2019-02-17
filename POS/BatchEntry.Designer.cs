@@ -42,7 +42,7 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBatchName = new System.Windows.Forms.TextBox();
             this.txtBatchNo = new System.Windows.Forms.TextBox();
-            this.txtBrndDescription = new System.Windows.Forms.TextBox();
+            this.txtBatchDescription = new System.Windows.Forms.TextBox();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             btnReset = new System.Windows.Forms.Button();
@@ -79,6 +79,7 @@
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
             // 
             // lblBrndDescription
             // 
@@ -108,7 +109,7 @@
             // 
             lblBatch.AutoSize = true;
             lblBatch.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblBatch.Location = new System.Drawing.Point(140, 27);
+            lblBatch.Location = new System.Drawing.Point(44, 167);
             lblBatch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblBatch.Name = "lblBatch";
             lblBatch.Size = new System.Drawing.Size(98, 22);
@@ -118,17 +119,20 @@
             // grBox
             // 
             grBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            grBox.Controls.Add(this.btnBack);
             grBox.Controls.Add(this.grvBatchEntry);
             grBox.Controls.Add(this.txtBatchName);
             grBox.Controls.Add(lblBatchName);
             grBox.Controls.Add(this.txtBatchNo);
-            grBox.Controls.Add(this.txtBrndDescription);
-            grBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            grBox.Location = new System.Drawing.Point(147, 51);
+            grBox.Controls.Add(lblBatch);
+            grBox.Controls.Add(this.txtBatchDescription);
+            grBox.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            grBox.ForeColor = System.Drawing.Color.Black;
+            grBox.Location = new System.Drawing.Point(0, 0);
             grBox.Margin = new System.Windows.Forms.Padding(2);
             grBox.Name = "grBox";
             grBox.Padding = new System.Windows.Forms.Padding(2);
-            grBox.Size = new System.Drawing.Size(604, 556);
+            grBox.Size = new System.Drawing.Size(1431, 839);
             grBox.TabIndex = 19;
             grBox.TabStop = false;
             // 
@@ -144,7 +148,7 @@
             this.grvBatchEntry.Location = new System.Drawing.Point(48, 290);
             this.grvBatchEntry.Name = "grvBatchEntry";
             this.grvBatchEntry.Size = new System.Drawing.Size(444, 150);
-            this.grvBatchEntry.TabIndex = 18;
+            this.grvBatchEntry.TabIndex = 6;
             this.grvBatchEntry.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBatchEntry_CellContentClick);
             // 
             // Sln
@@ -176,8 +180,10 @@
             this.txtBatchName.Location = new System.Drawing.Point(265, 85);
             this.txtBatchName.Margin = new System.Windows.Forms.Padding(2);
             this.txtBatchName.Name = "txtBatchName";
-            this.txtBatchName.Size = new System.Drawing.Size(227, 20);
+            this.txtBatchName.Size = new System.Drawing.Size(227, 22);
             this.txtBatchName.TabIndex = 2;
+            this.txtBatchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBatchName_KeyPress);
+            this.txtBatchName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchName_KeyUp);
             // 
             // lblBatchName
             // 
@@ -196,18 +202,19 @@
             this.txtBatchNo.Location = new System.Drawing.Point(265, 46);
             this.txtBatchNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtBatchNo.Name = "txtBatchNo";
-            this.txtBatchNo.Size = new System.Drawing.Size(227, 20);
+            this.txtBatchNo.Size = new System.Drawing.Size(227, 22);
             this.txtBatchNo.TabIndex = 1;
             this.txtBatchNo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchNo_KeyUp);
             // 
-            // txtBrndDescription
+            // txtBatchDescription
             // 
-            this.txtBrndDescription.Location = new System.Drawing.Point(265, 130);
-            this.txtBrndDescription.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBrndDescription.Multiline = true;
-            this.txtBrndDescription.Name = "txtBrndDescription";
-            this.txtBrndDescription.Size = new System.Drawing.Size(227, 59);
-            this.txtBrndDescription.TabIndex = 3;
+            this.txtBatchDescription.Location = new System.Drawing.Point(265, 130);
+            this.txtBatchDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBatchDescription.Multiline = true;
+            this.txtBatchDescription.Name = "txtBatchDescription";
+            this.txtBatchDescription.Size = new System.Drawing.Size(227, 59);
+            this.txtBatchDescription.TabIndex = 3;
+            this.txtBatchDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchDescription_KeyUp);
             // 
             // lblMessageBox
             // 
@@ -221,7 +228,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Location = new System.Drawing.Point(489, 209);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(98, 54);
             this.btnBack.TabIndex = 21;
@@ -233,17 +240,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 651);
-            this.Controls.Add(this.btnBack);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1433, 831);
             this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(btnReset);
             this.Controls.Add(btnSave);
             this.Controls.Add(lblBrndDescription);
             this.Controls.Add(lbl_Batch);
-            this.Controls.Add(lblBatch);
             this.Controls.Add(grBox);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "BatchEntry";
             this.Text = "BatchEntry";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             grBox.ResumeLayout(false);
             grBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvBatchEntry)).EndInit();
@@ -254,7 +262,7 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtBatchNo;
-        private System.Windows.Forms.TextBox txtBrndDescription;
+        private System.Windows.Forms.TextBox txtBatchDescription;
         private System.Windows.Forms.Label lblMessageBox;
         private System.Windows.Forms.TextBox txtBatchName;
         private System.Windows.Forms.DataGridView grvBatchEntry;
