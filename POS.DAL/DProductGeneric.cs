@@ -186,9 +186,10 @@ namespace POS.DAL
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.Parameters.Add("@PGenericID", System.Data.SqlDbType.Int).Value = PGenericID;
+               // da.SelectCommand.Parameters.Add("@PGenericID", System.Data.SqlDbType.Int).Value = PGenericID;
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Connection = con; da.SelectCommand.CommandText = "DCR_SP_GET_ProductGeneric";
+                da.SelectCommand.Connection = con;
+                da.SelectCommand.CommandText = "POS_SP_GET_GETProductGeneric";
 
                 if (con.State == ConnectionState.Closed)
                 {
@@ -210,8 +211,9 @@ namespace POS.DAL
                 {
                     objProductGeneric = new BO.ProductGeneric();
                     objProductGeneric.Sln = index++;
-                    objProductGeneric.PGenericID = Convert.ToInt32(row["PGenericID"]);
-                    objProductGeneric.GenericName = Convert.ToString(row["PGenericName"]);
+                    objProductGeneric.PGenericID = Convert.ToInt32(row["GenericID"]);
+                    objProductGeneric.GenericName = Convert.ToString(row["GenericName"]);
+                    objProductGeneric.GenericDescription = Convert.ToString(row["Description"]);
                     objProductGenericList.Add(objProductGeneric);
                 }
                 return objProductGenericList;

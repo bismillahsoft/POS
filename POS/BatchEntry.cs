@@ -14,12 +14,14 @@ namespace POS
     public partial class BatchEntry : Form
     {
         #region Global Declaration
-        private IProductBatch IProductBatch = null;
+        private IProductBatch _IProductBatch = null;
         #endregion
         public BatchEntry()
         {
             InitializeComponent();
-            IProductBatch = new BLL.BProductBatch();
+            txtBatchNo.Focus();
+            _IProductBatch = new BLL.BProductBatch();
+            Reset();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -30,10 +32,10 @@ namespace POS
 
                 ObjProductBatch.BatchNo = txtBatchNo.Text;
                 ObjProductBatch.BatchName = txtBatchName.Text;
-                ObjProductBatch.BatchDescription = txtBrndDescription.Text;
+                ObjProductBatch.BatchDescription = txtBatchDescription.Text;
                 if (ObjProductBatch.BatchNo != "" && ObjProductBatch.BatchName != "")
                 {
-                    if (IProductBatch.Insert(ObjProductBatch) > 0)
+                    if (_IProductBatch.Insert(ObjProductBatch) > 0)
                     {
                         lblMessageBox.Text = "Operation Success";
                         lblMessageBox.ForeColor = Color.Green;
@@ -62,7 +64,8 @@ namespace POS
         {
             txtBatchNo.Text = "";
             txtBatchName.Text = "";
-            txtBrndDescription.Text = "";
+            txtBatchDescription.Text = "";
+            GetProductBatch();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -71,6 +74,54 @@ namespace POS
                 Reset();
             }
             catch (Exception ex) { throw ex; }
+        }
+        private void GetProductBatch()
+        {
+            List<BO.ProductBatch> productBatches = new List<BO.ProductBatch>();
+            productBatches = _IProductBatch.GetProductBatchList().ToList();
+            grvBatchEntry.AutoGenerateColumns = false;
+            grvBatchEntry.DataSource = productBatches;
+        }
+        private void grvBatchEntry_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new Homeproduct().Show();
+            this.Hide();
+        }
+        private void txtBatchNo_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBatchName.Focus();
+            }
+        }
+        private void txtBatchName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+        private void txtBatchName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBatchDescription.Focus();
+            }
+        }
+        private void txtBatchDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBatchDescription.Focus();
+            }
+        }
+        private void btnSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBack.Focus();
+            }
         }
     }
 }

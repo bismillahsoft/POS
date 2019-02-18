@@ -14,12 +14,13 @@ namespace POS
     public partial class GenericEntry : Form
     {
         #region Global Declaration
-        private IProductGeneric IProductGeneric = null;
+        private IProductGeneric _IProductGeneric = null;
         #endregion
         public GenericEntry()
         {
             InitializeComponent();
-            IProductGeneric = new BLL.BProductGeneric();
+            _IProductGeneric = new BLL.BProductGeneric();
+            Reset();
         }
 
         private void btnGene_Save_Click(object sender, EventArgs e)
@@ -30,19 +31,21 @@ namespace POS
                 ObjProductGeneric.GenericName = txtGenericName.Text;
                 ObjProductGeneric.GenericDescription = txtGenericDescription.Text;
 
-
-                if(IProductGeneric.Insert(ObjProductGeneric)>0)
+                if (ObjProductGeneric.GenericName!="")
                 {
-                    lblMessageBox.Text = "Operation Success";
-                    lblMessageBox.ForeColor = Color.Green;
-                    // GetBrand();
-                    Reset();
-                }
-                else
-                {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = System.Drawing.Color.Red;
-                    // lblMessageBox.Font.Bold = true;
+                    if (_IProductGeneric.Insert(ObjProductGeneric) > 0)
+                    {
+                        lblMessageBox.Text = "Operation Success";
+                        lblMessageBox.ForeColor = Color.Green;
+                        // GetBrand();
+                        Reset();
+                    }
+                    else
+                    {
+                        lblMessageBox.Text = "Operation Failed";
+                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        // lblMessageBox.Font.Bold = true;
+                    }
                 }
             }
                 catch (Exception ex)
@@ -54,6 +57,7 @@ namespace POS
         {
             txtGenericName.Text = "";
             txtGenericDescription.Text = "";
+            GetGenericName();
         }
         private void btnGene_Reset_Click(object sender, EventArgs e)
         {
@@ -61,6 +65,37 @@ namespace POS
 
                 Reset();
             } catch(Exception ex) { throw ex; }
+        }
+        private void GetGenericName()
+        {
+            List<BO.ProductGeneric> productGenerics = new List<BO.ProductGeneric>();
+
+            productGenerics = _IProductGeneric.GetProductGenericList().ToList();
+            grvGeneric.AutoGenerateColumns = false;
+            grvGeneric.DataSource = productGenerics; 
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new Homeproduct().Show();
+            this.Hide();
+        }
+
+        private void txtGenericName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtGenericDescription.Focus();
+            }
+        }
+
+        private void txtGenericDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnGene_Save.Focus();
+            }
         }
     }
 }

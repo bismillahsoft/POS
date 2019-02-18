@@ -145,7 +145,7 @@ namespace POS.DAL
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "DCR_SP_GET_ProductBatch";
+                da.SelectCommand.CommandText = "[POS_SP_GET_GETProductBatch]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
 
@@ -168,9 +168,11 @@ namespace POS.DAL
                     obj = new BO.ProductBatch();
                     obj.Sln = index++;
                     obj.BatchID = Convert.ToInt64(row["BatchID"]);
-                    obj.BatchNo = row["BatchNo"].ToString();
-                    obj.ProductName = row["ProductName"].ToString();
-                    obj.ProductID = Convert.ToInt64(row["ProductID"].ToString());
+                    obj.BatchName = row["BatchName"].ToString();
+                    obj.BatchNo = row["BatchCode"].ToString();
+                    obj.BatchDescription = row["Description"].ToString();
+                    //  obj.ProductName = row["ProductName"].ToString();
+                    // obj.ProductID = Convert.ToInt64(row["ProductID"].ToString());
                     objDoctorList.Add(obj);
                 }
                 return objDoctorList;

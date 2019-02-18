@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace POS.COMMON
 {
@@ -18,15 +19,13 @@ namespace POS.COMMON
         /// <param name="dataTextField"></param>
         /// <param name="selectedText"></param>
         /// <param name="SelectedValue"></param>
-        public static void PopulateDropDownList<T>(this List<T> objectList, DropDownList dropdownlist, String dataValueField, String dataTextField, string selectedText = "--Select--", string SelectedValue = "-99")
+        public static void PopulateDropDownList<T>(this List<T> objectList, ComboBox dropdownlist, String dataValueField, String dataTextField, string selectedText = "--Select--", string SelectedValue = "-99")
         {
             try
             {
-                dropdownlist.DataValueField = dataValueField;
-                dropdownlist.DataTextField = dataTextField;
+                dropdownlist.ValueMember = dataValueField;
+                dropdownlist.DisplayMember = dataTextField;
                 dropdownlist.DataSource = objectList;
-                dropdownlist.ClearSelection();
-                dropdownlist.DataBind();
                 dropdownlist.Items.Insert(0, new ListItem(selectedText, "-99"));
                 dropdownlist.SelectedValue = SelectedValue;
             }

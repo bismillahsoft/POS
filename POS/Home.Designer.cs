@@ -30,12 +30,12 @@
         {
             this.Logout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.lblPosSystem = new System.Windows.Forms.Label();
-            this.btnlogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,14 +61,26 @@
             this.panel1.Location = new System.Drawing.Point(-336, -73);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 1024);
+            this.panel1.Size = new System.Drawing.Size(1690, 1024);
             this.panel1.TabIndex = 3;
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnlogout.Location = new System.Drawing.Point(1538, 85);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(140, 63);
+            this.btnlogout.TabIndex = 5;
+            this.btnlogout.Text = "Logout";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // btnReport
             // 
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = global::POS.Properties.Resources.Report;
-            this.btnReport.Location = new System.Drawing.Point(552, 376);
+            this.btnReport.Location = new System.Drawing.Point(788, 424);
             this.btnReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(208, 215);
@@ -82,7 +94,7 @@
             // 
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.Image = global::POS.Properties.Resources.Inventory;
-            this.btnInventory.Location = new System.Drawing.Point(764, 376);
+            this.btnInventory.Location = new System.Drawing.Point(1000, 424);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(208, 215);
@@ -96,7 +108,7 @@
             // 
             this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSales.Image = global::POS.Properties.Resources.Sales;
-            this.btnSales.Location = new System.Drawing.Point(552, 153);
+            this.btnSales.Location = new System.Drawing.Point(788, 201);
             this.btnSales.Margin = new System.Windows.Forms.Padding(2);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(208, 215);
@@ -110,7 +122,7 @@
             // 
             this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.Image = global::POS.Properties.Resources.Product;
-            this.btnProduct.Location = new System.Drawing.Point(764, 153);
+            this.btnProduct.Location = new System.Drawing.Point(1000, 201);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(208, 215);
@@ -119,6 +131,7 @@
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // lblPosSystem
             // 
@@ -132,23 +145,11 @@
             this.lblPosSystem.TabIndex = 4;
             this.lblPosSystem.Text = "Pos System";
             // 
-            // btnlogout
-            // 
-            this.btnlogout.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnlogout.Location = new System.Drawing.Point(1155, 101);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(89, 30);
-            this.btnlogout.TabIndex = 5;
-            this.btnlogout.Text = "Logout";
-            this.btnlogout.UseVisualStyleBackColor = true;
-            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 882);
+            this.ClientSize = new System.Drawing.Size(1433, 831);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPosSystem);

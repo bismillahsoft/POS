@@ -44,7 +44,7 @@
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnExit.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.Location = new System.Drawing.Point(110, 159);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -52,7 +52,6 @@
             this.btnExit.Size = new System.Drawing.Size(126, 27);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "&Exit";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -105,15 +104,13 @@
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLogin.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogin.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(259, 159);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(126, 27);
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "&Login";
-            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 

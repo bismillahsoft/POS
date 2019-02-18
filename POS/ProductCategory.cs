@@ -75,7 +75,7 @@ namespace POS
 
         private void ProductCategory_Load(object sender, EventArgs e)
         {
-
+            txtCategoryName.Focus();
         }
 
         private void GetProductCategory()
@@ -86,5 +86,10 @@ namespace POS
             grvPCategory.DataSource = productCategories;
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new Homeproduct().Show();
+            this.Hide();
+        }
     }
 }

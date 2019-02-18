@@ -265,7 +265,7 @@ namespace POS.DAL
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "DCR_SP_GET_Brand";
+                da.SelectCommand.CommandText = "[POS_SP_GET_GETBrand]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
 
