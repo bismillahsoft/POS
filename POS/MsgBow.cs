@@ -17,10 +17,11 @@ namespace POS
         {
             InitializeComponent();
         }
-        public static void ShowMessage(string content, string description)
+        public string ShowMessage(string content)
         {
-            MsgBox messageBox = new MsgBox();
-            messageBox.ShowDialog();
+            lblMessageNew.Text = content;
+            lblMessageNew.ForeColor = System.Drawing.Color.Green;
+            return lblMessageNew.Text;
         }
 
         private void btnOk_Click(object sender, EventArgs e)

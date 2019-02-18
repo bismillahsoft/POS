@@ -32,7 +32,9 @@ namespace POS
 
                     if (_IProductPackSize.Insert(ObjProductPackSize) > 0)
                     {
-                        MessageBox.Show("Operation Success");
+                        //MessageBox.Show("Operation Success");
+                        MsgBox msgbox = new MsgBox();
+                        msgbox.Show();
                         //lblMessageBox.Text = "Operation Success";
                         //lblMessageBox.ForeColor = Color.Green;
                         // GetBrand();
@@ -49,7 +51,7 @@ namespace POS
                 {
                     MsgBox msgbox = new MsgBox();
                     msgbox.Show();
-                  //  MessageBox.Show("Please Fill Up Require Fill..!");
+                    //  MessageBox.Show("Please Fill Up Require Fill..!");
                     txtPackSize.Focus();
                     //lblMessageBox.Text = "Please Fill Up Require Fill..!";
                     //lblMessageBox.ForeColor = Color.Blue;

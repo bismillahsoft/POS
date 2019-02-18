@@ -147,7 +147,7 @@
             // 
             // grvPackSize
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grvPackSize.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grvPackSize.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvPackSize.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -155,7 +155,7 @@
             this.grvPackSize.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -179,7 +179,7 @@
             this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
             this.Sln.HeaderText = "Sln";
             this.Sln.Name = "Sln";
-            this.Sln.Width = 95;
+            this.Sln.Width = 71;
             // 
             // PackSize
             // 
@@ -188,7 +188,7 @@
             this.PackSize.DefaultCellStyle = dataGridViewCellStyle4;
             this.PackSize.HeaderText = "Pack Size";
             this.PackSize.Name = "PackSize";
-            this.PackSize.Width = 184;
+            this.PackSize.Width = 130;
             // 
             // Description
             // 
@@ -197,7 +197,7 @@
             this.Description.DefaultCellStyle = dataGridViewCellStyle5;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
-            this.Description.Width = 217;
+            this.Description.Width = 152;
             // 
             // lblMessageBox
             // 
