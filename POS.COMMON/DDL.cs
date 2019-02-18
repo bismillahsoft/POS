@@ -23,11 +23,11 @@ namespace POS.COMMON
         {
             try
             {
+                dropdownlist.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                dropdownlist.AutoCompleteSource = AutoCompleteSource.ListItems;
                 dropdownlist.ValueMember = dataValueField;
                 dropdownlist.DisplayMember = dataTextField;
                 dropdownlist.DataSource = objectList;
-                dropdownlist.Items.Insert(0, new ListItem(selectedText, "-99"));
-                dropdownlist.SelectedValue = SelectedValue;
             }
             catch (Exception ex)
             {
