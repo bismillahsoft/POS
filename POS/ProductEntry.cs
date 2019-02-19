@@ -54,10 +54,10 @@ namespace POS
              
                 Objproducts.ProductName = txtPro_Name.Text;
                 Objproducts.ProductCode = txtProductCode.Text;
-                Objproducts.PackSize = Convert.ToString(ddlPackSize);
-                Objproducts.BrandName = Convert.ToString(ddlBrand);
-                Objproducts.GenericName = Convert.ToString(ddlGenericName);
-                Objproducts.CategoryName = Convert.ToString(ddlCategory);
+                Objproducts.ProdPackSize.PackSizeID = Convert.ToInt32(ddlPackSize.SelectedValue);
+                Objproducts.Brand.BrandID = Convert.ToInt32(ddlBrand.SelectedValue);
+                Objproducts.ProductGeneric.PGenericID = Convert.ToInt32(ddlGenericName.SelectedValue);
+                Objproducts.ProductCategory.Id = Convert.ToInt32(ddlCategory.SelectedValue);
                 Objproducts.TradePrice = Convert.ToDecimal(txtTradePrice.Text);
                 Objproducts.PurchesePrice = Convert.ToDecimal(txtPurchesePrice.Text);
                 Objproducts.Vat = Convert.ToDecimal(txtVat.Text);
