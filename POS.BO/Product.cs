@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace POS.BO
 {
-    public class Product : Brand 
+    public class Product : Brand
     {
         private long _ProductId;
         public long ProductId
@@ -59,32 +59,56 @@ namespace POS.BO
             set { _ProductShortName = value; }
         }
 
-        private IList<ProductWisePackSize> _prodPackSizeList = new List<ProductWisePackSize>();
+        private ProductWisePackSize _prodPackSize = new ProductWisePackSize();
 
-        public IList<ProductWisePackSize> ProdPackSizeList
+        public ProductWisePackSize ProdPackSize
         {
-            get { return _prodPackSizeList; }
-            set { _prodPackSizeList = value; }
+            get { return _prodPackSize; }
+            set { _prodPackSize = value; }
         }
 
+        private ProductGeneric _ProductGeneric = new ProductGeneric();
+
+        public ProductGeneric ProductGeneric
+        {
+            get { return _ProductGeneric; }
+            set { _ProductGeneric = value; }
+        }
+
+
+        private Brand _Brand = new Brand();
+
+        public Brand Brand
+        {
+            get { return _Brand; }
+            set { _Brand = value; }
+        }
+
+        private ProductCategory _ProductCategory = new ProductCategory();
+
+        public ProductCategory ProductCategory
+        {
+            get { return _ProductCategory; }
+            set { _ProductCategory = value; }
+        }
         public string PackSize { get; set; }
 
         private string _GenericName;
         public string GenericName
         {
-            get{return _GenericName;}
-            set{_GenericName = value;}
+            get { return _GenericName; }
+            set { _GenericName = value; }
         }
         public int CategoryID
         {
-            get{return _CategoryID; }
-            set{ _CategoryID = value;}
+            get { return _CategoryID; }
+            set { _CategoryID = value; }
         }
 
         public string CategoryName
         {
-            get { return _CategoryName;}
-            set{ _CategoryName = value; }
+            get { return _CategoryName; }
+            set { _CategoryName = value; }
         }
 
         public decimal TradePrice
