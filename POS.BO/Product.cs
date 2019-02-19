@@ -2,10 +2,9 @@ using System.Collections.Generic;
 
 namespace POS.BO
 {
-    public class Product : Brand
+    public class Product : Brand 
     {
         private long _ProductId;
-
         public long ProductId
         {
             get { return _ProductId; }
@@ -69,5 +68,96 @@ namespace POS.BO
         }
 
         public string PackSize { get; set; }
+
+        private string _GenericName;
+        public string GenericName
+        {
+            get{return _GenericName;}
+            set{_GenericName = value;}
+        }
+        public int CategoryID
+        {
+            get{return _CategoryID; }
+            set{ _CategoryID = value;}
+        }
+
+        public string CategoryName
+        {
+            get { return _CategoryName;}
+            set{ _CategoryName = value; }
+        }
+
+        public decimal TradePrice
+        {
+            get
+            {
+                return _TradePrice;
+            }
+
+            set
+            {
+                _TradePrice = value;
+            }
+        }
+
+        public decimal PurchesePrice
+        {
+            get
+            {
+                return _PurchesePrice;
+            }
+
+            set
+            {
+                _PurchesePrice = value;
+            }
+        }
+
+        public decimal Vat
+        {
+            get
+            {
+                return _Vat;
+            }
+
+            set
+            {
+                _Vat = value;
+            }
+        }
+
+        public decimal MRP
+        {
+            get
+            {
+                return _MRP;
+            }
+
+            set
+            {
+                _MRP = value;
+            }
+        }
+
+        public string BatchNo
+        {
+            get
+            {
+                return _BatchNo;
+            }
+
+            set
+            {
+                _BatchNo = value;
+            }
+        }
+
+        private int _CategoryID;
+        private string _CategoryName;
+        private decimal _TradePrice;
+        private decimal _PurchesePrice;
+        private decimal _Vat;
+        private decimal _MRP;
+        private string _BatchNo;
     }
 }

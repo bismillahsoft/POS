@@ -13,85 +13,127 @@ namespace POS.DAL
         {
             try
             {
-                int returnProductID = 0;
-                int transationStatus = 0;
-                using (var connection = new DCommon().CreateCon())
+                int returnStatus = 0;
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand =new SqlCommand();
+                da.SelectCommand.CommandText = "POS_SET_SP_INSERT_SET_Product";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@ProductId",System.Data.SqlDbType.BigInt);
+                da.SelectCommand.Parameters.Add("@GenericID",SqlDbType.Int);
+                da.SelectCommand.Parameters.Add("@brandID",SqlDbType.Int);
+                da.SelectCommand.Parameters.Add("@ProductName", SqlDbType.NVarChar, 200).ToString();
+                da.SelectCommand.Parameters.Add("@Description", SqlDbType.NVarChar,400).ToString();
+                da.SelectCommand.Parameters.Add("@ProductCategory",SqlDbType.TinyInt);
+                da.SelectCommand.Parameters.Add("@Sticks",SqlDbType.TinyInt);
+                if (con.State == ConnectionState.Closed)
                 {
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    da.SelectCommand = connection.CreateCommand();
-                    SqlTransaction transaction = null;
-                    try
-                    {
-                        // BeginTransaction() Requires Open Connection
-                        if (connection.State == System.Data.ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
-                        transaction = connection.BeginTransaction();
-                        // Assign Transaction to Command
-                        da.SelectCommand.Connection = connection;
-                        da.SelectCommand.Transaction = transaction;
-                        da.SelectCommand.CommandText = "DCR_SP_INSERT_Product";
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt);
-                        da.SelectCommand.Parameters["@ProductID"].Direction = ParameterDirection.Output;
-                        da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductCode;
-                        da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
-                        da.SelectCommand.Parameters.Add("@ProductShortName", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProductName;
-                        da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.BrandID;
-                        da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
-                        da.SelectCommand.Parameters.Add("@TypeId", System.Data.SqlDbType.Int).Value = null;
-                        da.SelectCommand.Parameters.Add("@Price", System.Data.SqlDbType.Decimal).Value = objProduct.Price;
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand.Connection = connection;
-
-                        transationStatus = da.SelectCommand.ExecuteNonQuery();
-                        long ProductID = (long)da.SelectCommand.Parameters["@ProductID"].Value;
-                        returnProductID = Convert.ToInt32(ProductID);
-                        da.SelectCommand.Parameters.Clear();
-                        if (transationStatus <= 0)
-                        {
-                            transaction.Rollback();
-                            //break;
-                        }
-                        else
-                        {
-                            foreach (var objPackSize in objProduct.ProdPackSizeList)
-                            {
-                                #region OrderDetail
-
-                                da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductWisePackSize";
-                                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = ProductID;
-                                da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objPackSize.PackSizeID;
-                                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                                transationStatus = da.SelectCommand.ExecuteNonQuery();
-                                da.SelectCommand.Parameters.Clear();
-
-                                #endregion OrderDetail
-                            }
-                        }
-
-                        transaction.Commit();
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                    }
-                    finally
-                    {
-                        if (connection.State == System.Data.ConnectionState.Open)
-                        {
-                            connection.Close();
-                        }
-                    }
+                    con.Open();
                 }
-                return returnProductID;
+
+                if (da.SelectCommand.ExecuteNonQuery() == 1)
+                {
+                    returnStatus = 1;
+                }
+                else
+                {
+                    returnStatus = 0;
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return returnStatus;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }
+        } 
+        //public int Insert(BO.Product objProduct)
+        //{
+        //    try
+        //    {
+        //        int returnProductID = 0;
+        //        int transationStatus = 0;
+        //        using (var connection = new DCommon().CreateCon())
+        //        {
+        //            SqlDataAdapter da = new SqlDataAdapter();
+        //            da.SelectCommand = connection.CreateCommand();
+        //            SqlTransaction transaction = null;
+        //            try
+        //            {
+        //                // BeginTransaction() Requires Open Connection
+        //                if (connection.State == System.Data.ConnectionState.Closed)
+        //                {
+        //                    connection.Open();
+        //                }
+        //                transaction = connection.BeginTransaction();
+        //                // Assign Transaction to Command
+        //                da.SelectCommand.Connection = connection;
+        //                da.SelectCommand.Transaction = transaction;
+        //                da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_Product]";
+        //                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt);
+        //                da.SelectCommand.Parameters["@ProductID"].Direction = ParameterDirection.Output;
+        //                da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductCode;
+        //                da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
+        //               // da.SelectCommand.Parameters.Add("@ProductShortName", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProductName;
+        //                da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.BrandID;
+        //                da.SelectCommand.Parameters.Add("@GenericID", SqlDbType.Int).Value = objProduct.GenericID;
+        //                da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
+        //               // da.SelectCommand.Parameters.Add("@TypeId", System.Data.SqlDbType.Int).Value = null;
+        //              //  da.SelectCommand.Parameters.Add("@Price", System.Data.SqlDbType.Decimal).Value = objProduct.Price;
+        //                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                da.SelectCommand.Connection = connection;
+
+        //                transationStatus = da.SelectCommand.ExecuteNonQuery();
+        //                long ProductID = (long)da.SelectCommand.Parameters["@ProductID"].Value;
+        //                returnProductID = Convert.ToInt32(ProductID);
+        //                da.SelectCommand.Parameters.Clear();
+        //                if (transationStatus <= 0)
+        //                {
+        //                    transaction.Rollback();
+        //                    //break;
+        //                }
+        //                else
+        //                {
+        //                    foreach (var objPackSize in objProduct.ProdPackSizeList)
+        //                    {
+        //                        #region OrderDetail
+
+        //                        da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductWisePackSize";
+        //                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = ProductID;
+        //                        da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objPackSize.PackSizeID;
+        //                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                        transationStatus = da.SelectCommand.ExecuteNonQuery();
+        //                        da.SelectCommand.Parameters.Clear();
+
+        //                        #endregion OrderDetail
+        //                    }
+        //                }
+
+        //                transaction.Commit();
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                transaction.Rollback();
+        //            }
+        //            finally
+        //            {
+        //                if (connection.State == System.Data.ConnectionState.Open)
+        //                {
+        //                    connection.Close();
+        //                }
+        //            }
+        //        }
+        //        return returnProductID;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
 
         public int Insert(List<BO.Product> objProductList)
