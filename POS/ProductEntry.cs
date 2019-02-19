@@ -47,48 +47,47 @@ namespace POS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           try
-           {
-              BO.Product Objproducts = new BO.Product();
+            try
+            {
+                BO.Product Objproducts = new BO.Product();
 
-             
                 Objproducts.ProductName = txtPro_Name.Text;
-                Objproducts.ProductCode = txtProductCode.Text;
+                Objproducts.ProdPackSize.ProductCode = txtProductCode.Text;
                 Objproducts.ProdPackSize.PackSizeID = Convert.ToInt32(ddlPackSize.SelectedValue);
                 Objproducts.Brand.BrandID = Convert.ToInt32(ddlBrand.SelectedValue);
                 Objproducts.ProductGeneric.PGenericID = Convert.ToInt32(ddlGenericName.SelectedValue);
                 Objproducts.ProductCategory.Id = Convert.ToInt32(ddlCategory.SelectedValue);
-                Objproducts.TradePrice = Convert.ToDecimal(txtTradePrice.Text);
-                Objproducts.PurchesePrice = Convert.ToDecimal(txtPurchesePrice.Text);
-                Objproducts.Vat = Convert.ToDecimal(txtVat.Text);
-                Objproducts.MRP = Convert.ToDecimal(txtMRP.Text);
+                Objproducts.ProductPrice.TradePrice = Convert.ToDecimal(txtTradePrice.Text);
+                Objproducts.ProductPrice.PurchasePrice = Convert.ToDecimal(txtPurchesePrice.Text);
+                Objproducts.ProductPrice.Vat = Convert.ToDecimal(txtVat.Text);
+                Objproducts.ProductPrice.MRP = Convert.ToDecimal(txtMRP.Text);
                 Objproducts.BatchNo = Convert.ToString(txtBatch.Text);
                 Objproducts.Description = txtDescription.Text;
 
 
-              if (txtPro_Name.Text != "")
-              {
-                  if(_IProduct.Insert(Objproducts ) > 0)
-                  {
-                      lblMessageBox.Text = "Successfully Saved";
-                      lblMessageBox.ForeColor = Color.Green;
-                  }
-                  else
+                if (txtPro_Name.Text != "")
+                {
+                    if (_IProduct.Insert(Objproducts) > 0)
+                    {
+                        lblMessageBox.Text = "Successfully Saved";
+                        lblMessageBox.ForeColor = Color.Green;
+                    }
+                    else
                     {
                         lblMessageBox.Text = "Operation Failed";
                         lblMessageBox.ForeColor = Color.Red;
                     }
-              }
-              else
-              {
+                }
+                else
+                {
                     lblMessageBox.Text = "Operation Failed";
                     lblMessageBox.ForeColor = Color.Red;
                 }
-           }
-           catch (Exception ex)
-           {
+            }
+            catch (Exception ex)
+            {
                 throw ex;
-           }
+            }
         }
     }
 }

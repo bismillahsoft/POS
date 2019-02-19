@@ -78,14 +78,11 @@ namespace POS.DAL
                         da.SelectCommand.Parameters["@ProductID"].Direction = ParameterDirection.Output;
                         da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductCode;
                         da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
-                        // da.SelectCommand.Parameters.Add("@ProductShortName", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProductName;
                         da.SelectCommand.Parameters.Add("@ProductCategoryID", System.Data.SqlDbType.Int).Value = objProduct.ProductCategory.Id;
                         da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.Brand.BrandID;
                         da.SelectCommand.Parameters.Add("@GenericID", SqlDbType.Int).Value = objProduct.ProductGeneric.PGenericID;
                         da.SelectCommand.Parameters.Add("@BatchNo", System.Data.SqlDbType.VarChar, 50).Value = objProduct.BatchNo;
                         da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
-                        // da.SelectCommand.Parameters.Add("@TypeId", System.Data.SqlDbType.Int).Value = null;
-                        //  da.SelectCommand.Parameters.Add("@Price", System.Data.SqlDbType.Decimal).Value = objProduct.Price;
                         da.SelectCommand.CommandType = CommandType.StoredProcedure;
                         da.SelectCommand.Connection = connection;
 
@@ -103,7 +100,7 @@ namespace POS.DAL
                             da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductWisePackSize";
                             da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = ProductID;
                             da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objProduct.ProdPackSize.PackSize;
-                            da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objProduct.ProdPackSize.ProductCode;
+                            da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProdPackSize.ProductCode;
                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
                             transationStatus = da.SelectCommand.ExecuteNonQuery();
 
