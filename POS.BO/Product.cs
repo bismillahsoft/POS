@@ -91,6 +91,15 @@ namespace POS.BO
             get { return _ProductCategory; }
             set { _ProductCategory = value; }
         }
+
+        private ProductPrice _ProductPrice = new ProductPrice();
+
+        public ProductPrice ProductPrice
+        {
+            get { return _ProductPrice; }
+            set { _ProductPrice = value; }
+        }
+
         public string PackSize { get; set; }
 
         private string _GenericName;
