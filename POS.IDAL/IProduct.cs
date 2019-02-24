@@ -16,7 +16,7 @@ namespace POS.IDAL
 
         IList<BO.Product> GetProductList();
 
-        BO.Product GetProductByID(long ProductID);
+        //BO.Product GetProductByID(long ProductID);
 
         IList<BO.Product> GetProductByOthersList(string columnsString);
 

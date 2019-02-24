@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using POS.BO;
 using POS.COMMON;
 
 namespace POS.DAL
@@ -81,7 +82,7 @@ namespace POS.DAL
                         da.SelectCommand.Parameters.Add("@ProductCategoryID", System.Data.SqlDbType.Int).Value = objProduct.ProductCategory.Id;
                         da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.Brand.BrandID;
                         da.SelectCommand.Parameters.Add("@GenericID", SqlDbType.Int).Value = objProduct.ProductGeneric.PGenericID;
-                        da.SelectCommand.Parameters.Add("@BatchNo", System.Data.SqlDbType.VarChar, 50).Value = objProduct.BatchNo;
+                        da.SelectCommand.Parameters.Add("@BatchCode", System.Data.SqlDbType.VarChar, 50).Value = objProduct.BatchNo;
                         da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
                         da.SelectCommand.CommandType = CommandType.StoredProcedure;
                         da.SelectCommand.Connection = connection;
@@ -164,19 +165,19 @@ namespace POS.DAL
                         // Assign Transaction to Command
                         da.SelectCommand.Connection = connection;
                         da.SelectCommand.Transaction = transaction;
-                        da.SelectCommand.CommandText = "DCR_SP_INSERT_Product";
+                        da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_Product]";
                         da.SelectCommand.CommandType = CommandType.StoredProcedure;
                         da.SelectCommand.Connection = connection;
 
                         foreach (var objProduct in objProductList)
                         {
-                            da.SelectCommand.CommandText = "DCR_SP_INSERT_Product";
+                            da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_Product]";
                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
                             da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt);
                             da.SelectCommand.Parameters["@ProductID"].Direction = ParameterDirection.Output;
                             da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductCode;
                             da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
-                            da.SelectCommand.Parameters.Add("@ProductShortName", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProductName;
+                            //da.SelectCommand.Parameters.Add("@ProductShortName", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProductName;
                             da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.BrandID;
                             da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
                             da.SelectCommand.Parameters.Add("@TypeId", System.Data.SqlDbType.Int).Value = null;
@@ -192,13 +193,13 @@ namespace POS.DAL
 
                             else
                             {
-                                foreach (var objPackSize in objProduct.ProdPackSizeList)
+                                foreach (var objPackSize in objProduct.ProdPackSizelist)
                                 {
                                     #region OrderDetail
 
-                                    da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductWisePackSize";
+                                    da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_ProductWisePackSize]";
                                     da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = ProductID;
-                                    da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objPackSize.PackSizeID;
+                                    //da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value =objPackSize.PackSizeID;
                                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                                     transationStatus = da.SelectCommand.ExecuteNonQuery();
                                     da.SelectCommand.Parameters.Clear();
@@ -238,181 +239,181 @@ namespace POS.DAL
             }
         }
 
-        public int Update(BO.Product objProduct)
-        {
-            try
-            {
-                int retunstatus = 0;
-                int transationStatus = 0;
-                using (var connection = new DCommon().CreateCon())
-                {
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    da.SelectCommand = connection.CreateCommand();
-                    SqlTransaction transaction = null;
-                    try
-                    {
-                        // BeginTransaction() Requires Open Connection
-                        if (connection.State == System.Data.ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
-                        transaction = connection.BeginTransaction();
-                        // Assign Transaction to Command
-                        da.SelectCommand.Connection = connection;
-                        da.SelectCommand.Transaction = transaction;
-                        da.SelectCommand.CommandText = "DCR_SP_Update_Product";
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-                        da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductCode;
-                        da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
-                        da.SelectCommand.Parameters.Add("@ProductShortName", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProductName;
-                        da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.BrandID;
-                        da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
-                        da.SelectCommand.Parameters.Add("@TypeId", System.Data.SqlDbType.Int).Value = null;
-                        da.SelectCommand.Parameters.Add("@Price", System.Data.SqlDbType.Decimal).Value = objProduct.Price;
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand.Connection = connection;
-                        transationStatus = da.SelectCommand.ExecuteNonQuery();
-                        da.SelectCommand.Parameters.Clear();
-                        if (transationStatus <= 0)
-                        {
-                            transaction.Rollback();
-                            //break;
-                        }
-                        else
-                        {
-                            foreach (var objPackSize in objProduct.ProdPackSizeList)
-                            {
-                                if (objPackSize.IsNewData == true)
-                                {
-                                    #region InsertProductWisePackSize
+        //public int Update(BO.Product objProduct)
+        //{
+        //    try
+        //    {
+        //        int retunstatus = 0;
+        //        int transationStatus = 0;
+        //        using (var connection = new DCommon().CreateCon())
+        //        {
+        //            SqlDataAdapter da = new SqlDataAdapter();
+        //            da.SelectCommand = connection.CreateCommand();
+        //            SqlTransaction transaction = null;
+        //            try
+        //            {
+        //                // BeginTransaction() Requires Open Connection
+        //                if (connection.State == System.Data.ConnectionState.Closed)
+        //                {
+        //                    connection.Open();
+        //                }
+        //                transaction = connection.BeginTransaction();
+        //                // Assign Transaction to Command
+        //                da.SelectCommand.Connection = connection;
+        //                da.SelectCommand.Transaction = transaction;
+        //                da.SelectCommand.CommandText = "DCR_SP_Update_Product";
+        //                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
+        //                da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductCode;
+        //                da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
+        //                da.SelectCommand.Parameters.Add("@ProductShortName", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProductName;
+        //                da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.BrandID;
+        //                da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
+        //                da.SelectCommand.Parameters.Add("@TypeId", System.Data.SqlDbType.Int).Value = null;
+        //                da.SelectCommand.Parameters.Add("@Price", System.Data.SqlDbType.Decimal).Value = objProduct.Price;
+        //                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                da.SelectCommand.Connection = connection;
+        //                transationStatus = da.SelectCommand.ExecuteNonQuery();
+        //                da.SelectCommand.Parameters.Clear();
+        //                if (transationStatus <= 0)
+        //                {
+        //                    transaction.Rollback();
+        //                    //break;
+        //                }
+        //                else
+        //                {
+        //                    foreach (var objPackSize in objProduct.ProdPackSizelist)
+        //                    {
+        //                        if (objPackSize.IsNewData == true)
+        //                        {
+        //                            #region InsertProductWisePackSize
 
-                                    da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductWisePackSize";
-                                    da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-                                    da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objPackSize.PackSizeID;
-                                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                                    transationStatus = da.SelectCommand.ExecuteNonQuery();
-                                    da.SelectCommand.Parameters.Clear();
+        //                            da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductWisePackSize";
+        //                            da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
+        //                            da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objPackSize.PackSizeID;
+        //                            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                            transationStatus = da.SelectCommand.ExecuteNonQuery();
+        //                            da.SelectCommand.Parameters.Clear();
 
-                                    #endregion InsertProductWisePackSize
-                                }
-                                if (objPackSize.IsDelete == true)
-                                {
-                                    #region DeleteProductWisePackSize
+        //                            #endregion InsertProductWisePackSize
+        //                        }
+        //                        if (objPackSize.IsDelete == true)
+        //                        {
+        //                            #region DeleteProductWisePackSize
 
-                                    da.SelectCommand.CommandText = "DCR_SP_DELETE_ProductWisePackSizee";
-                                    da.SelectCommand.Parameters.Add("@PPSID", System.Data.SqlDbType.BigInt).Value = objPackSize.PPSID;
-                                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                                    transationStatus = da.SelectCommand.ExecuteNonQuery();
-                                    da.SelectCommand.Parameters.Clear();
+        //                            da.SelectCommand.CommandText = "DCR_SP_DELETE_ProductWisePackSizee";
+        //                            da.SelectCommand.Parameters.Add("@PPSID", System.Data.SqlDbType.BigInt).Value = objPackSize.PPSID;
+        //                            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                            transationStatus = da.SelectCommand.ExecuteNonQuery();
+        //                            da.SelectCommand.Parameters.Clear();
 
-                                    #endregion DeleteProductWisePackSize
-                                }
-                            }
-                        }
+        //                            #endregion DeleteProductWisePackSize
+        //                        }
+        //                    }
+        //                }
 
-                        transaction.Commit();
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                    }
-                    finally
-                    {
-                        if (connection.State == System.Data.ConnectionState.Open)
-                        {
-                            connection.Close();
-                        }
-                        if (transationStatus == 1)
-                        {
-                            retunstatus = 1;
-                        }
-                    }
-                }
-                return retunstatus;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //                transaction.Commit();
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                transaction.Rollback();
+        //            }
+        //            finally
+        //            {
+        //                if (connection.State == System.Data.ConnectionState.Open)
+        //                {
+        //                    connection.Close();
+        //                }
+        //                if (transationStatus == 1)
+        //                {
+        //                    retunstatus = 1;
+        //                }
+        //            }
+        //        }
+        //        return retunstatus;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
-        public int DELETE(BO.Product objProduct)
-        {
-            try
-            {
-                int retunstatus = 0;
-                int transationStatus = 0;
-                using (var connection = new DCommon().CreateCon())
-                {
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    da.SelectCommand = connection.CreateCommand();
-                    SqlTransaction transaction = null;
-                    try
-                    {
-                        // BeginTransaction() Requires Open Connection
-                        if (connection.State == System.Data.ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
-                        transaction = connection.BeginTransaction();
-                        // Assign Transaction to Command
-                        da.SelectCommand.Connection = connection;
-                        da.SelectCommand.Transaction = transaction;
-                        da.SelectCommand.CommandText = "DCR_SP_DELETE_Product";
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand.Connection = connection;
-                        transationStatus = da.SelectCommand.ExecuteNonQuery();
-                        da.SelectCommand.Parameters.Clear();
-                        if (transationStatus <= 0)
-                        {
-                            transaction.Rollback();
-                            //break;
-                        }
-                        else
-                        {
-                            foreach (var objPackSize in objProduct.ProdPackSizeList)
-                            {
-                                #region InsertProductWisePackSize
+        //public int DELETE(BO.Product objProduct)
+        //{
+        //    try
+        //    {
+        //        int retunstatus = 0;
+        //        int transationStatus = 0;
+        //        using (var connection = new DCommon().CreateCon())
+        //        {
+        //            SqlDataAdapter da = new SqlDataAdapter();
+        //            da.SelectCommand = connection.CreateCommand();
+        //            SqlTransaction transaction = null;
+        //            try
+        //            {
+        //                // BeginTransaction() Requires Open Connection
+        //                if (connection.State == System.Data.ConnectionState.Closed)
+        //                {
+        //                    connection.Open();
+        //                }
+        //                transaction = connection.BeginTransaction();
+        //                // Assign Transaction to Command
+        //                da.SelectCommand.Connection = connection;
+        //                da.SelectCommand.Transaction = transaction;
+        //                da.SelectCommand.CommandText = "DCR_SP_DELETE_Product";
+        //                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
+        //                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                da.SelectCommand.Connection = connection;
+        //                transationStatus = da.SelectCommand.ExecuteNonQuery();
+        //                da.SelectCommand.Parameters.Clear();
+        //                if (transationStatus <= 0)
+        //                {
+        //                    transaction.Rollback();
+        //                    //break;
+        //                }
+        //                else
+        //                {
+        //                    foreach (var objPackSize in objProduct.ProdPackSizeList)
+        //                    {
+        //                        #region InsertProductWisePackSize
 
-                                da.SelectCommand.CommandText = "DCR_SP_DELETE_ProductWisePackSize";
-                                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-                                da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objPackSize.PackSizeID;
-                                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                                transationStatus = da.SelectCommand.ExecuteNonQuery();
-                                da.SelectCommand.Parameters.Clear();
+        //                        da.SelectCommand.CommandText = "DCR_SP_DELETE_ProductWisePackSize";
+        //                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
+        //                        da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objPackSize.PackSizeID;
+        //                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //                        transationStatus = da.SelectCommand.ExecuteNonQuery();
+        //                        da.SelectCommand.Parameters.Clear();
 
-                                #endregion InsertProductWisePackSize
-                            }
-                        }
+        //                        #endregion InsertProductWisePackSize
+        //                    }
+        //                }
 
-                        transaction.Commit();
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                    }
-                    finally
-                    {
-                        if (connection.State == System.Data.ConnectionState.Open)
-                        {
-                            connection.Close();
-                        }
-                        if (transationStatus == 1)
-                        {
-                            retunstatus = 1;
-                        }
-                    }
-                }
-                return retunstatus;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //                transaction.Commit();
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                transaction.Rollback();
+        //            }
+        //            finally
+        //            {
+        //                if (connection.State == System.Data.ConnectionState.Open)
+        //                {
+        //                    connection.Close();
+        //                }
+        //                if (transationStatus == 1)
+        //                {
+        //                    retunstatus = 1;
+        //                }
+        //            }
+        //        }
+        //        return retunstatus;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
         public IList<POS.BO.Product> GetProduct(int pageIndex, int pageSize, string orderBy, string sortindex)
         {
@@ -623,139 +624,139 @@ namespace POS.DAL
                 throw ex;
             }
         }
-        public IList<BO.Product> GetPackSizeIDByProductID(long ProductID)
-        {
-            try
-            {
-                return GetProductWisePackSizeList(ProductID);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //public IList<BO.Product> GetPackSizeIDByProductID(long ProductID)
+        //{
+        //    try
+        //    {
+        //        return GetProductWisePackSizeList(ProductID);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
-        public IList<BO.Product> GetProductWisePackSizeListDetail()
-        {
-            try
-            {
-                return GetProductWisePackSizeList(null);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //public IList<BO.Product> GetProductWisePackSizeListDetail()
+        //{
+        //    try
+        //    {
+        //        return GetProductWisePackSizeList(null);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
-        public IList<BO.Product> GetProductWisePackSizeListByID(long? ProdcutID)
-        {
-            try
-            {
-                return GetProductWisePackSizeList(ProdcutID);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //public IList<BO.Product> GetProductWisePackSizeListByID(long? ProdcutID)
+        //{
+        //    try
+        //    {
+        //        return GetProductWisePackSizeList(ProdcutID);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
-        private IList<BO.Product> GetProductWisePackSizeList(long? ProductId, string ProductCode = null)
-        {
-            try
-            {
-                SqlConnection con = CreateCon();
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "DCR_SP_GET_ProductWisePackSizeList";
-                da.SelectCommand.Parameters.Add("@ProductId", System.Data.SqlDbType.BigInt).Value = ProductId;
-                da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 50).Value = ProductCode;
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Connection = con;
+        //private IList<BO.Product> GetProductWisePackSizeList(long? ProductId, string ProductCode = null)
+        //{
+        //    try
+        //    {
+        //        SqlConnection con = CreateCon();
+        //        SqlDataAdapter da = new SqlDataAdapter();
+        //        da.SelectCommand = new SqlCommand();
+        //        da.SelectCommand.CommandText = "DCR_SP_GET_ProductWisePackSizeList";
+        //        da.SelectCommand.Parameters.Add("@ProductId", System.Data.SqlDbType.BigInt).Value = ProductId;
+        //        da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 50).Value = ProductCode;
+        //        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //        da.SelectCommand.Connection = con;
 
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-                DataTable dt = ds.Tables[0];
-                List<POS.BO.Product> objDoctorList = new List<POS.BO.Product>();
-                BO.Product objProduct = null;
-                BO.ProductWisePackSize objProductPackSize = null;
-                int index = 1;
-                long productID = 0;
-                foreach (DataRow row in dt.Rows)
-                {
+        //        if (con.State == ConnectionState.Closed)
+        //        {
+        //            con.Open();
+        //        }
+        //        DataSet ds = new DataSet();
+        //        da.Fill(ds);
+        //        if (con.State == ConnectionState.Open)
+        //        {
+        //            con.Close();
+        //        }
+        //        DataTable dt = ds.Tables[0];
+        //        List<POS.BO.Product> objDoctorList = new List<POS.BO.Product>();
+        //        BO.Product objProduct = null;
+        //        BO.ProductWisePackSize objProductPackSize = null;
+        //        int index = 1;
+        //        long productID = 0;
+        //        foreach (DataRow row in dt.Rows)
+        //        {
 
-                    if (productID != Convert.ToInt64(row["ProductId"]))
-                    {
-                        objProduct = new BO.Product();
-                        objProduct.Sln = index++;
-                        objProduct.ProductId = Convert.ToInt64(row["ProductId"]);
-                        objProduct.ProductCode = row["ProductCode"].ToString();
-                        objProduct.ProductName = row["ProductName"].ToString();
-                        objProduct.BrandID = Convert.ToInt32(row["BrandID"].ToString());
-                        objProduct.Description = row["Description"].ToString();
-                        //objProduct.SBGID = Convert.ToInt32(row["SBGID"].ToString());
-                        //objProduct.SBID = Convert.ToInt32(row["SBID"].ToString());
-                        //objProduct.SBGName = row["SBGName"].ToString();
-                        //objProduct.SBName = row["SBName"].ToString();
-                        objProduct.Price = row["Price"] == DBNull.Value ? 0 : Convert.ToDecimal(row["Price"].ToString());
-                        objProduct.BrandName = row["BrandName"].ToString();
-                        objProduct.ProductShortName = row["ProductShortName"].ToString();
-                        objProduct.PackSize = row["PackSize"].ToString();
-                        productID = Convert.ToInt64(row["ProductId"]);
-                        objDoctorList.Add(objProduct);
-                    }
-                    {
-                        objProductPackSize = new BO.ProductWisePackSize();
-                        objProductPackSize.PPSID = Convert.ToInt64(row["PPSID"]);
-                        objProductPackSize.PackSizeID = row["PackSizeID"] == DBNull.Value ? 0 : Convert.ToInt32(row["PackSizeID"]);
-                        objProductPackSize.PackSize = row["PackSize"].ToString();
-                        objProductPackSize.ProductID = objProduct.ProductId;
-                        objProduct.ProdPackSizeList.Add(objProductPackSize);
-                    }
-                }
-                return objDoctorList;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        //            if (productID != Convert.ToInt64(row["ProductId"]))
+        //            {
+        //                objProduct = new BO.Product();
+        //                objProduct.Sln = index++;
+        //                objProduct.ProductId = Convert.ToInt64(row["ProductId"]);
+        //                objProduct.ProductCode = row["ProductCode"].ToString();
+        //                objProduct.ProductName = row["ProductName"].ToString();
+        //                objProduct.BrandID = Convert.ToInt32(row["BrandID"].ToString());
+        //                objProduct.Description = row["Description"].ToString();
+        //                //objProduct.SBGID = Convert.ToInt32(row["SBGID"].ToString());
+        //                //objProduct.SBID = Convert.ToInt32(row["SBID"].ToString());
+        //                //objProduct.SBGName = row["SBGName"].ToString();
+        //                //objProduct.SBName = row["SBName"].ToString();
+        //                objProduct.Price = row["Price"] == DBNull.Value ? 0 : Convert.ToDecimal(row["Price"].ToString());
+        //                objProduct.BrandName = row["BrandName"].ToString();
+        //                objProduct.ProductShortName = row["ProductShortName"].ToString();
+        //                objProduct.PackSize = row["PackSize"].ToString();
+        //                productID = Convert.ToInt64(row["ProductId"]);
+        //                objDoctorList.Add(objProduct);
+        //            }
+        //            {
+        //                objProductPackSize = new BO.ProductWisePackSize();
+        //                objProductPackSize.PPSID = Convert.ToInt64(row["PPSID"]);
+        //                objProductPackSize.PackSizeID = row["PackSizeID"] == DBNull.Value ? 0 : Convert.ToInt32(row["PackSizeID"]);
+        //                objProductPackSize.PackSize = row["PackSize"].ToString();
+        //                objProductPackSize.ProductID = objProduct.ProductId;
+        //                objProduct.ProdPackSizeList.Add(objProductPackSize);
+        //            }
+        //        }
+        //        return objDoctorList;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
         public IList<BO.Product> GetProductByOthersList(string columnsString)
         {
             return new List<BO.Product>();
         }
 
-        public BO.Product GetProductByID(long ProductId)
-        {
-            try
-            {
-                return GetProductWisePackSizeList(ProductId).FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //public BO.Product GetProductByID(long ProductId)
+        //{
+        //    try
+        //    {
+        //        return GetProductWisePackSizeList(ProductId).FirstOrDefault();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
-        public IList<BO.Product> GetProductByCode(string productCode)
-        {
-            try
-            {
-                return GetProductWisePackSizeList(ProductId: null, ProductCode: productCode);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //public IList<BO.Product> GetProductByCode(string productCode)
+        //{
+        //    try
+        //    {
+        //        return GetProductWisePackSizeList(ProductId: null, ProductCode: productCode);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
         public int GetProductIDByCode(string productCode)
         {
@@ -864,25 +865,25 @@ namespace POS.DAL
             return objProductID;
         }
 
-        public IList<BO.Product> GetPackSizeListByProductID(long ProductID)
-        {
-            List<BO.Product> objProduct = new List<BO.Product>();
-            BO.Product obj = new BO.Product();
-            BO.ProductWisePackSize objPackSize = null;
-            querry = @"select ProductPackSize.PackSize,ProductPackSize.PackSizeID from ProductPackSize
-	                inner join ProductWisePackSize on ProductWisePackSize.PackSizeID = ProductPackSize.PackSizeID
-	                where ProductWisePackSize.ProductID= '" + ProductID + "' and ProductWisePackSize.IsActive = 1";
-            DataTable dt = ExecuteQuerry(querry).Tables[0];
-            foreach (DataRow row in dt.Rows)
-            {
-                objPackSize = new BO.ProductWisePackSize();
-                objPackSize.PackSizeID = Convert.ToInt32(row["PackSizeID"].ToString());
-                objPackSize.PackSize = row["PackSize"].ToString();
-                obj.ProdPackSizeList.Add(objPackSize);
-                objProduct.Add(obj);
-            }
-            return objProduct;
-        }
+        //public IList<BO.Product> GetPackSizeListByProductID(long ProductID)
+        //{
+        //    List<BO.Product> objProduct = new List<BO.Product>();
+        //    BO.Product obj = new BO.Product();
+        //    BO.ProductWisePackSize objPackSize = null;
+        //    querry = @"select ProductPackSize.PackSize,ProductPackSize.PackSizeID from ProductPackSize
+	       //         inner join ProductWisePackSize on ProductWisePackSize.PackSizeID = ProductPackSize.PackSizeID
+	       //         where ProductWisePackSize.ProductID= '" + ProductID + "' and ProductWisePackSize.IsActive = 1";
+        //    DataTable dt = ExecuteQuerry(querry).Tables[0];
+        //    foreach (DataRow row in dt.Rows)
+        //    {
+        //        objPackSize = new BO.ProductWisePackSize();
+        //        objPackSize.PackSizeID = Convert.ToInt32(row["PackSizeID"].ToString());
+        //        objPackSize.PackSize = row["PackSize"].ToString();
+        //        obj.ProdPackSizeList.Add(objPackSize);
+        //        objProduct.Add(obj);
+        //    }
+        //    return objProduct;
+        //}
 
         public IList<BO.Product> GetPackSizeByProductID(long ProductID)
         {
@@ -1079,6 +1080,41 @@ namespace POS.DAL
                 brandID = Convert.ToInt32(row["BrandID"].ToString());
             }
             return brandID;
+        }
+
+        public int Update(Product objProduct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DELETE(Product objProduct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Product> GetProductWisePackSizeListDetail()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Product> GetProductByCode(string productCode)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Product> GetProductWisePackSizeListByID(long? ProdcutID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Product> GetPackSizeIDByProductID(long ProductID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Product> GetPackSizeListByProductID(long ProductID)
+        {
+            throw new NotImplementedException();
         }
     }
 }

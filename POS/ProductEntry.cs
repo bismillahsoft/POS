@@ -15,23 +15,24 @@ namespace POS
     public partial class ProductEntry : Form
     {
         private IProduct _IProduct = null;
-        private IProductGeneric _IProductGeneric = null;
         private IProductPackSize _IProductPackSize = null;
         private IBrand _Ibrand = null;
+        private IProductGeneric _IProductGeneric = null;
         private IProductCategory _IProductCategory = null;
         public ProductEntry()
         {
             InitializeComponent();
             _IProduct = new BLL.BProduct();
             _IProductPackSize = new BLL.BProductPackSize();
-            _IProductGeneric = new BLL.BProductGeneric();
             _Ibrand = new BLL.BBrand();
+            _IProductGeneric = new BLL.BProductGeneric();
             _IProductCategory = new BLL.BProductCategory();
 
-            COMMON.DDL.PopulateDropDownList(_IProductGeneric.GetProductGenericList().ToList(), ddlGenericName, "GenericID", "GenericName");
             COMMON.DDL.PopulateDropDownList(_IProductPackSize.GetProductPackSizeList().ToList(), ddlPackSize, "PackSizeID", "PackSize");
             COMMON.DDL.PopulateDropDownList(_Ibrand.GetBrandList().ToList(), ddlBrand, "BrandID", "BrandName");
-            COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory, "ProductCategoryID", "CategoryName");
+            COMMON.DDL.PopulateDropDownList(_IProductGeneric.GetProductGenericList().ToList(), ddlGenericName, "GenericID", "GenericName");
+            COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory,"","");
+            // COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory, "ProductCategoryID", "CategoryName");
         }
 
         private void btnBack_Click(object sender, EventArgs e)

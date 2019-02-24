@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using POS.IDAL;
-namespace POS
+namespace POS 
 {
     public partial class ProductCategory : Form
     {

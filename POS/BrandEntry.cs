@@ -90,5 +90,10 @@ namespace POS
             new Homeproduct().Show();
             this.Hide();
         }
+
+        private void grvBrand_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

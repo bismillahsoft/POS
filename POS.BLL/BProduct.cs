@@ -51,11 +51,11 @@ namespace POS.BLL
             return _iProduct.GetProductByOthersList(columnsString);
 
         }
-        public BO.Product GetProductByID(long ProductID)
-        {
-            return _iProduct.GetProductByID(ProductID);
+        //public BO.Product GetProductByID(long ProductID)
+        //{
+        //    return _iProduct.GetProductByID(ProductID);
 
-        }
+        //}
         
         public IList<BO.Product> GetProductWisePackSizeListDetail()
         {

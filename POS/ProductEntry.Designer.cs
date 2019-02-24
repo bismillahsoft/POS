@@ -36,6 +36,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblP_Entry = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMRP = new System.Windows.Forms.TextBox();
+            this.lblMRP = new System.Windows.Forms.Label();
+            this.ddlCategory = new System.Windows.Forms.ComboBox();
+            this.lblProCategory = new System.Windows.Forms.Label();
             this.grvProductEntry = new System.Windows.Forms.DataGridView();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,10 +76,6 @@
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
             this.lblMessageBox = new System.Windows.Forms.Label();
-            this.lblProCategory = new System.Windows.Forms.Label();
-            this.ddlCategory = new System.Windows.Forms.ComboBox();
-            this.lblMRP = new System.Windows.Forms.Label();
-            this.txtMRP = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvProductEntry)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +151,45 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // txtMRP
+            // 
+            this.txtMRP.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMRP.Location = new System.Drawing.Point(951, 332);
+            this.txtMRP.Name = "txtMRP";
+            this.txtMRP.Size = new System.Drawing.Size(266, 47);
+            this.txtMRP.TabIndex = 10;
+            // 
+            // lblMRP
+            // 
+            this.lblMRP.AutoSize = true;
+            this.lblMRP.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMRP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblMRP.Location = new System.Drawing.Point(726, 333);
+            this.lblMRP.Name = "lblMRP";
+            this.lblMRP.Size = new System.Drawing.Size(221, 39);
+            this.lblMRP.TabIndex = 38;
+            this.lblMRP.Text = "MRP                   :";
+            // 
+            // ddlCategory
+            // 
+            this.ddlCategory.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlCategory.FormattingEnabled = true;
+            this.ddlCategory.Location = new System.Drawing.Point(952, 219);
+            this.ddlCategory.Name = "ddlCategory";
+            this.ddlCategory.Size = new System.Drawing.Size(266, 47);
+            this.ddlCategory.TabIndex = 6;
+            // 
+            // lblProCategory
+            // 
+            this.lblProCategory.AutoSize = true;
+            this.lblProCategory.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProCategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblProCategory.Location = new System.Drawing.Point(719, 219);
+            this.lblProCategory.Name = "lblProCategory";
+            this.lblProCategory.Size = new System.Drawing.Size(233, 39);
+            this.lblProCategory.TabIndex = 36;
+            this.lblProCategory.Text = "Product Category:";
+            // 
             // grvProductEntry
             // 
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,7 +215,7 @@
             this.grvProductEntry.Location = new System.Drawing.Point(100, 589);
             this.grvProductEntry.Name = "grvProductEntry";
             this.grvProductEntry.Size = new System.Drawing.Size(1253, 243);
-            this.grvProductEntry.TabIndex = 34;
+            this.grvProductEntry.TabIndex = 15;
             // 
             // Sln
             // 
@@ -260,7 +299,7 @@
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(180, 65);
-            this.btnReset.TabIndex = 10;
+            this.btnReset.TabIndex = 14;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
@@ -271,7 +310,7 @@
             this.btnBack.Location = new System.Drawing.Point(14, 27);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(98, 54);
-            this.btnBack.TabIndex = 33;
+            this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -284,7 +323,7 @@
             this.txtBatch.Margin = new System.Windows.Forms.Padding(2);
             this.txtBatch.Name = "txtBatch";
             this.txtBatch.Size = new System.Drawing.Size(266, 47);
-            this.txtBatch.TabIndex = 24;
+            this.txtBatch.TabIndex = 11;
             // 
             // lblBatchNo
             // 
@@ -306,7 +345,7 @@
             this.txtVat.Margin = new System.Windows.Forms.Padding(2);
             this.txtVat.Name = "txtVat";
             this.txtVat.Size = new System.Drawing.Size(266, 47);
-            this.txtVat.TabIndex = 7;
+            this.txtVat.TabIndex = 9;
             // 
             // label1
             // 
@@ -329,7 +368,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(266, 47);
-            this.txtDescription.TabIndex = 8;
+            this.txtDescription.TabIndex = 12;
             // 
             // ddlGenericName
             // 
@@ -340,7 +379,7 @@
             this.ddlGenericName.Margin = new System.Windows.Forms.Padding(2);
             this.ddlGenericName.Name = "ddlGenericName";
             this.ddlGenericName.Size = new System.Drawing.Size(266, 47);
-            this.ddlGenericName.TabIndex = 4;
+            this.ddlGenericName.TabIndex = 5;
             // 
             // lblVat
             // 
@@ -362,7 +401,7 @@
             this.txtTradePrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtTradePrice.Name = "txtTradePrice";
             this.txtTradePrice.Size = new System.Drawing.Size(266, 47);
-            this.txtTradePrice.TabIndex = 6;
+            this.txtTradePrice.TabIndex = 7;
             // 
             // ddlBrand
             // 
@@ -373,7 +412,7 @@
             this.ddlBrand.Margin = new System.Windows.Forms.Padding(2);
             this.ddlBrand.Name = "ddlBrand";
             this.ddlBrand.Size = new System.Drawing.Size(266, 47);
-            this.ddlBrand.TabIndex = 3;
+            this.ddlBrand.TabIndex = 4;
             // 
             // lblTradePrice
             // 
@@ -395,7 +434,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 65);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -408,7 +447,7 @@
             this.txtPurchesePrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPurchesePrice.Name = "txtPurchesePrice";
             this.txtPurchesePrice.Size = new System.Drawing.Size(266, 47);
-            this.txtPurchesePrice.TabIndex = 5;
+            this.txtPurchesePrice.TabIndex = 8;
             // 
             // ddlPackSize
             // 
@@ -419,7 +458,7 @@
             this.ddlPackSize.Margin = new System.Windows.Forms.Padding(2);
             this.ddlPackSize.Name = "ddlPackSize";
             this.ddlPackSize.Size = new System.Drawing.Size(266, 47);
-            this.ddlPackSize.TabIndex = 2;
+            this.ddlPackSize.TabIndex = 3;
             this.ddlPackSize.SelectedIndexChanged += new System.EventHandler(this.ddlPackSize_SelectedIndexChanged);
             // 
             // lblPurchesePrice
@@ -454,7 +493,7 @@
             this.txtProductCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(266, 47);
-            this.txtProductCode.TabIndex = 11;
+            this.txtProductCode.TabIndex = 2;
             // 
             // lblPro_Name
             // 
@@ -522,45 +561,6 @@
             this.lblMessageBox.Name = "lblMessageBox";
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 32;
-            // 
-            // lblProCategory
-            // 
-            this.lblProCategory.AutoSize = true;
-            this.lblProCategory.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProCategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblProCategory.Location = new System.Drawing.Point(719, 219);
-            this.lblProCategory.Name = "lblProCategory";
-            this.lblProCategory.Size = new System.Drawing.Size(233, 39);
-            this.lblProCategory.TabIndex = 36;
-            this.lblProCategory.Text = "Product Category:";
-            // 
-            // ddlCategory
-            // 
-            this.ddlCategory.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlCategory.FormattingEnabled = true;
-            this.ddlCategory.Location = new System.Drawing.Point(952, 219);
-            this.ddlCategory.Name = "ddlCategory";
-            this.ddlCategory.Size = new System.Drawing.Size(266, 47);
-            this.ddlCategory.TabIndex = 37;
-            // 
-            // lblMRP
-            // 
-            this.lblMRP.AutoSize = true;
-            this.lblMRP.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMRP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMRP.Location = new System.Drawing.Point(726, 333);
-            this.lblMRP.Name = "lblMRP";
-            this.lblMRP.Size = new System.Drawing.Size(221, 39);
-            this.lblMRP.TabIndex = 38;
-            this.lblMRP.Text = "MRP                   :";
-            // 
-            // txtMRP
-            // 
-            this.txtMRP.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMRP.Location = new System.Drawing.Point(951, 332);
-            this.txtMRP.Name = "txtMRP";
-            this.txtMRP.Size = new System.Drawing.Size(266, 47);
-            this.txtMRP.TabIndex = 39;
             // 
             // ProductEntry
             // 
