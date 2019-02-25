@@ -30,9 +30,9 @@ namespace POS
 
             COMMON.DDL.PopulateDropDownList(_IProductPackSize.GetProductPackSizeList().ToList(), ddlPackSize, "PackSizeID", "PackSize");
             COMMON.DDL.PopulateDropDownList(_Ibrand.GetBrandList().ToList(), ddlBrand, "BrandID", "BrandName");
-            COMMON.DDL.PopulateDropDownList(_IProductGeneric.GetProductGenericList().ToList(), ddlGenericName, "GenericID", "GenericName");
-            COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory,"","");
-            // COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory, "ProductCategoryID", "CategoryName");
+            COMMON.DDL.PopulateDropDownList(_IProductGeneric.GetProductGenericList().ToList(), ddlGenericName, "PGenericID", "GenericName");
+            //COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory,"","");
+            COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory, "Id", "Name");
         }
 
         private void btnBack_Click(object sender, EventArgs e)

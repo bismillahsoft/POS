@@ -77,9 +77,8 @@ namespace POS.DAL
                         da.SelectCommand.CommandType = CommandType.StoredProcedure;
                         da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt);
                         da.SelectCommand.Parameters["@ProductID"].Direction = ParameterDirection.Output;
-                        da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductCode;
                         da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
-                        da.SelectCommand.Parameters.Add("@ProductCategoryID", System.Data.SqlDbType.Int).Value = objProduct.ProductCategory.Id;
+                        da.SelectCommand.Parameters.Add("@ProductCategory", System.Data.SqlDbType.Int).Value = objProduct.ProductCategory.Id;
                         da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.Brand.BrandID;
                         da.SelectCommand.Parameters.Add("@GenericID", SqlDbType.Int).Value = objProduct.ProductGeneric.PGenericID;
                         da.SelectCommand.Parameters.Add("@BatchCode", System.Data.SqlDbType.VarChar, 50).Value = objProduct.BatchNo;
@@ -98,21 +97,21 @@ namespace POS.DAL
                         }
                         else
                         {
-                            da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductWisePackSize";
-                            da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = ProductID;
-                            da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objProduct.ProdPackSize.PackSize;
+                            da.SelectCommand.CommandText = "POS_SET_SP_INSERT_SET_ProductWisePackSize";
+                            da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.Int).Value = ProductID;
+                            da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objProduct.ProdPackSize.PackSizeID;
                             da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProdPackSize.ProductCode;
                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
                             transationStatus = da.SelectCommand.ExecuteNonQuery();
-
+                            da.SelectCommand.Parameters.Clear();
                             if (transationStatus > 0)
                             {
-                                da.SelectCommand.CommandText = "DCR_SP_INSERT_ProductPrice";
-                                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = ProductID;
-                                da.SelectCommand.Parameters.Add("@PurchasePrice", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.ProductId;
-                                da.SelectCommand.Parameters.Add("@MRP", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.MRP;
-                                da.SelectCommand.Parameters.Add("@Vat", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.Vat;
-                                da.SelectCommand.Parameters.Add("@TradePrice", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.TradePrice;
+                                da.SelectCommand.CommandText = "POS_SET_SP_INSERT_SET_ProductPrice";
+                                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.Int).Value = ProductID;
+                                da.SelectCommand.Parameters.Add("@PP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.PurchasePrice;
+                                da.SelectCommand.Parameters.Add("@MRP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.MRP;
+                                da.SelectCommand.Parameters.Add("@Vat", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.Vat;
+                                da.SelectCommand.Parameters.Add("@TP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.TradePrice;
                                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                                 transationStatus = da.SelectCommand.ExecuteNonQuery();
                             }
@@ -871,8 +870,8 @@ namespace POS.DAL
         //    BO.Product obj = new BO.Product();
         //    BO.ProductWisePackSize objPackSize = null;
         //    querry = @"select ProductPackSize.PackSize,ProductPackSize.PackSizeID from ProductPackSize
-	       //         inner join ProductWisePackSize on ProductWisePackSize.PackSizeID = ProductPackSize.PackSizeID
-	       //         where ProductWisePackSize.ProductID= '" + ProductID + "' and ProductWisePackSize.IsActive = 1";
+        //         inner join ProductWisePackSize on ProductWisePackSize.PackSizeID = ProductPackSize.PackSizeID
+        //         where ProductWisePackSize.ProductID= '" + ProductID + "' and ProductWisePackSize.IsActive = 1";
         //    DataTable dt = ExecuteQuerry(querry).Tables[0];
         //    foreach (DataRow row in dt.Rows)
         //    {
