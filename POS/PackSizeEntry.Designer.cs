@@ -42,11 +42,11 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblPackSize = new System.Windows.Forms.Label();
             this.grvPackSize = new System.Windows.Forms.DataGridView();
+            this.lblMessageBox = new System.Windows.Forms.Label();
+            this.grBox = new System.Windows.Forms.GroupBox();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblMessageBox = new System.Windows.Forms.Label();
-            this.grBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grvPackSize)).BeginInit();
             this.grBox.SuspendLayout();
             this.SuspendLayout();
@@ -172,33 +172,6 @@
             this.grvPackSize.Size = new System.Drawing.Size(513, 329);
             this.grvPackSize.TabIndex = 6;
             // 
-            // Sln
-            // 
-            this.Sln.DataPropertyName = "Sln";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            this.Sln.Width = 71;
-            // 
-            // PackSize
-            // 
-            this.PackSize.DataPropertyName = "PackSize";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PackSize.DefaultCellStyle = dataGridViewCellStyle4;
-            this.PackSize.HeaderText = "Pack Size";
-            this.PackSize.Name = "PackSize";
-            this.PackSize.Width = 130;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "PackSizeDescription";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.Width = 152;
-            // 
             // lblMessageBox
             // 
             this.lblMessageBox.AutoSize = true;
@@ -228,6 +201,33 @@
             this.grBox.Size = new System.Drawing.Size(1431, 839);
             this.grBox.TabIndex = 9;
             this.grBox.TabStop = false;
+            // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            this.Sln.Width = 71;
+            // 
+            // PackSize
+            // 
+            this.PackSize.DataPropertyName = "PackSize";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PackSize.DefaultCellStyle = dataGridViewCellStyle4;
+            this.PackSize.HeaderText = "Pack Size";
+            this.PackSize.Name = "PackSize";
+            this.PackSize.Width = 130;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "PackSizeDescription";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Width = 152;
             // 
             // PackSizeEntry
             // 

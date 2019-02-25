@@ -185,6 +185,8 @@ namespace POS.BO
             }
         }
 
+        public IEnumerable<object> ProdPackSizelist { get; set; }
+
         private int _CategoryID;
         private string _CategoryName;
         private decimal _TradePrice;
@@ -192,5 +194,6 @@ namespace POS.BO
         private decimal _Vat;
         private decimal _MRP;
         private string _BatchNo;
+        
     }
 }

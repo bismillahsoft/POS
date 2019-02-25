@@ -9,8 +9,8 @@ namespace POS.BO
 
     public class ProductGeneric : BaseClass
     {
-        private Int32 _PGenericID;
-        public Int32 PGenericID
+        private int _PGenericID;
+        public int PGenericID
         {
             get { return _PGenericID; }
             set { _PGenericID = value; }

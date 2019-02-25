@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPCategory = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.grvPCategory = new System.Windows.Forms.DataGridView();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.lblPCategoryName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -41,7 +47,9 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvPCategory)).BeginInit();
             this.SuspendLayout();
@@ -49,11 +57,11 @@
             // lblPCategory
             // 
             this.lblPCategory.AutoSize = true;
-            this.lblPCategory.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCategory.Location = new System.Drawing.Point(497, 284);
+            this.lblPCategory.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPCategory.Location = new System.Drawing.Point(252, 61);
             this.lblPCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPCategory.Name = "lblPCategory";
-            this.lblPCategory.Size = new System.Drawing.Size(187, 22);
+            this.lblPCategory.Size = new System.Drawing.Size(363, 44);
             this.lblPCategory.TabIndex = 10;
             this.lblPCategory.Text = "Product Category Entry";
             // 
@@ -78,38 +86,68 @@
             this.grBox.TabIndex = 11;
             this.grBox.TabStop = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(12, 21);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(114, 66);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // grvPCategory
             // 
-            this.grvPCategory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.grvPCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grvPCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grvPCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvPCategory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.grvPCategory.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grvPCategory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.grvPCategory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvPCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvPCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvPCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sln,
             this.CategoryName,
             this.Description});
-            this.grvPCategory.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grvPCategory.Location = new System.Drawing.Point(152, 324);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Fuchsia;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvPCategory.DefaultCellStyle = dataGridViewCellStyle6;
+            this.grvPCategory.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grvPCategory.Location = new System.Drawing.Point(475, 507);
             this.grvPCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grvPCategory.Name = "grvPCategory";
-            this.grvPCategory.Size = new System.Drawing.Size(404, 209);
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvPCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.grvPCategory.RowHeadersWidth = 44;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.grvPCategory.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.grvPCategory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvPCategory.Size = new System.Drawing.Size(486, 216);
             this.grvPCategory.TabIndex = 5;
-            // 
-            // Sln
-            // 
-            this.Sln.DataPropertyName = "Sln";
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.DataPropertyName = "Name";
-            this.CategoryName.HeaderText = "Category Name";
-            this.CategoryName.Name = "CategoryName";
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "BatchDescription";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
             // 
             // lblMessageBox
             // 
@@ -123,32 +161,32 @@
             // lblPCategoryName
             // 
             this.lblPCategoryName.AutoSize = true;
-            this.lblPCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCategoryName.Location = new System.Drawing.Point(195, 59);
+            this.lblPCategoryName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPCategoryName.Location = new System.Drawing.Point(426, 181);
             this.lblPCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPCategoryName.Name = "lblPCategoryName";
-            this.lblPCategoryName.Size = new System.Drawing.Size(101, 13);
+            this.lblPCategoryName.Size = new System.Drawing.Size(215, 39);
             this.lblPCategoryName.TabIndex = 1;
             this.lblPCategoryName.Text = "Category Name :";
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(195, 112);
+            this.lblDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(426, 234);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(79, 13);
+            this.lblDescription.Size = new System.Drawing.Size(170, 39);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Description :";
             // 
             // bntSave
             // 
-            this.bntSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntSave.Location = new System.Drawing.Point(355, 219);
+            this.bntSave.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntSave.Location = new System.Drawing.Point(750, 366);
             this.bntSave.Margin = new System.Windows.Forms.Padding(2);
             this.bntSave.Name = "bntSave";
-            this.bntSave.Size = new System.Drawing.Size(145, 50);
+            this.bntSave.Size = new System.Drawing.Size(180, 65);
             this.bntSave.TabIndex = 3;
             this.bntSave.Text = "Save";
             this.bntSave.UseVisualStyleBackColor = true;
@@ -156,43 +194,63 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(339, 108);
+            this.txtDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(664, 234);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(160, 68);
+            this.txtDescription.Size = new System.Drawing.Size(266, 83);
             this.txtDescription.TabIndex = 2;
             // 
             // btnReset
             // 
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(197, 219);
+            this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(528, 366);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(145, 50);
+            this.btnReset.Size = new System.Drawing.Size(180, 65);
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(339, 54);
+            this.txtCategoryName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoryName.Location = new System.Drawing.Point(664, 178);
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(160, 22);
+            this.txtCategoryName.Size = new System.Drawing.Size(266, 47);
             this.txtCategoryName.TabIndex = 1;
             // 
-            // btnBack
+            // Sln
             // 
-            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(27, 240);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(114, 66);
-            this.btnBack.TabIndex = 12;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.Sln.DataPropertyName = "Sln";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            this.Sln.Width = 71;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "Name";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CategoryName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.CategoryName.HeaderText = "Category Name";
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.Width = 189;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "BatchDescription";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Description.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Width = 152;
             // 
             // ProductCategory
             // 
@@ -226,9 +284,9 @@
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Label lblMessageBox;
         private System.Windows.Forms.DataGridView grvPCategory;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.Button btnBack;
     }
 }
