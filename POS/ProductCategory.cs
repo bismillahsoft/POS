@@ -49,8 +49,11 @@ namespace POS
                 {
                     if (_IProductCategory.Insert(ObjProductCategory) > 0)
                     {
-                        lblMessageBox.Text = "Operation Success";
-                        lblMessageBox.ForeColor = Color.Green;
+                        MessageBox.Show("Operation Success");
+                        //MsgBox msgbox = new MsgBox();
+                        //msgbox.Show();
+                      //  lblMessageBox.Text = "Operation Success";
+                      //  lblMessageBox.ForeColor = Color.Green;
                         // GetBrand();
                         Reset();
                     }
@@ -63,8 +66,11 @@ namespace POS
                 }
                 else
                 {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                    MsgBox msgbox = new MsgBox();
+                    msgbox.Show();
+                    txtCategoryName.Focus();
+                   // lblMessageBox.Text = "Operation Failed";
+                  //  lblMessageBox.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch (Exception ex)
@@ -90,6 +96,29 @@ namespace POS
         {
             new Homeproduct().Show();
             this.Hide();
+        }
+        private void txtCategoryName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtDescription.Focus();
+            }
+        }
+
+        private void txtDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bntSave.Focus();
+            }
+        }
+
+        private void bntSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBack.Focus();
+            }
         }
     }
 }

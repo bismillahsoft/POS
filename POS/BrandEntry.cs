@@ -43,14 +43,17 @@ namespace POS
                     }
                     else
                     {
-                        lblMessageBox.Text = "Operation Failed";
-                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        MessageBox.Show("Operation Failed");
+                        //lblMessageBox.Text = "Operation Failed";
+                        //lblMessageBox.ForeColor = System.Drawing.Color.Red;
                         // lblMessageBox.Font.Bold = true;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill Up Required Fill..!");
+                    MsgBox msgBox = new MsgBox();
+                    msgBox.Show();
+                   // MessageBox.Show("Please Fill Up Required Fill..!");
                 }
             }
             catch (Exception ex)
@@ -91,9 +94,28 @@ namespace POS
             this.Hide();
         }
 
-        private void grvBrand_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtBrand_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+                txtBrndDescription.Focus();
+        }
 
+        private void txtBrndDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSave.Focus();
+        }
+
+        private void btnReset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBack.Focus();
+        }
+
+        private void btnSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnReset.Focus();
         }
     }
 }

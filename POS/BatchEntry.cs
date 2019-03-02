@@ -37,22 +37,26 @@ namespace POS
                 {
                     if (_IProductBatch.Insert(ObjProductBatch) > 0)
                     {
-                        lblMessageBox.Text = "Operation Success";
-                        lblMessageBox.ForeColor = Color.Green;
+                        MessageBox.Show("Operation Success");
+                       // lblMessageBox.Text = "Operation Success";
+                       // lblMessageBox.ForeColor = Color.Green;
                         // GetBrand();
                         Reset();
                     }
                     else
                     {
-                        lblMessageBox.Text = "Operation Failed";
-                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        MessageBox.Show("Operation Failed");
+                       // lblMessageBox.Text = "Operation Failed";
+                       // lblMessageBox.ForeColor = System.Drawing.Color.Red;
                         // lblMessageBox.Font.Bold = true;
                     }
                 }
                 else
                 {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                    MsgBox msgBox = new MsgBox();
+                    msgBox.Show();
+                    //lblMessageBox.Text = "Operation Failed";
+                    //lblMessageBox.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch (Exception ex)
@@ -98,10 +102,6 @@ namespace POS
                 txtBatchName.Focus();
             }
         }
-        private void txtBatchName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
         private void txtBatchName_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -113,15 +113,21 @@ namespace POS
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtBatchDescription.Focus();
+              
             }
         }
         private void btnSave_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnBack.Focus();
+              
             }
+        }
+
+        private void btnReset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBack.Focus();
         }
     }
 }

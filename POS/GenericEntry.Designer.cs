@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGene_Reset = new System.Windows.Forms.Button();
             this.btnGene_Save = new System.Windows.Forms.Button();
             this.lblGenericNameEntry = new System.Windows.Forms.Label();
@@ -40,12 +41,12 @@
             this.txtGenericName = new System.Windows.Forms.TextBox();
             this.lblGenericName = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.grvGeneric = new System.Windows.Forms.DataGridView();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenericName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBack = new System.Windows.Forms.Button();
             this.grBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvGeneric)).BeginInit();
             this.SuspendLayout();
@@ -54,25 +55,27 @@
             // 
             this.btnGene_Reset.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGene_Reset.Location = new System.Drawing.Point(506, 390);
-            this.btnGene_Reset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGene_Reset.Margin = new System.Windows.Forms.Padding(2);
             this.btnGene_Reset.Name = "btnGene_Reset";
             this.btnGene_Reset.Size = new System.Drawing.Size(180, 65);
             this.btnGene_Reset.TabIndex = 4;
             this.btnGene_Reset.Text = "Reset";
             this.btnGene_Reset.UseVisualStyleBackColor = true;
             this.btnGene_Reset.Click += new System.EventHandler(this.btnGene_Reset_Click);
+            this.btnGene_Reset.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnGene_Reset_KeyUp);
             // 
             // btnGene_Save
             // 
             this.btnGene_Save.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGene_Save.Location = new System.Drawing.Point(719, 390);
-            this.btnGene_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGene_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btnGene_Save.Name = "btnGene_Save";
             this.btnGene_Save.Size = new System.Drawing.Size(180, 65);
             this.btnGene_Save.TabIndex = 3;
             this.btnGene_Save.Text = "Save";
             this.btnGene_Save.UseVisualStyleBackColor = true;
             this.btnGene_Save.Click += new System.EventHandler(this.btnGene_Save_Click);
+            this.btnGene_Save.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnGene_Save_KeyUp);
             // 
             // lblGenericNameEntry
             // 
@@ -90,7 +93,7 @@
             // 
             this.txtGenericDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenericDescription.Location = new System.Drawing.Point(631, 231);
-            this.txtGenericDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGenericDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenericDescription.Multiline = true;
             this.txtGenericDescription.Name = "txtGenericDescription";
             this.txtGenericDescription.Size = new System.Drawing.Size(266, 65);
@@ -113,7 +116,7 @@
             // 
             this.txtGenericName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenericName.Location = new System.Drawing.Point(631, 158);
-            this.txtGenericName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGenericName.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenericName.Name = "txtGenericName";
             this.txtGenericName.Size = new System.Drawing.Size(266, 47);
             this.txtGenericName.TabIndex = 1;
@@ -144,12 +147,23 @@
             this.grBox.Controls.Add(this.btnGene_Save);
             this.grBox.Controls.Add(this.btnGene_Reset);
             this.grBox.Location = new System.Drawing.Point(-1, -7);
-            this.grBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grBox.Margin = new System.Windows.Forms.Padding(2);
             this.grBox.Name = "grBox";
-            this.grBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grBox.Padding = new System.Windows.Forms.Padding(2);
             this.grBox.Size = new System.Drawing.Size(1431, 839);
             this.grBox.TabIndex = 15;
             this.grBox.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(13, 19);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblMessageBox
             // 
@@ -162,7 +176,7 @@
             // 
             // grvGeneric
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grvGeneric.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grvGeneric.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvGeneric.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -170,7 +184,7 @@
             this.grvGeneric.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -189,17 +203,19 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvGeneric.DefaultCellStyle = dataGridViewCellStyle3;
-            this.grvGeneric.Location = new System.Drawing.Point(429, 491);
+            this.grvGeneric.Location = new System.Drawing.Point(474, 514);
             this.grvGeneric.Name = "grvGeneric";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grvGeneric.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.grvGeneric.Size = new System.Drawing.Size(658, 228);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvGeneric.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.grvGeneric.Size = new System.Drawing.Size(470, 228);
             this.grvGeneric.TabIndex = 5;
             // 
             // Sln
@@ -207,32 +223,21 @@
             this.Sln.DataPropertyName = "Sln";
             this.Sln.HeaderText = "Sln";
             this.Sln.Name = "Sln";
-            this.Sln.Width = 95;
+            this.Sln.Width = 71;
             // 
             // GenericName
             // 
             this.GenericName.DataPropertyName = "GenericName";
             this.GenericName.HeaderText = "Generic Name";
             this.GenericName.Name = "GenericName";
-            this.GenericName.Width = 255;
+            this.GenericName.Width = 180;
             // 
             // Description
             // 
             this.Description.DataPropertyName = "GenericDescription";
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
-            this.Description.Width = 217;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(13, 19);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(98, 54);
-            this.btnBack.TabIndex = 6;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.Description.Width = 152;
             // 
             // GenericEntry
             // 

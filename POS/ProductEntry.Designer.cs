@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblP_Entry = new System.Windows.Forms.Label();
@@ -158,6 +158,7 @@
             this.txtMRP.Name = "txtMRP";
             this.txtMRP.Size = new System.Drawing.Size(266, 47);
             this.txtMRP.TabIndex = 10;
+            this.txtMRP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMRP_KeyUp);
             // 
             // lblMRP
             // 
@@ -178,6 +179,7 @@
             this.ddlCategory.Name = "ddlCategory";
             this.ddlCategory.Size = new System.Drawing.Size(266, 47);
             this.ddlCategory.TabIndex = 6;
+            this.ddlCategory.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlCategory_KeyUp);
             // 
             // lblProCategory
             // 
@@ -192,8 +194,8 @@
             // 
             // grvProductEntry
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grvProductEntry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvProductEntry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
             this.grvProductEntry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvProductEntry.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvProductEntry.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -220,8 +222,8 @@
             // Sln
             // 
             this.Sln.DataPropertyName = "Sln";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sln.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sln.DefaultCellStyle = dataGridViewCellStyle58;
             this.Sln.HeaderText = "Sln";
             this.Sln.Name = "Sln";
             this.Sln.Width = 60;
@@ -229,8 +231,8 @@
             // ProductName
             // 
             this.ProductName.DataPropertyName = "ProductName";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductName.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle59.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductName.DefaultCellStyle = dataGridViewCellStyle59;
             this.ProductName.HeaderText = "Product Name";
             this.ProductName.Name = "ProductName";
             this.ProductName.Width = 142;
@@ -285,8 +287,8 @@
             // Description
             // 
             this.Description.DataPropertyName = "Description";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle60.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.DefaultCellStyle = dataGridViewCellStyle60;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             this.Description.Width = 122;
@@ -302,6 +304,7 @@
             this.btnReset.TabIndex = 14;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnReset_KeyUp);
             // 
             // btnBack
             // 
@@ -314,6 +317,7 @@
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnBack_KeyUp);
             // 
             // txtBatch
             // 
@@ -324,6 +328,7 @@
             this.txtBatch.Name = "txtBatch";
             this.txtBatch.Size = new System.Drawing.Size(266, 47);
             this.txtBatch.TabIndex = 11;
+            this.txtBatch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatch_KeyUp);
             // 
             // lblBatchNo
             // 
@@ -346,6 +351,7 @@
             this.txtVat.Name = "txtVat";
             this.txtVat.Size = new System.Drawing.Size(266, 47);
             this.txtVat.TabIndex = 9;
+            this.txtVat.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtVat_KeyUp);
             // 
             // label1
             // 
@@ -369,6 +375,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(266, 47);
             this.txtDescription.TabIndex = 12;
+            this.txtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyUp);
             // 
             // ddlGenericName
             // 
@@ -380,6 +387,7 @@
             this.ddlGenericName.Name = "ddlGenericName";
             this.ddlGenericName.Size = new System.Drawing.Size(266, 47);
             this.ddlGenericName.TabIndex = 5;
+            this.ddlGenericName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlGenericName_KeyUp);
             // 
             // lblVat
             // 
@@ -402,6 +410,7 @@
             this.txtTradePrice.Name = "txtTradePrice";
             this.txtTradePrice.Size = new System.Drawing.Size(266, 47);
             this.txtTradePrice.TabIndex = 7;
+            this.txtTradePrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTradePrice_KeyUp);
             // 
             // ddlBrand
             // 
@@ -413,6 +422,7 @@
             this.ddlBrand.Name = "ddlBrand";
             this.ddlBrand.Size = new System.Drawing.Size(266, 47);
             this.ddlBrand.TabIndex = 4;
+            this.ddlBrand.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlBrand_KeyUp);
             // 
             // lblTradePrice
             // 
@@ -438,6 +448,7 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
             // 
             // txtPurchesePrice
             // 
@@ -448,6 +459,7 @@
             this.txtPurchesePrice.Name = "txtPurchesePrice";
             this.txtPurchesePrice.Size = new System.Drawing.Size(266, 47);
             this.txtPurchesePrice.TabIndex = 8;
+            this.txtPurchesePrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPurchesePrice_KeyUp);
             // 
             // ddlPackSize
             // 
@@ -460,6 +472,7 @@
             this.ddlPackSize.Size = new System.Drawing.Size(266, 47);
             this.ddlPackSize.TabIndex = 3;
             this.ddlPackSize.SelectedIndexChanged += new System.EventHandler(this.ddlPackSize_SelectedIndexChanged);
+            this.ddlPackSize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlPackSize_KeyUp);
             // 
             // lblPurchesePrice
             // 
@@ -494,6 +507,7 @@
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(266, 47);
             this.txtProductCode.TabIndex = 2;
+            this.txtProductCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProductCode_KeyUp);
             // 
             // lblPro_Name
             // 
@@ -528,6 +542,7 @@
             this.txtPro_Name.Name = "txtPro_Name";
             this.txtPro_Name.Size = new System.Drawing.Size(266, 47);
             this.txtPro_Name.TabIndex = 1;
+            this.txtPro_Name.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPro_Name_KeyUp);
             // 
             // lblPackSize
             // 

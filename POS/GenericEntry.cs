@@ -31,23 +31,30 @@ namespace POS
                 ObjProductGeneric.GenericName = txtGenericName.Text;
                 ObjProductGeneric.GenericDescription = txtGenericDescription.Text;
 
-                if (ObjProductGeneric.GenericName!="")
-                {
+                  if (ObjProductGeneric.GenericName!="")
+                  {
                     if (_IProductGeneric.Insert(ObjProductGeneric) > 0)
                     {
-                        lblMessageBox.Text = "Operation Success";
-                        lblMessageBox.ForeColor = Color.Green;
+                        MessageBox.Show("Operation Success");
+                        //lblMessageBox.Text = "Operation Success";
+                        //lblMessageBox.ForeColor = Color.Green;
                         // GetBrand();
                         Reset();
                     }
                     else
                     {
-                        lblMessageBox.Text = "Operation Failed";
-                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        MessageBox.Show("Operation Failed");
+                        //lblMessageBox.Text = "Operation Failed";
+                        //lblMessageBox.ForeColor = System.Drawing.Color.Red;
                         // lblMessageBox.Font.Bold = true;
                     }
+                   }
+                  else
+                {
+                    MsgBox msgBox = new MsgBox();
+                    msgBox.Show();
                 }
-            }
+                 }
                 catch (Exception ex)
                 {
                     throw ex;
@@ -96,6 +103,18 @@ namespace POS
             {
                 btnGene_Save.Focus();
             }
+        }
+
+        private void btnGene_Save_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnGene_Reset.Focus();
+        }
+
+        private void btnGene_Reset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBack.Focus();
         }
     }
 }

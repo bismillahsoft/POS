@@ -31,15 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPCategory = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.grvPCategory = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.lblPCategoryName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -68,9 +66,9 @@
             // grBox
             // 
             this.grBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grBox.Controls.Add(this.grvPCategory);
             this.grBox.Controls.Add(this.lblPCategory);
             this.grBox.Controls.Add(this.btnBack);
-            this.grBox.Controls.Add(this.grvPCategory);
             this.grBox.Controls.Add(this.lblMessageBox);
             this.grBox.Controls.Add(this.lblPCategoryName);
             this.grBox.Controls.Add(this.lblDescription);
@@ -86,6 +84,34 @@
             this.grBox.TabIndex = 11;
             this.grBox.TabStop = false;
             // 
+            // grvPCategory
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvPCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grvPCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvPCategory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.grvPCategory.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grvPCategory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvPCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.grvPCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvPCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sln,
+            this.CategoryName,
+            this.Description});
+            this.grvPCategory.Location = new System.Drawing.Point(447, 556);
+            this.grvPCategory.Name = "grvPCategory";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvPCategory.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.grvPCategory.Size = new System.Drawing.Size(461, 248);
+            this.grvPCategory.TabIndex = 18;
+            // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,65 +124,15 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // grvPCategory
-            // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.grvPCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.grvPCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grvPCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.grvPCategory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.grvPCategory.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grvPCategory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.grvPCategory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvPCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.grvPCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvPCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Sln,
-            this.CategoryName,
-            this.Description});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Fuchsia;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvPCategory.DefaultCellStyle = dataGridViewCellStyle6;
-            this.grvPCategory.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grvPCategory.Location = new System.Drawing.Point(475, 507);
-            this.grvPCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grvPCategory.Name = "grvPCategory";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvPCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.grvPCategory.RowHeadersWidth = 44;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.grvPCategory.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.grvPCategory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grvPCategory.Size = new System.Drawing.Size(486, 216);
-            this.grvPCategory.TabIndex = 5;
-            // 
             // lblMessageBox
             // 
             this.lblMessageBox.AutoSize = true;
             this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessageBox.Location = new System.Drawing.Point(229, 18);
             this.lblMessageBox.Name = "lblMessageBox";
-            this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
+            this.lblMessageBox.Size = new System.Drawing.Size(57, 13);
             this.lblMessageBox.TabIndex = 17;
+            this.lblMessageBox.Text = "Message";
             // 
             // lblPCategoryName
             // 
@@ -191,6 +167,7 @@
             this.bntSave.Text = "Save";
             this.bntSave.UseVisualStyleBackColor = true;
             this.bntSave.Click += new System.EventHandler(this.bntSave_Click);
+            this.bntSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bntSave_KeyUp);
             // 
             // txtDescription
             // 
@@ -201,6 +178,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(266, 83);
             this.txtDescription.TabIndex = 2;
+            this.txtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyUp);
             // 
             // btnReset
             // 
@@ -221,12 +199,12 @@
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(266, 47);
             this.txtCategoryName.TabIndex = 1;
+            this.txtCategoryName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCategoryName_KeyUp);
             // 
             // Sln
             // 
             this.Sln.DataPropertyName = "Sln";
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
             this.Sln.HeaderText = "Sln";
             this.Sln.Name = "Sln";
@@ -236,7 +214,6 @@
             // 
             this.CategoryName.DataPropertyName = "Name";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CategoryName.DefaultCellStyle = dataGridViewCellStyle4;
             this.CategoryName.HeaderText = "Category Name";
             this.CategoryName.Name = "CategoryName";
@@ -244,9 +221,8 @@
             // 
             // Description
             // 
-            this.Description.DataPropertyName = "BatchDescription";
+            this.Description.DataPropertyName = "Description";
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Description.DefaultCellStyle = dataGridViewCellStyle5;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
@@ -283,8 +259,8 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Label lblMessageBox;
-        private System.Windows.Forms.DataGridView grvPCategory;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.DataGridView grvPCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;

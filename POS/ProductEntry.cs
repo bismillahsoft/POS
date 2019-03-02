@@ -70,25 +70,118 @@ namespace POS
                 {
                     if (_IProduct.Insert(Objproducts) > 0)
                     {
-                        lblMessageBox.Text = "Successfully Saved";
-                        lblMessageBox.ForeColor = Color.Green;
+                        MessageBox.Show("Successfully Saved");
+                        //lblMessageBox.Text = "Successfully Saved";
+                        //lblMessageBox.ForeColor = Color.Green;
                     }
                     else
                     {
-                        lblMessageBox.Text = "Operation Failed";
-                        lblMessageBox.ForeColor = Color.Red;
+                        MessageBox.Show("Operation Failed");
+                        //lblMessageBox.Text = "Operation Failed";
+                        //lblMessageBox.ForeColor = Color.Red;
                     }
                 }
                 else
                 {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = Color.Red;
+                    MsgBox msgBox = new MsgBox();
+                    msgBox.Show();
+                    //lblMessageBox.Text = "Operation Failed";
+                    //lblMessageBox.ForeColor = Color.Red;
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        private void txtPro_Name_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtProductCode.Focus();
+        }
+
+        private void txtProductCode_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlPackSize.Focus();
+        }
+
+        private void ddlPackSize_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlBrand.Focus();
+        }
+
+        private void ddlBrand_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlGenericName.Focus();
+        }
+
+        private void ddlGenericName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlCategory.Focus();
+        }
+
+        private void ddlCategory_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtTradePrice.Focus();
+        }
+
+        private void txtTradePrice_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtPurchesePrice.Focus();
+        }
+
+        private void txtPurchesePrice_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtVat.Focus();
+        }
+
+        private void txtVat_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtMRP.Focus();
+        }
+
+        private void txtMRP_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtBatch.Focus();
+        }
+
+        private void txtBatch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtDescription.Focus();
+        }
+
+        private void txtDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSave.Focus();
+        }
+
+        private void btnSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+               btnReset.Focus();
+        }
+
+        private void btnReset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBack.Focus();
+        }
+
+        private void btnBack_KeyUp(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
