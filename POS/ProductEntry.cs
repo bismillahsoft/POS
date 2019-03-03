@@ -33,6 +33,7 @@ namespace POS
             COMMON.DDL.PopulateDropDownList(_IProductGeneric.GetProductGenericList().ToList(), ddlGenericName, "PGenericID", "GenericName");
             //COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory,"","");
             COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory, "Id", "Name");
+            GetProductList();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -73,6 +74,7 @@ namespace POS
                         MessageBox.Show("Successfully Saved");
                         //lblMessageBox.Text = "Successfully Saved";
                         //lblMessageBox.ForeColor = Color.Green;
+                        GetProductList();
                     }
                     else
                     {
@@ -93,6 +95,13 @@ namespace POS
             {
                 throw ex;
             }
+        }
+        private void GetProductList()
+        {
+            List<BO.Product> getProduct = new List<BO.Product>();
+            getProduct = _IProduct.GetProductList().ToList();
+            grvProductEntry.AutoGenerateColumns = false;
+            grvProductEntry.DataSource = getProduct;
         }
 
         private void txtPro_Name_KeyUp(object sender, KeyEventArgs e)

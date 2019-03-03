@@ -431,7 +431,7 @@ namespace POS.DAL
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "DCR_SP_GET_Product";
+                da.SelectCommand.CommandText = "[POS_SP_GET_SET_Product]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
 
@@ -446,10 +446,10 @@ namespace POS.DAL
                     con.Close();
                 }
                 DataTable dt = ds.Tables[0];
-                List<POS.BO.Product> objDoctorList = new List<POS.BO.Product>();
+                List<POS.BO.Product> objProductList = new List<POS.BO.Product>();
                 POS.BO.Product obj = null;
                 long productID = 0;
-                string packSize = "";
+               // string packSize = "";
                 int index = 1;
                 foreach (DataRow row in dt.Rows)
                 {
@@ -459,24 +459,38 @@ namespace POS.DAL
                         obj = new BO.Product();
                         obj.Sln = index++;
                         obj.ProductId = productID;
-                        obj.ProductCode = row["ProductCode"].ToString();
                         obj.ProductName = row["ProductName"].ToString();
-                        obj.BrandName = row["BrandName"].ToString();
-                        objDoctorList.Add(obj);
-                        packSize = "";
+                        obj.ProductCode = row["ProductCode"].ToString();
+                        obj.PackSize = Convert.ToString(row["PackSize"]);
+                        obj.BrandName = row["Brand"].ToString();
+                        obj.GenericName = row["GenericName"].ToString();
+                        obj.CategoryName = row["CategoryName"].ToString();
+                        obj.PurchesePrice = Convert.ToDecimal(row["PurchesePrice"]);
+                        obj.TradePrice = Convert.ToDecimal(row["TradePrice"]);
+                        obj.Vat = Convert.ToDecimal(row["Vat"]);
+                        obj.MRP = Convert.ToDecimal(row["MRP"]);
+                        //obj.ProductPrice.TradePrice = Convert.ToDecimal(row["TradePrice"]);
+                        //obj.ProductPrice.Vat = Convert.ToDecimal(row["Vat"]);
+                        //obj.ProductPrice.MRP = Convert.ToDecimal(row["MRP"]);
+                        obj.BatchNo = row["BatchNo"].ToString();
+                        obj.Description = row["Description"].ToString();
+
+                        
+                        objProductList.Add(obj);
+                       // packSize = "";
                     }
-                    if (packSize != "")
-                    {
-                        packSize = packSize + "," + row["PackSize"].ToString();
-                        obj.PackSize = packSize;
-                    }
-                    else
-                    {
-                        packSize = row["PackSize"].ToString();
-                        obj.PackSize = packSize;
-                    }
+                    //if (packSize != "")
+                    //{
+                    //    packSize = packSize + "," + row["PackSize"].ToString();
+                    //    obj.PackSize = packSize;
+                    //}
+                    //else
+                    //{
+                    //    packSize = row["PackSize"].ToString();
+                    //    obj.PackSize = packSize;
+                    //}
                 }
-                return objDoctorList;
+                return objProductList;
             }
             catch (Exception)
             {
