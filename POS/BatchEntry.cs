@@ -107,13 +107,14 @@ namespace POS
             if (e.KeyCode == Keys.Enter)
             {
                 txtBatchDescription.Focus();
+              
             }
         }
         private void txtBatchDescription_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-              
+                
             }
         }
         private void btnSave_KeyUp(object sender, KeyEventArgs e)
@@ -123,11 +124,11 @@ namespace POS
               
             }
         }
-
         private void btnReset_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnBack.Focus();
         }
+       
     }
 }

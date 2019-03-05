@@ -33,7 +33,7 @@ namespace POS
             COMMON.DDL.PopulateDropDownList(_IProductGeneric.GetProductGenericList().ToList(), ddlGenericName, "PGenericID", "GenericName");
             //COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory,"","");
             COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory, "Id", "Name");
-            GetProductList();
+            Reset();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace POS
                 Objproducts.Description = txtDescription.Text;
 
 
-                if (txtPro_Name.Text != "")
+                if (txtPro_Name.Text != "" && txtProductCode.Text!="" && txtTradePrice.Text!="" && txtPurchesePrice.Text!="" && txtVat.Text!="" && txtMRP.Text!="" && txtBatch.Text!="")
                 {
                     if (_IProduct.Insert(Objproducts) > 0)
                     {
@@ -191,6 +191,26 @@ namespace POS
         private void btnBack_KeyUp(object sender, KeyEventArgs e)
         {
 
+        }
+        private void Reset()
+        {
+            txtPro_Name.Text = "";
+            txtProductCode.Text = "";
+            ddlBrand.SelectedText = "";
+            ddlPackSize.SelectedText = "";
+            ddlGenericName.SelectedText = "";
+            ddlCategory.SelectedText = "";
+            txtTradePrice.Text = "";
+            txtPurchesePrice.Text = "";
+            txtVat.Text = "";
+            txtMRP.Text = "";
+            txtBatch.Text = "";
+            txtDescription.Text = "";
+            GetProductList();
+        }
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }

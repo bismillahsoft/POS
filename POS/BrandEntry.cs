@@ -117,5 +117,15 @@ namespace POS
             if (e.KeyCode == Keys.Enter)
                 btnReset.Focus();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grvBrand_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

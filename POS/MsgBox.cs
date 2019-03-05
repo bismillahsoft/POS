@@ -16,6 +16,7 @@ namespace POS
         public MsgBox()
         {
             InitializeComponent();
+            btnOk.Focus();
         }
         public string ShowMessage(string content)
         {
@@ -27,6 +28,14 @@ namespace POS
         private void btnOk_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnOk_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnOk.Focus();
+            }
         }
     }
 

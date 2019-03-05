@@ -63,13 +63,12 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "DCR_SP_UPDATE_Brand";
+                da.SelectCommand.CommandText = "[POS_SP_Update_SET_Brand]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
                 da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objBrand.BrandID;
                 da.SelectCommand.Parameters.Add("@BrandName", System.Data.SqlDbType.VarChar, 100).Value = objBrand.BrandName;
                 da.SelectCommand.Parameters.Add("@BrandDescription", System.Data.SqlDbType.VarChar, 100).Value = objBrand.BrandDescription;
-                da.SelectCommand.Parameters.Add("@GenericID", System.Data.SqlDbType.Int).Value = objBrand.GenericID;
 
                 if (con.State == ConnectionState.Closed)
                 {

@@ -27,14 +27,7 @@ namespace POS
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Reset();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+
         }
 
         private void bntSave_Click(object sender, EventArgs e)
@@ -88,8 +81,8 @@ namespace POS
         {
             List<BO.ProductCategory> productCategories = new List<BO.ProductCategory>();
             productCategories = _IProductCategory.GetProductCategoryList().ToList();
-            grvPCategory.AutoGenerateColumns = false;
-            grvPCategory.DataSource = productCategories;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = productCategories;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -114,6 +107,14 @@ namespace POS
         }
 
         private void bntSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnReset.Focus();
+            }
+        }
+
+        private void btnReset_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {

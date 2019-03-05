@@ -101,5 +101,17 @@ namespace POS
             if (e.KeyCode == Keys.Enter)
                 btnSave.Focus();
         }
+
+        private void btnSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnReset.Focus();
+        }
+
+        private void btnReset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBack.Focus();
+        }
     }
 }
