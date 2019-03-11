@@ -36,16 +36,16 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.grvBrand = new System.Windows.Forms.DataGridView();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.lblBrndDescription = new System.Windows.Forms.Label();
             this.txtBrndDescription = new System.Windows.Forms.TextBox();
             this.lbl_Brand = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvBrand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,52 +131,10 @@
             this.grvBrand.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvBrand.Location = new System.Drawing.Point(429, 484);
             this.grvBrand.Name = "grvBrand";
-            this.grvBrand.Size = new System.Drawing.Size(496, 236);
+            this.grvBrand.Size = new System.Drawing.Size(528, 236);
             this.grvBrand.TabIndex = 20;
             this.grvBrand.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBrand_CellClick);
-            // 
-            // Sln
-            // 
-            this.Sln.DataPropertyName = "Sln";
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            this.Sln.Width = 60;
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "BrandName";
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            this.Brand.Width = 81;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "BrandDescription";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.Width = 122;
-            // 
-            // Edit
-            // 
-            this.Edit.DataPropertyName = "Edit";
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 66;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 83;
+            this.grvBrand.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBrand_CellContentClick);
             // 
             // txtBrand
             // 
@@ -236,6 +194,49 @@
             this.lblBrand.TabIndex = 21;
             this.lblBrand.Text = "Brand Entry";
             // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            this.Sln.Width = 60;
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "BrandName";
+            this.Brand.HeaderText = "Brand";
+            this.Brand.Name = "Brand";
+            this.Brand.Width = 81;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "BrandDescription";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Width = 122;
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Edit";
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 66;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 83;
+            // 
             // BrandEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +256,7 @@
             this.Name = "BrandEntry";
             this.Text = "BrandEntry";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.BrandEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grvBrand)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

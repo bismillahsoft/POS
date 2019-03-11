@@ -54,7 +54,7 @@ namespace POS.DAL
             }
 
         }
-        public int Update(BO.Brand objBrand, int SBG)
+        public int Update(BO.Brand objBrand)
         {
             try
             {
@@ -300,9 +300,7 @@ namespace POS.DAL
             {
                 throw ex;
             }
-
         }
-
 
         public IList<BO.Brand> GetBrandBySBG(int sbgID)
         {

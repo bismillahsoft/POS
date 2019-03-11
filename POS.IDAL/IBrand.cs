@@ -12,7 +12,7 @@ namespace POS.IDAL
     {
         int Insert(BO.Brand objBrand);
 
-        int Update(BO.Brand objBrand, int SBG);
+        int Update(BO.Brand objBrand);
 
         int Delete(int SBG);
 
