@@ -1,6 +1,8 @@
 ﻿using POS.IDAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -26,13 +28,14 @@ namespace POS
             try
             {
                 BO.Brand ObjBrand = new BO.Brand();
+                //ObjBrand.BrandID = Convert.ToInt16(lblMessageBox.Text);
 
                 ObjBrand.BrandName = txtBrand.Text;
                 ObjBrand.BrandDescription = txtBrndDescription.Text;
                 
                 if(btnSave.Text=="Update" && txtBrand.Text!="")
                 {
-
+                    ObjBrand.BrandID = Convert.ToInt16(lblMessageBox.Text);
                     if (_IBrand.Update(ObjBrand) > 0)
                     {
                         MessageBox.Show("Successfully Update");
@@ -77,19 +80,8 @@ namespace POS
         {
             txtBrand.Text = "";
             txtBrndDescription.Text = "";
+            btnSave.Text = "Save";
             GetBrand();
-        }
-
-        protected void btnReset_Click_(object sender, EventArgs e)
-        {
-            try
-            {
-                Reset();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
         private void GetBrand()
         {
@@ -99,66 +91,10 @@ namespace POS
             grvBrand.AutoGenerateColumns = false;
             grvBrand.DataSource = brands;
         }
-
-      
-        private void grvBrand_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-            //if (e.ColumnIndex == 6)
-            //{
-            //    empid = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
-            //    Form_Insert fm2 = new Form_Insert();
-            //    fm2.Show();
-            //}
-            //if (e.ColumnIndex == 7)
-            //{
-            //    empid = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
-            //    SqlDataAdapter da = new SqlDataAdapter("delete from employee where Id = '" + empid + "'", con);
-            //    DataSet ds = new DataSet();
-            //    da.Fill(ds);
-            //    displayDataGridView();
-            //    dataGridView1.Refresh();
-        }
-
         private void BrandEntry_Load(object sender, EventArgs e)
         {
-            displayDataGridView();
+           
         }
-        public void displayDataGridView()
-        {
-            List<BO.Brand> brands = new List<BO.Brand>();
-            brands = _IBrand.GetBrandList().ToList();
-            grvBrand.AutoGenerateColumns = false;
-            grvBrand.DataSource = brands;
-           
-            //grvBrand.AllowUserToAddRows = false;
-            //using SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //grvBrand.DataSource=
-
-            //SqlCommand cmd;
-            //cmd = new SqlCommand("select * from Employee", con);
-            //cmd.CommandType = CommandType.Text;
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds);
-            //dataGridView1.DataSource = ds.Tables[0];
-            //dataGridView1.AutoGenerateColumns = false;
-            //dataGridView1.AllowUserToAddRows = false;
-        }
-        protected void Edit_Click(object sender, EventArgs e)
-        {
-           // using (StdRegBLL StdData = new StdRegBLL())
-                BO.Brand Brands = new BO.Brand();
-            txtBrand.Text = Brands.BrandName;
-            txtBrndDescription.Text = Brands.BrandDescription;
-
-            _IBrand.Update(Brands);
-
-           
-           
-
-            }
         private void btnBack_Click(object sender, EventArgs e)
         {
             new Homeproduct().Show();
@@ -191,7 +127,14 @@ namespace POS
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Reset();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void grvBrand_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -200,21 +143,29 @@ namespace POS
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == grvBrand.Columns["Delete"].Index && e.RowIndex >= 0)
             {
-
                 lblMessageBox.Text="Execute";
             }
             if (e.ColumnIndex == grvBrand.Columns["Edit"].Index && e.RowIndex >= 0)
             {
+                //displayDataGridView();
+                //   DataSet ds = new DataSet();
+                //SqlDataAdapter da = new SqlDataAdapter(); 
+                //DataTable dt = ds.Tables["SET_Brand"];
+
+                //this.grvBrand.BindingContext[dt].EndCurrentEdit();
+                //da.Update(dt);
                 int numberRow = Convert.ToInt32(e.RowIndex);
                 //assign the value plus the desired column example 1
-                var BrandName = grvBrand.Rows[numberRow].Cells[0].Value;
-                lblMessageBox.Text = "" + BrandName;
+                var Sln = grvBrand.Rows[numberRow].Cells[0].Value.ToString();
+                lblMessageBox.Text = "" + Sln;
                 //var BrandDescription = grvBrand.Rows[numberRow].Cells[2].Value;
-                txtBrand.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[1].Value);
-                txtBrndDescription.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[2].Value);
+                txtBrand.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[2].Value);
+                txtBrndDescription.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[3].Value);
                 //txtBrand.Text = ""+ BrandName;
                 //txtBrndDescription.Text = "" + BrandDescription;
                 btnSave.Text = "Update";
+                
+
             }
         }
     }

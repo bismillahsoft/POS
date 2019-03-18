@@ -97,6 +97,57 @@ namespace POS.DAL
             }
 
         }
+        public IList<BO.Brand> GetBrandList()
+        {
+            try
+            {
+                //string SBG = "";
+                //if (SBGID == 3)
+                //{
+                //    SBG = "1,2";
+                //}
+                //else
+                //{
+                //    SBG = SBGID.ToString();
+                //}
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+                da.SelectCommand.CommandText = "[POS_SP_GET_GETBrand]";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                DataTable dt = ds.Tables[0];
+                List<POS.BO.Brand> objBrandList = new List<POS.BO.Brand>();
+                POS.BO.Brand obj = null;
+                int index = 1;
+                foreach (DataRow row in dt.Rows)
+                {
+                    obj = new BO.Brand();
+                    obj.Sln = index++;
+                    obj.BrandID = Convert.ToInt32(row["BrandID"]);
+                    obj.BrandName = row["BrandName"].ToString();
+                    obj.BrandDescription = row["BrandDescription"].ToString();
+                    objBrandList.Add(obj);
+                }
+                return objBrandList;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public int Delete(int BrandID)
         {
             try
@@ -114,7 +165,6 @@ namespace POS.DAL
                 {
                     con.Open();
                 }
-
                 if (da.SelectCommand.ExecuteNonQuery() == 1)
                 {
                     returnStatus = 1;
@@ -126,7 +176,6 @@ namespace POS.DAL
                 if (con.State == ConnectionState.Open)
                 {
                     con.Close();
-
                 }
                 return returnStatus;
             }
@@ -135,10 +184,6 @@ namespace POS.DAL
 
                 throw ex;
             }
-
-
-
-
         }
         public IList<POS.BO.Brand> GetBrand(int pageIndex, int pageSize, string orderBy, string sortindex)
         {
@@ -248,59 +293,7 @@ namespace POS.DAL
 
 
 
-        public IList<BO.Brand> GetBrandList()
-        {
-            try
-            {
-                //string SBG = "";
-                //if (SBGID == 3)
-                //{
-                //    SBG = "1,2";
-                //}
-                //else
-                //{
-                //    SBG = SBGID.ToString();
-                //}
-                SqlConnection con = CreateCon();
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "[POS_SP_GET_GETBrand]";
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Connection = con;
-
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-                DataTable dt = ds.Tables[0];
-                List<POS.BO.Brand> objDoctorList = new List<POS.BO.Brand>();
-                POS.BO.Brand obj = null;
-                int index = 1;
-                foreach (DataRow row in dt.Rows)
-                {
-                    obj = new BO.Brand();
-                    obj.Sln = index++;
-                    obj.BrandID = Convert.ToInt32(row["BrandID"]);
-                    obj.BrandName = row["BrandName"].ToString();
-                    obj.BrandDescription = row["BrandDescription"].ToString();
-
-
-                    objDoctorList.Add(obj);
-                }
-                return objDoctorList;
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+    
 
         public IList<BO.Brand> GetBrandBySBG(int sbgID)
         {

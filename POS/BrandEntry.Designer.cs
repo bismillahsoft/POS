@@ -36,16 +36,17 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.grvBrand = new System.Windows.Forms.DataGridView();
-            this.txtBrand = new System.Windows.Forms.TextBox();
-            this.lblBrndDescription = new System.Windows.Forms.Label();
-            this.txtBrndDescription = new System.Windows.Forms.TextBox();
-            this.lbl_Brand = new System.Windows.Forms.Label();
-            this.lblBrand = new System.Windows.Forms.Label();
+            this.BrandID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.lblBrndDescription = new System.Windows.Forms.Label();
+            this.txtBrndDescription = new System.Windows.Forms.TextBox();
+            this.lbl_Brand = new System.Windows.Forms.Label();
+            this.lblBrand = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grvBrand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.lblMessageBox.Name = "lblMessageBox";
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 14;
+            this.lblMessageBox.Visible = false;
             // 
             // btnBack
             // 
@@ -64,7 +66,7 @@
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(98, 54);
-            this.btnBack.TabIndex = 26;
+            this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -77,7 +79,7 @@
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(180, 65);
-            this.btnReset.TabIndex = 25;
+            this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -91,7 +93,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 65);
-            this.btnSave.TabIndex = 24;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -115,6 +117,7 @@
             this.grvBrand.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvBrand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BrandID,
             this.Sln,
             this.Brand,
             this.Description,
@@ -132,67 +135,17 @@
             this.grvBrand.Location = new System.Drawing.Point(429, 484);
             this.grvBrand.Name = "grvBrand";
             this.grvBrand.Size = new System.Drawing.Size(528, 236);
-            this.grvBrand.TabIndex = 20;
+            this.grvBrand.TabIndex = 5;
             this.grvBrand.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBrand_CellClick);
-            this.grvBrand.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBrand_CellContentClick);
             // 
-            // txtBrand
+            // BrandID
             // 
-            this.txtBrand.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrand.ForeColor = System.Drawing.Color.Black;
-            this.txtBrand.Location = new System.Drawing.Point(632, 136);
-            this.txtBrand.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(266, 47);
-            this.txtBrand.TabIndex = 18;
-            this.txtBrand.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBrand_KeyUp);
-            // 
-            // lblBrndDescription
-            // 
-            this.lblBrndDescription.AutoSize = true;
-            this.lblBrndDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrndDescription.ForeColor = System.Drawing.Color.Black;
-            this.lblBrndDescription.Location = new System.Drawing.Point(440, 208);
-            this.lblBrndDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBrndDescription.Name = "lblBrndDescription";
-            this.lblBrndDescription.Size = new System.Drawing.Size(170, 39);
-            this.lblBrndDescription.TabIndex = 23;
-            this.lblBrndDescription.Text = "Description :";
-            // 
-            // txtBrndDescription
-            // 
-            this.txtBrndDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrndDescription.ForeColor = System.Drawing.Color.Black;
-            this.txtBrndDescription.Location = new System.Drawing.Point(632, 205);
-            this.txtBrndDescription.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBrndDescription.Multiline = true;
-            this.txtBrndDescription.Name = "txtBrndDescription";
-            this.txtBrndDescription.Size = new System.Drawing.Size(266, 65);
-            this.txtBrndDescription.TabIndex = 19;
-            this.txtBrndDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBrndDescription_KeyUp);
-            // 
-            // lbl_Brand
-            // 
-            this.lbl_Brand.AutoSize = true;
-            this.lbl_Brand.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Brand.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Brand.Location = new System.Drawing.Point(440, 139);
-            this.lbl_Brand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Brand.Name = "lbl_Brand";
-            this.lbl_Brand.Size = new System.Drawing.Size(167, 39);
-            this.lbl_Brand.TabIndex = 22;
-            this.lbl_Brand.Text = "Brand          :";
-            // 
-            // lblBrand
-            // 
-            this.lblBrand.AutoSize = true;
-            this.lblBrand.Font = new System.Drawing.Font("Palatino Linotype", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrand.Location = new System.Drawing.Point(363, 67);
-            this.lblBrand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(213, 47);
-            this.lblBrand.TabIndex = 21;
-            this.lblBrand.Text = "Brand Entry";
+            this.BrandID.DataPropertyName = "BrandID";
+            this.BrandID.HeaderText = "ID";
+            this.BrandID.Name = "BrandID";
+            this.BrandID.ReadOnly = true;
+            this.BrandID.Visible = false;
+            this.BrandID.Width = 54;
             // 
             // Sln
             // 
@@ -237,6 +190,64 @@
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 83;
             // 
+            // txtBrand
+            // 
+            this.txtBrand.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrand.ForeColor = System.Drawing.Color.Black;
+            this.txtBrand.Location = new System.Drawing.Point(632, 136);
+            this.txtBrand.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(266, 47);
+            this.txtBrand.TabIndex = 1;
+            this.txtBrand.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBrand_KeyUp);
+            // 
+            // lblBrndDescription
+            // 
+            this.lblBrndDescription.AutoSize = true;
+            this.lblBrndDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrndDescription.ForeColor = System.Drawing.Color.Black;
+            this.lblBrndDescription.Location = new System.Drawing.Point(440, 208);
+            this.lblBrndDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBrndDescription.Name = "lblBrndDescription";
+            this.lblBrndDescription.Size = new System.Drawing.Size(170, 39);
+            this.lblBrndDescription.TabIndex = 23;
+            this.lblBrndDescription.Text = "Description :";
+            // 
+            // txtBrndDescription
+            // 
+            this.txtBrndDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrndDescription.ForeColor = System.Drawing.Color.Black;
+            this.txtBrndDescription.Location = new System.Drawing.Point(632, 205);
+            this.txtBrndDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBrndDescription.Multiline = true;
+            this.txtBrndDescription.Name = "txtBrndDescription";
+            this.txtBrndDescription.Size = new System.Drawing.Size(266, 65);
+            this.txtBrndDescription.TabIndex = 2;
+            this.txtBrndDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBrndDescription_KeyUp);
+            // 
+            // lbl_Brand
+            // 
+            this.lbl_Brand.AutoSize = true;
+            this.lbl_Brand.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Brand.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Brand.Location = new System.Drawing.Point(440, 139);
+            this.lbl_Brand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Brand.Name = "lbl_Brand";
+            this.lbl_Brand.Size = new System.Drawing.Size(167, 39);
+            this.lbl_Brand.TabIndex = 22;
+            this.lbl_Brand.Text = "Brand          :";
+            // 
+            // lblBrand
+            // 
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Font = new System.Drawing.Font("Palatino Linotype", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrand.Location = new System.Drawing.Point(363, 67);
+            this.lblBrand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(213, 47);
+            this.lblBrand.TabIndex = 21;
+            this.lblBrand.Text = "Brand Entry";
+            // 
             // BrandEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,6 +285,7 @@
         private System.Windows.Forms.TextBox txtBrndDescription;
         private System.Windows.Forms.Label lbl_Brand;
         private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BrandID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
