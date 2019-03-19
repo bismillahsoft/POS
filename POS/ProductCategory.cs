@@ -38,7 +38,16 @@ namespace POS
                 ObjProductCategory.Name = txtCategoryName.Text;
                 ObjProductCategory.Description = txtDescription.Text;
 
-                if (ObjProductCategory.Name != "")
+                if(bntSave.Text=="Update" && txtCategoryName.Text != "")
+                {
+                    ObjProductCategory.Id = Convert.ToInt32(lblMessageBox.Text);
+                    if (_IProductCategory.Update(ObjProductCategory) > 0)
+                    {
+                        MessageBox.Show("Successfully Update");
+                        Reset();
+                    }
+                }
+                else if (ObjProductCategory.Name != "")
                 {
                     if (_IProductCategory.Insert(ObjProductCategory) > 0)
                     {
@@ -76,15 +85,13 @@ namespace POS
         {
             txtCategoryName.Focus();
         }
-
         private void GetProductCategory()
         {
             List<BO.ProductCategory> productCategories = new List<BO.ProductCategory>();
             productCategories = _IProductCategory.GetProductCategoryList().ToList();
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = productCategories;
+            grvCategory.AutoGenerateColumns = false;
+            grvCategory.DataSource = productCategories;
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             new Homeproduct().Show();
@@ -97,7 +104,6 @@ namespace POS
                 txtDescription.Focus();
             }
         }
-
         private void txtDescription_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -105,7 +111,6 @@ namespace POS
                 bntSave.Focus();
             }
         }
-
         private void bntSave_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -113,12 +118,23 @@ namespace POS
                 btnReset.Focus();
             }
         }
-
         private void btnReset_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 btnBack.Focus();
+            }
+        }
+        private void grvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex==grvCategory.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                int numberRow = Convert.ToInt32(e.RowIndex);
+                var ID = grvCategory.Rows[numberRow].Cells[0].Value.ToString();
+                lblMessageBox.Text = ID;
+                txtCategoryName.Text=Convert.ToString(grvCategory.Rows[numberRow].Cells[2].Value);
+                txtDescription.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[3].Value);
+                bntSave.Text = "Update";
             }
         }
     }

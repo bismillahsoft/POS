@@ -15,7 +15,10 @@ namespace POS.BLL
         {
             return _iProductCategory.Insert(objProductCategory);
         }
-
+        public int Update(BO.ProductCategory objProductCategory)
+        {
+            return _iProductCategory.Update(objProductCategory);
+        }
         public int Update(BO.ProductCategory objProductCategory, int Id)
         {
             return _iProductCategory.Update(objProductCategory, Id);

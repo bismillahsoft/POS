@@ -27,7 +27,17 @@ namespace POS
                 ObjProductPackSize.PackSize = txtPackSize.Text;
                 ObjProductPackSize.PackSizeDescription = txtDescription.Text;
 
-                if (txtPackSize.Text != "")
+                if(btnSave.Text=="Update"&& txtPackSize.Text != "")
+                {
+                    ObjProductPackSize.PackSizeID = Convert.ToInt32(lblMessageBox.Text);
+                    if (_IProductPackSize.Update(ObjProductPackSize) > 0)
+                    {
+                        MessageBox.Show("Successfully Update");
+                        Reset();
+                    }
+                }
+
+                else if (txtPackSize.Text != "")
                 {
 
                     if (_IProductPackSize.Insert(ObjProductPackSize) > 0)
@@ -66,6 +76,7 @@ namespace POS
         {
             txtPackSize.Text = "";
             txtDescription.Text = "";
+            btnSave.Text = "Save";
             GetPackSizeList();
         }
         private void btnReset_Click(object sender, EventArgs e)
@@ -112,6 +123,19 @@ namespace POS
         {
             if (e.KeyCode == Keys.Enter)
                 btnBack.Focus();
+        }
+
+        private void grvPackSize_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex== grvPackSize.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                int numberRow = Convert.ToInt32(e.RowIndex);
+                var ID = grvPackSize.Rows[numberRow].Cells[0].Value.ToString();
+                lblMessageBox.Text = ID;
+                txtPackSize.Text=Convert.ToString(grvPackSize.Rows[numberRow].Cells[2].Value);
+                txtDescription.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[3].Value);
+                btnSave.Text = "Update";
+            }
         }
     }
 }

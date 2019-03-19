@@ -46,10 +46,83 @@ namespace POS.DAL
                 throw ex;
             }
         }
+        public int Update(BO.ProductCategory objProductCategory)
+        {
+            try
+            {
+                int returnStatus = 0;
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+
+                da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_ProductCategory]";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+                da.SelectCommand.Parameters.Add("@Id", SqlDbType.Int).Value = objProductCategory.Id;
+                da.SelectCommand.Parameters.Add("@CategoryName", SqlDbType.VarChar, 100).Value = objProductCategory.Name;
+                da.SelectCommand.Parameters.Add("@Description", SqlDbType.VarChar, 200).Value = objProductCategory.Description;
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                if (da.SelectCommand.ExecuteNonQuery() == 1)
+                {
+                    returnStatus = 1;
+                }
+                else
+                {
+                    returnStatus = 0;
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return returnStatus;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public int Update(BO.ProductCategory objProductCategory, int Id)
         {
-            return 0;
+            try
+            {
+                int returnStatus = 0;
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+
+                da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_ProductCategory]";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+                da.SelectCommand.Parameters.Add("@CategoryName", SqlDbType.VarChar, 100).Value = objProductCategory.Name;
+                da.SelectCommand.Parameters.Add("@Description", SqlDbType.VarChar, 200).Value = objProductCategory.Description;
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                if (da.SelectCommand.ExecuteNonQuery() == 1)
+                {
+                    returnStatus = 1;
+                }
+                else
+                {
+                    returnStatus = 0;
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return returnStatus;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public int Delete(int Id)

@@ -8,11 +8,8 @@ using POS.COMMON;
 
 namespace POS.DAL
 {
-
-
     public class DProductGeneric : DCommon, IDAL.IProductGeneric
     {
-
         public Int32 Insert(BO.ProductGeneric objProductGeneric)
         {
             try

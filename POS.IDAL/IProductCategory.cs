@@ -5,7 +5,7 @@ namespace POS.IDAL
     public interface IProductCategory
     {
         int Insert(BO.ProductCategory objProductCategory);
-
+        int Update(BO.ProductCategory objProductCategory);
         int Update(BO.ProductCategory objProductCategory, int Id);
 
         int Delete(int Id);
