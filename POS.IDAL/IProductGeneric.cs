@@ -13,6 +13,8 @@ namespace POS.IDAL
         Int32 Insert(BO.ProductGeneric objProductGeneric);
 
         Int32 Update(BO.ProductGeneric objProductGeneric, Int32 PGenericID);
+        Int32 Update(BO.ProductGeneric objProductGeneric);
+
 
         Int32 Delete(Int32 PGenericID);
 

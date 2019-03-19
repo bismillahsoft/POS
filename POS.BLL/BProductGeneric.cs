@@ -21,6 +21,11 @@ namespace POS.BLL
             return _iProductGeneric.Insert(objProductGeneric);
 
         }
+        public Int32 Update(BO.ProductGeneric objProductGeneric)
+        {
+            return _iProductGeneric.Update(objProductGeneric);
+
+        }
         public Int32 Update(BO.ProductGeneric objProductGeneric, Int32 PGenericID)
         {
             return _iProductGeneric.Update(objProductGeneric, PGenericID);

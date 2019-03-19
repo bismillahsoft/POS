@@ -177,12 +177,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvBatchEntry.DefaultCellStyle = dataGridViewCellStyle3;
             this.grvBatchEntry.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grvBatchEntry.Location = new System.Drawing.Point(235, 488);
+            this.grvBatchEntry.Location = new System.Drawing.Point(303, 477);
             this.grvBatchEntry.Name = "grvBatchEntry";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.grvBatchEntry.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.grvBatchEntry.Size = new System.Drawing.Size(622, 321);
+            this.grvBatchEntry.Size = new System.Drawing.Size(615, 321);
             this.grvBatchEntry.TabIndex = 26;
             this.grvBatchEntry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBatchEntry_CellClick);
             // 
