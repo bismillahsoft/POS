@@ -92,6 +92,7 @@ namespace POS
             grvBrand.DataSource = brands;
         }
         private void BrandEntry_Load(object sender, EventArgs e)
+
         {
            
         }
@@ -100,31 +101,26 @@ namespace POS
             new Homeproduct().Show();
             this.Hide();
         }
-
         private void txtBrand_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtBrndDescription.Focus();
         }
-
         private void txtBrndDescription_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnSave.Focus();
         }
-
         private void btnReset_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnBack.Focus();
         }
-
         private void btnSave_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnReset.Focus();
         }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             try
@@ -136,10 +132,8 @@ namespace POS
                 throw ex;
             }
         }
-
         private void grvBrand_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-          
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == grvBrand.Columns["Delete"].Index && e.RowIndex >= 0)
             {
@@ -147,25 +141,14 @@ namespace POS
             }
             if (e.ColumnIndex == grvBrand.Columns["Edit"].Index && e.RowIndex >= 0)
             {
-                //displayDataGridView();
-                //   DataSet ds = new DataSet();
-                //SqlDataAdapter da = new SqlDataAdapter(); 
-                //DataTable dt = ds.Tables["SET_Brand"];
-
-                //this.grvBrand.BindingContext[dt].EndCurrentEdit();
-                //da.Update(dt);
                 int numberRow = Convert.ToInt32(e.RowIndex);
+               
                 //assign the value plus the desired column example 1
                 var Sln = grvBrand.Rows[numberRow].Cells[0].Value.ToString();
                 lblMessageBox.Text = "" + Sln;
-                //var BrandDescription = grvBrand.Rows[numberRow].Cells[2].Value;
                 txtBrand.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[2].Value);
                 txtBrndDescription.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[3].Value);
-                //txtBrand.Text = ""+ BrandName;
-                //txtBrndDescription.Text = "" + BrandDescription;
                 btnSave.Text = "Update";
-                
-
             }
         }
     }

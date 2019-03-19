@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using POS.BO;
 using POS.COMMON;
 
 namespace POS.DAL
@@ -48,7 +49,7 @@ namespace POS.DAL
             }
         }
 
-        public int Update(BO.ProductBatch objProductBatch, long ProductID)
+        public int Update(BO.ProductBatch objProductBatch)
         {
             try
             {
@@ -57,12 +58,14 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "DCR_SP_UPDATE_ProductBatch";
+                da.SelectCommand.CommandText = "[POS_SP_Update_SET_ProductBatch]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
-                da.SelectCommand.Parameters.Add("@BatchNo", System.Data.SqlDbType.VarChar, 500).Value = objProductBatch.BatchNo;
+                //"@BatchCode" Store Procedure
+                da.SelectCommand.Parameters.Add("@BatchCode", System.Data.SqlDbType.VarChar, 500).Value = objProductBatch.BatchNo; 
                 da.SelectCommand.Parameters.Add("@BatchID", System.Data.SqlDbType.BigInt).Value = objProductBatch.BatchID;
-                da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 5).Value = objProductBatch.ProductCode;
+                da.SelectCommand.Parameters.Add("@BatchName", System.Data.SqlDbType.VarChar, 500).Value = objProductBatch.BatchName;
+                da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProductBatch.BatchDescription;
 
                 if (con.State == ConnectionState.Closed)
                 {
@@ -167,7 +170,7 @@ namespace POS.DAL
                 {
                     obj = new BO.ProductBatch();
                     obj.Sln = index++;
-                    obj.BatchID = Convert.ToInt64(row["BatchID"]);
+                    obj.BatchID = Convert.ToInt32(row["BatchID"]);
                     obj.BatchName = row["BatchName"].ToString();
                     obj.BatchNo = row["BatchCode"].ToString();
                     obj.BatchDescription = row["Description"].ToString();
@@ -204,7 +207,7 @@ namespace POS.DAL
                 foreach (DataRow row in dt.Rows)
                 {
                     obj = new BO.ProductBatch();
-                    obj.BatchID = Convert.ToInt64(row["BatchID"]);
+                    obj.BatchID = Convert.ToInt32(row["BatchID"]);
                     obj.BatchNo = row["BatchNo"].ToString();
                     obj.ProductName = row["ProductName"].ToString();
                     obj.ProductCode = row["ProductCode"].ToString();
@@ -238,7 +241,7 @@ namespace POS.DAL
                 foreach (DataRow row in dt.Rows)
                 {
                     obj = new BO.ProductBatch();
-                    obj.BatchID = Convert.ToInt64(row["BatchID"]);
+                    obj.BatchID = Convert.ToInt32(row["BatchID"]);
                     obj.BatchNo = row["BatchNo"].ToString();
                     objList.Add(obj);
                 }
@@ -276,6 +279,11 @@ namespace POS.DAL
             {
                 throw ex;
             }
+        }
+
+        public int Update(ProductBatch objProductBatch, long ProductID)
+        {
+            throw new NotImplementedException();
         }
     }
 }

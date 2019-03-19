@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button btnReset;
-            System.Windows.Forms.Button btnSave;
             System.Windows.Forms.Label lblBrndDescription;
             System.Windows.Forms.Label lblBatchName;
             System.Windows.Forms.Label lbl_Batch;
@@ -41,15 +40,18 @@
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.grvBatchEntry = new System.Windows.Forms.DataGridView();
+            this.BatchID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BatchNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BatchName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBatchName = new System.Windows.Forms.TextBox();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtBatchNo = new System.Windows.Forms.TextBox();
+            this.txtBatchName = new System.Windows.Forms.TextBox();
             this.txtBatchDescription = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             btnReset = new System.Windows.Forms.Button();
-            btnSave = new System.Windows.Forms.Button();
             lblBrndDescription = new System.Windows.Forms.Label();
             lblBatchName = new System.Windows.Forms.Label();
             lbl_Batch = new System.Windows.Forms.Label();
@@ -69,19 +71,6 @@
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += new System.EventHandler(this.btnReset_Click);
             btnReset.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnReset_KeyUp);
-            // 
-            // btnSave
-            // 
-            btnSave.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnSave.Location = new System.Drawing.Point(677, 361);
-            btnSave.Margin = new System.Windows.Forms.Padding(2);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(180, 65);
-            btnSave.TabIndex = 24;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
             // 
             // lblBrndDescription
             // 
@@ -141,6 +130,7 @@
             this.lblMessageBox.Name = "lblMessageBox";
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 20;
+            this.lblMessageBox.Visible = false;
             // 
             // btnBack
             // 
@@ -171,10 +161,13 @@
             this.grvBatchEntry.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvBatchEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvBatchEntry.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BatchID,
             this.Sln,
             this.BatchNo,
             this.BatchName,
-            this.Description});
+            this.Description,
+            this.Edit,
+            this.Delete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,13 +177,23 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvBatchEntry.DefaultCellStyle = dataGridViewCellStyle3;
             this.grvBatchEntry.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grvBatchEntry.Location = new System.Drawing.Point(414, 497);
+            this.grvBatchEntry.Location = new System.Drawing.Point(235, 488);
             this.grvBatchEntry.Name = "grvBatchEntry";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.grvBatchEntry.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.grvBatchEntry.Size = new System.Drawing.Size(479, 247);
+            this.grvBatchEntry.Size = new System.Drawing.Size(622, 321);
             this.grvBatchEntry.TabIndex = 26;
+            this.grvBatchEntry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBatchEntry_CellClick);
+            // 
+            // BatchID
+            // 
+            this.BatchID.DataPropertyName = "BatchID";
+            this.BatchID.HeaderText = "BatchID";
+            this.BatchID.Name = "BatchID";
+            this.BatchID.ReadOnly = true;
+            this.BatchID.Visible = false;
+            this.BatchID.Width = 96;
             // 
             // Sln
             // 
@@ -220,27 +223,49 @@
             this.Description.Name = "Description";
             this.Description.Width = 122;
             // 
-            // txtBatchName
+            // Edit
             // 
-            this.txtBatchName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBatchName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtBatchName.Location = new System.Drawing.Point(630, 84);
-            this.txtBatchName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBatchName.Name = "txtBatchName";
-            this.txtBatchName.Size = new System.Drawing.Size(227, 47);
-            this.txtBatchName.TabIndex = 21;
-            this.txtBatchName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchDescription_KeyUp);
+            this.Edit.DataPropertyName = "Edit";
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 66;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 83;
             // 
             // txtBatchNo
             // 
             this.txtBatchNo.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBatchNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtBatchNo.Location = new System.Drawing.Point(630, 147);
+            this.txtBatchNo.Location = new System.Drawing.Point(630, 84);
             this.txtBatchNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtBatchNo.Name = "txtBatchNo";
             this.txtBatchNo.Size = new System.Drawing.Size(227, 47);
-            this.txtBatchNo.TabIndex = 22;
-            this.txtBatchNo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchNo_KeyUp);
+            this.txtBatchNo.TabIndex = 21;
+            this.txtBatchNo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchDescription_KeyUp);
+            // 
+            // txtBatchName
+            // 
+            this.txtBatchName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBatchName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtBatchName.Location = new System.Drawing.Point(630, 147);
+            this.txtBatchName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBatchName.Name = "txtBatchName";
+            this.txtBatchName.Size = new System.Drawing.Size(227, 47);
+            this.txtBatchName.TabIndex = 22;
+            this.txtBatchName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchNo_KeyUp);
             // 
             // txtBatchDescription
             // 
@@ -254,21 +279,32 @@
             this.txtBatchDescription.TabIndex = 23;
             this.txtBatchDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchDescription_KeyUp);
             // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(677, 361);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(180, 65);
+            this.btnSave.TabIndex = 32;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // BatchEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1433, 831);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(btnReset);
             this.Controls.Add(this.grvBatchEntry);
-            this.Controls.Add(btnSave);
-            this.Controls.Add(this.txtBatchName);
+            this.Controls.Add(this.txtBatchNo);
             this.Controls.Add(lblBrndDescription);
             this.Controls.Add(lblBatchName);
             this.Controls.Add(lbl_Batch);
-            this.Controls.Add(this.txtBatchNo);
+            this.Controls.Add(this.txtBatchName);
             this.Controls.Add(lblBatch);
             this.Controls.Add(this.txtBatchDescription);
             this.Controls.Add(this.lblMessageBox);
@@ -286,12 +322,16 @@
         private System.Windows.Forms.Label lblMessageBox;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridView grvBatchEntry;
+        private System.Windows.Forms.TextBox txtBatchNo;
+        private System.Windows.Forms.TextBox txtBatchName;
+        private System.Windows.Forms.TextBox txtBatchDescription;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BatchID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn BatchNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn BatchName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.TextBox txtBatchName;
-        private System.Windows.Forms.TextBox txtBatchNo;
-        private System.Windows.Forms.TextBox txtBatchDescription;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

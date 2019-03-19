@@ -7,8 +7,6 @@ using POS.COMMON;
 
 namespace POS.DAL
 {
-
-
     public class DBrand : DCommon, IDAL.IBrand
     {
         public int Insert(BO.Brand objBrand)
@@ -290,11 +288,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
-
-
-    
-
         public IList<BO.Brand> GetBrandBySBG(int sbgID)
         {
             try
@@ -341,7 +334,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public int InsertSBGWiseBrand(BO.Brand objBrand)
         {
             try
@@ -517,8 +509,6 @@ namespace POS.DAL
             //    throw ex;
             //}
         }
-
-
         public int UpdateSBGWiseBrand(BO.Brand objBrand)
         {
             try
@@ -613,8 +603,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
-
         public long GetSBGBrandIdByBrandIdSbgId(int brandID, int SBGID)
         {
             long sbgBrandID = 0;
@@ -626,8 +614,6 @@ namespace POS.DAL
             }
             return sbgBrandID;
         }
-
-
         public void InsertSBGBrand(int SBGID, int brandID)
         {
             try
@@ -668,7 +654,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public IList<POS.BO.Brand> GetTerritoryWiseSBGAndBrand(long EmployeeID)
         {
             try
@@ -713,7 +698,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public int InsertDeleteTerritoryWiseSBGAndBrand(List<BO.Brand> objList)
         {
             try
@@ -794,7 +778,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public int UpdateTerritoryWiseSBGAndBrand(List<BO.Brand> objList)
         {
             try
@@ -861,7 +844,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public IList<BO.Brand> GetSBGIDBrandIDByTerritoryID(long TerritoryID)
         {
             try
