@@ -55,17 +55,16 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_ProductCategory]";
+                da.SelectCommand.CommandText = "[POS_SP_Update_SET_ProductCategory]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
-                da.SelectCommand.Parameters.Add("@Id", SqlDbType.Int).Value = objProductCategory.Id;
+                da.SelectCommand.Parameters.Add("@ProductCategoryID", SqlDbType.Int).Value = objProductCategory.Id;
                 da.SelectCommand.Parameters.Add("@CategoryName", SqlDbType.VarChar, 100).Value = objProductCategory.Name;
                 da.SelectCommand.Parameters.Add("@Description", SqlDbType.VarChar, 200).Value = objProductCategory.Description;
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
-
                 if (da.SelectCommand.ExecuteNonQuery() == 1)
                 {
                     returnStatus = 1;
@@ -85,7 +84,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public int Update(BO.ProductCategory objProductCategory, int Id)
         {
             try
@@ -95,7 +93,7 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "[POS_SET_SP_INSERT_SET_ProductCategory]";
+                da.SelectCommand.CommandText = "[POS_SP_Update_SET_ProductCategory]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
                 da.SelectCommand.Parameters.Add("@CategoryName", SqlDbType.VarChar, 100).Value = objProductCategory.Name;

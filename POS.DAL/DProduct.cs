@@ -10,47 +10,6 @@ namespace POS.DAL
 {
     public class DProduct : DCommon, IDAL.IProduct
     {
-        //public int Insert(BO.Product objProduct)
-        //{
-        //    try
-        //    {
-        //        int returnStatus = 0;
-        //        SqlConnection con = CreateCon();
-        //        SqlDataAdapter da = new SqlDataAdapter();
-        //        da.SelectCommand =new SqlCommand();
-        //        da.SelectCommand.CommandText = "POS_SET_SP_INSERT_SET_Product";
-        //        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-        //        da.SelectCommand.Parameters.Add("@ProductId",System.Data.SqlDbType.BigInt);
-        //        da.SelectCommand.Parameters.Add("@GenericID",SqlDbType.Int);
-        //        da.SelectCommand.Parameters.Add("@brandID",SqlDbType.Int);
-        //        da.SelectCommand.Parameters.Add("@ProductName", SqlDbType.NVarChar, 200).ToString();
-        //        da.SelectCommand.Parameters.Add("@Description", SqlDbType.NVarChar,400).ToString();
-        //        da.SelectCommand.Parameters.Add("@ProductCategory",SqlDbType.TinyInt);
-        //        da.SelectCommand.Parameters.Add("@Sticks",SqlDbType.TinyInt);
-        //        if (con.State == ConnectionState.Closed)
-        //        {
-        //            con.Open();
-        //        }
-
-        //        if (da.SelectCommand.ExecuteNonQuery() == 1)
-        //        {
-        //            returnStatus = 1;
-        //        }
-        //        else
-        //        {
-        //            returnStatus = 0;
-        //        }
-        //        if (con.State == ConnectionState.Open)
-        //        {
-        //            con.Close();
-        //        }
-        //        return returnStatus;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //} 
         public int Insert(BO.Product objProduct)
         {
             try
@@ -77,12 +36,12 @@ namespace POS.DAL
                         da.SelectCommand.CommandType = CommandType.StoredProcedure;
                         da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt);
                         da.SelectCommand.Parameters["@ProductID"].Direction = ParameterDirection.Output;
-                        da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
-                        da.SelectCommand.Parameters.Add("@ProductCategory", System.Data.SqlDbType.Int).Value = objProduct.ProductCategory.Id;
-                        da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.Brand.BrandID;
                         da.SelectCommand.Parameters.Add("@GenericID", SqlDbType.Int).Value = objProduct.ProductGeneric.PGenericID;
-                        da.SelectCommand.Parameters.Add("@BatchCode", System.Data.SqlDbType.VarChar, 50).Value = objProduct.BatchNo;
+                        da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.Brand.BrandID;
+                        da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
                         da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
+                        da.SelectCommand.Parameters.Add("@ProductCategoryID", System.Data.SqlDbType.Int).Value = objProduct.ProductCategory.Id;
+                        da.SelectCommand.Parameters.Add("@BatchCode", System.Data.SqlDbType.VarChar, 50).Value = objProduct.BatchNo;
                         da.SelectCommand.CommandType = CommandType.StoredProcedure;
                         da.SelectCommand.Connection = connection;
 
@@ -139,8 +98,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
-
         public int Insert(List<BO.Product> objProductList)
         {
             try
@@ -176,7 +133,6 @@ namespace POS.DAL
                             da.SelectCommand.Parameters["@ProductID"].Direction = ParameterDirection.Output;
                             da.SelectCommand.Parameters.Add("@ProductCode", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductCode;
                             da.SelectCommand.Parameters.Add("@ProductName", System.Data.SqlDbType.VarChar, 500).Value = objProduct.ProductName;
-                            //da.SelectCommand.Parameters.Add("@ProductShortName", System.Data.SqlDbType.VarChar, 50).Value = objProduct.ProductName;
                             da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = objProduct.BrandID;
                             da.SelectCommand.Parameters.Add("@Description", System.Data.SqlDbType.VarChar, 500).Value = objProduct.Description;
                             da.SelectCommand.Parameters.Add("@TypeId", System.Data.SqlDbType.Int).Value = null;
@@ -414,16 +370,7 @@ namespace POS.DAL
         //    }
         //}
 
-        public IList<POS.BO.Product> GetProduct(int pageIndex, int pageSize, string orderBy, string sortindex)
-        {
-            return new List<BO.Product>();
-        }
-
-        public IList<BO.Product> GetProductByObject(BO.Product objProduct, int pageIndex, int pageSize, string orderBy, string sortindex)
-        {
-            return new List<BO.Product>();
-        }
-
+       
         public IList<BO.Product> GetProductList()
         {
             try
@@ -496,6 +443,15 @@ namespace POS.DAL
             {
                 throw;
             }
+        }
+        public IList<POS.BO.Product> GetProduct(int pageIndex, int pageSize, string orderBy, string sortindex)
+        {
+            return new List<BO.Product>();
+        }
+
+        public IList<BO.Product> GetProductByObject(BO.Product objProduct, int pageIndex, int pageSize, string orderBy, string sortindex)
+        {
+            return new List<BO.Product>();
         }
 
         public int GetPackSizeIDByPackSize(string PackSize)
@@ -741,12 +697,10 @@ namespace POS.DAL
         //        throw;
         //    }
         //}
-
         public IList<BO.Product> GetProductByOthersList(string columnsString)
         {
             return new List<BO.Product>();
         }
-
         //public BO.Product GetProductByID(long ProductId)
         //{
         //    try

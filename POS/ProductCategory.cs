@@ -23,13 +23,13 @@ namespace POS
         {
             txtCategoryName.Text = "";
             txtDescription.Text = "";
+            bntSave.Text = "Save";
             GetProductCategory();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
 
         }
-
         private void bntSave_Click(object sender, EventArgs e)
         {
             try
@@ -52,18 +52,12 @@ namespace POS
                     if (_IProductCategory.Insert(ObjProductCategory) > 0)
                     {
                         MessageBox.Show("Operation Success");
-                        //MsgBox msgbox = new MsgBox();
-                        //msgbox.Show();
-                      //  lblMessageBox.Text = "Operation Success";
-                      //  lblMessageBox.ForeColor = Color.Green;
-                        // GetBrand();
                         Reset();
                     }
                     else
                     {
                         lblMessageBox.Text = "Operation Failed";
                         lblMessageBox.ForeColor = System.Drawing.Color.Red;
-                        // lblMessageBox.Font.Bold = true;
                     }
                 }
                 else
@@ -71,8 +65,7 @@ namespace POS
                     MsgBox msgbox = new MsgBox();
                     msgbox.Show();
                     txtCategoryName.Focus();
-                   // lblMessageBox.Text = "Operation Failed";
-                  //  lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                    lblMessageBox.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch (Exception ex)
@@ -80,7 +73,6 @@ namespace POS
                 throw ex;
             }
         }
-
         private void ProductCategory_Load(object sender, EventArgs e)
         {
             txtCategoryName.Focus();
