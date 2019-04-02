@@ -26,3 +26,16 @@ F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csproj.CoreCompileInputs.cache
 F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csproj.CopyComplete
 F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.dll
 F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.pdb
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.BLL.dll
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.BLL.pdb
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.BO.dll
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.COMMON.dll
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.DAL.dll
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.IDAL.dll
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.BO.pdb
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.COMMON.pdb
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.DAL.pdb
+E:\GitRepository\BPOS\POS\POS.BLL\bin\Debug\POS.IDAL.pdb
+E:\GitRepository\BPOS\POS\POS.BLL\obj\Debug\POS.BLL.csprojResolveAssemblyReference.cache
+E:\GitRepository\BPOS\POS\POS.BLL\obj\Debug\POS.BLL.dll
+E:\GitRepository\BPOS\POS\POS.BLL\obj\Debug\POS.BLL.pdb
