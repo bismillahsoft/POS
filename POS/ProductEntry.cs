@@ -206,11 +206,35 @@ namespace POS
             txtMRP.Text = "";
             txtBatch.Text = "";
             txtDescription.Text = "";
+            btnSave.Text = "Save";
             GetProductList();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
             Reset();
+        }
+
+        private void grvProductEntry_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == grvProductEntry.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                int numberRow = Convert.ToInt32(e.RowIndex);
+                var ProductID = grvProductEntry.Rows[numberRow].Cells[0].Value.ToString();
+                lblMessageBox.Text = ProductID;
+                txtPro_Name.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[2].Value);
+                txtProductCode.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[3].Value);
+                //ddlPackSize.SelectedItem = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[4].Value);
+                //ddlBrand.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[5].Value);
+                //ddlGenericName.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[6].Value);
+                //ddlCategory.SelectedValue = Convert.ToInt32((grvProductEntry.Rows[numberRow].Cells[7].Value));
+                txtTradePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[8].Value);
+                txtPurchesePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[9].Value);
+                txtVat.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[10].Value);
+                txtMRP.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[11].Value);
+                txtBatch.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[12].Value);
+                txtDescription.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[13].Value);
+                btnSave.Text = "Update";
+            }
         }
     }
 }

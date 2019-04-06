@@ -43,6 +43,20 @@
             this.ddlCategory = new System.Windows.Forms.ComboBox();
             this.lblProCategory = new System.Windows.Forms.Label();
             this.grvProductEntry = new System.Windows.Forms.DataGridView();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenericName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchesePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TradePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BatchNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtBatch = new System.Windows.Forms.TextBox();
             this.lblBatchNo = new System.Windows.Forms.Label();
@@ -67,20 +81,6 @@
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenericName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchesePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TradePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BatchNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvProductEntry)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,13 +194,120 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvProductEntry.DefaultCellStyle = dataGridViewCellStyle6;
             this.grvProductEntry.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grvProductEntry.Location = new System.Drawing.Point(22, 576);
+            this.grvProductEntry.Location = new System.Drawing.Point(-3, 565);
             this.grvProductEntry.Name = "grvProductEntry";
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             this.grvProductEntry.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.grvProductEntry.Size = new System.Drawing.Size(1371, 243);
+            this.grvProductEntry.Size = new System.Drawing.Size(1361, 172);
             this.grvProductEntry.TabIndex = 58;
+            this.grvProductEntry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvProductEntry_CellClick);
+            // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            this.Sln.Width = 57;
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "ProductName";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ProductName.HeaderText = "Product Name";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Width = 135;
+            // 
+            // ProductCode
+            // 
+            this.ProductCode.DataPropertyName = "ProductCode";
+            this.ProductCode.HeaderText = "ProductCode";
+            this.ProductCode.Name = "ProductCode";
+            this.ProductCode.Width = 124;
+            // 
+            // PackSize
+            // 
+            this.PackSize.DataPropertyName = "PackSize";
+            this.PackSize.HeaderText = "PackSize";
+            this.PackSize.Name = "PackSize";
+            this.PackSize.Width = 96;
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "BrandName";
+            this.Brand.HeaderText = "Brand";
+            this.Brand.Name = "Brand";
+            this.Brand.Width = 77;
+            // 
+            // GenericName
+            // 
+            this.GenericName.DataPropertyName = "GenericName";
+            this.GenericName.HeaderText = "Generic Name";
+            this.GenericName.Name = "GenericName";
+            this.GenericName.Width = 133;
+            // 
+            // PurchesePrice
+            // 
+            this.PurchesePrice.DataPropertyName = "PurchesePrice";
+            this.PurchesePrice.HeaderText = "Purchese Price";
+            this.PurchesePrice.Name = "PurchesePrice";
+            this.PurchesePrice.Width = 134;
+            // 
+            // TradePrice
+            // 
+            this.TradePrice.DataPropertyName = "TradePrice";
+            this.TradePrice.HeaderText = "TradePrice";
+            this.TradePrice.Name = "TradePrice";
+            this.TradePrice.Width = 108;
+            // 
+            // Vat
+            // 
+            this.Vat.DataPropertyName = "Vat";
+            this.Vat.HeaderText = "Vat";
+            this.Vat.Name = "Vat";
+            this.Vat.Width = 58;
+            // 
+            // MRP
+            // 
+            this.MRP.DataPropertyName = "MRP";
+            this.MRP.HeaderText = "MRP";
+            this.MRP.Name = "MRP";
+            this.MRP.Width = 70;
+            // 
+            // BatchNo
+            // 
+            this.BatchNo.DataPropertyName = "BatchNo";
+            this.BatchNo.HeaderText = "Batch No";
+            this.BatchNo.Name = "BatchNo";
+            this.BatchNo.Width = 99;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Width = 112;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 44;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 58;
             // 
             // btnReset
             // 
@@ -488,118 +595,12 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // Sln
-            // 
-            this.Sln.DataPropertyName = "Sln";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            this.Sln.Width = 57;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductName.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.Width = 135;
-            // 
-            // ProductCode
-            // 
-            this.ProductCode.DataPropertyName = "ProductCode";
-            this.ProductCode.HeaderText = "ProductCode";
-            this.ProductCode.Name = "ProductCode";
-            this.ProductCode.Width = 124;
-            // 
-            // PackSize
-            // 
-            this.PackSize.DataPropertyName = "PackSize";
-            this.PackSize.HeaderText = "PackSize";
-            this.PackSize.Name = "PackSize";
-            this.PackSize.Width = 96;
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "BrandName";
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            this.Brand.Width = 77;
-            // 
-            // GenericName
-            // 
-            this.GenericName.DataPropertyName = "GenericName";
-            this.GenericName.HeaderText = "Generic Name";
-            this.GenericName.Name = "GenericName";
-            this.GenericName.Width = 133;
-            // 
-            // PurchesePrice
-            // 
-            this.PurchesePrice.DataPropertyName = "PurchesePrice";
-            this.PurchesePrice.HeaderText = "Purchese Price";
-            this.PurchesePrice.Name = "PurchesePrice";
-            this.PurchesePrice.Width = 134;
-            // 
-            // TradePrice
-            // 
-            this.TradePrice.DataPropertyName = "TradePrice";
-            this.TradePrice.HeaderText = "TradePrice";
-            this.TradePrice.Name = "TradePrice";
-            this.TradePrice.Width = 108;
-            // 
-            // Vat
-            // 
-            this.Vat.DataPropertyName = "Vat";
-            this.Vat.HeaderText = "Vat";
-            this.Vat.Name = "Vat";
-            this.Vat.Width = 58;
-            // 
-            // MRP
-            // 
-            this.MRP.DataPropertyName = "MRP";
-            this.MRP.HeaderText = "MRP";
-            this.MRP.Name = "MRP";
-            this.MRP.Width = 70;
-            // 
-            // BatchNo
-            // 
-            this.BatchNo.DataPropertyName = "BatchNo";
-            this.BatchNo.HeaderText = "Batch No";
-            this.BatchNo.Name = "BatchNo";
-            this.BatchNo.Width = 99;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.Width = 112;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 44;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 58;
-            // 
             // ProductEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1433, 831);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.txtMRP);
             this.Controls.Add(this.lblMRP);
             this.Controls.Add(this.ddlCategory);
