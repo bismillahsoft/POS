@@ -9,7 +9,3 @@ F:\Git_Repository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.csprojAssemblyReference.c
 F:\Git_Repository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.csproj.CoreCompileInputs.cache
 F:\Git_Repository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.dll
 F:\Git_Repository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.pdb
-E:\GitRepository\BPOS\POS\POS.COMMON\bin\Debug\POS.COMMON.dll
-E:\GitRepository\BPOS\POS\POS.COMMON\bin\Debug\POS.COMMON.pdb
-E:\GitRepository\BPOS\POS\POS.COMMON\obj\Debug\POS.COMMON.dll
-E:\GitRepository\BPOS\POS\POS.COMMON\obj\Debug\POS.COMMON.pdb
