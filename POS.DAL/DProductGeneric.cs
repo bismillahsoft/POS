@@ -8,11 +8,8 @@ using POS.COMMON;
 
 namespace POS.DAL
 {
-
-
     public class DProductGeneric : DCommon, IDAL.IProductGeneric
     {
-
         public Int32 Insert(BO.ProductGeneric objProductGeneric)
         {
             try
@@ -43,18 +40,94 @@ namespace POS.DAL
                 {
                     con.Close();
                 }
-
-
                 return returnStatus;
-
             }
-
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+        public Int32 Update(BO.ProductGeneric objProductGeneric)
+        {
+            try
+            {
+                Int32 returnStatus = 0;
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+                da.SelectCommand.Parameters.Add("@GenericID", System.Data.SqlDbType.Int).Value = objProductGeneric.PGenericID;
+                da.SelectCommand.Parameters.Add("@GenericName", System.Data.SqlDbType.VarChar, 100).Value = objProductGeneric.GenericName;
+                da.SelectCommand.Parameters.Add("@GenericDescription", System.Data.SqlDbType.VarChar, 500).Value = objProductGeneric.GenericDescription;
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+                da.SelectCommand.CommandText = "[POS_SP_Update_SET_ProductGeneric]";
 
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                if (da.SelectCommand.ExecuteNonQuery() == 1)
+                {
+                    returnStatus = 1;
+                }
+                else
+                {
+                    returnStatus = 0;
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return returnStatus;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private IList<POS.BO.ProductGeneric> GetProductGenericList(Int64? PGenericID)
+        {
+            try
+            {
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+                // da.SelectCommand.Parameters.Add("@PGenericID", System.Data.SqlDbType.Int).Value = PGenericID;
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+                da.SelectCommand.CommandText = "POS_SP_GET_GETProductGeneric";
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                DataTable dt = ds.Tables[0];
+                List<BO.ProductGeneric> objProductGenericList = new List<BO.ProductGeneric>();
+                BO.ProductGeneric objProductGeneric = null;
+                Int32 index = 1;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    objProductGeneric = new BO.ProductGeneric();
+                    objProductGeneric.Sln = index++;
+                    objProductGeneric.PGenericID = Convert.ToInt32(row["GenericID"]);
+                    objProductGeneric.GenericName = Convert.ToString(row["GenericName"]);
+                    objProductGeneric.GenericDescription = Convert.ToString(row["Description"]);
+                    objProductGenericList.Add(objProductGeneric);
+                }
+                return objProductGenericList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public Int32 Update(BO.ProductGeneric objProductGeneric, Int32 PGenericID)
         {
             try
@@ -95,7 +168,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public Int32 Delete(Int32 PGenericID)
         {
             try
@@ -150,7 +222,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public IList<BO.ProductGeneric> GetProductGenericByObject(BO.ProductGeneric objProductGeneric, Int32 pageIndex, Int32 pageSize, String orderBy, String sortindex)
         {
             try
@@ -164,7 +235,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public IList<POS.BO.ProductGeneric> GetProductGenericList()
         {
 
@@ -178,52 +248,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-        private IList<POS.BO.ProductGeneric> GetProductGenericList(Int64? PGenericID)
-        {
-
-            try
-            {
-                SqlConnection con = CreateCon();
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand();
-               // da.SelectCommand.Parameters.Add("@PGenericID", System.Data.SqlDbType.Int).Value = PGenericID;
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Connection = con;
-                da.SelectCommand.CommandText = "POS_SP_GET_GETProductGeneric";
-
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-                DataTable dt = ds.Tables[0];
-                List<BO.ProductGeneric> objProductGenericList = new List<BO.ProductGeneric>();
-                BO.ProductGeneric objProductGeneric = null;
-                Int32 index = 1;
-
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    objProductGeneric = new BO.ProductGeneric();
-                    objProductGeneric.Sln = index++;
-                    objProductGeneric.PGenericID = Convert.ToInt32(row["GenericID"]);
-                    objProductGeneric.GenericName = Convert.ToString(row["GenericName"]);
-                    objProductGeneric.GenericDescription = Convert.ToString(row["Description"]);
-                    objProductGenericList.Add(objProductGeneric);
-                }
-                return objProductGenericList;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public IList<BO.ProductGeneric> GetProductGenericByOthersList(String columnsString)
         {
             try
@@ -240,7 +264,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public BO.ProductGeneric GetProductGenericByID(Int32 PGenericID)
         {
             try
@@ -256,9 +279,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
-
-
         public int GetGenericIDByName(string genericName)
         {
             try

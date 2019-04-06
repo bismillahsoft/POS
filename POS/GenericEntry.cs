@@ -31,23 +31,39 @@ namespace POS
                 ObjProductGeneric.GenericName = txtGenericName.Text;
                 ObjProductGeneric.GenericDescription = txtGenericDescription.Text;
 
-                if (ObjProductGeneric.GenericName!="")
+                if(btnGene_Save.Text=="Update" && ObjProductGeneric.GenericName != "")
                 {
+                    ObjProductGeneric.PGenericID = Convert.ToInt32(lblMessageBox.Text);
+                    if (_IProductGeneric.Update(ObjProductGeneric) > 0)
+                    {
+                        MessageBox.Show("Successfully Update");
+                        Reset();
+                    }
+                }
+                  else if (ObjProductGeneric.GenericName!="")
+                  {
                     if (_IProductGeneric.Insert(ObjProductGeneric) > 0)
                     {
-                        lblMessageBox.Text = "Operation Success";
-                        lblMessageBox.ForeColor = Color.Green;
+                        MessageBox.Show("Operation Success");
+                        //lblMessageBox.Text = "Operation Success";
+                        //lblMessageBox.ForeColor = Color.Green;
                         // GetBrand();
                         Reset();
                     }
                     else
                     {
-                        lblMessageBox.Text = "Operation Failed";
-                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        MessageBox.Show("Operation Failed");
+                        //lblMessageBox.Text = "Operation Failed";
+                        //lblMessageBox.ForeColor = System.Drawing.Color.Red;
                         // lblMessageBox.Font.Bold = true;
                     }
+                   }
+                  else
+                {
+                    MsgBox msgBox = new MsgBox();
+                    msgBox.Show();
                 }
-            }
+                 }
                 catch (Exception ex)
                 {
                     throw ex;
@@ -57,12 +73,12 @@ namespace POS
         {
             txtGenericName.Text = "";
             txtGenericDescription.Text = "";
+            btnGene_Save.Text = "Save";
             GetGenericName();
         }
         private void btnGene_Reset_Click(object sender, EventArgs e)
         {
             try {
-
                 Reset();
             } catch(Exception ex) { throw ex; }
         }
@@ -73,7 +89,6 @@ namespace POS
             productGenerics = _IProductGeneric.GetProductGenericList().ToList();
             grvGeneric.AutoGenerateColumns = false;
             grvGeneric.DataSource = productGenerics; 
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -81,7 +96,6 @@ namespace POS
             new Homeproduct().Show();
             this.Hide();
         }
-
         private void txtGenericName_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -89,12 +103,37 @@ namespace POS
                 txtGenericDescription.Focus();
             }
         }
-
         private void txtGenericDescription_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 btnGene_Save.Focus();
+            }
+        }
+        private void btnGene_Save_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnGene_Reset.Focus();
+        }
+        private void btnGene_Reset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBack.Focus();
+        }
+        private void grvGeneric_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex== grvGeneric.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                int numberRow = Convert.ToInt32(e.RowIndex);
+                var GenericID =grvGeneric.Rows[numberRow].Cells[0].Value.ToString();
+                lblMessageBox.Text = GenericID;
+                txtGenericName.Text = Convert.ToString(grvGeneric.Rows[numberRow].Cells[2].Value);
+                txtGenericDescription.Text = Convert.ToString(grvGeneric.Rows[numberRow].Cells[3].Value);
+                btnGene_Save.Text = "Update";
+            }
+            if(e.ColumnIndex== grvGeneric.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                lblMessageBox.Text = "Delete";
             }
         }
     }

@@ -21,9 +21,9 @@ namespace POS.BLL
             return _iBrand.Insert(objBrand);
 
         }
-        public int Update(BO.Brand objBrand, int SBG)
+        public int Update(BO.Brand objBrand)
         {
-            return _iBrand.Update(objBrand, SBG);
+            return _iBrand.Update(objBrand);
 
         }
         public int Delete(int SBG)

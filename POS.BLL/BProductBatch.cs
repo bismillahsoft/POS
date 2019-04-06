@@ -15,7 +15,10 @@ namespace POS.BLL
         {
             return _iProductBatch.Insert(objProductBatch);
         }
-
+        public int Update(BO.ProductBatch objProductBatch)
+        {
+            return _iProductBatch.Update(objProductBatch);
+        }
         public int Update(BO.ProductBatch objProductBatch, long ProductID)
         {
             return _iProductBatch.Update(objProductBatch, ProductID);

@@ -19,40 +19,59 @@ namespace POS
         public BatchEntry()
         {
             InitializeComponent();
-            txtBatchNo.Focus();
+            txtBatchName.Focus();
             _IProductBatch = new BLL.BProductBatch();
             Reset();
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 BO.ProductBatch ObjProductBatch = new BO.ProductBatch();
 
-                ObjProductBatch.BatchNo = txtBatchNo.Text;
+                ObjProductBatch.BatchNo = txtBatchNo.Text; 
                 ObjProductBatch.BatchName = txtBatchName.Text;
                 ObjProductBatch.BatchDescription = txtBatchDescription.Text;
-                if (ObjProductBatch.BatchNo != "" && ObjProductBatch.BatchName != "")
+
+                if (btnSave.Text == "Update" && ObjProductBatch.BatchName != "")
+                {
+                    ObjProductBatch.BatchID = Convert.ToInt32(lblMessageBox.Text);
+                    if (_IProductBatch.Update(ObjProductBatch) > 0)
+                    {
+                        MessageBox.Show("Successfully Update");
+                        Reset();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update Failed");
+                        Reset();
+                    }
+                }
+
+                else if (ObjProductBatch.BatchNo != "" && ObjProductBatch.BatchName != "")
                 {
                     if (_IProductBatch.Insert(ObjProductBatch) > 0)
                     {
-                        lblMessageBox.Text = "Operation Success";
-                        lblMessageBox.ForeColor = Color.Green;
+                        MessageBox.Show("Operation Success");
+                        // lblMessageBox.Text = "Operation Success";
+                        // lblMessageBox.ForeColor = Color.Green;
                         // GetBrand();
                         Reset();
                     }
                     else
                     {
-                        lblMessageBox.Text = "Operation Failed";
-                        lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                        MessageBox.Show("Operation Failed");
+                        // lblMessageBox.Text = "Operation Failed";
+                        // lblMessageBox.ForeColor = System.Drawing.Color.Red;
                         // lblMessageBox.Font.Bold = true;
                     }
                 }
                 else
                 {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = System.Drawing.Color.Red;
+                    MsgBox msgBox = new MsgBox();
+                    msgBox.Show();
+                    //lblMessageBox.Text = "Operation Failed";
+                    //lblMessageBox.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch (Exception ex)
@@ -62,10 +81,11 @@ namespace POS
         }
         private void Reset()
         {
-            txtBatchNo.Text = "";
             txtBatchName.Text = "";
+            txtBatchNo.Text = "";
             txtBatchDescription.Text = "";
             GetProductBatch();
+            btnSave.Text = "Save";
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -95,32 +115,52 @@ namespace POS
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtBatchName.Focus();
+                txtBatchNo.Focus();
             }
-        }
-        private void txtBatchName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
         }
         private void txtBatchName_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 txtBatchDescription.Focus();
+              
             }
         }
         private void txtBatchDescription_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtBatchDescription.Focus();
+                btnSave.Focus();
             }
         }
         private void btnSave_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+              
+            }
+        }
+        private void btnReset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
                 btnBack.Focus();
+        }
+
+        private void grvBatchEntry_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == grvBatchEntry.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                lblMessageBox.Text = "Delete";
+            }
+            if(e.ColumnIndex == grvBatchEntry.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                int numberRow = Convert.ToInt32(e.RowIndex);
+                var ID = grvBatchEntry.Rows[numberRow].Cells[0].Value.ToString();
+                lblMessageBox.Text = ID;
+                txtBatchName.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[2].Value);
+                txtBatchNo.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[3].Value);
+                txtBatchDescription.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[4].Value);
+                btnSave.Text = "Update";
             }
         }
     }

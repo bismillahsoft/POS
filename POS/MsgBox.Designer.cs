@@ -58,6 +58,7 @@
             this.btnOk.Name = "btnOk";
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.btnOk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnOk_KeyUp);
             // 
             // MsgBox
             // 

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using POS.BO;
 
 namespace POS.IDAL
 {
@@ -26,5 +26,6 @@ namespace POS.IDAL
         IList<BO.ProductBatch> GetProductIDWiseProductBactchList(int productID);
 
         long? GetProductBatchIDByCode(string bathcNo);
+        int Update(ProductBatch objProductBatch);
     }
 }

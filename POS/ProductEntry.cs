@@ -33,6 +33,7 @@ namespace POS
             COMMON.DDL.PopulateDropDownList(_IProductGeneric.GetProductGenericList().ToList(), ddlGenericName, "PGenericID", "GenericName");
             //COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory,"","");
             COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory, "Id", "Name");
+            Reset();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -66,28 +67,173 @@ namespace POS
                 Objproducts.Description = txtDescription.Text;
 
 
-                if (txtPro_Name.Text != "")
+                if (txtPro_Name.Text != "" && txtProductCode.Text!="" && txtTradePrice.Text!="" && txtPurchesePrice.Text!="" && txtVat.Text!="" && txtMRP.Text!="" && txtBatch.Text!="")
                 {
                     if (_IProduct.Insert(Objproducts) > 0)
                     {
-                        lblMessageBox.Text = "Successfully Saved";
-                        lblMessageBox.ForeColor = Color.Green;
+                        MessageBox.Show("Successfully Saved");
+                        //lblMessageBox.Text = "Successfully Saved";
+                        //lblMessageBox.ForeColor = Color.Green;
+                        GetProductList();
                     }
                     else
                     {
-                        lblMessageBox.Text = "Operation Failed";
-                        lblMessageBox.ForeColor = Color.Red;
+                        MessageBox.Show("Operation Failed");
+                        //lblMessageBox.Text = "Operation Failed";
+                        //lblMessageBox.ForeColor = Color.Red;
                     }
                 }
                 else
                 {
-                    lblMessageBox.Text = "Operation Failed";
-                    lblMessageBox.ForeColor = Color.Red;
+                    MsgBox msgBox = new MsgBox();
+                    msgBox.Show();
+                    //lblMessageBox.Text = "Operation Failed";
+                    //lblMessageBox.ForeColor = Color.Red;
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        private void GetProductList()
+        {
+            List<BO.Product> getProduct = new List<BO.Product>();
+            getProduct = _IProduct.GetProductList().ToList();
+            grvProductEntry.AutoGenerateColumns = false;
+            grvProductEntry.DataSource = getProduct;
+        }
+
+        private void txtPro_Name_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtProductCode.Focus();
+        }
+
+        private void txtProductCode_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlPackSize.Focus();
+        }
+
+        private void ddlPackSize_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlBrand.Focus();
+        }
+
+        private void ddlBrand_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlGenericName.Focus();
+        }
+
+        private void ddlGenericName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlCategory.Focus();
+        }
+
+        private void ddlCategory_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtTradePrice.Focus();
+        }
+
+        private void txtTradePrice_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtPurchesePrice.Focus();
+        }
+
+        private void txtPurchesePrice_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtVat.Focus();
+        }
+
+        private void txtVat_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtMRP.Focus();
+        }
+
+        private void txtMRP_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtBatch.Focus();
+        }
+
+        private void txtBatch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtDescription.Focus();
+        }
+
+        private void txtDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSave.Focus();
+        }
+
+        private void btnSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+               btnReset.Focus();
+        }
+
+        private void btnReset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBack.Focus();
+        }
+
+        private void btnBack_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+        private void Reset()
+        {
+            txtPro_Name.Text = "";
+            txtProductCode.Text = "";
+            ddlBrand.SelectedText = "";
+            ddlPackSize.SelectedText = "";
+            ddlGenericName.SelectedText = "";
+            ddlCategory.SelectedText = "";
+            txtTradePrice.Text = "";
+            txtPurchesePrice.Text = "";
+            txtVat.Text = "";
+            txtMRP.Text = "";
+            txtBatch.Text = "";
+            txtDescription.Text = "";
+            btnSave.Text = "Save";
+            GetProductList();
+        }
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void grvProductEntry_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == grvProductEntry.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                int numberRow = Convert.ToInt32(e.RowIndex);
+                var ProductID = grvProductEntry.Rows[numberRow].Cells[0].Value.ToString();
+                lblMessageBox.Text = ProductID;
+                txtPro_Name.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[2].Value);
+                txtProductCode.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[3].Value);
+                //ddlPackSize.SelectedItem = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[4].Value);
+                //ddlBrand.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[5].Value);
+                //ddlGenericName.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[6].Value);
+                //ddlCategory.SelectedValue = Convert.ToInt32((grvProductEntry.Rows[numberRow].Cells[7].Value));
+                txtTradePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[8].Value);
+                txtPurchesePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[9].Value);
+                txtVat.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[10].Value);
+                txtMRP.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[11].Value);
+                txtBatch.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[12].Value);
+                txtDescription.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[13].Value);
+                btnSave.Text = "Update";
             }
         }
     }
