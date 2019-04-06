@@ -155,7 +155,7 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "DCR_SP_DELETE_Brand";
+                da.SelectCommand.CommandText = "POS_SP_DELETE_Brand";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
                 da.SelectCommand.Parameters.Add("@BrandID", System.Data.SqlDbType.Int).Value = BrandID;
@@ -179,7 +179,6 @@ namespace POS.DAL
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

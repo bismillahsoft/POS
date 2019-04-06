@@ -12,6 +12,7 @@ namespace POS
 {
     public partial class ProductCategory : Form
     {
+        int ID;
         private IProductCategory _IProductCategory = null;
         public ProductCategory()
         {
@@ -119,14 +120,42 @@ namespace POS
         }
         private void grvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex==grvCategory.Columns["Edit"].Index && e.RowIndex >= 0)
+            try
             {
-                int numberRow = Convert.ToInt32(e.RowIndex);
-                var ID = grvCategory.Rows[numberRow].Cells[0].Value.ToString();
-                lblMessageBox.Text = ID;
-                txtCategoryName.Text=Convert.ToString(grvCategory.Rows[numberRow].Cells[2].Value);
-                txtDescription.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[3].Value);
-                bntSave.Text = "Update";
+                if (e.ColumnIndex == grvCategory.Columns["Edit"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    int ID =Convert.ToInt32(grvCategory.Rows[numberRow].Cells[0].Value.ToString());
+                    //lblMessageBox.Text = ID;
+                    txtCategoryName.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[2].Value);
+                    txtDescription.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[3].Value);
+                    bntSave.Text = "Update";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageBox.Text = ex.ToString();
+                lblMessageBox.Enabled = true;
+                lblMessageBox.ForeColor = Color.Red;
+            }
+            try
+            {
+                if (e.ColumnIndex == grvCategory.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    int ID = Convert.ToInt32(grvCategory.Rows[numberRow].Cells[0].Value.ToString());
+                    if (_IProductCategory.Delete(ID) > 0)
+                    {
+                        MessageBox.Show("Operation Success");
+                        Reset();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageBox.Text = ex.ToString();
+                lblMessageBox.Enabled = true;
+                lblMessageBox.ForeColor = Color.Red;
             }
         }
     }

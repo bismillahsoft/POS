@@ -50,4 +50,3 @@ F:\Git_Repository\BPOS\POS\obj\Debug\en\POS.resources.dll
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.CopyComplete
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.exe
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.pdb
-E:\GitRepository\BPOS\POS\POS\bin\Debug\POS.exe.config

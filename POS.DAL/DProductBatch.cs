@@ -101,7 +101,7 @@ namespace POS.DAL
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
 
-                da.SelectCommand.CommandText = "DCR_SP_DELETE_ProductBatch";
+                da.SelectCommand.CommandText = "POS_SP_DELETE_ProductBatch";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
                 da.SelectCommand.Parameters.Add("@BatchID", System.Data.SqlDbType.BigInt).Value = BatchID;

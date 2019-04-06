@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,6 +11,7 @@ namespace POS
 {
     public partial class BrandEntry : Form
     {
+        int ID;
         #region Global Declaration
         private IBrand _IBrand = null;
 
@@ -135,20 +137,34 @@ namespace POS
         private void grvBrand_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Ignore clicks that are not in our 
-            if (e.ColumnIndex == grvBrand.Columns["Delete"].Index && e.RowIndex >= 0)
+            try
             {
-                lblMessageBox.Text="Execute";
+                if (e.ColumnIndex == grvBrand.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    //assign the value plus the desired column example 1
+                    int ID = Convert.ToInt32(grvBrand.Rows[numberRow].Cells[0].Value.ToString());
+                    if (_IBrand.Delete(ID) > 0)
+                    {
+                        MessageBox.Show("Operation Success");
+                        Reset();
+                    }
+                }
+                if (e.ColumnIndex == grvBrand.Columns["Edit"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    //assign the value plus the desired column example 1
+                    int ID = Convert.ToInt32(grvBrand.Rows[numberRow].Cells[0].Value.ToString());
+                    txtBrand.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[2].Value);
+                    txtBrndDescription.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[3].Value);
+                    btnSave.Text = "Update";
+                }
             }
-            if (e.ColumnIndex == grvBrand.Columns["Edit"].Index && e.RowIndex >= 0)
+            catch (Exception ex)
             {
-                int numberRow = Convert.ToInt32(e.RowIndex);
-               
-                //assign the value plus the desired column example 1
-                var Sln = grvBrand.Rows[numberRow].Cells[0].Value.ToString();
-                lblMessageBox.Text = "" + Sln;
-                txtBrand.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[2].Value);
-                txtBrndDescription.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[3].Value);
-                btnSave.Text = "Update";
+                lblMessageBox.Text = ex.ToString();
+                lblMessageBox.Enabled = true;
+                lblMessageBox.ForeColor = Color.Red;
             }
         }
     }

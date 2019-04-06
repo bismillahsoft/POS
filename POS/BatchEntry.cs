@@ -16,6 +16,7 @@ namespace POS
         #region Global Declaration
         private IProductBatch _IProductBatch = null;
         #endregion
+        int ID;
         public BatchEntry()
         {
             InitializeComponent();
@@ -148,19 +149,43 @@ namespace POS
 
         private void grvBatchEntry_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == grvBatchEntry.Columns["Delete"].Index && e.RowIndex >= 0)
+            try
             {
-                lblMessageBox.Text = "Delete";
+                if (e.ColumnIndex == grvBatchEntry.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    int ID = Convert.ToInt32(grvBatchEntry.Rows[numberRow].Cells[0].Value.ToString());
+                    if (_IProductBatch.Delete(ID) > 0)
+                    {
+                        MessageBox.Show("Operation Sucess");
+                        Reset();
+                    }
+                }
             }
-            if(e.ColumnIndex == grvBatchEntry.Columns["Edit"].Index && e.RowIndex >= 0)
+            catch (Exception ex)
             {
-                int numberRow = Convert.ToInt32(e.RowIndex);
-                var ID = grvBatchEntry.Rows[numberRow].Cells[0].Value.ToString();
-                lblMessageBox.Text = ID;
-                txtBatchName.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[2].Value);
-                txtBatchNo.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[3].Value);
-                txtBatchDescription.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[4].Value);
-                btnSave.Text = "Update";
+                lblMessageBox.Text = ex.ToString();
+                lblMessageBox.Enabled = true;
+                lblMessageBox.ForeColor = Color.Red;
+            }
+            try
+            {
+                if (e.ColumnIndex == grvBatchEntry.Columns["Edit"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    int ID = Convert.ToInt32(grvBatchEntry.Rows[numberRow].Cells[0].Value.ToString());
+                    //lblMessageBox.Text = ID;
+                    txtBatchName.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[2].Value);
+                    txtBatchNo.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[3].Value);
+                    txtBatchDescription.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[4].Value);
+                    btnSave.Text = "Update";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageBox.Text = ex.ToString();
+                lblMessageBox.Enabled = true;
+                lblMessageBox.ForeColor = Color.Red;
             }
         }
     }

@@ -14,11 +14,14 @@ namespace POS
 {
     public partial class ProductEntry : Form
     {
+        #region
         private IProduct _IProduct = null;
         private IProductPackSize _IProductPackSize = null;
         private IBrand _Ibrand = null;
         private IProductGeneric _IProductGeneric = null;
         private IProductCategory _IProductCategory = null;
+        #endregion
+        int ID;
         public ProductEntry()
         {
             InitializeComponent();
@@ -216,24 +219,36 @@ namespace POS
 
         private void grvProductEntry_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == grvProductEntry.Columns["Edit"].Index && e.RowIndex >= 0)
+            try
             {
-                int numberRow = Convert.ToInt32(e.RowIndex);
-                var ProductID = grvProductEntry.Rows[numberRow].Cells[0].Value.ToString();
-                lblMessageBox.Text = ProductID;
-                txtPro_Name.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[2].Value);
-                txtProductCode.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[3].Value);
-                //ddlPackSize.SelectedItem = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[4].Value);
-                //ddlBrand.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[5].Value);
-                //ddlGenericName.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[6].Value);
-                //ddlCategory.SelectedValue = Convert.ToInt32((grvProductEntry.Rows[numberRow].Cells[7].Value));
-                txtTradePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[8].Value);
-                txtPurchesePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[9].Value);
-                txtVat.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[10].Value);
-                txtMRP.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[11].Value);
-                txtBatch.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[12].Value);
-                txtDescription.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[13].Value);
-                btnSave.Text = "Update";
+                if (e.ColumnIndex == grvProductEntry.Columns["Edit"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    int ID =Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[0].Value.ToString());
+                    txtPro_Name.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[2].Value);
+                    txtProductCode.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[3].Value);
+                    //ddlPackSize.SelectedItem = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[4].Value);
+                    //ddlBrand.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[5].Value);
+                    //ddlGenericName.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[6].Value);
+                    //ddlCategory.SelectedValue = Convert.ToInt32((grvProductEntry.Rows[numberRow].Cells[7].Value));
+                    txtTradePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[8].Value);
+                    txtPurchesePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[9].Value);
+                    txtVat.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[10].Value);
+                    txtMRP.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[11].Value);
+                    txtBatch.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[12].Value);
+                    txtDescription.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[13].Value);
+                    btnSave.Text = "Update";
+                }
+                if (e.ColumnIndex == grvProductEntry.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageBox.Text = ex.ToString();
+                lblMessageBox.Enabled = true;
+                lblMessageBox.ForeColor = Color.Red;
             }
         }
     }

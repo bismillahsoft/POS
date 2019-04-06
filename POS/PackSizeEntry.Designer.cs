@@ -45,7 +45,6 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtPackSize = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,7 +92,6 @@
             this.grvPackSize.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.grvPackSize.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvPackSize.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
             this.Sln,
             this.PackSize,
             this.Description,
@@ -203,11 +201,6 @@
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "PackSizeID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            this.ID.Width = 54;
             // 
             // Sln
             // 
@@ -293,7 +286,6 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtPackSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn PackSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;

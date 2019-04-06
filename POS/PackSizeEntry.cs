@@ -9,6 +9,7 @@ namespace POS
 {
     public partial class PackSizeEntry : Form
     {
+        int ID;
         #region Global Declaration
         private IProductPackSize _IProductPackSize = null;
         #endregion
@@ -127,14 +128,32 @@ namespace POS
 
         private void grvPackSize_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex== grvPackSize.Columns["Edit"].Index && e.RowIndex >= 0)
+            try
             {
-                int numberRow = Convert.ToInt32(e.RowIndex);
-                var ID = grvPackSize.Rows[numberRow].Cells[0].Value.ToString();
-                lblMessageBox.Text = ID;
-                txtPackSize.Text=Convert.ToString(grvPackSize.Rows[numberRow].Cells[2].Value);
-                txtDescription.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[3].Value);
-                btnSave.Text = "Update";
+                if (e.ColumnIndex == grvPackSize.Columns["Edit"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    int ID =Convert.ToInt32(grvPackSize.Rows[numberRow].Cells[0].Value.ToString());
+                    txtPackSize.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[2].Value);
+                    txtDescription.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[3].Value);
+                    btnSave.Text = "Update";
+                }
+                if (e.ColumnIndex == grvPackSize.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    int numberRow = Convert.ToInt32(e.RowIndex);
+                    int ID = Convert.ToInt32(grvPackSize.Rows[numberRow].Cells[0].Value.ToString());
+                    if (_IProductPackSize.Delete(ID) > 0)
+                    {
+                        MessageBox.Show("Operation Success");
+                        Reset();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessageBox.Text = ex.ToString();
+                lblMessageBox.Enabled = true;
+                lblMessageBox.ForeColor = Color.Red;
             }
         }
     }

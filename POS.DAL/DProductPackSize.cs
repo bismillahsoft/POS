@@ -96,7 +96,7 @@ namespace POS.DAL
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "DCR_SP_DELETE_ProductPackSize";
+                da.SelectCommand.CommandText = "POS_SP_DELETE_ProductPackSize";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
                 da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = PackSizeId;

@@ -125,7 +125,41 @@ namespace POS.DAL
 
         public int Delete(int Id)
         {
-            return 0;
+            try
+            {
+                int returnStatus = 0;
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+
+                da.SelectCommand.CommandText = "POS_SP_DELETE_ProductCategory";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+                da.SelectCommand.Parameters.Add("@ProductCategoryID", System.Data.SqlDbType.BigInt).Value = Id;
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                if (da.SelectCommand.ExecuteNonQuery() == 1)
+                {
+                    returnStatus = 1;
+                }
+                else
+                {
+                    returnStatus = 0;
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return returnStatus;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public IList<POS.BO.ProductCategory> GetProductCategory(int pageIndex, int pageSize, string orderBy, string sortindex)
