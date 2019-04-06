@@ -176,11 +176,10 @@ namespace POS.DAL
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.Parameters.Add("@PGenericID", System.Data.SqlDbType.Int).Value = PGenericID;
+                da.SelectCommand.Parameters.Add("@GenericID", System.Data.SqlDbType.Int).Value = PGenericID;
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
-                da.SelectCommand.CommandText = "DCR_SP_DELETE_ProductGeneric"
-                ;
+                da.SelectCommand.CommandText = "POS_SP_DELETE_Generic";
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
