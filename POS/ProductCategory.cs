@@ -127,8 +127,8 @@ namespace POS
                     int numberRow = Convert.ToInt32(e.RowIndex);
                     int ID =Convert.ToInt32(grvCategory.Rows[numberRow].Cells[0].Value.ToString());
                     //lblMessageBox.Text = ID;
-                    txtCategoryName.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[2].Value);
-                    txtDescription.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[3].Value);
+                    txtCategoryName.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[1].Value);
+                    txtDescription.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[2].Value);
                     bntSave.Text = "Update";
                 }
             }
