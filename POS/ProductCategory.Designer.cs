@@ -30,8 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPCategory = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblMessageBox = new System.Windows.Forms.Label();
@@ -42,6 +40,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.grvCategory = new System.Windows.Forms.DataGridView();
+            this.ProductCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -160,16 +159,9 @@
             this.grvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvCategory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvCategory.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductCategoryID,
             this.Sln,
             this.CategoryName,
             this.Description,
@@ -177,45 +169,43 @@
             this.Delete});
             this.grvCategory.Location = new System.Drawing.Point(444, 492);
             this.grvCategory.Name = "grvCategory";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.grvCategory.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.grvCategory.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grvCategory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grvCategory.Size = new System.Drawing.Size(427, 242);
             this.grvCategory.TabIndex = 28;
             this.grvCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvCategory_CellClick);
             // 
-            // ID
+            // ProductCategoryID
             // 
+            this.ProductCategoryID.DataPropertyName = "Id";
+            this.ProductCategoryID.HeaderText = "ID";
+            this.ProductCategoryID.Name = "ProductCategoryID";
+            this.ProductCategoryID.ReadOnly = true;
+            this.ProductCategoryID.Visible = false;
+            this.ProductCategoryID.Width = 45;
             // 
             // Sln
             // 
             this.Sln.DataPropertyName = "Sln";
             this.Sln.HeaderText = "Sln";
             this.Sln.Name = "Sln";
-            this.Sln.Width = 60;
+            this.Sln.Width = 49;
             // 
             // CategoryName
             // 
             this.CategoryName.DataPropertyName = "Name";
             this.CategoryName.HeaderText = "Category Name";
             this.CategoryName.Name = "CategoryName";
-            this.CategoryName.Width = 151;
+            this.CategoryName.Width = 112;
             // 
             // Description
             // 
             this.Description.DataPropertyName = "Description";
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
-            this.Description.Width = 122;
+            this.Description.Width = 91;
             // 
             // Edit
             // 
@@ -225,7 +215,7 @@
             this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 66;
+            this.Edit.Width = 52;
             // 
             // Delete
             // 
@@ -233,14 +223,14 @@
             this.Delete.Name = "Delete";
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 64;
+            this.Delete.Width = 47;
             // 
             // ProductCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1433, 831);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.grvCategory);
             this.Controls.Add(this.lblPCategory);
             this.Controls.Add(this.btnBack);
@@ -274,6 +264,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.DataGridView grvCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;

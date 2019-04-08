@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.grvPackSize = new System.Windows.Forms.DataGridView();
@@ -45,6 +45,7 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtPackSize = new System.Windows.Forms.TextBox();
+            this.PackSizeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,22 +77,23 @@
             // 
             // grvPackSize
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grvPackSize.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvPackSize.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grvPackSize.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvPackSize.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvPackSize.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvPackSize.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvPackSize.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvPackSize.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvPackSize.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvPackSize.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PackSizeID,
             this.Sln,
             this.PackSize,
             this.Description,
@@ -100,16 +102,16 @@
             this.grvPackSize.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvPackSize.Location = new System.Drawing.Point(444, 486);
             this.grvPackSize.Name = "grvPackSize";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvPackSize.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grvPackSize.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvPackSize.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvPackSize.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.grvPackSize.Size = new System.Drawing.Size(488, 313);
             this.grvPackSize.TabIndex = 16;
             this.grvPackSize.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvPackSize_CellClick);
@@ -199,14 +201,20 @@
             this.txtPackSize.TabIndex = 10;
             this.txtPackSize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPackSize_KeyUp);
             // 
-            // ID
+            // PackSizeID
             // 
+            this.PackSizeID.DataPropertyName = "PackSizeID";
+            this.PackSizeID.HeaderText = "ID";
+            this.PackSizeID.Name = "PackSizeID";
+            this.PackSizeID.ReadOnly = true;
+            this.PackSizeID.Visible = false;
+            this.PackSizeID.Width = 54;
             // 
             // Sln
             // 
             this.Sln.DataPropertyName = "Sln";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sln.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
             this.Sln.HeaderText = "Sln";
             this.Sln.Name = "Sln";
             this.Sln.Width = 60;
@@ -214,8 +222,8 @@
             // PackSize
             // 
             this.PackSize.DataPropertyName = "PackSize";
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PackSize.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PackSize.DefaultCellStyle = dataGridViewCellStyle4;
             this.PackSize.HeaderText = "Pack Size";
             this.PackSize.Name = "PackSize";
             this.PackSize.Width = 104;
@@ -223,8 +231,8 @@
             // Description
             // 
             this.Description.DataPropertyName = "PackSizeDescription";
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.DefaultCellStyle = dataGridViewCellStyle5;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             this.Description.Width = 122;
@@ -254,7 +262,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1433, 831);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.lblMessageBox);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.grvPackSize);
@@ -286,6 +294,7 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtPackSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PackSizeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn PackSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;

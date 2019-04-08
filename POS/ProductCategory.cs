@@ -29,7 +29,7 @@ namespace POS
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            Reset();
         }
         private void bntSave_Click(object sender, EventArgs e)
         {
@@ -125,25 +125,16 @@ namespace POS
                 if (e.ColumnIndex == grvCategory.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
-                    int ID =Convert.ToInt32(grvCategory.Rows[numberRow].Cells[0].Value.ToString());
+                    ID =Convert.ToInt32(grvCategory.Rows[numberRow].Cells[0].Value.ToString());
                     //lblMessageBox.Text = ID;
-                    txtCategoryName.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[1].Value);
-                    txtDescription.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[2].Value);
+                    txtCategoryName.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[2].Value);
+                    txtDescription.Text = Convert.ToString(grvCategory.Rows[numberRow].Cells[3].Value);
                     bntSave.Text = "Update";
                 }
-            }
-            catch (Exception ex)
-            {
-                lblMessageBox.Text = ex.ToString();
-                lblMessageBox.Enabled = true;
-                lblMessageBox.ForeColor = Color.Red;
-            }
-            try
-            {
                 if (e.ColumnIndex == grvCategory.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
-                    int ID = Convert.ToInt32(grvCategory.Rows[numberRow].Cells[0].Value.ToString());
+                    ID = Convert.ToInt32(grvCategory.Rows[numberRow].Cells[0].Value.ToString());
                     if (_IProductCategory.Delete(ID) > 0)
                     {
                         MessageBox.Show("Operation Success");

@@ -82,8 +82,6 @@ E:\GitRepository\BPOS\POS\POS\obj\Debug\en\POS.resources.dll
 E:\GitRepository\BPOS\POS\POS\obj\Debug\POS.exe
 E:\GitRepository\BPOS\POS\POS\obj\Debug\POS.pdb
 D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.exe.config
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.exe
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.pdb
 D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.exe
 D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.pdb
 D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\en\POS.resources.dll
@@ -112,3 +110,5 @@ D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.Properties.Resources.resources
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.MsgBox.en.resources
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\en\POS.resources.dll
+D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.exe
+D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.pdb
