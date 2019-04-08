@@ -70,7 +70,7 @@ namespace POS
                 Objproducts.Description = txtDescription.Text;
 
 
-                if (txtPro_Name.Text != "" && txtProductCode.Text!="" && txtTradePrice.Text!="" && txtPurchesePrice.Text!="" && txtVat.Text!="" && txtMRP.Text!="" && txtBatch.Text!="")
+                if (txtPro_Name.Text != "" && txtProductCode.Text != "" && txtTradePrice.Text != "" && txtPurchesePrice.Text != "" && txtVat.Text != "" && txtMRP.Text != "" && txtBatch.Text != "")
                 {
                     if (_IProduct.Insert(Objproducts) > 0)
                     {
@@ -182,7 +182,7 @@ namespace POS
         private void btnSave_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-               btnReset.Focus();
+                btnReset.Focus();
         }
 
         private void btnReset_KeyUp(object sender, KeyEventArgs e)
@@ -221,17 +221,19 @@ namespace POS
         {
             try
             {
+                BO.Product objProduct = new BO.Product();
                 if (e.ColumnIndex == grvProductEntry.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
-                    int ID =Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[0].Value.ToString());
-                    txtPro_Name.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[2].Value);
-                    txtProductCode.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[3].Value);
-                    //ddlPackSize.SelectedItem = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[4].Value);
+                    int ID = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[0].Value.ToString());
+                    objProduct = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == ID);
+                    txtPro_Name.Text = objProduct.ProductName;
+                    txtProductCode.Text = objProduct.ProductCode;
+                    ddlPackSize.SelectedValue = objProduct.ProdPackSize.PackSizeID;
                     //ddlBrand.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[5].Value);
                     //ddlGenericName.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[6].Value);
                     //ddlCategory.SelectedValue = Convert.ToInt32((grvProductEntry.Rows[numberRow].Cells[7].Value));
-                    txtTradePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[8].Value);
+                    txtTradePrice.Text = objProduct.ProductPrice.ToString();
                     txtPurchesePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[9].Value);
                     txtVat.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[10].Value);
                     txtMRP.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[11].Value);
@@ -241,7 +243,7 @@ namespace POS
                 }
                 if (e.ColumnIndex == grvProductEntry.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
-                   
+
                 }
             }
             catch (Exception ex)
