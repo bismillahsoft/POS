@@ -398,10 +398,15 @@ namespace POS.DAL
                         obj.ProductId = productID;
                         obj.ProductName = row["ProductName"].ToString();
                         obj.ProductCode = row["ProductCode"].ToString();
+                        obj.ProdPackSize.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
                         obj.PackSize = Convert.ToString(row["PackSize"]);
+                        obj.Brand.BrandID = Convert.ToInt32(row["BrandID"]);
                         obj.BrandName = row["Brand"].ToString();
+                        obj.ProductGeneric.PGenericID = Convert.ToInt32(row["GenericID"]);
                         obj.GenericName = row["GenericName"].ToString();
+                        obj.ProductCategory.Id = Convert.ToInt32(row["ProductCategoryID"]);
                         obj.CategoryName = row["CategoryName"].ToString();
+                        obj.ProductPrice.PPID = Convert.ToInt32(row["PPID"]);
                         obj.PurchesePrice = Convert.ToDecimal(row["PurchesePrice"]);
                         obj.TradePrice = Convert.ToDecimal(row["TradePrice"]);
                         obj.Vat = Convert.ToDecimal(row["Vat"]);
