@@ -69,6 +69,17 @@ namespace POS
                 Objproducts.BatchNo = Convert.ToString(txtBatch.Text);
                 Objproducts.Description = txtDescription.Text;
 
+                if (btnSave.Text == "Update" && txtPro_Name.Text != "")
+                {
+                    
+                    Objproducts = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == ID);
+
+                    if (_IProduct.Update(Objproducts,ID) > 0)
+                    {
+                        MessageBox.Show("Successfully Update");
+                        Reset();
+                    }
+                }
 
                 if (txtPro_Name.Text != "" && txtProductCode.Text != "" && txtTradePrice.Text != "" && txtPurchesePrice.Text != "" && txtVat.Text != "" && txtMRP.Text != "" && txtBatch.Text != "")
                 {
@@ -86,6 +97,7 @@ namespace POS
                         //lblMessageBox.ForeColor = Color.Red;
                     }
                 }
+              
                 else
                 {
                     MsgBox msgBox = new MsgBox();
