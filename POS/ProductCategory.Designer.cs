@@ -52,21 +52,20 @@
             // lblPCategory
             // 
             this.lblPCategory.AutoSize = true;
-            this.lblPCategory.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCategory.Location = new System.Drawing.Point(252, 53);
-            this.lblPCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPCategory.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPCategory.Location = new System.Drawing.Point(330, 44);
             this.lblPCategory.Name = "lblPCategory";
-            this.lblPCategory.Size = new System.Drawing.Size(363, 44);
+            this.lblPCategory.Size = new System.Drawing.Size(241, 28);
             this.lblPCategory.TabIndex = 25;
             this.lblPCategory.Text = "Product Category Entry";
             // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(12, 13);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBack.Location = new System.Drawing.Point(15, 18);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(114, 66);
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -76,7 +75,8 @@
             // 
             this.lblMessageBox.AutoSize = true;
             this.lblMessageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessageBox.Location = new System.Drawing.Point(229, 10);
+            this.lblMessageBox.Location = new System.Drawing.Point(294, 14);
+            this.lblMessageBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageBox.Name = "lblMessageBox";
             this.lblMessageBox.Size = new System.Drawing.Size(0, 13);
             this.lblMessageBox.TabIndex = 27;
@@ -85,32 +85,29 @@
             // lblPCategoryName
             // 
             this.lblPCategoryName.AutoSize = true;
-            this.lblPCategoryName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCategoryName.Location = new System.Drawing.Point(426, 173);
-            this.lblPCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPCategoryName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPCategoryName.Location = new System.Drawing.Point(546, 108);
             this.lblPCategoryName.Name = "lblPCategoryName";
-            this.lblPCategoryName.Size = new System.Drawing.Size(215, 39);
+            this.lblPCategoryName.Size = new System.Drawing.Size(119, 23);
             this.lblPCategoryName.TabIndex = 19;
             this.lblPCategoryName.Text = "Category Name :";
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(426, 226);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDescription.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(546, 147);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(170, 39);
+            this.lblDescription.Size = new System.Drawing.Size(94, 23);
             this.lblDescription.TabIndex = 21;
             this.lblDescription.Text = "Description :";
             // 
             // bntSave
             // 
-            this.bntSave.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntSave.Location = new System.Drawing.Point(750, 358);
-            this.bntSave.Margin = new System.Windows.Forms.Padding(2);
+            this.bntSave.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntSave.Location = new System.Drawing.Point(769, 219);
             this.bntSave.Name = "bntSave";
-            this.bntSave.Size = new System.Drawing.Size(180, 65);
+            this.bntSave.Size = new System.Drawing.Size(90, 35);
             this.bntSave.TabIndex = 3;
             this.bntSave.Text = "Save";
             this.bntSave.UseVisualStyleBackColor = true;
@@ -119,22 +116,21 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(664, 226);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescription.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(671, 149);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(266, 83);
+            this.txtDescription.Size = new System.Drawing.Size(188, 47);
             this.txtDescription.TabIndex = 2;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             this.txtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyUp);
             // 
             // btnReset
             // 
-            this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(528, 358);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(659, 219);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(180, 65);
+            this.btnReset.Size = new System.Drawing.Size(90, 35);
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -143,12 +139,12 @@
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryName.Location = new System.Drawing.Point(664, 170);
-            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCategoryName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoryName.Location = new System.Drawing.Point(671, 106);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(266, 47);
+            this.txtCategoryName.Size = new System.Drawing.Size(188, 29);
             this.txtCategoryName.TabIndex = 1;
+            this.txtCategoryName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
             this.txtCategoryName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCategoryName_KeyUp);
             // 
             // grvCategory
@@ -159,6 +155,7 @@
             this.grvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvCategory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvCategory.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grvCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductCategoryID,
@@ -167,13 +164,14 @@
             this.Description,
             this.Edit,
             this.Delete});
-            this.grvCategory.Location = new System.Drawing.Point(444, 492);
+            this.grvCategory.Location = new System.Drawing.Point(471, 322);
+            this.grvCategory.Margin = new System.Windows.Forms.Padding(4);
             this.grvCategory.Name = "grvCategory";
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.grvCategory.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grvCategory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grvCategory.Size = new System.Drawing.Size(427, 242);
+            this.grvCategory.Size = new System.Drawing.Size(516, 322);
             this.grvCategory.TabIndex = 28;
             this.grvCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvCategory_CellClick);
             // 
@@ -191,21 +189,21 @@
             this.Sln.DataPropertyName = "Sln";
             this.Sln.HeaderText = "Sln";
             this.Sln.Name = "Sln";
-            this.Sln.Width = 49;
+            this.Sln.Width = 57;
             // 
             // CategoryName
             // 
             this.CategoryName.DataPropertyName = "Name";
             this.CategoryName.HeaderText = "Category Name";
             this.CategoryName.Name = "CategoryName";
-            this.CategoryName.Width = 112;
+            this.CategoryName.Width = 144;
             // 
             // Description
             // 
             this.Description.DataPropertyName = "Description";
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
-            this.Description.Width = 91;
+            this.Description.Width = 112;
             // 
             // Edit
             // 
@@ -215,7 +213,7 @@
             this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 52;
+            this.Edit.Width = 63;
             // 
             // Delete
             // 
@@ -223,11 +221,11 @@
             this.Delete.Name = "Delete";
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 47;
+            this.Delete.Width = 58;
             // 
             // ProductCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1370, 749);
@@ -241,8 +239,8 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtCategoryName);
-            this.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "ProductCategory";
             this.Text = "ProductCategory";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

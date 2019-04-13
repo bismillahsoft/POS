@@ -30,7 +30,7 @@ namespace POS
 
                 if(btnSave.Text=="Update"&& txtPackSize.Text != "")
                 {
-                    ObjProductPackSize.PackSizeID = Convert.ToInt32(lblMessageBox.Text);
+                    ObjProductPackSize.PackSizeID = ID;
                     if (_IProductPackSize.Update(ObjProductPackSize) > 0)
                     {
                         MessageBox.Show("Successfully Update");
@@ -133,7 +133,7 @@ namespace POS
                 if (e.ColumnIndex == grvPackSize.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
-                    int ID =Convert.ToInt32(grvPackSize.Rows[numberRow].Cells[0].Value.ToString());
+                    ID =Convert.ToInt32(grvPackSize.Rows[numberRow].Cells[0].Value.ToString());
                     txtPackSize.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[2].Value);
                     txtDescription.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[3].Value);
                     btnSave.Text = "Update";
@@ -141,7 +141,7 @@ namespace POS
                 if (e.ColumnIndex == grvPackSize.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
-                    int ID = Convert.ToInt32(grvPackSize.Rows[numberRow].Cells[0].Value.ToString());
+                    ID = Convert.ToInt32(grvPackSize.Rows[numberRow].Cells[0].Value.ToString());
                     if (_IProductPackSize.Delete(ID) > 0)
                     {
                         MessageBox.Show("Operation Success");

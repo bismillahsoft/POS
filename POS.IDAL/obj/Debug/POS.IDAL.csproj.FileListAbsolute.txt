@@ -21,10 +21,3 @@ E:\GitRepository\BPOS\POS\POS.IDAL\bin\Debug\POS.BO.pdb
 E:\GitRepository\BPOS\POS\POS.IDAL\obj\Debug\POS.IDAL.csprojResolveAssemblyReference.cache
 E:\GitRepository\BPOS\POS\POS.IDAL\obj\Debug\POS.IDAL.dll
 E:\GitRepository\BPOS\POS\POS.IDAL\obj\Debug\POS.IDAL.pdb
-D:\Zahid PC\GitRepository\BPOS\POS.IDAL\bin\Debug\POS.IDAL.dll
-D:\Zahid PC\GitRepository\BPOS\POS.IDAL\bin\Debug\POS.IDAL.pdb
-D:\Zahid PC\GitRepository\BPOS\POS.IDAL\bin\Debug\POS.BO.dll
-D:\Zahid PC\GitRepository\BPOS\POS.IDAL\bin\Debug\POS.BO.pdb
-D:\Zahid PC\GitRepository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.csprojResolveAssemblyReference.cache
-D:\Zahid PC\GitRepository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.dll
-D:\Zahid PC\GitRepository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.pdb

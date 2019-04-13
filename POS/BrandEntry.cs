@@ -37,7 +37,7 @@ namespace POS
                 
                 if(btnSave.Text=="Update" && txtBrand.Text!="")
                 {
-                    ObjBrand.BrandID = Convert.ToInt16(lblMessageBox.Text);
+                    ObjBrand.BrandID = ID;
                     if (_IBrand.Update(ObjBrand) > 0)
                     {
                         MessageBox.Show("Successfully Update");
@@ -143,7 +143,7 @@ namespace POS
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
                     //assign the value plus the desired column example 1
-                    int ID = Convert.ToInt32(grvBrand.Rows[numberRow].Cells[0].Value.ToString());
+                    ID = Convert.ToInt32(grvBrand.Rows[numberRow].Cells[0].Value.ToString());
                     if (_IBrand.Delete(ID) > 0)
                     {
                         MessageBox.Show("Operation Success");
@@ -154,7 +154,7 @@ namespace POS
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
                     //assign the value plus the desired column example 1
-                    int ID = Convert.ToInt32(grvBrand.Rows[numberRow].Cells[0].Value.ToString());
+                    ID = Convert.ToInt32(grvBrand.Rows[numberRow].Cells[0].Value.ToString());
                     txtBrand.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[2].Value);
                     txtBrndDescription.Text = Convert.ToString(grvBrand.Rows[numberRow].Cells[3].Value);
                     btnSave.Text = "Update";
