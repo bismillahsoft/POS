@@ -69,6 +69,17 @@ namespace POS
                 Objproducts.BatchNo = Convert.ToString(txtBatch.Text);
                 Objproducts.Description = txtDescription.Text;
 
+                if (btnSave.Text == "Update" && txtPro_Name.Text != "")
+                {
+                    
+                    Objproducts = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == ID);
+
+                    if (_IProduct.Update(Objproducts,ID) > 0)
+                    {
+                        MessageBox.Show("Successfully Update");
+                        Reset();
+                    }
+                }
 
                 if (txtPro_Name.Text != "" && txtProductCode.Text != "" && txtTradePrice.Text != "" && txtPurchesePrice.Text != "" && txtVat.Text != "" && txtMRP.Text != "" && txtBatch.Text != "")
                 {
@@ -86,6 +97,7 @@ namespace POS
                         //lblMessageBox.ForeColor = Color.Red;
                     }
                 }
+              
                 else
                 {
                     MsgBox msgBox = new MsgBox();
@@ -230,8 +242,8 @@ namespace POS
                     txtPro_Name.Text = objProduct.ProductName;
                     txtProductCode.Text = objProduct.ProductCode;
                     ddlPackSize.SelectedValue = objProduct.ProdPackSize.PackSizeID;
-                    ddlBrand.SelectedValue = objProduct.Brand;
-                    ddlGenericName.SelectedValue = objProduct.GenericID;
+                    ddlBrand.SelectedValue = objProduct.Brand.BrandID ;
+                    ddlGenericName.SelectedValue = objProduct.ProductGeneric.PGenericID;
                     ddlCategory.SelectedValue = objProduct.ProductCategory.Id;
                     txtTradePrice.Text = objProduct.TradePrice.ToString();
                     txtPurchesePrice.Text = objProduct.PurchesePrice.ToString();
@@ -239,16 +251,6 @@ namespace POS
                     txtMRP.Text = objProduct.MRP.ToString();
                     txtBatch.Text = objProduct.BatchNo.ToString();
                     txtDescription.Text = objProduct.Description.ToString();
-
-                    //ddlBrand.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[5].Value);
-                    //ddlGenericName.SelectedValue = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[6].Value);
-                    //ddlCategorygory.SelectedValue = Convert.ToInt32((grvProductEntry.Rows[numberRow].Cells[7].Value));
-                    //txtTradePrice.Text = objProduct.ProductPrice.ToString();
-                    //txtPurchesePrice.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[9].Value);
-                    //txtVat.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[10].Value);
-                    //txtMRP.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[11].Value);
-                    //txtBatch.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[12].Value);
-                    //txtDescription.Text = Convert.ToString(grvProductEntry.Rows[numberRow].Cells[13].Value);
                     btnSave.Text = "Update";
                 }
                 if (e.ColumnIndex == grvProductEntry.Columns["Delete"].Index && e.RowIndex >= 0)

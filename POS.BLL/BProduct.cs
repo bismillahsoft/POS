@@ -21,9 +21,9 @@ namespace POS.BLL
             return _iProduct.Insert(objProduct);
 
         }
-        public int Update(BO.Product objProduct)
+        public int Update(BO.Product objProduct, int id)
         {
-            return _iProduct.Update(objProduct);
+            return _iProduct.Update(objProduct,id);
 
         }
         public int DELETE(BO.Product objProduct)

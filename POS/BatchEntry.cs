@@ -36,7 +36,7 @@ namespace POS
 
                 if (btnSave.Text == "Update" && ObjProductBatch.BatchName != "")
                 {
-                    ObjProductBatch.BatchID = Convert.ToInt32(lblMessageBox.Text);
+                    ObjProductBatch.BatchID = ID;
                     if (_IProductBatch.Update(ObjProductBatch) > 0)
                     {
                         MessageBox.Show("Successfully Update");
@@ -154,7 +154,7 @@ namespace POS
                 if (e.ColumnIndex == grvBatchEntry.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
-                    int ID = Convert.ToInt32(grvBatchEntry.Rows[numberRow].Cells[0].Value.ToString());
+                    ID = Convert.ToInt32(grvBatchEntry.Rows[numberRow].Cells[0].Value.ToString());
                     if (_IProductBatch.Delete(ID) > 0)
                     {
                         MessageBox.Show("Operation Sucess");
@@ -173,7 +173,7 @@ namespace POS
                 if (e.ColumnIndex == grvBatchEntry.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
-                    int ID = Convert.ToInt32(grvBatchEntry.Rows[numberRow].Cells[0].Value.ToString());
+                    ID = Convert.ToInt32(grvBatchEntry.Rows[numberRow].Cells[0].Value.ToString());
                     //lblMessageBox.Text = ID;
                     txtBatchName.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[2].Value);
                     txtBatchNo.Text = Convert.ToString(grvBatchEntry.Rows[numberRow].Cells[3].Value);
@@ -187,6 +187,30 @@ namespace POS
                 lblMessageBox.Enabled = true;
                 lblMessageBox.ForeColor = Color.Red;
             }
+        }
+        private void lblBrndDescription_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBatchName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Batch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBatchName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBatchDescription_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

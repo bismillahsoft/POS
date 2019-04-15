@@ -6,7 +6,7 @@ namespace POS.IDAL
     {
         int Insert(BO.Product objProduct);
 
-        int Update(BO.Product objProduct);
+        int Update(BO.Product objProduct,int id);
 
         int DELETE(BO.Product objProduct);
 

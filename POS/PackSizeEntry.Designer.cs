@@ -38,6 +38,12 @@
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.grvPackSize = new System.Windows.Forms.DataGridView();
+            this.PackSizeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblPack = new System.Windows.Forms.Label();
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -45,12 +51,6 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtPackSize = new System.Windows.Forms.TextBox();
-            this.PackSizeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvPackSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +82,7 @@
             this.grvPackSize.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvPackSize.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvPackSize.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grvPackSize.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.grvPackSize.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,7 +100,7 @@
             this.Edit,
             this.Delete});
             this.grvPackSize.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grvPackSize.Location = new System.Drawing.Point(444, 486);
+            this.grvPackSize.Location = new System.Drawing.Point(425, 359);
             this.grvPackSize.Name = "grvPackSize";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -112,94 +112,9 @@
             this.grvPackSize.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grvPackSize.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.grvPackSize.Size = new System.Drawing.Size(488, 313);
+            this.grvPackSize.Size = new System.Drawing.Size(501, 334);
             this.grvPackSize.TabIndex = 16;
             this.grvPackSize.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvPackSize_CellClick);
-            // 
-            // lblPack
-            // 
-            this.lblPack.AutoSize = true;
-            this.lblPack.Font = new System.Drawing.Font("Palatino Linotype", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPack.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPack.Location = new System.Drawing.Point(293, 101);
-            this.lblPack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPack.Name = "lblPack";
-            this.lblPack.Size = new System.Drawing.Size(267, 47);
-            this.lblPack.TabIndex = 18;
-            this.lblPack.Text = "Pack Size Entry";
-            // 
-            // lblPackSize
-            // 
-            this.lblPackSize.AutoSize = true;
-            this.lblPackSize.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPackSize.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPackSize.Location = new System.Drawing.Point(406, 176);
-            this.lblPackSize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPackSize.Name = "lblPackSize";
-            this.lblPackSize.Size = new System.Drawing.Size(183, 38);
-            this.lblPackSize.TabIndex = 9;
-            this.lblPackSize.Text = "Pack Size     :";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDescription.Location = new System.Drawing.Point(406, 244);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(183, 38);
-            this.lblDescription.TabIndex = 11;
-            this.lblDescription.Text = "Description :";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSave.Location = new System.Drawing.Point(705, 367);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(180, 65);
-            this.btnSave.TabIndex = 13;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            this.btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(619, 244);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(266, 65);
-            this.txtDescription.TabIndex = 12;
-            this.txtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyUp);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnReset.Location = new System.Drawing.Point(497, 367);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(180, 65);
-            this.btnReset.TabIndex = 14;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            this.btnReset.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnReset_KeyUp);
-            // 
-            // txtPackSize
-            // 
-            this.txtPackSize.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPackSize.Location = new System.Drawing.Point(619, 176);
-            this.txtPackSize.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPackSize.Name = "txtPackSize";
-            this.txtPackSize.Size = new System.Drawing.Size(266, 44);
-            this.txtPackSize.TabIndex = 10;
-            this.txtPackSize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPackSize_KeyUp);
             // 
             // PackSizeID
             // 
@@ -256,6 +171,91 @@
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 83;
+            // 
+            // lblPack
+            // 
+            this.lblPack.AutoSize = true;
+            this.lblPack.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPack.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblPack.Location = new System.Drawing.Point(420, 84);
+            this.lblPack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPack.Name = "lblPack";
+            this.lblPack.Size = new System.Drawing.Size(159, 28);
+            this.lblPack.TabIndex = 18;
+            this.lblPack.Text = "Pack Size Entry";
+            // 
+            // lblPackSize
+            // 
+            this.lblPackSize.AutoSize = true;
+            this.lblPackSize.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPackSize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblPackSize.Location = new System.Drawing.Point(533, 159);
+            this.lblPackSize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPackSize.Name = "lblPackSize";
+            this.lblPackSize.Size = new System.Drawing.Size(95, 23);
+            this.lblPackSize.TabIndex = 9;
+            this.lblPackSize.Text = "Pack Size     :";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblDescription.Location = new System.Drawing.Point(533, 204);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(94, 23);
+            this.lblDescription.TabIndex = 11;
+            this.lblDescription.Text = "Description :";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSave.Location = new System.Drawing.Point(726, 272);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 35);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(628, 201);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(188, 47);
+            this.txtDescription.TabIndex = 12;
+            this.txtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyUp);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReset.Location = new System.Drawing.Point(628, 272);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(90, 35);
+            this.btnReset.TabIndex = 14;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnReset.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnReset_KeyUp);
+            // 
+            // txtPackSize
+            // 
+            this.txtPackSize.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPackSize.Location = new System.Drawing.Point(628, 156);
+            this.txtPackSize.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPackSize.Name = "txtPackSize";
+            this.txtPackSize.Size = new System.Drawing.Size(188, 29);
+            this.txtPackSize.TabIndex = 10;
+            this.txtPackSize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPackSize_KeyUp);
             // 
             // PackSizeEntry
             // 

@@ -61,11 +61,11 @@
             // 
             // btnReset
             // 
-            btnReset.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnReset.Location = new System.Drawing.Point(458, 361);
+            btnReset.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnReset.Location = new System.Drawing.Point(644, 238);
             btnReset.Margin = new System.Windows.Forms.Padding(2);
             btnReset.Name = "btnReset";
-            btnReset.Size = new System.Drawing.Size(180, 65);
+            btnReset.Size = new System.Drawing.Size(90, 35);
             btnReset.TabIndex = 25;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
@@ -76,49 +76,52 @@
             // 
             lblBrndDescription.AutoSize = true;
             lblBrndDescription.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            lblBrndDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblBrndDescription.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblBrndDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lblBrndDescription.Location = new System.Drawing.Point(430, 222);
+            lblBrndDescription.Location = new System.Drawing.Point(535, 171);
             lblBrndDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblBrndDescription.Name = "lblBrndDescription";
-            lblBrndDescription.Size = new System.Drawing.Size(191, 39);
+            lblBrndDescription.Size = new System.Drawing.Size(110, 23);
             lblBrndDescription.TabIndex = 30;
-            lblBrndDescription.Text = "Description    :";
+            lblBrndDescription.Text = "Description     :";
+            lblBrndDescription.Click += new System.EventHandler(this.lblBrndDescription_Click);
             // 
             // lblBatchName
             // 
             lblBatchName.AutoSize = true;
-            lblBatchName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblBatchName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblBatchName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lblBatchName.Location = new System.Drawing.Point(430, 150);
+            lblBatchName.Location = new System.Drawing.Point(535, 128);
             lblBatchName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblBatchName.Name = "lblBatchName";
-            lblBatchName.Size = new System.Drawing.Size(190, 39);
+            lblBatchName.Size = new System.Drawing.Size(108, 23);
             lblBatchName.TabIndex = 31;
-            lblBatchName.Text = "Batch Name   :";
+            lblBatchName.Text = "Batch Name    :";
+            lblBatchName.Click += new System.EventHandler(this.lblBatchName_Click);
             // 
             // lbl_Batch
             // 
             lbl_Batch.AutoSize = true;
             lbl_Batch.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            lbl_Batch.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbl_Batch.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lbl_Batch.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lbl_Batch.Location = new System.Drawing.Point(430, 87);
+            lbl_Batch.Location = new System.Drawing.Point(535, 89);
             lbl_Batch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lbl_Batch.Name = "lbl_Batch";
-            lbl_Batch.Size = new System.Drawing.Size(191, 39);
+            lbl_Batch.Size = new System.Drawing.Size(105, 23);
             lbl_Batch.TabIndex = 29;
             lbl_Batch.Text = "Batch No        :";
+            lbl_Batch.Click += new System.EventHandler(this.lbl_Batch_Click);
             // 
             // lblBatch
             // 
             lblBatch.AutoSize = true;
-            lblBatch.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblBatch.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblBatch.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lblBatch.Location = new System.Drawing.Point(327, 28);
+            lblBatch.Location = new System.Drawing.Point(432, 30);
             lblBatch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblBatch.Name = "lblBatch";
-            lblBatch.Size = new System.Drawing.Size(190, 44);
+            lblBatch.Size = new System.Drawing.Size(127, 28);
             lblBatch.TabIndex = 28;
             lblBatch.Text = "Batch Entry";
             // 
@@ -151,6 +154,7 @@
             this.grvBatchEntry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvBatchEntry.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvBatchEntry.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grvBatchEntry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,12 +181,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grvBatchEntry.DefaultCellStyle = dataGridViewCellStyle3;
             this.grvBatchEntry.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grvBatchEntry.Location = new System.Drawing.Point(303, 477);
+            this.grvBatchEntry.Location = new System.Drawing.Point(397, 325);
             this.grvBatchEntry.Name = "grvBatchEntry";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.grvBatchEntry.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.grvBatchEntry.Size = new System.Drawing.Size(615, 321);
+            this.grvBatchEntry.Size = new System.Drawing.Size(615, 367);
             this.grvBatchEntry.TabIndex = 26;
             this.grvBatchEntry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvBatchEntry_CellClick);
             // 
@@ -247,44 +251,46 @@
             // 
             // txtBatchNo
             // 
-            this.txtBatchNo.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBatchNo.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBatchNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtBatchNo.Location = new System.Drawing.Point(630, 84);
+            this.txtBatchNo.Location = new System.Drawing.Point(644, 89);
             this.txtBatchNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtBatchNo.Name = "txtBatchNo";
-            this.txtBatchNo.Size = new System.Drawing.Size(227, 47);
+            this.txtBatchNo.Size = new System.Drawing.Size(188, 29);
             this.txtBatchNo.TabIndex = 21;
             this.txtBatchNo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchDescription_KeyUp);
             // 
             // txtBatchName
             // 
-            this.txtBatchName.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBatchName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBatchName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtBatchName.Location = new System.Drawing.Point(630, 147);
+            this.txtBatchName.Location = new System.Drawing.Point(644, 128);
             this.txtBatchName.Margin = new System.Windows.Forms.Padding(2);
             this.txtBatchName.Name = "txtBatchName";
-            this.txtBatchName.Size = new System.Drawing.Size(227, 47);
+            this.txtBatchName.Size = new System.Drawing.Size(188, 29);
             this.txtBatchName.TabIndex = 22;
+            this.txtBatchName.TextChanged += new System.EventHandler(this.txtBatchName_TextChanged);
             this.txtBatchName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchNo_KeyUp);
             // 
             // txtBatchDescription
             // 
-            this.txtBatchDescription.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBatchDescription.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBatchDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtBatchDescription.Location = new System.Drawing.Point(630, 218);
+            this.txtBatchDescription.Location = new System.Drawing.Point(644, 170);
             this.txtBatchDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtBatchDescription.Multiline = true;
             this.txtBatchDescription.Name = "txtBatchDescription";
-            this.txtBatchDescription.Size = new System.Drawing.Size(227, 72);
+            this.txtBatchDescription.Size = new System.Drawing.Size(188, 47);
             this.txtBatchDescription.TabIndex = 23;
+            this.txtBatchDescription.TextChanged += new System.EventHandler(this.txtBatchDescription_TextChanged);
             this.txtBatchDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBatchDescription_KeyUp);
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(677, 361);
+            this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(742, 238);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(180, 65);
+            this.btnSave.Size = new System.Drawing.Size(90, 35);
             this.btnSave.TabIndex = 32;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -295,7 +301,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1433, 831);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(btnReset);

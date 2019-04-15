@@ -41,7 +41,7 @@ namespace POS
 
                 if(bntSave.Text=="Update" && txtCategoryName.Text != "")
                 {
-                    ObjProductCategory.Id = Convert.ToInt32(lblMessageBox.Text);
+                    ObjProductCategory.Id = ID;
                     if (_IProductCategory.Update(ObjProductCategory) > 0)
                     {
                         MessageBox.Show("Successfully Update");
@@ -148,6 +148,16 @@ namespace POS
                 lblMessageBox.Enabled = true;
                 lblMessageBox.ForeColor = Color.Red;
             }
+        }
+
+        private void txtCategoryName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
