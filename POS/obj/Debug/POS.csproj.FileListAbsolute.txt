@@ -81,3 +81,4 @@ E:\GitRepository\BPOS\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 E:\GitRepository\BPOS\POS\POS\obj\Debug\en\POS.resources.dll
 E:\GitRepository\BPOS\POS\POS\obj\Debug\POS.exe
 E:\GitRepository\BPOS\POS\POS\obj\Debug\POS.pdb
+D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.exe.config
