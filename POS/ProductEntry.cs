@@ -22,6 +22,8 @@ namespace POS
         private IProductCategory _IProductCategory = null;
         #endregion
         int ID;
+        long pPID;
+        long pPSID;
         public ProductEntry()
         {
             InitializeComponent();
@@ -54,36 +56,35 @@ namespace POS
         {
             try
             {
-                BO.Product Objproducts = new BO.Product();
+                BO.Product objProducts = new BO.Product();
 
-                Objproducts.ProductName = txtPro_Name.Text;
-                Objproducts.ProdPackSize.ProductCode = txtProductCode.Text;
-                Objproducts.ProdPackSize.PackSizeID = Convert.ToInt32(ddlPackSize.SelectedValue);
-                Objproducts.Brand.BrandID = Convert.ToInt32(ddlBrand.SelectedValue);
-                Objproducts.ProductGeneric.PGenericID = Convert.ToInt32(ddlGenericName.SelectedValue);
-                Objproducts.ProductCategory.Id = Convert.ToInt32(ddlCategory.SelectedValue);
-                Objproducts.ProductPrice.TradePrice = Convert.ToDecimal(txtTradePrice.Text);
-                Objproducts.ProductPrice.PurchasePrice = Convert.ToDecimal(txtPurchesePrice.Text);
-                Objproducts.ProductPrice.Vat = Convert.ToDecimal(txtVat.Text);
-                Objproducts.ProductPrice.MRP = Convert.ToDecimal(txtMRP.Text);
-                Objproducts.BatchNo = Convert.ToString(txtBatch.Text);
-                Objproducts.Description = txtDescription.Text;
+                objProducts.ProductName = txtPro_Name.Text;
+                objProducts.ProdPackSize.ProductCode = txtProductCode.Text;
+                objProducts.ProdPackSize.PackSizeID = Convert.ToInt32(ddlPackSize.SelectedValue);
+                objProducts.Brand.BrandID = Convert.ToInt32(ddlBrand.SelectedValue);
+                objProducts.ProductGeneric.PGenericID = Convert.ToInt32(ddlGenericName.SelectedValue);
+                objProducts.ProductCategory.Id = Convert.ToInt32(ddlCategory.SelectedValue);
+                objProducts.ProductPrice.TradePrice = Convert.ToDecimal(txtTradePrice.Text);
+                objProducts.ProductPrice.PurchasePrice = Convert.ToDecimal(txtPurchesePrice.Text);
+                objProducts.ProductPrice.Vat = Convert.ToDecimal(txtVat.Text);
+                objProducts.ProductPrice.MRP = Convert.ToDecimal(txtMRP.Text);
+                objProducts.BatchNo = Convert.ToString(txtBatch.Text);
+                objProducts.Description = txtDescription.Text;
+                objProducts.ProdPackSize.PPSID = pPSID;
+                objProducts.ProductPrice.PPID = pPID;
 
                 if (btnSave.Text == "Update" && txtPro_Name.Text != "")
                 {
-                    
-                    Objproducts = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == ID);
-
-                    if (_IProduct.Update(Objproducts,ID) > 0)
+                    if (_IProduct.Update(objProducts, ID) > 0)
                     {
                         MessageBox.Show("Successfully Update");
                         Reset();
                     }
                 }
 
-                if (txtPro_Name.Text != "" && txtProductCode.Text != "" && txtTradePrice.Text != "" && txtPurchesePrice.Text != "" && txtVat.Text != "" && txtMRP.Text != "" && txtBatch.Text != "")
+                if (btnSave.Text == "Save")
                 {
-                    if (_IProduct.Insert(Objproducts) > 0)
+                    if (_IProduct.Insert(objProducts) > 0)
                     {
                         MessageBox.Show("Successfully Saved");
                         //lblMessageBox.Text = "Successfully Saved";
@@ -97,7 +98,7 @@ namespace POS
                         //lblMessageBox.ForeColor = Color.Red;
                     }
                 }
-              
+
                 else
                 {
                     MsgBox msgBox = new MsgBox();
@@ -242,7 +243,7 @@ namespace POS
                     txtPro_Name.Text = objProduct.ProductName;
                     txtProductCode.Text = objProduct.ProductCode;
                     ddlPackSize.SelectedValue = objProduct.ProdPackSize.PackSizeID;
-                    ddlBrand.SelectedValue = objProduct.Brand.BrandID ;
+                    ddlBrand.SelectedValue = objProduct.Brand.BrandID;
                     ddlGenericName.SelectedValue = objProduct.ProductGeneric.PGenericID;
                     ddlCategory.SelectedValue = objProduct.ProductCategory.Id;
                     txtTradePrice.Text = objProduct.TradePrice.ToString();
@@ -251,6 +252,8 @@ namespace POS
                     txtMRP.Text = objProduct.MRP.ToString();
                     txtBatch.Text = objProduct.BatchNo.ToString();
                     txtDescription.Text = objProduct.Description.ToString();
+                    pPID = objProduct.ProductPrice.PPID;
+                    pPSID = objProduct.ProdPackSize.PPSID;
                     btnSave.Text = "Update";
                 }
                 if (e.ColumnIndex == grvProductEntry.Columns["Delete"].Index && e.RowIndex >= 0)
