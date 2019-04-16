@@ -40,18 +40,15 @@ namespace POS
             COMMON.DDL.PopulateDropDownList(_IProductCategory.GetProductCategoryList().ToList(), ddlCategory, "Id", "Name");
             Reset();
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             new Homeproduct().Show();
             this.Hide();
         }
-
         private void ddlPackSize_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -79,9 +76,9 @@ namespace POS
                     {
                         MessageBox.Show("Successfully Update");
                         Reset();
+                        GetProductList();
                     }
                 }
-
                 if (btnSave.Text == "Save")
                 {
                     if (_IProduct.Insert(objProducts) > 0)
@@ -90,6 +87,7 @@ namespace POS
                         //lblMessageBox.Text = "Successfully Saved";
                         //lblMessageBox.ForeColor = Color.Green;
                         GetProductList();
+                        Reset();
                     }
                     else
                     {
@@ -98,7 +96,6 @@ namespace POS
                         //lblMessageBox.ForeColor = Color.Red;
                     }
                 }
-
                 else
                 {
                     MsgBox msgBox = new MsgBox();
@@ -119,91 +116,76 @@ namespace POS
             grvProductEntry.AutoGenerateColumns = false;
             grvProductEntry.DataSource = getProduct;
         }
-
         private void txtPro_Name_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtProductCode.Focus();
         }
-
         private void txtProductCode_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 ddlPackSize.Focus();
         }
-
         private void ddlPackSize_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 ddlBrand.Focus();
         }
-
         private void ddlBrand_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 ddlGenericName.Focus();
         }
-
         private void ddlGenericName_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 ddlCategory.Focus();
         }
-
         private void ddlCategory_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtTradePrice.Focus();
         }
-
         private void txtTradePrice_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtPurchesePrice.Focus();
         }
-
         private void txtPurchesePrice_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtVat.Focus();
         }
-
         private void txtVat_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtMRP.Focus();
         }
-
         private void txtMRP_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtBatch.Focus();
         }
-
         private void txtBatch_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtDescription.Focus();
         }
-
         private void txtDescription_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnSave.Focus();
         }
-
         private void btnSave_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnReset.Focus();
         }
-
         private void btnReset_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnBack.Focus();
         }
-
         private void btnBack_KeyUp(object sender, KeyEventArgs e)
         {
 
@@ -229,7 +211,6 @@ namespace POS
         {
             Reset();
         }
-
         private void grvProductEntry_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
