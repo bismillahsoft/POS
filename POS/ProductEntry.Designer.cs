@@ -82,9 +82,6 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenericName = new System.Windows.Forms.DataGridViewTextBoxColumn();
