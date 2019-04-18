@@ -299,17 +299,17 @@ namespace POS.DAL
                         {
                             connection.Open();
                         }
-                        transaction = connection.BeginTransaction();
-                        // Assign Transaction to Command
-                        da.SelectCommand.Connection = connection;
-                        da.SelectCommand.Transaction = transaction;
-                        da.SelectCommand.CommandText = "POS_SP_DELETE_Product";
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand.Connection = connection;
-                        transationStatus = da.SelectCommand.ExecuteNonQuery();
-                        da.SelectCommand.Parameters.Clear();
+                             transaction = connection.BeginTransaction();
+                             // Assign Transaction to Command
+                             da.SelectCommand.Connection = connection;
+                             da.SelectCommand.Transaction = transaction;
+                             da.SelectCommand.CommandText = "POS_SP_DELETE_Product";
+                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                             da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
+                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                             da.SelectCommand.Connection = connection;
+                             transationStatus = da.SelectCommand.ExecuteNonQuery();
+                             da.SelectCommand.Parameters.Clear();
                         if (transationStatus <= 0)
                         {
                             transaction.Rollback();
@@ -317,19 +317,16 @@ namespace POS.DAL
                         }
                         else 
                         {
-                        da.SelectCommand.CommandText = "POS_SP_DELETE_ProductWisePackSize";
-                        //da.SelectCommand.Parameters.Add("@PPSID", System.Data.SqlDbType.BigInt).Value = objProduct.ProdPackSize.PPSID;
-                        //da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-                        da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objProduct.ProdPackSize.PackSizeID;
-                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        transationStatus = da.SelectCommand.ExecuteNonQuery();
-                        da.SelectCommand.Parameters.Clear();
+                            da.SelectCommand.CommandText = "POS_SP_DELETE_ProductWisePackSize";
+                            da.SelectCommand.Parameters.Add("@PPSID", System.Data.SqlDbType.BigInt).Value = objProduct.ProdPackSize.PPSID;
+                            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            transationStatus = da.SelectCommand.ExecuteNonQuery();
+                            da.SelectCommand.Parameters.Clear();
                         }
                         if(transationStatus>0)
                         {
                             da.SelectCommand.CommandText = "POS_SP_DELETE_ProductPrice";
                             da.SelectCommand.Parameters.Add("@PPID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductPrice.PPID;
-                            //da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.Int).Value = objProduct.ProductId;
                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
                             transationStatus = da.SelectCommand.ExecuteNonQuery();
                             da.SelectCommand.Parameters.Clear();

@@ -243,7 +243,6 @@ namespace POS
                     //assign the value plus the desired column example 1
                     ID = Convert.ToInt32(grvProductEntry.Rows[numberRow].Cells[0].Value.ToString());
                     objProduct = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == ID);
-                    int PackSizeID = objProduct.ProdPackSize.PackSizeID;
                     pPID = objProduct.ProductPrice.PPID;
                     pPSID = objProduct.ProdPackSize.PPSID;
                     if (_IProduct.DELETE(objProduct) > 0)
