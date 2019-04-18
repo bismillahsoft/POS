@@ -193,10 +193,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-        public int DELETE(Product objProduct)
-        {
-            throw new NotImplementedException();
-        }
         public int Update(BO.Product objProduct, int ID)
         {
             try
@@ -285,84 +281,84 @@ namespace POS.DAL
             }
         }
 
-        //public int DELETE(BO.Product objProduct)
-        //{
-        //    try
-        //    {
-        //        int retunstatus = 0;
-        //        int transationStatus = 0;
-        //        using (var connection = new DCommon().CreateCon())
-        //        {
-        //            SqlDataAdapter da = new SqlDataAdapter();
-        //            da.SelectCommand = connection.CreateCommand();
-        //            SqlTransaction transaction = null;
-        //            try
-        //            {
-        //                // BeginTransaction() Requires Open Connection
-        //                if (connection.State == System.Data.ConnectionState.Closed)
-        //                {
-        //                    connection.Open();
-        //                }
-        //                transaction = connection.BeginTransaction();
-        //                // Assign Transaction to Command
-        //                da.SelectCommand.Connection = connection;
-        //                da.SelectCommand.Transaction = transaction;
-        //                da.SelectCommand.CommandText = "DCR_SP_DELETE_Product";
-        //                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-        //                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-        //                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-        //                da.SelectCommand.Connection = connection;
-        //                transationStatus = da.SelectCommand.ExecuteNonQuery();
-        //                da.SelectCommand.Parameters.Clear();
-        //                if (transationStatus <= 0)
-        //                {
-        //                    transaction.Rollback();
-        //                    //break;
-        //                }
-        //                else
-        //                {
-        //                    foreach (var objPackSize in objProduct.ProdPackSizeList)
-        //                    {
-        //                        #region InsertProductWisePackSize
-
-        //                        da.SelectCommand.CommandText = "DCR_SP_DELETE_ProductWisePackSize";
-        //                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-        //                        da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objPackSize.PackSizeID;
-        //                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-        //                        transationStatus = da.SelectCommand.ExecuteNonQuery();
-        //                        da.SelectCommand.Parameters.Clear();
-
-        //                        #endregion InsertProductWisePackSize
-        //                    }
-        //                }
-
-        //                transaction.Commit();
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                transaction.Rollback();
-        //            }
-        //            finally
-        //            {
-        //                if (connection.State == System.Data.ConnectionState.Open)
-        //                {
-        //                    connection.Close();
-        //                }
-        //                if (transationStatus == 1)
-        //                {
-        //                    retunstatus = 1;
-        //                }
-        //            }
-        //        }
-        //        return retunstatus;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-
+        public int DELETE(BO.Product objProduct)
+        {
+            try
+            {
+                int retunstatus = 0;
+                int transationStatus = 0;
+                using (var connection = new DCommon().CreateCon())
+                {
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    da.SelectCommand = connection.CreateCommand();
+                    SqlTransaction transaction = null;
+                    try
+                    {
+                        // BeginTransaction() Requires Open Connection
+                        if (connection.State == System.Data.ConnectionState.Closed)
+                        {
+                            connection.Open();
+                        }
+                        transaction = connection.BeginTransaction();
+                        // Assign Transaction to Command
+                        da.SelectCommand.Connection = connection;
+                        da.SelectCommand.Transaction = transaction;
+                        da.SelectCommand.CommandText = "POS_SP_DELETE_Product";
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand.Connection = connection;
+                        transationStatus = da.SelectCommand.ExecuteNonQuery();
+                        da.SelectCommand.Parameters.Clear();
+                        if (transationStatus <= 0)
+                        {
+                            transaction.Rollback();
+                            //break;
+                        }
+                        else 
+                        {
+                        da.SelectCommand.CommandText = "POS_SP_DELETE_ProductWisePackSize";
+                        //da.SelectCommand.Parameters.Add("@PPSID", System.Data.SqlDbType.BigInt).Value = objProduct.ProdPackSize.PPSID;
+                        //da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
+                        da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objProduct.ProdPackSize.PackSizeID;
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        transationStatus = da.SelectCommand.ExecuteNonQuery();
+                        da.SelectCommand.Parameters.Clear();
+                        }
+                        if(transationStatus>0)
+                        {
+                            da.SelectCommand.CommandText = "POS_SP_DELETE_ProductPrice";
+                            da.SelectCommand.Parameters.Add("@PPID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductPrice.PPID;
+                            //da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.Int).Value = objProduct.ProductId;
+                            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            transationStatus = da.SelectCommand.ExecuteNonQuery();
+                            da.SelectCommand.Parameters.Clear();
+                        }
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                    }
+                    finally
+                    {
+                        if (connection.State == System.Data.ConnectionState.Open)
+                        {
+                            connection.Close();
+                        }
+                        if (transationStatus == 1)
+                        {
+                            retunstatus = 1;
+                        }
+                    }
+                }
+                return retunstatus;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public IList<BO.Product> GetProductList()
         {
             try
