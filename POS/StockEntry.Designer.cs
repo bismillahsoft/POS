@@ -50,6 +50,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblStockEntry
@@ -241,7 +244,7 @@
             this.txtRemarks.Location = new System.Drawing.Point(349, 379);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.Size = new System.Drawing.Size(188, 71);
+            this.txtRemarks.Size = new System.Drawing.Size(188, 58);
             this.txtRemarks.TabIndex = 3;
             // 
             // label11
@@ -254,12 +257,50 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "New Entry";
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 16;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReset.Location = new System.Drawing.Point(724, 415);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(90, 35);
+            this.btnReset.TabIndex = 18;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSave.Location = new System.Drawing.Point(835, 415);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 35);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // StockEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1161, 576);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtTsQty);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.txtTsPcs);
@@ -315,5 +356,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSave;
     }
 }
