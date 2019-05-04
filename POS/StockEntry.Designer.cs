@@ -182,6 +182,7 @@
             // 
             // txtTsCtnPkt
             // 
+            this.txtTsCtnPkt.Enabled = false;
             this.txtTsCtnPkt.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsCtnPkt.Location = new System.Drawing.Point(349, 326);
             this.txtTsCtnPkt.Name = "txtTsCtnPkt";
@@ -190,6 +191,7 @@
             // 
             // txtTsPcs
             // 
+            this.txtTsPcs.Enabled = false;
             this.txtTsPcs.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsPcs.Location = new System.Drawing.Point(598, 326);
             this.txtTsPcs.Name = "txtTsPcs";
@@ -198,6 +200,7 @@
             // 
             // txtTsQty
             // 
+            this.txtTsQty.Enabled = false;
             this.txtTsQty.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsQty.Location = new System.Drawing.Point(825, 326);
             this.txtTsQty.Name = "txtTsQty";
@@ -267,12 +270,13 @@
             this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReset.Location = new System.Drawing.Point(724, 415);
+            this.btnReset.Location = new System.Drawing.Point(731, 475);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(90, 35);
@@ -284,7 +288,7 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSave.Location = new System.Drawing.Point(835, 415);
+            this.btnSave.Location = new System.Drawing.Point(842, 475);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 35);

@@ -15,16 +15,26 @@ namespace POS
     public partial class StockEntry : Form
     {
         #region
-        private int IProduct _IProduct = null;
-        private int IProductPackSize _IProductPackSize = null;
+        private IProduct _IProduct = null;
+        private IProductPackSize _IProductPackSize = null;
+       
         #endregion
         public StockEntry()
         {
             InitializeComponent();
             _IProduct = new BLL.BProduct();
             _IProductPackSize = new BLL.BProductPackSize();
+
+
+            COMMON.DDL.PopulateDropDownList(_IProduct.GetProductList().ToList(), ddlProduct, "ProductID", "ProductName");
+            COMMON.DDL.PopulateDropDownList(_IProductPackSize.GetProductPackSizeList().ToList(), ddlPackSize, "PackSizeID", "PackSize");
+           
         }
 
-     
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new Home().Show();
+            this.Hide();
+        }
     }
 }

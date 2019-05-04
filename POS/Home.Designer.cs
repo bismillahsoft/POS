@@ -103,6 +103,7 @@
             this.btnInventory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // btnSales
             // 
@@ -149,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1433, 831);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPosSystem);
