@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BaseClass.cs" />
     <Compile Include="Brand.cs" />
+    <Compile Include="DMS_AreaStock.cs" />
     <Compile Include="ProductPrice.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductBatch.cs" />
