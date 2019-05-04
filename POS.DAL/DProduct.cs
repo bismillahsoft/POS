@@ -67,10 +67,10 @@ namespace POS.DAL
                             {
                                 da.SelectCommand.CommandText = "POS_SET_SP_INSERT_SET_ProductPrice";
                                 da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.Int).Value = ProductID;
-                                da.SelectCommand.Parameters.Add("@PP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.PurchasePrice;
-                                da.SelectCommand.Parameters.Add("@MRP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.MRP;
-                                da.SelectCommand.Parameters.Add("@Vat", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.Vat;
-                                da.SelectCommand.Parameters.Add("@TP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.TradePrice;
+                                da.SelectCommand.Parameters.Add("@PP", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.PurchasePrice;
+                                da.SelectCommand.Parameters.Add("@MRP", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.MRP;
+                                da.SelectCommand.Parameters.Add("@Vat", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.Vat;
+                                da.SelectCommand.Parameters.Add("@TP", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.TradePrice;
                                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                                 transationStatus = da.SelectCommand.ExecuteNonQuery();
                             }
@@ -248,10 +248,10 @@ namespace POS.DAL
                                 da.SelectCommand.CommandText = "POS_SP_Update_SET_ProductPrice";
                                 da.SelectCommand.Parameters.Add("@PPID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductPrice.PPID;
                                 da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.Int).Value = ID;
-                                da.SelectCommand.Parameters.Add("@PP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.PurchasePrice;
-                                da.SelectCommand.Parameters.Add("@MRP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.MRP;
-                                da.SelectCommand.Parameters.Add("@Vat", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.Vat;
-                                da.SelectCommand.Parameters.Add("@TP", System.Data.SqlDbType.Decimal, 3).Value = objProduct.ProductPrice.TradePrice;
+                                da.SelectCommand.Parameters.Add("@PP", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.PurchasePrice;
+                                da.SelectCommand.Parameters.Add("@MRP", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.MRP;
+                                da.SelectCommand.Parameters.Add("@Vat", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.Vat;
+                                da.SelectCommand.Parameters.Add("@TP", System.Data.SqlDbType.Decimal, 2).Value = objProduct.ProductPrice.TradePrice;
                                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                                 transationStatus = da.SelectCommand.ExecuteNonQuery();
                             }
@@ -299,23 +299,23 @@ namespace POS.DAL
                         {
                             connection.Open();
                         }
-                             transaction = connection.BeginTransaction();
-                             // Assign Transaction to Command
-                             da.SelectCommand.Connection = connection;
-                             da.SelectCommand.Transaction = transaction;
-                             da.SelectCommand.CommandText = "POS_SP_DELETE_Product";
-                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                             da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
-                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                             da.SelectCommand.Connection = connection;
-                             transationStatus = da.SelectCommand.ExecuteNonQuery();
-                             da.SelectCommand.Parameters.Clear();
+                        transaction = connection.BeginTransaction();
+                        // Assign Transaction to Command
+                        da.SelectCommand.Connection = connection;
+                        da.SelectCommand.Transaction = transaction;
+                        da.SelectCommand.CommandText = "POS_SP_DELETE_Product";
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductId;
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand.Connection = connection;
+                        transationStatus = da.SelectCommand.ExecuteNonQuery();
+                        da.SelectCommand.Parameters.Clear();
                         if (transationStatus <= 0)
                         {
                             transaction.Rollback();
                             //break;
                         }
-                        else 
+                        else
                         {
                             da.SelectCommand.CommandText = "POS_SP_DELETE_ProductWisePackSize";
                             da.SelectCommand.Parameters.Add("@PPSID", System.Data.SqlDbType.BigInt).Value = objProduct.ProdPackSize.PPSID;
@@ -323,7 +323,7 @@ namespace POS.DAL
                             transationStatus = da.SelectCommand.ExecuteNonQuery();
                             da.SelectCommand.Parameters.Clear();
                         }
-                        if(transationStatus>0)
+                        if (transationStatus > 0)
                         {
                             da.SelectCommand.CommandText = "POS_SP_DELETE_ProductPrice";
                             da.SelectCommand.Parameters.Add("@PPID", System.Data.SqlDbType.BigInt).Value = objProduct.ProductPrice.PPID;
