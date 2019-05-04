@@ -112,7 +112,9 @@
             this.ddlProduct.Location = new System.Drawing.Point(349, 156);
             this.ddlProduct.Name = "ddlProduct";
             this.ddlProduct.Size = new System.Drawing.Size(188, 31);
-            this.ddlProduct.TabIndex = 2;
+            this.ddlProduct.TabIndex = 1;
+            this.ddlProduct.SelectedIndexChanged += new System.EventHandler(this.ddlProduct_SelectedIndexChanged);
+            this.ddlProduct.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlProduct_KeyUp);
             // 
             // ddlPackSize
             // 
@@ -122,6 +124,7 @@
             this.ddlPackSize.Name = "ddlPackSize";
             this.ddlPackSize.Size = new System.Drawing.Size(188, 31);
             this.ddlPackSize.TabIndex = 2;
+            this.ddlPackSize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlPackSize_KeyUp);
             // 
             // label3
             // 
@@ -150,7 +153,7 @@
             this.txtCsCtn.Location = new System.Drawing.Point(349, 237);
             this.txtCsCtn.Name = "txtCsCtn";
             this.txtCsCtn.Size = new System.Drawing.Size(188, 29);
-            this.txtCsCtn.TabIndex = 3;
+            this.txtCsCtn.TabIndex = 15;
             // 
             // txtCsPcs
             // 
@@ -159,7 +162,7 @@
             this.txtCsPcs.Location = new System.Drawing.Point(598, 237);
             this.txtCsPcs.Name = "txtCsPcs";
             this.txtCsPcs.Size = new System.Drawing.Size(188, 29);
-            this.txtCsPcs.TabIndex = 3;
+            this.txtCsPcs.TabIndex = 16;
             // 
             // txtCsQty
             // 
@@ -168,7 +171,7 @@
             this.txtCsQty.Location = new System.Drawing.Point(825, 237);
             this.txtCsQty.Name = "txtCsQty";
             this.txtCsQty.Size = new System.Drawing.Size(188, 29);
-            this.txtCsQty.TabIndex = 3;
+            this.txtCsQty.TabIndex = 17;
             // 
             // label1
             // 
@@ -187,7 +190,7 @@
             this.txtTsCtnPkt.Location = new System.Drawing.Point(349, 326);
             this.txtTsCtnPkt.Name = "txtTsCtnPkt";
             this.txtTsCtnPkt.Size = new System.Drawing.Size(188, 29);
-            this.txtTsCtnPkt.TabIndex = 3;
+            this.txtTsCtnPkt.TabIndex = 18;
             // 
             // txtTsPcs
             // 
@@ -196,7 +199,7 @@
             this.txtTsPcs.Location = new System.Drawing.Point(598, 326);
             this.txtTsPcs.Name = "txtTsPcs";
             this.txtTsPcs.Size = new System.Drawing.Size(188, 29);
-            this.txtTsPcs.TabIndex = 3;
+            this.txtTsPcs.TabIndex = 19;
             // 
             // txtTsQty
             // 
@@ -205,7 +208,7 @@
             this.txtTsQty.Location = new System.Drawing.Point(825, 326);
             this.txtTsQty.Name = "txtTsQty";
             this.txtTsQty.Size = new System.Drawing.Size(188, 29);
-            this.txtTsQty.TabIndex = 3;
+            this.txtTsQty.TabIndex = 20;
             // 
             // txtCtnPkt
             // 
@@ -214,6 +217,7 @@
             this.txtCtnPkt.Name = "txtCtnPkt";
             this.txtCtnPkt.Size = new System.Drawing.Size(188, 29);
             this.txtCtnPkt.TabIndex = 3;
+            this.txtCtnPkt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCtnPkt_KeyUp);
             // 
             // txtPcs
             // 
@@ -221,7 +225,8 @@
             this.txtPcs.Location = new System.Drawing.Point(598, 282);
             this.txtPcs.Name = "txtPcs";
             this.txtPcs.Size = new System.Drawing.Size(188, 29);
-            this.txtPcs.TabIndex = 3;
+            this.txtPcs.TabIndex = 4;
+            this.txtPcs.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPcs_KeyUp);
             // 
             // txtQty
             // 
@@ -229,7 +234,8 @@
             this.txtQty.Location = new System.Drawing.Point(825, 282);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(188, 29);
-            this.txtQty.TabIndex = 3;
+            this.txtQty.TabIndex = 5;
+            this.txtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyUp);
             // 
             // label10
             // 
@@ -248,7 +254,8 @@
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(188, 58);
-            this.txtRemarks.TabIndex = 3;
+            this.txtRemarks.TabIndex = 6;
+            this.txtRemarks.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemarks_KeyUp);
             // 
             // label11
             // 
@@ -267,7 +274,7 @@
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(98, 54);
-            this.btnBack.TabIndex = 16;
+            this.btnBack.TabIndex = 9;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -280,9 +287,10 @@
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(90, 35);
-            this.btnReset.TabIndex = 18;
+            this.btnReset.TabIndex = 7;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnReset_KeyUp);
             // 
             // btnSave
             // 
@@ -292,9 +300,10 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 35);
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
             // 
             // StockEntry
             // 

@@ -31,7 +31,7 @@ namespace POS
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            new StockEntry().Show();
+            new HomeStock().Show();
             this.Hide();
         }
     }

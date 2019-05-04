@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BBrand.cs" />
+    <Compile Include="BDMS_AreaStock.cs" />
     <Compile Include="BProduct.cs" />
     <Compile Include="BProductBatch.cs" />
     <Compile Include="BProductCategory.cs" />

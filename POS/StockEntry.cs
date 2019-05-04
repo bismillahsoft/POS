@@ -27,14 +27,82 @@ namespace POS
 
 
             COMMON.DDL.PopulateDropDownList(_IProduct.GetProductList().ToList(), ddlProduct, "ProductID", "ProductName");
-            COMMON.DDL.PopulateDropDownList(_IProductPackSize.GetProductPackSizeList().ToList(), ddlPackSize, "PackSizeID", "PackSize");
            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            new Home().Show();
+            new HomeStock().Show();
             this.Hide();
+        }
+
+        private void ddlProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int productId = Convert.ToInt32(ddlProduct.SelectedValue);
+            var productList = _IProduct.GetProductList().Where(m=>m.ProductId==productId).ToList();
+            List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
+            foreach (var objProduct in productList)
+            {
+                BO.ProductPackSize objPackSize = new BO.ProductPackSize();
+                //objPackSize.PackSizeID = objProduct.ProdPackSize.PackSizeID;
+                objPackSize.PackSizeID = objProduct.PackSizeID;
+                objPackSize.PackSize = objProduct.PackSize;
+                //objPackSize.PackSize = objProduct.ProdPackSize.PackSize;
+                objPackSizeList.Add(objPackSize);
+            }
+
+            COMMON.DDL.PopulateDropDownList(objPackSizeList, ddlPackSize, "PackSizeID", "PackSize");
+
+        }
+
+        private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ddlPackSize.Focus();
+        }
+
+        private void ddlPackSize_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtCtnPkt.Focus();
+        }
+
+      
+
+        private void txtPcs_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtQty.Focus();
+        }
+
+        private void txtQty_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtRemarks.Focus();
+        }
+
+        private void txtRemarks_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSave.Focus();
+        }
+
+        private void btnSave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnReset.Focus();
+        }
+
+        private void btnReset_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBack.Focus();
+        }
+
+        private void txtCtnPkt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtPcs.Focus();
         }
     }
 }

@@ -80,3 +80,4 @@ D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.DAL.pdb
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\en\POS.resources.dll
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.exe
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.pdb
+D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.HomeStock.resources
