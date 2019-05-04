@@ -50,6 +50,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblStockEntry
@@ -109,7 +112,9 @@
             this.ddlProduct.Location = new System.Drawing.Point(349, 156);
             this.ddlProduct.Name = "ddlProduct";
             this.ddlProduct.Size = new System.Drawing.Size(188, 31);
-            this.ddlProduct.TabIndex = 2;
+            this.ddlProduct.TabIndex = 1;
+            this.ddlProduct.SelectedIndexChanged += new System.EventHandler(this.ddlProduct_SelectedIndexChanged);
+            this.ddlProduct.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlProduct_KeyUp);
             // 
             // ddlPackSize
             // 
@@ -119,6 +124,7 @@
             this.ddlPackSize.Name = "ddlPackSize";
             this.ddlPackSize.Size = new System.Drawing.Size(188, 31);
             this.ddlPackSize.TabIndex = 2;
+            this.ddlPackSize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlPackSize_KeyUp);
             // 
             // label3
             // 
@@ -147,7 +153,7 @@
             this.txtCsCtn.Location = new System.Drawing.Point(349, 237);
             this.txtCsCtn.Name = "txtCsCtn";
             this.txtCsCtn.Size = new System.Drawing.Size(188, 29);
-            this.txtCsCtn.TabIndex = 3;
+            this.txtCsCtn.TabIndex = 15;
             // 
             // txtCsPcs
             // 
@@ -156,7 +162,7 @@
             this.txtCsPcs.Location = new System.Drawing.Point(598, 237);
             this.txtCsPcs.Name = "txtCsPcs";
             this.txtCsPcs.Size = new System.Drawing.Size(188, 29);
-            this.txtCsPcs.TabIndex = 3;
+            this.txtCsPcs.TabIndex = 16;
             // 
             // txtCsQty
             // 
@@ -165,7 +171,7 @@
             this.txtCsQty.Location = new System.Drawing.Point(825, 237);
             this.txtCsQty.Name = "txtCsQty";
             this.txtCsQty.Size = new System.Drawing.Size(188, 29);
-            this.txtCsQty.TabIndex = 3;
+            this.txtCsQty.TabIndex = 17;
             // 
             // label1
             // 
@@ -179,27 +185,30 @@
             // 
             // txtTsCtnPkt
             // 
+            this.txtTsCtnPkt.Enabled = false;
             this.txtTsCtnPkt.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsCtnPkt.Location = new System.Drawing.Point(349, 326);
             this.txtTsCtnPkt.Name = "txtTsCtnPkt";
             this.txtTsCtnPkt.Size = new System.Drawing.Size(188, 29);
-            this.txtTsCtnPkt.TabIndex = 3;
+            this.txtTsCtnPkt.TabIndex = 18;
             // 
             // txtTsPcs
             // 
+            this.txtTsPcs.Enabled = false;
             this.txtTsPcs.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsPcs.Location = new System.Drawing.Point(598, 326);
             this.txtTsPcs.Name = "txtTsPcs";
             this.txtTsPcs.Size = new System.Drawing.Size(188, 29);
-            this.txtTsPcs.TabIndex = 3;
+            this.txtTsPcs.TabIndex = 19;
             // 
             // txtTsQty
             // 
+            this.txtTsQty.Enabled = false;
             this.txtTsQty.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsQty.Location = new System.Drawing.Point(825, 326);
             this.txtTsQty.Name = "txtTsQty";
             this.txtTsQty.Size = new System.Drawing.Size(188, 29);
-            this.txtTsQty.TabIndex = 3;
+            this.txtTsQty.TabIndex = 20;
             // 
             // txtCtnPkt
             // 
@@ -208,6 +217,7 @@
             this.txtCtnPkt.Name = "txtCtnPkt";
             this.txtCtnPkt.Size = new System.Drawing.Size(188, 29);
             this.txtCtnPkt.TabIndex = 3;
+            this.txtCtnPkt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCtnPkt_KeyUp);
             // 
             // txtPcs
             // 
@@ -215,7 +225,8 @@
             this.txtPcs.Location = new System.Drawing.Point(598, 282);
             this.txtPcs.Name = "txtPcs";
             this.txtPcs.Size = new System.Drawing.Size(188, 29);
-            this.txtPcs.TabIndex = 3;
+            this.txtPcs.TabIndex = 4;
+            this.txtPcs.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPcs_KeyUp);
             // 
             // txtQty
             // 
@@ -223,7 +234,8 @@
             this.txtQty.Location = new System.Drawing.Point(825, 282);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(188, 29);
-            this.txtQty.TabIndex = 3;
+            this.txtQty.TabIndex = 5;
+            this.txtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyUp);
             // 
             // label10
             // 
@@ -241,8 +253,9 @@
             this.txtRemarks.Location = new System.Drawing.Point(349, 379);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.Size = new System.Drawing.Size(188, 71);
-            this.txtRemarks.TabIndex = 3;
+            this.txtRemarks.Size = new System.Drawing.Size(188, 58);
+            this.txtRemarks.TabIndex = 6;
+            this.txtRemarks.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemarks_KeyUp);
             // 
             // label11
             // 
@@ -254,12 +267,53 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "New Entry";
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 9;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReset.Location = new System.Drawing.Point(731, 475);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(90, 35);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnReset_KeyUp);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSave.Location = new System.Drawing.Point(842, 475);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 35);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
+            // 
             // StockEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1161, 576);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtTsQty);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.txtTsPcs);
@@ -315,5 +369,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSave;
     }
 }

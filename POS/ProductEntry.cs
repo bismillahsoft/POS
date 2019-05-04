@@ -100,13 +100,12 @@ namespace POS
                 {
                     MsgBox msgBox = new MsgBox();
                     msgBox.Show();
-                    //lblMessageBox.Text = "Operation Failed";
-                    //lblMessageBox.ForeColor = Color.Red;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                throw ex;
+                MsgBox msgBox = new MsgBox();
+                msgBox.Show();
             }
         }
         private void GetProductList()

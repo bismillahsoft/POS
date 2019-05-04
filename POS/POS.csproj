@@ -74,6 +74,12 @@
     <Compile Include="Homeproduct.Designer.cs">
       <DependentUpon>Homeproduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeStock.Designer.cs">
+      <DependentUpon>HomeStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Homeproduct.resx">
       <DependentUpon>Homeproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeStock.resx">
+      <DependentUpon>HomeStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

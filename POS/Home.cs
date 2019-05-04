@@ -28,5 +28,11 @@ namespace POS
             new Homeproduct().Show();
             this.Hide(); 
         }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            new HomeStock().Show();
+            this.Hide();
+        }
     }
 }
