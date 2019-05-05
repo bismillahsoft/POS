@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS.IDAL
 {
-    public interface IMDS_AreaStock
+    public interface IDMS_AreaStock
     {
         int Insert(BO.DMS_AreaStock ObjAreaStock);
         int Update(BO.DMS_AreaStock ObjAreaStock);

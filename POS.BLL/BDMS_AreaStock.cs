@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace POS.BLL
 {
-    public class BDMS_AreaStock : IDAL.IMDS_AreaStock
+    public class BDMS_AreaStock : IDAL.IDMS_AreaStock
     {
-        private IDAL.IMDS_AreaStock _iDMS_AreaStock = null;
+        private IDAL.IDMS_AreaStock _iDMS_AreaStock = null;
 
         public BDMS_AreaStock()
         {

@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBrand.cs" />
-    <Compile Include="IMDS_AreaStock.cs" />
+    <Compile Include="IDMS_AreaStock.cs" />
     <Compile Include="IProduct.cs" />
     <Compile Include="IProductBatch.cs" />
     <Compile Include="IProductCategory.cs" />

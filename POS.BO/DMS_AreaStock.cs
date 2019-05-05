@@ -186,6 +186,10 @@ namespace POS.BO
                 _StockTransantionDate = value;
             }
         }
+
+        public int ProductName { get; set; }
+        public string Remarks { get; set; }
+
         private int _AsID;
         private int _AreaID;
         private int _ProductID;

@@ -48,11 +48,11 @@
             this.txtPcs = new System.Windows.Forms.TextBox();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtRemarks = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.TransactionDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblStockEntry
@@ -69,7 +69,7 @@
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(227, 156);
+            this.lblProductName.Location = new System.Drawing.Point(202, 156);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(104, 23);
             this.lblProductName.TabIndex = 1;
@@ -89,7 +89,7 @@
             // 
             this.lblCStock.AutoSize = true;
             this.lblCStock.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCStock.Location = new System.Drawing.Point(230, 240);
+            this.lblCStock.Location = new System.Drawing.Point(205, 240);
             this.lblCStock.Name = "lblCStock";
             this.lblCStock.Size = new System.Drawing.Size(103, 23);
             this.lblCStock.TabIndex = 1;
@@ -177,7 +177,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(230, 329);
+            this.label1.Location = new System.Drawing.Point(205, 329);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 23);
             this.label1.TabIndex = 1;
@@ -241,27 +241,17 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(230, 382);
+            this.label10.Location = new System.Drawing.Point(205, 382);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 23);
+            this.label10.Size = new System.Drawing.Size(131, 23);
             this.label10.TabIndex = 1;
-            this.label10.Text = "Remarks :";
-            // 
-            // txtRemarks
-            // 
-            this.txtRemarks.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemarks.Location = new System.Drawing.Point(349, 379);
-            this.txtRemarks.Multiline = true;
-            this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.Size = new System.Drawing.Size(188, 58);
-            this.txtRemarks.TabIndex = 6;
-            this.txtRemarks.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemarks_KeyUp);
+            this.label10.Text = "Transaction Date :";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(230, 285);
+            this.label11.Location = new System.Drawing.Point(205, 285);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 23);
             this.label11.TabIndex = 1;
@@ -303,7 +293,17 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             this.btnSave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnSave_KeyUp);
+            // 
+            // TransactionDate
+            // 
+            this.TransactionDate.Location = new System.Drawing.Point(349, 384);
+            this.TransactionDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.TransactionDate.Name = "TransactionDate";
+            this.TransactionDate.Size = new System.Drawing.Size(188, 20);
+            this.TransactionDate.TabIndex = 21;
+            this.TransactionDate.Value = new System.DateTime(2019, 5, 5, 17, 50, 19, 0);
             // 
             // StockEntry
             // 
@@ -311,6 +311,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1161, 576);
+            this.Controls.Add(this.TransactionDate);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBack);
@@ -321,7 +322,6 @@
             this.Controls.Add(this.txtCsCtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQty);
-            this.Controls.Add(this.txtRemarks);
             this.Controls.Add(this.ddlPackSize);
             this.Controls.Add(this.txtPcs);
             this.Controls.Add(this.txtCtnPkt);
@@ -339,6 +339,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "StockEntry";
             this.Text = "StockEntry";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -367,10 +368,10 @@
         private System.Windows.Forms.TextBox txtPcs;
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DateTimePicker TransactionDate;
     }
 }
