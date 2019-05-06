@@ -44,7 +44,7 @@ namespace POS
                 ObjDMS_AreaStock.CtnOrPkt = Convert.ToInt32(txtCtnPkt.Text);
                 ObjDMS_AreaStock.Pcs = Convert.ToInt32(txtPcs.Text);
                 ObjDMS_AreaStock.Qty = Convert.ToInt32(txtQty.Text);
-                ObjDMS_AreaStock.StockTransantionDate =Convert.ToDateTime(TransactionDate.Value.ToString());
+                ObjDMS_AreaStock.StockTransantionDate =Convert.ToDateTime (TransactionDate.Text.ToString());
                 //ObjDMS_AreaStock.Remarks = txtRemarks.Text;
                 
 
