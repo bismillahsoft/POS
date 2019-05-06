@@ -48,39 +48,6 @@ E:\GitRepository\BPOS\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 E:\GitRepository\BPOS\POS\POS\obj\Debug\en\POS.resources.dll
 E:\GitRepository\BPOS\POS\POS\obj\Debug\POS.exe
 E:\GitRepository\BPOS\POS\POS\obj\Debug\POS.pdb
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.exe.config
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.exe
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.pdb
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\en\POS.resources.dll
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.BLL.dll
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.BO.dll
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.COMMON.dll
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.IDAL.dll
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.DAL.dll
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.BLL.pdb
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.BO.pdb
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.COMMON.pdb
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.IDAL.pdb
-D:\Zahid PC\GitRepository\BPOS\POS\bin\Debug\POS.DAL.pdb
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.BatchEntry.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.BrandEntry.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.GenericEntry.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.Home.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.Homeproduct.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.HomeStock.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.Login.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.MsgBox.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.PackSizeEntry.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.ProductCategory.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.ProductEntry.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.Properties.Resources.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.StockEntry.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.MsgBox.en.resources
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\en\POS.resources.dll
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.exe
-D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.pdb
 F:\Git_Repository\BPOS\POS\bin\Debug\POS.exe.config
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.exe
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.pdb
