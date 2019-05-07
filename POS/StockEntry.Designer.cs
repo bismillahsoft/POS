@@ -124,6 +124,7 @@
             this.ddlPackSize.Name = "ddlPackSize";
             this.ddlPackSize.Size = new System.Drawing.Size(188, 31);
             this.ddlPackSize.TabIndex = 2;
+            this.ddlPackSize.SelectedIndexChanged += new System.EventHandler(this.ddlPackSize_SelectedIndexChanged);
             this.ddlPackSize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlPackSize_KeyUp);
             // 
             // label3
@@ -233,6 +234,7 @@
             this.txtQty.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQty.Location = new System.Drawing.Point(825, 282);
             this.txtQty.Name = "txtQty";
+            this.txtQty.ReadOnly = true;
             this.txtQty.Size = new System.Drawing.Size(188, 29);
             this.txtQty.TabIndex = 5;
             this.txtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyUp);

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace POS
 {
-    public partial class StockEntry : Form
+    public partial class StockEntryPage : Form
     {
         #region
         private IProduct _IProduct = null;
@@ -20,19 +20,19 @@ namespace POS
         private IDMS_AreaStock _IDMS_AreaStock = null;
 
         #endregion
-        public StockEntry()
+        public StockEntryPage()
         {
             InitializeComponent();
             _IProduct = new BLL.BProduct();
             _IProductPackSize = new BLL.BProductPackSize();
             _IDMS_AreaStock = new BLL.BDMS_AreaStock();
-            
+
 
 
             COMMON.DDL.PopulateDropDownList(_IProduct.GetProductList().ToList(), ddlProduct, "ProductID", "ProductName");
-           
+
         }
-       
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -52,6 +52,7 @@ namespace POS
                 if (_IDMS_AreaStock.Insert(ObjDMS_AreaStock) > 0)
                 {
                     MessageBox.Show("Succesfully Saved");
+                    Reset();
                 }
             }
             catch (Exception ex)
@@ -62,26 +63,38 @@ namespace POS
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            new HomeStock().Show();
-            this.Hide();
+            try
+            {
+                new HomeStock().Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void ddlProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int productId = Convert.ToInt32(ddlProduct.SelectedValue);
-            var productList = _IProduct.GetProductList().Where(m=>m.ProductId==productId).ToList();
-            List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
-            foreach (var objProduct in productList)
+            try
             {
-                BO.ProductPackSize objPackSize = new BO.ProductPackSize();
-                //objPackSize.PackSizeID = objProduct.ProdPackSize.PackSizeID;
-                objPackSize.PackSizeID = objProduct.PackSizeID;
-                objPackSize.PackSize = objProduct.PackSize;
-                objPackSizeList.Add(objPackSize);
+                int productId = Convert.ToInt32(ddlProduct.SelectedValue);
+                var productList = _IProduct.GetProductList().Where(m => m.ProductId == productId).ToList();
+                List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
+                foreach (var objProduct in productList)
+                {
+                    BO.ProductPackSize objPackSize = new BO.ProductPackSize();
+                    //objPackSize.PackSizeID = objProduct.ProdPackSize.PackSizeID;
+                    objPackSize.PackSizeID = objProduct.PackSizeID;
+                    objPackSize.PackSize = objProduct.PackSize;
+                    objPackSizeList.Add(objPackSize);
+                }
+                COMMON.DDL.PopulateDropDownList(objPackSizeList, ddlPackSize, "PackSizeID", "PackSize");
             }
-
-            COMMON.DDL.PopulateDropDownList(objPackSizeList, ddlPackSize, "PackSizeID", "PackSize");
-
+            catch (Exception ex)
+            {
+                
+            }
         }
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
@@ -122,6 +135,18 @@ namespace POS
         {
             if (e.KeyCode == Keys.Enter)
                 btnSave.Focus();
+        }
+        private void Reset()
+        {
+            ddlProduct.Text = "";
+            ddlPackSize.Text = "";
+            txtCtnPkt.Text = "";
+            txtPcs.Text = "";
+            TransactionDate.Text = "";
+        }
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
 
         private void ddlPackSize_SelectedIndexChanged(object sender, EventArgs e)
