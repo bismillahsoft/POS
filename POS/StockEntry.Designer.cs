@@ -277,7 +277,7 @@
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(90, 35);
-            this.btnReset.TabIndex = 7;
+            this.btnReset.TabIndex = 8;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnReset_KeyUp);
@@ -290,7 +290,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 35);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -302,8 +302,9 @@
             this.TransactionDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.TransactionDate.Name = "TransactionDate";
             this.TransactionDate.Size = new System.Drawing.Size(188, 20);
-            this.TransactionDate.TabIndex = 21;
+            this.TransactionDate.TabIndex = 6;
             this.TransactionDate.Value = new System.DateTime(2019, 5, 5, 17, 50, 19, 0);
+            this.TransactionDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TransactionDate_KeyUp);
             // 
             // StockEntry
             // 

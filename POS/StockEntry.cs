@@ -32,6 +32,7 @@ namespace POS
             COMMON.DDL.PopulateDropDownList(_IProduct.GetProductList().ToList(), ddlProduct, "ProductID", "ProductName");
            
         }
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -44,9 +45,9 @@ namespace POS
                 ObjDMS_AreaStock.CtnOrPkt = Convert.ToInt32(txtCtnPkt.Text);
                 ObjDMS_AreaStock.Pcs = Convert.ToInt32(txtPcs.Text);
                 ObjDMS_AreaStock.Qty = Convert.ToInt32(txtQty.Text);
-                ObjDMS_AreaStock.StockTransantionDate =Convert.ToDateTime (TransactionDate.Value.ToString());
+                ObjDMS_AreaStock.StockTransantionDate = Convert.ToDateTime(TransactionDate.Value.ToString());
                 //ObjDMS_AreaStock.Remarks = txtRemarks.Text;
-                
+
 
                 if (_IDMS_AreaStock.Insert(ObjDMS_AreaStock) > 0)
                 {
@@ -82,55 +83,47 @@ namespace POS
             COMMON.DDL.PopulateDropDownList(objPackSizeList, ddlPackSize, "PackSizeID", "PackSize");
 
         }
-
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 ddlPackSize.Focus();
         }
-
         private void ddlPackSize_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtCtnPkt.Focus();
         }
-
-      
-
         private void txtPcs_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtQty.Focus();
         }
-
         private void txtQty_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) ;
-                //txtRemarks.Focus();
-        }
-
-        private void txtRemarks_KeyUp(object sender, KeyEventArgs e)
-        {
             if (e.KeyCode == Keys.Enter)
-                btnSave.Focus();
+                TransactionDate.Focus();
         }
-
         private void btnSave_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnReset.Focus();
         }
-
         private void btnReset_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnBack.Focus();
         }
-
         private void txtCtnPkt_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 txtPcs.Focus();
         }
+        private void TransactionDate_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSave.Focus();
+        }
+
+      
     }
 }
