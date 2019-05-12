@@ -97,7 +97,6 @@ F:\Git_Repository\BPOS\POS\bin\Debug\POS.BO.pdb
 F:\Git_Repository\BPOS\POS\bin\Debug\POS.COMMON.pdb
 F:\Git_Repository\BPOS\POS\bin\Debug\POS.IDAL.pdb
 F:\Git_Repository\BPOS\POS\bin\Debug\POS.DAL.pdb
-F:\Git_Repository\BPOS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.BatchEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.BrandEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.GenericEntry.resources
@@ -114,3 +113,7 @@ F:\Git_Repository\BPOS\POS\obj\Debug\POS.StockEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.MsgBox.en.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 F:\Git_Repository\BPOS\POS\obj\Debug\en\POS.resources.dll
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.csprojAssemblyReference.cache
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.CoreCompileInputs.cache
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.CopyComplete
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.StockEntryPage.resources
