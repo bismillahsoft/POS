@@ -393,7 +393,7 @@ namespace POS.DAL
                         obj.ProductId = productID;
                         obj.ProductName = row["ProductName"].ToString();
                         obj.ProductCode = row["ProductCode"].ToString();
-                        obj.ProdPackSize.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
+                        obj.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
                         obj.PackSize = Convert.ToString(row["PackSize"]);
                         obj.Brand.BrandID = Convert.ToInt32(row["BrandID"]);
                         obj.BrandName = row["Brand"].ToString();
