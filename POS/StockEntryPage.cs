@@ -151,7 +151,24 @@ namespace POS
 
         private void ddlPackSize_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+        }
 
+        private void txtCtnPkt_TextChanged(object sender, EventArgs e)
+        {
+            //int a = Convert.ToInt32(txtCtnPkt.Text);
+            //txtQty.Text = Convert.ToString(a);
+
+            txtQty.Text = (txtCtnPkt.Text);
+        }
+
+        private void txtPcs_TextChanged(object sender, EventArgs e)
+        {
+            //int a = Convert.ToInt32(txtQty.Text);
+            //int b = Convert.ToInt32(txtPcs.Text);
+            //txtQty.Text =  (a+b).ToString();
+
+            txtQty.Text = Convert.ToString(Convert.ToInt32(txtQty.Text) + Convert.ToInt32(txtPcs.Text));
         }
     }
 }

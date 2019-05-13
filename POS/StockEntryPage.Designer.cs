@@ -189,6 +189,7 @@
             this.txtPcs.Name = "txtPcs";
             this.txtPcs.Size = new System.Drawing.Size(188, 29);
             this.txtPcs.TabIndex = 34;
+            this.txtPcs.TextChanged += new System.EventHandler(this.txtPcs_TextChanged);
             this.txtPcs.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPcs_KeyUp);
             // 
             // txtCtnPkt
@@ -198,6 +199,7 @@
             this.txtCtnPkt.Name = "txtCtnPkt";
             this.txtCtnPkt.Size = new System.Drawing.Size(188, 29);
             this.txtCtnPkt.TabIndex = 33;
+            this.txtCtnPkt.TextChanged += new System.EventHandler(this.txtCtnPkt_TextChanged);
             this.txtCtnPkt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCtnPkt_KeyUp);
             // 
             // ddlProduct
