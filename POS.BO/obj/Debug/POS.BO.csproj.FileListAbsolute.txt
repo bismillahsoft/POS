@@ -17,3 +17,7 @@ D:\Zahid PC\GitRepository\BPOS\POS.BO\bin\Debug\POS.BO.pdb
 D:\Zahid PC\GitRepository\BPOS\POS.BO\obj\Debug\POS.BO.dll
 D:\Zahid PC\GitRepository\BPOS\POS.BO\obj\Debug\POS.BO.pdb
 D:\Zahid PC\GitRepository\BPOS\POS.BO\obj\Debug\POS.BO.csprojResolveAssemblyReference.cache
+D:\Zahid PC\GitRepo\BPOS\POS.BO\bin\Debug\POS.BO.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BO\bin\Debug\POS.BO.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BO\obj\Debug\POS.BO.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BO\obj\Debug\POS.BO.pdb
