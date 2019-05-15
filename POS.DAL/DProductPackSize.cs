@@ -65,7 +65,7 @@ namespace POS.DAL
                 da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objProductPackSize.PackSizeID;
                 da.SelectCommand.Parameters.Add("@PackSizeName", SqlDbType.VarChar, 100).Value = objProductPackSize.PackSize;
                 da.SelectCommand.Parameters.Add("@Strip", SqlDbType.Int).Value = objProductPackSize.Strip;
-                da.SelectCommand.Parameters.Add("@PackSizeName", System.Data.SqlDbType.VarChar, 100).Value = objProductPackSize.PackSize;
+                da.SelectCommand.Parameters.Add("@PcsPerStrip", System.Data.SqlDbType.Int).Value = objProductPackSize.PcsPerStrip;
                 da.SelectCommand.Parameters.Add("@PackSizeDescription", System.Data.SqlDbType.VarChar, 500).Value = objProductPackSize.PackSizeDescription;
                 if (con.State == ConnectionState.Closed)
                 {

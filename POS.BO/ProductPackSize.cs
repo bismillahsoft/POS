@@ -5,7 +5,6 @@ namespace POS.BO
     public class ProductPackSize : BaseClass
     {
         private int _PackSizeID;
-
         public int PackSizeID
         {
             get { return _PackSizeID; }
@@ -45,6 +44,8 @@ namespace POS.BO
 
         public bool IsInsert { get; set; }
 
+
+        private string packSizeDescription;
         public string PackSizeDescription
         {
             get
@@ -58,6 +59,5 @@ namespace POS.BO
             }
         }
 
-        private string packSizeDescription;
     }
 }

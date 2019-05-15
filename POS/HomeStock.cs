@@ -19,7 +19,7 @@ namespace POS
 
         private void btnStockEntry_Click(object sender, EventArgs e)
         {
-            new StockEntry().Show();
+            new StockEntryPage().Show();
             this.Hide();
         }
 

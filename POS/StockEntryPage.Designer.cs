@@ -57,6 +57,7 @@
             // 
             // TransactionDate
             // 
+            this.TransactionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TransactionDate.Location = new System.Drawing.Point(344, 363);
             this.TransactionDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.TransactionDate.Name = "TransactionDate";
