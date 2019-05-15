@@ -39,7 +39,6 @@
             this.txtCsCtn = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
-            this.ddlPackSize = new System.Windows.Forms.ComboBox();
             this.txtPcs = new System.Windows.Forms.TextBox();
             this.txtCtnPkt = new System.Windows.Forms.TextBox();
             this.ddlProduct = new System.Windows.Forms.ComboBox();
@@ -53,6 +52,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblStockEntry = new System.Windows.Forms.Label();
+            this.txtPackSizee = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TransactionDate
@@ -170,17 +170,6 @@
             this.txtQty.Size = new System.Drawing.Size(188, 29);
             this.txtQty.TabIndex = 35;
             this.txtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyUp);
-            // 
-            // ddlPackSize
-            // 
-            this.ddlPackSize.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlPackSize.FormattingEnabled = true;
-            this.ddlPackSize.Location = new System.Drawing.Point(672, 132);
-            this.ddlPackSize.Name = "ddlPackSize";
-            this.ddlPackSize.Size = new System.Drawing.Size(188, 31);
-            this.ddlPackSize.TabIndex = 32;
-            this.ddlPackSize.SelectedIndexChanged += new System.EventHandler(this.ddlPackSize_SelectedIndexChanged);
-            this.ddlPackSize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlPackSize_KeyUp);
             // 
             // txtPcs
             // 
@@ -311,11 +300,20 @@
             this.lblStockEntry.TabIndex = 21;
             this.lblStockEntry.Text = "Stock Entry";
             // 
+            // txtPackSizee
+            // 
+            this.txtPackSizee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPackSizee.Location = new System.Drawing.Point(672, 135);
+            this.txtPackSizee.Name = "txtPackSizee";
+            this.txtPackSizee.Size = new System.Drawing.Size(231, 26);
+            this.txtPackSizee.TabIndex = 46;
+            // 
             // StockEntryPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 528);
+            this.Controls.Add(this.txtPackSizee);
             this.Controls.Add(this.TransactionDate);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
@@ -327,7 +325,6 @@
             this.Controls.Add(this.txtCsCtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQty);
-            this.Controls.Add(this.ddlPackSize);
             this.Controls.Add(this.txtPcs);
             this.Controls.Add(this.txtCtnPkt);
             this.Controls.Add(this.ddlProduct);
@@ -362,7 +359,6 @@
         private System.Windows.Forms.TextBox txtCsCtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtQty;
-        private System.Windows.Forms.ComboBox ddlPackSize;
         private System.Windows.Forms.TextBox txtPcs;
         private System.Windows.Forms.TextBox txtCtnPkt;
         private System.Windows.Forms.ComboBox ddlProduct;
@@ -376,5 +372,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblStockEntry;
+        private System.Windows.Forms.TextBox txtPackSizee;
     }
 }

@@ -27,8 +27,6 @@ namespace POS
             _IProductPackSize = new BLL.BProductPackSize();
             _IDMS_AreaStock = new BLL.BDMS_AreaStock();
 
-
-
             COMMON.DDL.PopulateDropDownList(_IProduct.GetProductList().ToList(), ddlProduct, "ProductID", "ProductName");
 
         }
@@ -79,27 +77,27 @@ namespace POS
             try
             {
                 int productId = Convert.ToInt32(ddlProduct.SelectedValue);
-                var productList = _IProduct.GetProductList().Where(m => m.ProductId == productId).ToList();
-                List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
-                foreach (var objProduct in productList)
-                {
-                    BO.ProductPackSize objPackSize = new BO.ProductPackSize();
-                    //objPackSize.PackSizeID = objProduct.ProdPackSize.PackSizeID;
-                    objPackSize.PackSizeID = objProduct.PackSizeID;
-                    objPackSize.PackSize = objProduct.PackSize;
-                    objPackSizeList.Add(objPackSize);
-                }
-                COMMON.DDL.PopulateDropDownList(objPackSizeList, ddlPackSize, "PackSizeID", "PackSize");
+                var product = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == productId);
+                txtPackSizee.Text = product.PackSize;
+                //List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
+                //foreach (var objProduct in productList)
+                //{
+                //    BO.ProductPackSize objPackSize = new BO.ProductPackSize();
+                //    //objPackSize.PackSizeID = objProduct.ProdPackSize.PackSizeID;
+                //    objPackSize.PackSizeID = objProduct.PackSizeID;
+                //    objPackSize.PackSize = objProduct.PackSize;
+                //    objPackSizeList.Add(objPackSize);
+                //}
             }
             catch (Exception ex)
             {
-                
+
             }
         }
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                ddlPackSize.Focus();
+                txtPackSizee.Focus();
         }
         private void ddlPackSize_KeyUp(object sender, KeyEventArgs e)
         {
@@ -139,7 +137,7 @@ namespace POS
         private void Reset()
         {
             ddlProduct.Text = "";
-            ddlPackSize.Text = "";
+            txtPackSizee.Text = "";
             txtCtnPkt.Text = "";
             txtPcs.Text = "";
             TransactionDate.Text = "";
@@ -147,11 +145,6 @@ namespace POS
         private void btnReset_Click(object sender, EventArgs e)
         {
             Reset();
-        }
-
-        private void ddlPackSize_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
         }
 
         private void txtCtnPkt_TextChanged(object sender, EventArgs e)

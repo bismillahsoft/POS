@@ -64,7 +64,6 @@ F:\Git_Repository\BPOS\POS\bin\Debug\POS.BO.pdb
 F:\Git_Repository\BPOS\POS\bin\Debug\POS.COMMON.pdb
 F:\Git_Repository\BPOS\POS\bin\Debug\POS.IDAL.pdb
 F:\Git_Repository\BPOS\POS\bin\Debug\POS.DAL.pdb
-F:\Git_Repository\BPOS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.BatchEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.BrandEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.GenericEntry.resources
@@ -115,3 +114,7 @@ D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\en\POS.resources.dll
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.exe
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.pdb
 D:\Zahid PC\GitRepository\BPOS\POS\obj\Debug\POS.StockEntryPage.resources
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.csprojAssemblyReference.cache
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.StockEntryPage.resources
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.CoreCompileInputs.cache
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.CopyComplete
