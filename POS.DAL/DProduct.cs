@@ -415,7 +415,6 @@ namespace POS.DAL
 
 
                         objProductList.Add(obj);
-                        // packSize = "";
                     }
                 }
                 return objProductList;
