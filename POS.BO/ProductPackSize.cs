@@ -35,7 +35,8 @@ namespace POS.BO
             get { return _LastUpdate; }
             set { _LastUpdate = value; }
         }
-
+        public int Strip { get; set; }
+        public int PcsPerStrip { get; set; }
         public long ProductId { get; set; }
 
         public bool ChkStatus { get; set; }

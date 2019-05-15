@@ -26,6 +26,8 @@ namespace POS
                 BO.ProductPackSize ObjProductPackSize = new BO.ProductPackSize();
 
                 ObjProductPackSize.PackSize = txtPackSize.Text;
+                ObjProductPackSize.Strip = Convert.ToInt32(txtStrip.Text);
+                ObjProductPackSize.PcsPerStrip = Convert.ToInt32(txtPcsPerStrip.Text);
                 ObjProductPackSize.PackSizeDescription = txtDescription.Text;
 
                 if(btnSave.Text=="Update"&& txtPackSize.Text != "")
@@ -76,6 +78,8 @@ namespace POS
         private void Reset()
         {
             txtPackSize.Text = "";
+            txtStrip.Text = "";
+            txtPcsPerStrip.Text = "";
             txtDescription.Text = "";
             btnSave.Text = "Save";
             GetPackSizeList();
@@ -105,7 +109,7 @@ namespace POS
         private void txtPackSize_KeyUp(object sender, KeyEventArgs e)
         {
            if( e.KeyCode == Keys.Enter)
-            txtDescription.Focus();
+            txtStrip.Focus();
         }
 
         private void txtDescription_KeyUp(object sender, KeyEventArgs e)
@@ -130,12 +134,21 @@ namespace POS
         {
             try
             {
+                BO.ProductPackSize ObjProductPackSize = new BO.ProductPackSize();
                 if (e.ColumnIndex == grvPackSize.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
                     int numberRow = Convert.ToInt32(e.RowIndex);
                     ID =Convert.ToInt32(grvPackSize.Rows[numberRow].Cells[0].Value.ToString());
-                    txtPackSize.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[2].Value);
-                    txtDescription.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[3].Value);
+                  
+                    ObjProductPackSize = _IProductPackSize.GetProductPackSizeList().FirstOrDefault(m => m.PackSizeID == ID);
+                    txtPackSize.Text = Convert.ToString(ObjProductPackSize.PackSize);
+                    txtStrip.Text = Convert.ToString(ObjProductPackSize.Strip);
+                    txtDescription.Text = Convert.ToString(ObjProductPackSize.PackSizeDescription);
+                    txtPcsPerStrip.Text = Convert.ToString(ObjProductPackSize.PcsPerStrip);
+                    //txtPackSize.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[2].Value);
+                    //txtStrip.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[3].Value);
+                    //txtPcsPerStrip.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[4]);
+                    //txtDescription.Text = Convert.ToString(grvPackSize.Rows[numberRow].Cells[5].Value);
                     btnSave.Text = "Update";
                 }
                 if (e.ColumnIndex == grvPackSize.Columns["Delete"].Index && e.RowIndex >= 0)
@@ -155,6 +168,18 @@ namespace POS
                 lblMessageBox.Enabled = true;
                 lblMessageBox.ForeColor = Color.Red;
             }
+        }
+
+        private void txtStrip_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtPcsPerStrip.Focus();
+        }
+
+        private void txtPcsPerStrip_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtDescription.Focus();
         }
     }
 }

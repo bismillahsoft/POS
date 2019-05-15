@@ -22,6 +22,8 @@ namespace POS.DAL
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
                 da.SelectCommand.Parameters.Add("@PackSizeName", SqlDbType.VarChar, 100).Value = objProductPackSize.PackSize;
+                da.SelectCommand.Parameters.Add("@Strip", SqlDbType.Int).Value = objProductPackSize.Strip;
+                da.SelectCommand.Parameters.Add("@PcsPerStrip", SqlDbType.Int).Value = objProductPackSize.PcsPerStrip;
                 da.SelectCommand.Parameters.Add("@PackSizeDescription", SqlDbType.VarChar, 500).Value = objProductPackSize.PackSizeDescription;
                 if (con.State == ConnectionState.Closed)
                 {
@@ -61,6 +63,8 @@ namespace POS.DAL
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
                 da.SelectCommand.Parameters.Add("@PackSizeID", System.Data.SqlDbType.Int).Value = objProductPackSize.PackSizeID;
+                da.SelectCommand.Parameters.Add("@PackSizeName", SqlDbType.VarChar, 100).Value = objProductPackSize.PackSize;
+                da.SelectCommand.Parameters.Add("@Strip", SqlDbType.Int).Value = objProductPackSize.Strip;
                 da.SelectCommand.Parameters.Add("@PackSizeName", System.Data.SqlDbType.VarChar, 100).Value = objProductPackSize.PackSize;
                 da.SelectCommand.Parameters.Add("@PackSizeDescription", System.Data.SqlDbType.VarChar, 500).Value = objProductPackSize.PackSizeDescription;
                 if (con.State == ConnectionState.Closed)
@@ -160,6 +164,8 @@ namespace POS.DAL
                     obj = new BO.ProductPackSize();
                     obj.Sln = index++;
                     obj.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
+                    obj.Strip = Convert.ToInt32(row["Strip"]);
+                    obj.PcsPerStrip = Convert.ToInt32(row["PcsPerStrip"]);
                     obj.PackSize = row["PackSizeName"].ToString();
                     obj.PackSizeDescription = row["Description"].ToString();
                     objDoctorList.Add(obj);
