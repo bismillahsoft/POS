@@ -28,7 +28,6 @@ namespace POS
             _IDMS_AreaStock = new BLL.BDMS_AreaStock();
 
             COMMON.DDL.PopulateDropDownList(_IProduct.GetProductList().ToList(), ddlProduct, "ProductID", "ProductName");
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -46,7 +45,6 @@ namespace POS
                 ObjDMS_AreaStock.StockTransantionDate = Convert.ToDateTime(TransactionDate.Value.ToString());
                 //ObjDMS_AreaStock.Remarks = txtRemarks.Text;
 
-
                 if (_IDMS_AreaStock.Insert(ObjDMS_AreaStock) > 0)
                 {
                     MessageBox.Show("Succesfully Saved");
@@ -55,7 +53,6 @@ namespace POS
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -71,14 +68,20 @@ namespace POS
                 throw ex;
             }
         }
-
         private void ddlProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
             try
             {
+                BO.ProductPackSize objProductPackSize = new BO.ProductPackSize();
                 int productId = Convert.ToInt32(ddlProduct.SelectedValue);
                 var product = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == productId);
                 txtPackSizee.Text = product.PackSize;
+
+                //int packSizeID = 2;
+                //var PackSize = _IProductPackSize.GetProductPackSizeList().FirstOrDefault(m => m.PackSizeID == packSizeID);
+                //txtStrip.Text = Convert.ToString(PackSize.Strip);
+                //txtPcsPerStrip.Text = Convert.ToString(PackSize.PcsPerStrip);
                 //List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
                 //foreach (var objProduct in productList)
                 //{
@@ -93,6 +96,16 @@ namespace POS
             {
 
             }
+        }
+        private void txtPackSizee_TextChanged(object sender, EventArgs e)
+        {
+            BO.ProductPackSize objproductPackSize = new BO.ProductPackSize();
+            int productId = Convert.ToInt32(ddlProduct.SelectedValue);
+
+            
+            //var product = _IProductPackSize.GETStripAndPcsPerStripByProductID().FirstOrDefault(m => m.ProductId == productId);
+            txtStrip.Text = Convert.ToString(product.Strip);
+            txtPcsPerStrip.Text = Convert.ToString(product.PcsPerStrip);
         }
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {

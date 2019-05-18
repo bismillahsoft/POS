@@ -141,6 +141,7 @@ namespace POS
                     ID =Convert.ToInt32(grvPackSize.Rows[numberRow].Cells[0].Value.ToString());
                   
                     ObjProductPackSize = _IProductPackSize.GetProductPackSizeList().FirstOrDefault(m => m.PackSizeID == ID);
+                    
                     txtPackSize.Text = Convert.ToString(ObjProductPackSize.PackSize);
                     txtStrip.Text = Convert.ToString(ObjProductPackSize.Strip);
                     txtDescription.Text = Convert.ToString(ObjProductPackSize.PackSizeDescription);

@@ -31,7 +31,10 @@ namespace POS.BLL
         {
             return _iProductPackSize.GetProductPackSizeList();
         }
-
+        public IList<BO.ProductPackSize> GETStripAndPcsPerStripByProductID(long productID)
+        {
+            return _iProductPackSize.GETStripAndPcsPerStripByProductID(productID);
+        }
         public BO.ProductPackSize GetProductPackSizeByID(Int32 PackSizeID)
         {
             return _iProductPackSize.GetProductPackSizeByID(PackSizeID);

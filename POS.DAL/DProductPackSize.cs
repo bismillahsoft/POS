@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using POS.BO;
 using POS.COMMON;
 
 namespace POS.DAL
@@ -227,7 +228,6 @@ namespace POS.DAL
                 throw ex;
             }
         }
-
         public IList<BO.ProductPackSize> GetProductPackSizeByProductID(long productID)
         {
             try
@@ -268,8 +268,48 @@ namespace POS.DAL
                 throw;
             }
         }
-
-
+        public IList<BO.ProductPackSize> GETStripAndPcsPerStripByProductID(long productID)
+        {
+            try
+            {
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+                da.SelectCommand.CommandText = "POS_SET_SP_GET_StripAndPcsPerStripByProductID";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = productID;
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                DataTable dt = ds.Tables[0];
+                List<POS.BO.ProductPackSize> objProductPackSize = new List<POS.BO.ProductPackSize>();
+                POS.BO.ProductPackSize obj = null;
+                int index = 1;
+                foreach (DataRow row in dt.Rows)
+                {
+                    obj = new BO.ProductPackSize();
+                    obj.Sln = index++;
+                    obj.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
+                    obj.Strip = Convert.ToInt32(row["Strip"]);
+                    obj.PcsPerStrip = Convert.ToInt32(row["PcsPerStrip"]);
+                    obj.PackSize = row["PackSize"].ToString();
+                    objProductPackSize.Add(obj);
+                }
+                return objProductPackSize;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public long InsertProductPackSize(long productID, int packSizeID)
         {
             try

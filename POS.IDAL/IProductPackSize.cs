@@ -18,6 +18,7 @@ namespace POS.IDAL
         int GetPackSizeIdByName(string packSize);
 
         long GetPPSIdByProductIdPackSizeId(long productID, int packSizeID);
+        IList<BO.ProductPackSize> GETStripAndPcsPerStripByProductID(long produtID);
 
         IList<BO.ProductPackSize> GetProductPackSizeByProductID(long productID);
 
