@@ -14,8 +14,6 @@ D:\Zahid PC\GitRepository\BPOS\POS.BO\obj\Debug\POS.BO.pdb
 D:\Zahid PC\GitRepository\BPOS\POS.BO\obj\Debug\POS.BO.csprojResolveAssemblyReference.cache
 F:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.dll
 F:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.pdb
-F:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.dll.CodeAnalysisLog.xml
-F:\Git_Repository\BPOS\POS.BO\bin\Debug\POS.BO.dll.lastcodeanalysissucceeded
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.csprojAssemblyReference.cache
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.csproj.CoreCompileInputs.cache
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.dll

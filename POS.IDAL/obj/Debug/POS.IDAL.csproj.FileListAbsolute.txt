@@ -21,8 +21,6 @@ D:\Zahid PC\GitRepository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.dll
 D:\Zahid PC\GitRepository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.pdb
 F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.IDAL.dll
 F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.IDAL.pdb
-F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.IDAL.dll.CodeAnalysisLog.xml
-F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.IDAL.dll.lastcodeanalysissucceeded
 F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.BO.dll
 F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.BO.pdb
 F:\Git_Repository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.csprojAssemblyReference.cache
