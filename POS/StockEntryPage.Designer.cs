@@ -53,9 +53,9 @@
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblStockEntry = new System.Windows.Forms.Label();
             this.txtPackSizee = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtStrip = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPcsPerStrip = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -308,19 +308,23 @@
             // 
             // txtPackSizee
             // 
+            this.txtPackSizee.Enabled = false;
             this.txtPackSizee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPackSizee.Location = new System.Drawing.Point(685, 135);
             this.txtPackSizee.Name = "txtPackSizee";
             this.txtPackSizee.Size = new System.Drawing.Size(188, 26);
             this.txtPackSizee.TabIndex = 46;
+            this.txtPackSizee.TextChanged += new System.EventHandler(this.txtPackSizee_TextChanged);
             // 
-            // textBox1
+            // txtStrip
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(344, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 26);
-            this.textBox1.TabIndex = 48;
+            this.txtStrip.Enabled = false;
+            this.txtStrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStrip.Location = new System.Drawing.Point(344, 195);
+            this.txtStrip.Name = "txtStrip";
+            this.txtStrip.Size = new System.Drawing.Size(108, 26);
+            this.txtStrip.TabIndex = 48;
+            this.txtStrip.UseWaitCursor = true;
             // 
             // label2
             // 
@@ -332,13 +336,14 @@
             this.label2.TabIndex = 47;
             this.label2.Text = "Strip";
             // 
-            // textBox2
+            // txtPcsPerStrip
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(593, 196);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(108, 26);
-            this.textBox2.TabIndex = 50;
+            this.txtPcsPerStrip.Enabled = false;
+            this.txtPcsPerStrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPcsPerStrip.Location = new System.Drawing.Point(593, 196);
+            this.txtPcsPerStrip.Name = "txtPcsPerStrip";
+            this.txtPcsPerStrip.Size = new System.Drawing.Size(108, 26);
+            this.txtPcsPerStrip.TabIndex = 50;
             // 
             // label4
             // 
@@ -355,9 +360,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 597);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPcsPerStrip);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtStrip);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPackSizee);
             this.Controls.Add(this.TransactionDate);
@@ -419,9 +424,9 @@
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblStockEntry;
         private System.Windows.Forms.TextBox txtPackSizee;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtStrip;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPcsPerStrip;
         private System.Windows.Forms.Label label4;
     }
 }
