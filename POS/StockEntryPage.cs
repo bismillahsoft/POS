@@ -70,13 +70,17 @@ namespace POS
         }
         private void ddlProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             try
             {
                 BO.ProductPackSize objProductPackSize = new BO.ProductPackSize();
                 int productId = Convert.ToInt32(ddlProduct.SelectedValue);
                 var product = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == productId);
                 txtPackSizee.Text = product.PackSize;
+
+                var productPackSize = _IProductPackSize.GETStripAndPcsPerStripByProductID(productId);
+                txtStrip.Text = Convert.ToString(productPackSize.Strip);
+                txtPcsPerStrip.Text = Convert.ToString(productPackSize.PcsPerStrip);
 
                 //int packSizeID = 2;
                 //var PackSize = _IProductPackSize.GetProductPackSizeList().FirstOrDefault(m => m.PackSizeID == packSizeID);
@@ -99,14 +103,9 @@ namespace POS
         }
         private void txtPackSizee_TextChanged(object sender, EventArgs e)
         {
-            BO.ProductPackSize objproductPackSize = new BO.ProductPackSize();
-            int productId = Convert.ToInt32(ddlProduct.SelectedValue);
 
-            
-            //var product = _IProductPackSize.GETStripAndPcsPerStripByProductID().FirstOrDefault(m => m.ProductId == productId);
-            txtStrip.Text = Convert.ToString(product.Strip);
-            txtPcsPerStrip.Text = Convert.ToString(product.PcsPerStrip);
         }
+
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
