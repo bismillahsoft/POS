@@ -104,8 +104,8 @@ namespace POS
 
             
             //var product = _IProductPackSize.GETStripAndPcsPerStripByProductID().FirstOrDefault(m => m.ProductId == productId);
-            txtStrip.Text = Convert.ToString(product.Strip);
-            txtPcsPerStrip.Text = Convert.ToString(product.PcsPerStrip);
+            //txtStrip.Text = Convert.ToString(product.Strip);
+            //txtPcsPerStrip.Text = Convert.ToString(product.PcsPerStrip);
         }
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
