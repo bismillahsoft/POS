@@ -30,5 +30,10 @@ namespace POS.BLL
         {
             return _iDMS_AreaStock.Delete(ObjAreaStock);
         }
+
+        public DMS_AreaStock GetCurrentStockByProductID(long ProductID)
+        {
+            return _iDMS_AreaStock.GetCurrentStockByProductID(ProductID);
+        }
     }
 }

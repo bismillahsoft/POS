@@ -11,6 +11,8 @@ namespace POS.IDAL
         int Insert(BO.DMS_AreaStock ObjAreaStock);
         int Update(BO.DMS_AreaStock ObjAreaStock);
         int Delete(BO.DMS_AreaStock ObjAreaStock);
+
+        BO.DMS_AreaStock GetCurrentStockByProductID(long ProductID);
         //IList(BO.DMS_AreaStock) GetMDS_AreaStockList();
     }
 }
