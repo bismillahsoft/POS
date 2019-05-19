@@ -30,6 +30,9 @@ namespace POS.DAL
                 da.SelectCommand.Parameters.Add("@CtnOrPkt", SqlDbType.Int).Value = ObjDMS_AreaStock.CtnOrPkt;
                 da.SelectCommand.Parameters.Add("@Pcs", SqlDbType.Int).Value = ObjDMS_AreaStock.Pcs;
                 da.SelectCommand.Parameters.Add("@Qty", SqlDbType.Int).Value = ObjDMS_AreaStock.Qty;
+                da.SelectCommand.Parameters.Add("@Strip", SqlDbType.Int).Value = ObjDMS_AreaStock.Strip;
+                da.SelectCommand.Parameters.Add("@PcsPerStrip", SqlDbType.Int).Value = ObjDMS_AreaStock.PcsPerStrip;
+
                 //da.SelectCommand.Parameters.Add("@PP", SqlDbType.Decimal,2).Value = ObjDMS_AreaStock.PP;
                 //da.SelectCommand.Parameters.Add("@MRP", SqlDbType.Decimal,2).Value = ObjDMS_AreaStock.MRP;
                 //da.SelectCommand.Parameters.Add("@Vat", SqlDbType.Decimal,2).Value = ObjDMS_AreaStock.Vat;

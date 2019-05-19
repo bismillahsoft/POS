@@ -413,10 +413,11 @@ namespace POS.DAL
                 {
                     obj = new BO.ProductPackSize();
                     obj.Sln = index++;
+                    obj.ProductId = Convert.ToInt32(row["ProductID"]);
                     obj.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
                     obj.Strip = Convert.ToInt32(row["Strip"]);
                     obj.PcsPerStrip = Convert.ToInt32(row["PcsPerStrip"]);
-                    obj.PackSize = row["PackSize"].ToString();
+                    obj.PackSize = row["PackSizeName"].ToString();
                 }
                 return obj;
             }

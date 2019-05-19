@@ -190,12 +190,40 @@ namespace POS.BO
         public int ProductName { get; set; }
         public string Remarks { get; set; }
 
+        public int Strip
+        {
+            get
+            {
+                return _Strip;
+            }
+
+            set
+            {
+                _Strip = value;
+            }
+        }
+
+        public int PcsPerStrip
+        {
+            get
+            {
+                return _PcsPerStrip;
+            }
+
+            set
+            {
+                _PcsPerStrip = value;
+            }
+        }
+
         private int _AsID;
         private int _AreaID;
         private int _ProductID;
         private int _CtnOrPkt;
         private int _Pcs;
         private int _Qty;
+        private int _Strip;
+        private int _PcsPerStrip;
         private int _Balance;
         private decimal _PP;
         private decimal _TP;

@@ -18,3 +18,7 @@ F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.csprojAssemblyReference.cache
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.csproj.CoreCompileInputs.cache
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.dll
 F:\Git_Repository\BPOS\POS.BO\obj\Debug\POS.BO.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BO\bin\Debug\POS.BO.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BO\bin\Debug\POS.BO.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BO\obj\Debug\POS.BO.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BO\obj\Debug\POS.BO.pdb

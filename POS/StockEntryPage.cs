@@ -14,6 +14,7 @@ namespace POS
 {
     public partial class StockEntryPage : Form
     {
+        int StpAndCnt;
         #region
         private IProduct _IProduct = null;
         private IProductPackSize _IProductPackSize = null;
@@ -36,19 +37,23 @@ namespace POS
             {
                 BO.DMS_AreaStock ObjDMS_AreaStock = new BO.DMS_AreaStock();
 
-                //ObjDMS_AreaStock.ProductName = Convert.ToInt32(ddlProduct.SelectedValue);
                 ObjDMS_AreaStock.AreaID = 1;
                 ObjDMS_AreaStock.ProductID = Convert.ToInt32(ddlProduct.SelectedValue);
                 ObjDMS_AreaStock.CtnOrPkt = Convert.ToInt32(txtCtnPkt.Text);
                 ObjDMS_AreaStock.Pcs = Convert.ToInt32(txtPcs.Text);
                 ObjDMS_AreaStock.Qty = Convert.ToInt32(txtQty.Text);
+                ObjDMS_AreaStock.Strip = Convert.ToInt32(txtStrip.Text);
+                ObjDMS_AreaStock.PcsPerStrip = Convert.ToInt32(txtPcsPerStrip.Text);
                 ObjDMS_AreaStock.StockTransantionDate = Convert.ToDateTime(TransactionDate.Value.ToString());
-                //ObjDMS_AreaStock.Remarks = txtRemarks.Text;
 
                 if (_IDMS_AreaStock.Insert(ObjDMS_AreaStock) > 0)
                 {
                     MessageBox.Show("Succesfully Saved");
                     Reset();
+                }
+                else
+                {
+                    MessageBox.Show("Operation Failed");
                 }
             }
             catch (Exception ex)
@@ -78,10 +83,9 @@ namespace POS
                 var product = _IProduct.GetProductList().FirstOrDefault(m => m.ProductId == productId);
                 txtPackSizee.Text = product.PackSize;
 
-                //int packSizeID = 2;
-                //var PackSize = _IProductPackSize.GetProductPackSizeList().FirstOrDefault(m => m.PackSizeID == packSizeID);
-                //txtStrip.Text = Convert.ToString(PackSize.Strip);
-                //txtPcsPerStrip.Text = Convert.ToString(PackSize.PcsPerStrip);
+                var productPackSize = _IProductPackSize.GETStripAndPcsPerStripByProductID(productId);
+                txtStrip.Text = Convert.ToString(productPackSize.Strip);
+                txtPcsPerStrip.Text = Convert.ToString(productPackSize.PcsPerStrip);
                 //List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
                 //foreach (var objProduct in productList)
                 //{
@@ -99,13 +103,7 @@ namespace POS
         }
         private void txtPackSizee_TextChanged(object sender, EventArgs e)
         {
-            BO.ProductPackSize objproductPackSize = new BO.ProductPackSize();
-            int productId = Convert.ToInt32(ddlProduct.SelectedValue);
-
-            
-            //var product = _IProductPackSize.GETStripAndPcsPerStripByProductID().FirstOrDefault(m => m.ProductId == productId);
-            //txtStrip.Text = Convert.ToString(product.Strip);
-            //txtPcsPerStrip.Text = Convert.ToString(product.PcsPerStrip);
+           
         }
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
@@ -162,19 +160,21 @@ namespace POS
 
         private void txtCtnPkt_TextChanged(object sender, EventArgs e)
         {
-            //int a = Convert.ToInt32(txtCtnPkt.Text);
-            //txtQty.Text = Convert.ToString(a);
-
-            txtQty.Text = (txtCtnPkt.Text);
+            int strip = Convert.ToInt32(txtStrip.Text);
+            int PcsPerStrip = Convert.ToInt32(txtPcsPerStrip.Text);
+            int CtnOrPkt = Convert.ToInt32(txtCtnPkt.Text);
+            StpAndCnt = (strip * PcsPerStrip * CtnOrPkt);
+            txtQty.Text =Convert.ToString(StpAndCnt);
         }
 
         private void txtPcs_TextChanged(object sender, EventArgs e)
         {
-            //int a = Convert.ToInt32(txtQty.Text);
-            //int b = Convert.ToInt32(txtPcs.Text);
-            //txtQty.Text =  (a+b).ToString();
+            int Pcs = Convert.ToInt32(txtPcs.Text);
+            int totalsum = StpAndCnt + Pcs;
+            txtQty.Text = Convert.ToString(totalsum);
 
-            txtQty.Text = Convert.ToString(Convert.ToInt32(txtQty.Text) + Convert.ToInt32(txtPcs.Text));
+
+            
         }
     }
 }
