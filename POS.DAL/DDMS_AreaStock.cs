@@ -1,11 +1,10 @@
-﻿using POS.COMMON;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using POS.BO;
+using POS.COMMON;
 
 
 namespace POS.DAL
@@ -62,6 +61,47 @@ namespace POS.DAL
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        public BO.DMS_AreaStock GetCurrentStockByProductID(long ProductID)
+        {
+            try
+            {
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+                da.SelectCommand.CommandText = "POS_SP_GetCurrentStockByProductID";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+                da.SelectCommand.Parameters.Add("@AreaID", SqlDbType.Int).Value = 1;
+                da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = ProductID;
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                DataTable dt = ds.Tables[0];
+                List<POS.BO.DMS_AreaStock> objProductPackSize = new List<POS.BO.DMS_AreaStock>();
+                POS.BO.DMS_AreaStock obj = null;
+                int index = 1;
+                foreach (DataRow row in dt.Rows)
+                {
+                    obj = new BO.DMS_AreaStock();
+                    obj.Sln = index++;
+                    obj.CtnOrPkt = Convert.ToInt32(row["CtnOrPktStock"]);
+                    obj.Qty = Convert.ToInt32(row["Balance"]);
+                    obj.Pcs =Convert.ToInt32(row["PcsStock"]);
+                }
+                return obj;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
         public int Update(BO.DMS_AreaStock ObjDMS_AreaStock)
