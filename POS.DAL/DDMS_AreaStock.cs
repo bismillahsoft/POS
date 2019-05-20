@@ -73,6 +73,7 @@ namespace POS.DAL
                 da.SelectCommand.CommandText = "POS_SP_GetCurrentStockByProductID";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
+                da.SelectCommand.Parameters.Add("@AreaID", SqlDbType.Int).Value = 1;
                 da.SelectCommand.Parameters.Add("@ProductID", System.Data.SqlDbType.BigInt).Value = ProductID;
                 if (con.State == ConnectionState.Closed)
                 {
@@ -92,9 +93,9 @@ namespace POS.DAL
                 {
                     obj = new BO.DMS_AreaStock();
                     obj.Sln = index++;
-                    obj.CtnOrPkt = Convert.ToInt32(row["CtnOrPkt"]);
-                    obj.Qty = Convert.ToInt32(row["Qty"]);
-                    obj.Pcs =Convert.ToInt32(row["Pcs"]);
+                    obj.CtnOrPkt = Convert.ToInt32(row["CtnOrPktStock"]);
+                    obj.Qty = Convert.ToInt32(row["Balance"]);
+                    obj.Pcs =Convert.ToInt32(row["PcsStock"]);
                 }
                 return obj;
             }
@@ -102,7 +103,6 @@ namespace POS.DAL
             {
                 throw;
             }
-      
         }
         public int Update(BO.DMS_AreaStock ObjDMS_AreaStock)
         {

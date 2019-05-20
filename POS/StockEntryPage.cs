@@ -15,6 +15,7 @@ namespace POS
     public partial class StockEntryPage : Form
     {
         int StpAndCnt;
+        int TStock;
         #region
         private IProduct _IProduct = null;
         private IProductPackSize _IProductPackSize = null;
@@ -29,6 +30,7 @@ namespace POS
             _IDMS_AreaStock = new BLL.BDMS_AreaStock();
 
             COMMON.DDL.PopulateDropDownList(_IProduct.GetProductList().ToList(), ddlProduct, "ProductID", "ProductName");
+            //GetCurrentStock();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -50,6 +52,7 @@ namespace POS
                 {
                     MessageBox.Show("Succesfully Saved");
                     Reset();
+                    GetCurrentStock();
                 }
                 else
                 {
@@ -86,6 +89,8 @@ namespace POS
                 var productPackSize = _IProductPackSize.GETStripAndPcsPerStripByProductID(productId);
                 txtStrip.Text = Convert.ToString(productPackSize.Strip);
                 txtPcsPerStrip.Text = Convert.ToString(productPackSize.PcsPerStrip);
+                GetCurrentStock();
+                //Reset();
                 //List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
                 //foreach (var objProduct in productList)
                 //{
@@ -147,17 +152,27 @@ namespace POS
         }
         private void Reset()
         {
-            ddlProduct.Text = "";
-            txtPackSizee.Text = "";
-            txtCtnPkt.Text = "";
-            txtPcs.Text = "";
+            txtCsCtn.Text = "";
+            txtCsPcs.Text = "";
             TransactionDate.Text = "";
+
+        }
+        private void GetCurrentStock()
+        {
+            BO.DMS_AreaStock currentStock = new BO.DMS_AreaStock();
+            int productID = Convert.ToInt32(ddlProduct.SelectedValue);
+            currentStock = _IDMS_AreaStock.GetCurrentStockByProductID(productID);
+            txtCsCtn.Text = Convert.ToString(currentStock.CtnOrPkt);
+            txtCsPcs.Text = Convert.ToString(currentStock.Pcs);
+            txtCsQty.Text = Convert.ToString(currentStock.Qty);
+            txtTsCtnPkt.Text = txtCsCtn.Text;
+            txtTsPcs.Text = txtCsPcs.Text;
+            txtTsQty.Text = txtCsQty.Text;
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
             Reset();
         }
-
         private void txtCtnPkt_TextChanged(object sender, EventArgs e)
         {
             int strip = Convert.ToInt32(txtStrip.Text);
@@ -165,16 +180,24 @@ namespace POS
             int CtnOrPkt = Convert.ToInt32(txtCtnPkt.Text);
             StpAndCnt = (strip * PcsPerStrip * CtnOrPkt);
             txtQty.Text =Convert.ToString(StpAndCnt);
+            int CsStock = Convert.ToInt32(txtCsQty.Text);
+            int NewStock = Convert.ToInt32(txtQty.Text);
+            TStock = CsStock + NewStock;
+            txtTsCtnPkt.Text = Convert.ToString((TStock / (strip * PcsPerStrip)));
+            txtTsPcs.Text = Convert.ToString(( TStock % (strip * PcsPerStrip)));
+            txtTsQty.Text = Convert.ToString(TStock);
         }
-
         private void txtPcs_TextChanged(object sender, EventArgs e)
         {
+            int strip = Convert.ToInt32(txtStrip.Text);
+            int PcsPerStrip = Convert.ToInt32(txtPcsPerStrip.Text);
             int Pcs = Convert.ToInt32(txtPcs.Text);
             int totalsum = StpAndCnt + Pcs;
             txtQty.Text = Convert.ToString(totalsum);
-
-
-            
+            int TotalStock = TStock + Pcs;
+            txtTsCtnPkt.Text = Convert.ToString((TotalStock / (strip * PcsPerStrip)));
+            txtTsPcs.Text = Convert.ToString((TotalStock % (strip * PcsPerStrip)));
+            txtTsQty.Text = Convert.ToString(TotalStock);
         }
     }
 }
