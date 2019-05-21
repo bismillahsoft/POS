@@ -78,7 +78,7 @@ namespace POS
         }
         private void ddlProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             try
             {
                 BO.ProductPackSize objProductPackSize = new BO.ProductPackSize();
@@ -108,7 +108,7 @@ namespace POS
         }
         private void txtPackSizee_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
@@ -175,23 +175,48 @@ namespace POS
         }
         private void txtCtnPkt_TextChanged(object sender, EventArgs e)
         {
+            int CtnOrPkt = 0;
+            int NewStock = 0;
             int strip = Convert.ToInt32(txtStrip.Text);
             int PcsPerStrip = Convert.ToInt32(txtPcsPerStrip.Text);
-            int CtnOrPkt = Convert.ToInt32(txtCtnPkt.Text);
+            if (txtCtnPkt.Text == "")
+            {
+                CtnOrPkt = 0;
+            }
+            else
+            {
+                CtnOrPkt = Convert.ToInt32(txtCtnPkt.Text);
+            }
             StpAndCnt = (strip * PcsPerStrip * CtnOrPkt);
-            txtQty.Text =Convert.ToString(StpAndCnt);
+            txtQty.Text = Convert.ToString(StpAndCnt);
+            if (txtQty.Text == "")
+            {
+                NewStock = Convert.ToInt32(txtQty.Text);
+            }
+            else
+            {
+                NewStock = 0;
+            }
             int CsStock = Convert.ToInt32(txtCsQty.Text);
-            int NewStock = Convert.ToInt32(txtQty.Text);
             TStock = CsStock + NewStock;
             txtTsCtnPkt.Text = Convert.ToString((TStock / (strip * PcsPerStrip)));
-            txtTsPcs.Text = Convert.ToString(( TStock % (strip * PcsPerStrip)));
+            txtTsPcs.Text = Convert.ToString((TStock % (strip * PcsPerStrip)));
             txtTsQty.Text = Convert.ToString(TStock);
         }
         private void txtPcs_TextChanged(object sender, EventArgs e)
         {
+            int Pcs = 0;
             int strip = Convert.ToInt32(txtStrip.Text);
             int PcsPerStrip = Convert.ToInt32(txtPcsPerStrip.Text);
-            int Pcs = Convert.ToInt32(txtPcs.Text);
+            if (txtPcs.Text == "")
+            {
+                Pcs = 0;
+            }
+            else
+            {
+                Pcs = Convert.ToInt32(txtPcs.Text);
+            }
+
             int totalsum = StpAndCnt + Pcs;
             txtQty.Text = Convert.ToString(totalsum);
             int TotalStock = TStock + Pcs;

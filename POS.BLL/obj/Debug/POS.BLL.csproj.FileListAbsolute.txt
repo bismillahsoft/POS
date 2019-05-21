@@ -37,6 +37,19 @@ D:\Zahid PC\GitRepository\BPOS\POS.BLL\bin\Debug\POS.IDAL.pdb
 D:\Zahid PC\GitRepository\BPOS\POS.BLL\obj\Debug\POS.BLL.csprojResolveAssemblyReference.cache
 D:\Zahid PC\GitRepository\BPOS\POS.BLL\obj\Debug\POS.BLL.dll
 D:\Zahid PC\GitRepository\BPOS\POS.BLL\obj\Debug\POS.BLL.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.BLL.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.BLL.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.BO.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.COMMON.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.DAL.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.IDAL.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.BO.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.COMMON.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.DAL.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.IDAL.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\obj\Debug\POS.BLL.csprojResolveAssemblyReference.cache
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\obj\Debug\POS.BLL.dll
+D:\Zahid PC\GitRepo\BPOS\POS.BLL\obj\Debug\POS.BLL.pdb
 F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BLL.dll
 F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BLL.pdb
 F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BO.dll
