@@ -67,7 +67,7 @@
             this.TransactionDate.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.TransactionDate.Name = "TransactionDate";
             this.TransactionDate.Size = new System.Drawing.Size(108, 29);
-            this.TransactionDate.TabIndex = 36;
+            this.TransactionDate.TabIndex = 4;
             this.TransactionDate.Value = new System.DateTime(2019, 5, 5, 17, 50, 19, 0);
             this.TransactionDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TransactionDate_KeyUp);
             // 
@@ -79,7 +79,7 @@
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(90, 35);
-            this.btnReset.TabIndex = 38;
+            this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -93,7 +93,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 35);
-            this.btnSave.TabIndex = 37;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -106,7 +106,7 @@
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(98, 54);
-            this.btnBack.TabIndex = 39;
+            this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -180,7 +180,6 @@
             this.txtQty.ReadOnly = true;
             this.txtQty.Size = new System.Drawing.Size(188, 29);
             this.txtQty.TabIndex = 35;
-            this.txtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyUp);
             // 
             // txtPcs
             // 
@@ -188,7 +187,7 @@
             this.txtPcs.Location = new System.Drawing.Point(593, 313);
             this.txtPcs.Name = "txtPcs";
             this.txtPcs.Size = new System.Drawing.Size(188, 29);
-            this.txtPcs.TabIndex = 34;
+            this.txtPcs.TabIndex = 3;
             this.txtPcs.TextChanged += new System.EventHandler(this.txtPcs_TextChanged);
             this.txtPcs.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPcs_KeyUp);
             // 
@@ -198,7 +197,7 @@
             this.txtCtnPkt.Location = new System.Drawing.Point(344, 313);
             this.txtCtnPkt.Name = "txtCtnPkt";
             this.txtCtnPkt.Size = new System.Drawing.Size(188, 29);
-            this.txtCtnPkt.TabIndex = 33;
+            this.txtCtnPkt.TabIndex = 2;
             this.txtCtnPkt.TextChanged += new System.EventHandler(this.txtCtnPkt_TextChanged);
             this.txtCtnPkt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCtnPkt_KeyUp);
             // 
@@ -209,7 +208,7 @@
             this.ddlProduct.Location = new System.Drawing.Point(344, 135);
             this.ddlProduct.Name = "ddlProduct";
             this.ddlProduct.Size = new System.Drawing.Size(188, 31);
-            this.ddlProduct.TabIndex = 29;
+            this.ddlProduct.TabIndex = 1;
             this.ddlProduct.SelectedIndexChanged += new System.EventHandler(this.ddlProduct_SelectedIndexChanged);
             this.ddlProduct.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlProduct_KeyUp);
             // 
@@ -346,7 +345,7 @@
             // 
             // txtPcsPerStrip
             // 
-            this.txtPcsPerStrip.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPcsPerStrip.BackColor = System.Drawing.SystemColors.Control;
             this.txtPcsPerStrip.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPcsPerStrip.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPcsPerStrip.Location = new System.Drawing.Point(593, 196);

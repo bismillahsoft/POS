@@ -90,7 +90,7 @@ namespace POS
                 txtStrip.Text = Convert.ToString(productPackSize.Strip);
                 txtPcsPerStrip.Text = Convert.ToString(productPackSize.PcsPerStrip);
                 GetCurrentStock();
-                //Reset();
+                Reset();
                 //List<BO.ProductPackSize> objPackSizeList = new List<BO.ProductPackSize>();
                 //foreach (var objProduct in productList)
                 //{
@@ -109,19 +109,9 @@ namespace POS
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                txtPackSizee.Focus();
-        }
-        private void ddlPackSize_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
                 txtCtnPkt.Focus();
         }
         private void txtPcs_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                txtQty.Focus();
-        }
-        private void txtQty_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 TransactionDate.Focus();
@@ -148,8 +138,8 @@ namespace POS
         }
         private void Reset()
         {
-            txtCsCtn.Text = "";
-            txtCsPcs.Text = "";
+            txtCtnPkt.Text = "";
+            txtPcs.Text = "";
             TransactionDate.Text = "";
 
         }
