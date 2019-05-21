@@ -106,10 +106,6 @@ namespace POS
 
             }
         }
-        private void txtPackSizee_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void ddlProduct_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -191,11 +187,11 @@ namespace POS
             txtQty.Text = Convert.ToString(StpAndCnt);
             if (txtQty.Text == "")
             {
-                NewStock = Convert.ToInt32(txtQty.Text);
+                NewStock = 0;
             }
             else
             {
-                NewStock = 0;
+                NewStock = Convert.ToInt32(txtQty.Text);
             }
             int CsStock = Convert.ToInt32(txtCsQty.Text);
             TStock = CsStock + NewStock;
