@@ -57,16 +57,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPcsPerStrip = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // TransactionDate
             // 
             this.TransactionDate.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransactionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TransactionDate.Location = new System.Drawing.Point(900, 196);
+            this.TransactionDate.Location = new System.Drawing.Point(768, 118);
             this.TransactionDate.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.TransactionDate.Name = "TransactionDate";
-            this.TransactionDate.Size = new System.Drawing.Size(108, 29);
+            this.TransactionDate.Size = new System.Drawing.Size(237, 29);
             this.TransactionDate.TabIndex = 4;
             this.TransactionDate.Value = new System.DateTime(2019, 5, 5, 17, 50, 19, 0);
             this.TransactionDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TransactionDate_KeyUp);
@@ -75,7 +77,7 @@
             // 
             this.btnReset.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReset.Location = new System.Drawing.Point(726, 506);
+            this.btnReset.Location = new System.Drawing.Point(777, 467);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(90, 35);
@@ -89,7 +91,7 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSave.Location = new System.Drawing.Point(837, 506);
+            this.btnSave.Location = new System.Drawing.Point(888, 467);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 35);
@@ -115,7 +117,7 @@
             // 
             this.txtTsQty.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsQty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTsQty.Location = new System.Drawing.Point(820, 357);
+            this.txtTsQty.Location = new System.Drawing.Point(820, 384);
             this.txtTsQty.Name = "txtTsQty";
             this.txtTsQty.ReadOnly = true;
             this.txtTsQty.Size = new System.Drawing.Size(188, 29);
@@ -125,7 +127,7 @@
             // 
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(395, 235);
+            this.lbl.Location = new System.Drawing.Point(395, 262);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(65, 23);
             this.lbl.TabIndex = 26;
@@ -135,7 +137,7 @@
             // 
             this.txtTsPcs.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsPcs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTsPcs.Location = new System.Drawing.Point(593, 357);
+            this.txtTsPcs.Location = new System.Drawing.Point(593, 384);
             this.txtTsPcs.Name = "txtTsPcs";
             this.txtTsPcs.ReadOnly = true;
             this.txtTsPcs.Size = new System.Drawing.Size(188, 29);
@@ -145,7 +147,7 @@
             // 
             this.txtTsCtnPkt.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTsCtnPkt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTsCtnPkt.Location = new System.Drawing.Point(344, 357);
+            this.txtTsCtnPkt.Location = new System.Drawing.Point(344, 384);
             this.txtTsCtnPkt.Name = "txtTsCtnPkt";
             this.txtTsCtnPkt.ReadOnly = true;
             this.txtTsCtnPkt.Size = new System.Drawing.Size(188, 29);
@@ -155,7 +157,7 @@
             // 
             this.txtCsCtn.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCsCtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCsCtn.Location = new System.Drawing.Point(344, 268);
+            this.txtCsCtn.Location = new System.Drawing.Point(344, 295);
             this.txtCsCtn.Name = "txtCsCtn";
             this.txtCsCtn.ReadOnly = true;
             this.txtCsCtn.Size = new System.Drawing.Size(188, 29);
@@ -165,7 +167,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(241, 360);
+            this.label1.Location = new System.Drawing.Point(241, 387);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 23);
             this.label1.TabIndex = 30;
@@ -175,7 +177,7 @@
             // 
             this.txtQty.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtQty.Location = new System.Drawing.Point(820, 313);
+            this.txtQty.Location = new System.Drawing.Point(820, 340);
             this.txtQty.Name = "txtQty";
             this.txtQty.ReadOnly = true;
             this.txtQty.Size = new System.Drawing.Size(188, 29);
@@ -184,7 +186,7 @@
             // txtPcs
             // 
             this.txtPcs.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPcs.Location = new System.Drawing.Point(593, 313);
+            this.txtPcs.Location = new System.Drawing.Point(593, 340);
             this.txtPcs.Name = "txtPcs";
             this.txtPcs.Size = new System.Drawing.Size(188, 29);
             this.txtPcs.TabIndex = 3;
@@ -194,7 +196,7 @@
             // txtCtnPkt
             // 
             this.txtCtnPkt.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCtnPkt.Location = new System.Drawing.Point(344, 313);
+            this.txtCtnPkt.Location = new System.Drawing.Point(344, 340);
             this.txtCtnPkt.Name = "txtCtnPkt";
             this.txtCtnPkt.Size = new System.Drawing.Size(188, 29);
             this.txtCtnPkt.TabIndex = 2;
@@ -205,9 +207,9 @@
             // 
             this.ddlProduct.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlProduct.FormattingEnabled = true;
-            this.ddlProduct.Location = new System.Drawing.Point(344, 135);
+            this.ddlProduct.Location = new System.Drawing.Point(344, 114);
             this.ddlProduct.Name = "ddlProduct";
-            this.ddlProduct.Size = new System.Drawing.Size(188, 31);
+            this.ddlProduct.Size = new System.Drawing.Size(248, 31);
             this.ddlProduct.TabIndex = 1;
             this.ddlProduct.SelectedIndexChanged += new System.EventHandler(this.ddlProduct_SelectedIndexChanged);
             this.ddlProduct.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlProduct_KeyUp);
@@ -216,7 +218,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(241, 316);
+            this.label11.Location = new System.Drawing.Point(241, 343);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 23);
             this.label11.TabIndex = 28;
@@ -226,7 +228,7 @@
             // 
             this.lblCStock.AutoSize = true;
             this.lblCStock.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCStock.Location = new System.Drawing.Point(241, 271);
+            this.lblCStock.Location = new System.Drawing.Point(241, 298);
             this.lblCStock.Name = "lblCStock";
             this.lblCStock.Size = new System.Drawing.Size(103, 23);
             this.lblCStock.TabIndex = 27;
@@ -236,7 +238,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(668, 235);
+            this.label3.Location = new System.Drawing.Point(668, 262);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 23);
             this.label3.TabIndex = 25;
@@ -246,7 +248,7 @@
             // 
             this.txtCsPcs.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCsPcs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCsPcs.Location = new System.Drawing.Point(593, 268);
+            this.txtCsPcs.Location = new System.Drawing.Point(593, 295);
             this.txtCsPcs.Name = "txtCsPcs";
             this.txtCsPcs.ReadOnly = true;
             this.txtCsPcs.Size = new System.Drawing.Size(188, 29);
@@ -256,7 +258,7 @@
             // 
             this.txtCsQty.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCsQty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCsQty.Location = new System.Drawing.Point(820, 268);
+            this.txtCsQty.Location = new System.Drawing.Point(820, 295);
             this.txtCsQty.Name = "txtCsQty";
             this.txtCsQty.ReadOnly = true;
             this.txtCsQty.Size = new System.Drawing.Size(188, 29);
@@ -266,7 +268,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(887, 235);
+            this.label9.Location = new System.Drawing.Point(887, 262);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 23);
             this.label9.TabIndex = 24;
@@ -276,7 +278,7 @@
             // 
             this.lblPackSIze.AutoSize = true;
             this.lblPackSIze.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPackSIze.Location = new System.Drawing.Point(589, 135);
+            this.lblPackSIze.Location = new System.Drawing.Point(802, 174);
             this.lblPackSIze.Name = "lblPackSIze";
             this.lblPackSIze.Size = new System.Drawing.Size(71, 23);
             this.lblPackSIze.TabIndex = 23;
@@ -286,7 +288,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(751, 196);
+            this.label10.Location = new System.Drawing.Point(595, 118);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(131, 23);
             this.label10.TabIndex = 22;
@@ -296,7 +298,7 @@
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(238, 139);
+            this.lblProductName.Location = new System.Drawing.Point(238, 118);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(104, 23);
             this.lblProductName.TabIndex = 31;
@@ -306,7 +308,7 @@
             // 
             this.lblStockEntry.AutoSize = true;
             this.lblStockEntry.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStockEntry.Location = new System.Drawing.Point(184, 70);
+            this.lblStockEntry.Location = new System.Drawing.Point(184, 51);
             this.lblStockEntry.Name = "lblStockEntry";
             this.lblStockEntry.Size = new System.Drawing.Size(126, 28);
             this.lblStockEntry.TabIndex = 21;
@@ -316,17 +318,17 @@
             // 
             this.txtPackSizee.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPackSizee.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtPackSizee.Location = new System.Drawing.Point(685, 135);
+            this.txtPackSizee.Location = new System.Drawing.Point(899, 174);
             this.txtPackSizee.Name = "txtPackSizee";
             this.txtPackSizee.ReadOnly = true;
-            this.txtPackSizee.Size = new System.Drawing.Size(188, 29);
+            this.txtPackSizee.Size = new System.Drawing.Size(106, 29);
             this.txtPackSizee.TabIndex = 46;
             // 
             // txtStrip
             // 
             this.txtStrip.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStrip.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtStrip.Location = new System.Drawing.Point(344, 195);
+            this.txtStrip.Location = new System.Drawing.Point(344, 174);
             this.txtStrip.Name = "txtStrip";
             this.txtStrip.ReadOnly = true;
             this.txtStrip.Size = new System.Drawing.Size(108, 29);
@@ -337,7 +339,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(241, 196);
+            this.label2.Location = new System.Drawing.Point(241, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 23);
             this.label2.TabIndex = 47;
@@ -348,7 +350,7 @@
             this.txtPcsPerStrip.BackColor = System.Drawing.SystemColors.Control;
             this.txtPcsPerStrip.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPcsPerStrip.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtPcsPerStrip.Location = new System.Drawing.Point(593, 196);
+            this.txtPcsPerStrip.Location = new System.Drawing.Point(593, 175);
             this.txtPcsPerStrip.Name = "txtPcsPerStrip";
             this.txtPcsPerStrip.ReadOnly = true;
             this.txtPcsPerStrip.Size = new System.Drawing.Size(108, 29);
@@ -358,11 +360,39 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(482, 196);
+            this.label4.Location = new System.Drawing.Point(482, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 23);
             this.label4.TabIndex = 49;
             this.label4.Text = "Pcs Per Strip";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(227, 101);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(810, 118);
+            this.tableLayoutPanel1.TabIndex = 51;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(227, 246);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(810, 277);
+            this.tableLayoutPanel2.TabIndex = 52;
             // 
             // StockEntryPage
             // 
@@ -399,6 +429,8 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblStockEntry);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "StockEntryPage";
             this.Text = "StockEntryPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -438,5 +470,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPcsPerStrip;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

@@ -41,27 +41,36 @@ namespace POS
 
                 ObjDMS_AreaStock.AreaID = 1;
                 ObjDMS_AreaStock.ProductID = Convert.ToInt32(ddlProduct.SelectedValue);
+                ObjDMS_AreaStock.Strip = Convert.ToInt32(txtStrip.Text);
+                ObjDMS_AreaStock.PcsPerStrip = Convert.ToInt32(txtPcsPerStrip.Text);
                 ObjDMS_AreaStock.CtnOrPkt = Convert.ToInt32(txtCtnPkt.Text);
                 ObjDMS_AreaStock.Pcs = Convert.ToInt32(txtPcs.Text);
                 ObjDMS_AreaStock.Qty = Convert.ToInt32(txtQty.Text);
-                ObjDMS_AreaStock.Strip = Convert.ToInt32(txtStrip.Text);
-                ObjDMS_AreaStock.PcsPerStrip = Convert.ToInt32(txtPcsPerStrip.Text);
                 ObjDMS_AreaStock.StockTransantionDate = Convert.ToDateTime(TransactionDate.Value.ToString());
 
-                if (_IDMS_AreaStock.Insert(ObjDMS_AreaStock) > 0)
+                if (txtStrip.Text != "" || txtPcsPerStrip.Text != "")
                 {
-                    MessageBox.Show("Succesfully Saved");
-                    Reset();
-                    GetCurrentStock();
+                    if (_IDMS_AreaStock.Insert(ObjDMS_AreaStock) > 0)
+                    {
+                        MessageBox.Show("Succesfully Saved");
+                        Reset();
+                        GetCurrentStock();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Operation Failed");
+                    }
                 }
-                else
+                else if(txtStrip.Text != "" && txtPcsPerStrip.Text != "")
                 {
-                    MessageBox.Show("Operation Failed");
+                    MsgBox msgBow = new MsgBox();
+                    msgBow.Show();
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                MsgBox msgBow = new MsgBox();
+                msgBow.Show();
             }
         }
         private void btnBack_Click(object sender, EventArgs e)
