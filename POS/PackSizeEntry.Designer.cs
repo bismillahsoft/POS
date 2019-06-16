@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.grvPackSize = new System.Windows.Forms.DataGridView();
+            this.PackSizeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Strip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PcsPerStrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblPack = new System.Windows.Forms.Label();
             this.lblPackSize = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -49,14 +57,6 @@
             this.txtStrip = new System.Windows.Forms.TextBox();
             this.txtPcsPerStrip = new System.Windows.Forms.TextBox();
             this.lblStripperpcs = new System.Windows.Forms.Label();
-            this.PackSizeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PackSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Strip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PcsPerStrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvPackSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,20 +83,20 @@
             // 
             // grvPackSize
             // 
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grvPackSize.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvPackSize.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grvPackSize.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvPackSize.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvPackSize.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvPackSize.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvPackSize.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvPackSize.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvPackSize.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvPackSize.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PackSizeID,
@@ -110,19 +110,89 @@
             this.grvPackSize.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvPackSize.Location = new System.Drawing.Point(288, 365);
             this.grvPackSize.Name = "grvPackSize";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvPackSize.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grvPackSize.RowsDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvPackSize.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvPackSize.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.grvPackSize.Size = new System.Drawing.Size(698, 334);
             this.grvPackSize.TabIndex = 16;
             this.grvPackSize.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvPackSize_CellClick);
+            // 
+            // PackSizeID
+            // 
+            this.PackSizeID.DataPropertyName = "PackSizeID";
+            this.PackSizeID.HeaderText = "ID";
+            this.PackSizeID.Name = "PackSizeID";
+            this.PackSizeID.ReadOnly = true;
+            this.PackSizeID.Visible = false;
+            this.PackSizeID.Width = 54;
+            // 
+            // Sln
+            // 
+            this.Sln.DataPropertyName = "Sln";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sln.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Sln.HeaderText = "Sln";
+            this.Sln.Name = "Sln";
+            this.Sln.Width = 60;
+            // 
+            // PackSize
+            // 
+            this.PackSize.DataPropertyName = "PackSize";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PackSize.DefaultCellStyle = dataGridViewCellStyle4;
+            this.PackSize.HeaderText = "Pack Size";
+            this.PackSize.Name = "PackSize";
+            this.PackSize.Width = 104;
+            // 
+            // Strip
+            // 
+            this.Strip.DataPropertyName = "Strip";
+            this.Strip.HeaderText = "Strip";
+            this.Strip.Name = "Strip";
+            this.Strip.Width = 73;
+            // 
+            // PcsPerStrip
+            // 
+            this.PcsPerStrip.DataPropertyName = "PcsPerStrip";
+            this.PcsPerStrip.HeaderText = "Pcs Per Strip";
+            this.PcsPerStrip.Name = "PcsPerStrip";
+            this.PcsPerStrip.Width = 129;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "PackSizeDescription";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Width = 122;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 66;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 83;
             // 
             // lblPack
             // 
@@ -246,76 +316,6 @@
             this.lblStripperpcs.Size = new System.Drawing.Size(103, 23);
             this.lblStripperpcs.TabIndex = 21;
             this.lblStripperpcs.Text = "Pcs Per Strip :";
-            // 
-            // PackSizeID
-            // 
-            this.PackSizeID.DataPropertyName = "PackSizeID";
-            this.PackSizeID.HeaderText = "ID";
-            this.PackSizeID.Name = "PackSizeID";
-            this.PackSizeID.ReadOnly = true;
-            this.PackSizeID.Visible = false;
-            this.PackSizeID.Width = 54;
-            // 
-            // Sln
-            // 
-            this.Sln.DataPropertyName = "Sln";
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sln.DefaultCellStyle = dataGridViewCellStyle31;
-            this.Sln.HeaderText = "Sln";
-            this.Sln.Name = "Sln";
-            this.Sln.Width = 60;
-            // 
-            // PackSize
-            // 
-            this.PackSize.DataPropertyName = "PackSize";
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PackSize.DefaultCellStyle = dataGridViewCellStyle32;
-            this.PackSize.HeaderText = "Pack Size";
-            this.PackSize.Name = "PackSize";
-            this.PackSize.Width = 104;
-            // 
-            // Strip
-            // 
-            this.Strip.DataPropertyName = "Strip";
-            this.Strip.HeaderText = "Strip";
-            this.Strip.Name = "Strip";
-            this.Strip.Width = 73;
-            // 
-            // PcsPerStrip
-            // 
-            this.PcsPerStrip.DataPropertyName = "PcsPerStrip";
-            this.PcsPerStrip.HeaderText = "Pcs Per Strip";
-            this.PcsPerStrip.Name = "PcsPerStrip";
-            this.PcsPerStrip.Width = 129;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "PackSizeDescription";
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.DefaultCellStyle = dataGridViewCellStyle33;
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.Width = 122;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 66;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 83;
             // 
             // PackSizeEntry
             // 

@@ -65,10 +65,10 @@
             // 
             this.TransactionDate.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransactionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TransactionDate.Location = new System.Drawing.Point(768, 118);
+            this.TransactionDate.Location = new System.Drawing.Point(820, 118);
             this.TransactionDate.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.TransactionDate.Name = "TransactionDate";
-            this.TransactionDate.Size = new System.Drawing.Size(237, 29);
+            this.TransactionDate.Size = new System.Drawing.Size(185, 29);
             this.TransactionDate.TabIndex = 4;
             this.TransactionDate.Value = new System.DateTime(2019, 5, 5, 17, 50, 19, 0);
             this.TransactionDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TransactionDate_KeyUp);
@@ -288,7 +288,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(595, 118);
+            this.label10.Location = new System.Drawing.Point(653, 118);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(131, 23);
             this.label10.TabIndex = 22;
@@ -350,7 +350,7 @@
             this.txtPcsPerStrip.BackColor = System.Drawing.SystemColors.Control;
             this.txtPcsPerStrip.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPcsPerStrip.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtPcsPerStrip.Location = new System.Drawing.Point(593, 175);
+            this.txtPcsPerStrip.Location = new System.Drawing.Point(613, 175);
             this.txtPcsPerStrip.Name = "txtPcsPerStrip";
             this.txtPcsPerStrip.ReadOnly = true;
             this.txtPcsPerStrip.Size = new System.Drawing.Size(108, 29);
