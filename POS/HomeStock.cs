@@ -28,5 +28,10 @@ namespace POS
             new Home().Show();
             this.Hide();
         }
+
+        private void lblEntry_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

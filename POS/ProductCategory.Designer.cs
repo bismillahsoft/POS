@@ -182,7 +182,7 @@
             this.ProductCategoryID.Name = "ProductCategoryID";
             this.ProductCategoryID.ReadOnly = true;
             this.ProductCategoryID.Visible = false;
-            this.ProductCategoryID.Width = 45;
+            this.ProductCategoryID.Width = 52;
             // 
             // Sln
             // 
@@ -219,7 +219,7 @@
             // 
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
+            this.Delete.Text = "X";
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 58;
             // 

@@ -118,6 +118,7 @@
             this.btnSales.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnProduct
             // 
