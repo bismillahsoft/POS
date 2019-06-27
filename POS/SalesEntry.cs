@@ -16,5 +16,15 @@ namespace POS
         {
             InitializeComponent();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCustomer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

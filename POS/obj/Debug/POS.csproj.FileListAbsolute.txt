@@ -109,7 +109,6 @@ F:\Git_Repository\BPOS\POS\obj\Debug\POS.PackSizeEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.ProductCategory.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.ProductEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.Properties.Resources.resources
-F:\Git_Repository\BPOS\POS\obj\Debug\POS.StockEntry.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.StockEntryPage.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.MsgBox.en.resources
 F:\Git_Repository\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.cache
@@ -153,3 +152,5 @@ D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\en\POS.resources.dll
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.exe
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.pdb
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.SalesEntry.resources
+F:\Git_Repository\BPOS\POS\obj\Debug\POS.StockReport.resources
