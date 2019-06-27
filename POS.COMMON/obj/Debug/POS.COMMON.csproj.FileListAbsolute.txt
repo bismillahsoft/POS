@@ -13,12 +13,6 @@ D:\Zahid PC\GitRepository\BPOS\POS.COMMON\bin\Debug\POS.COMMON.pdb
 D:\Zahid PC\GitRepository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.dll
 D:\Zahid PC\GitRepository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.pdb
 D:\Zahid PC\GitRepository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.csprojResolveAssemblyReference.cache
-F:\Git_Repository\BPOS\POS.COMMON\bin\Debug\POS.COMMON.dll
-F:\Git_Repository\BPOS\POS.COMMON\bin\Debug\POS.COMMON.pdb
-F:\Git_Repository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.csprojAssemblyReference.cache
-F:\Git_Repository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.csproj.CoreCompileInputs.cache
-F:\Git_Repository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.dll
-F:\Git_Repository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.pdb
 D:\Zahid PC\GitRepo\BPOS\POS.COMMON\bin\Debug\POS.COMMON.dll
 D:\Zahid PC\GitRepo\BPOS\POS.COMMON\bin\Debug\POS.COMMON.pdb
 D:\Zahid PC\GitRepo\BPOS\POS.COMMON\obj\Debug\POS.COMMON.csprojResolveAssemblyReference.cache
