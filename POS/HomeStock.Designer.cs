@@ -73,6 +73,7 @@
             this.lblEntry.Size = new System.Drawing.Size(150, 65);
             this.lblEntry.TabIndex = 10;
             this.lblEntry.Text = "Stock";
+            this.lblEntry.Click += new System.EventHandler(this.lblEntry_Click);
             // 
             // HomeStock
             // 

@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,12 @@
     <Compile Include="Homeproduct.Designer.cs">
       <DependentUpon>Homeproduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeSales.Designer.cs">
+      <DependentUpon>HomeSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +117,12 @@
     <Compile Include="ProductEntry.Designer.cs">
       <DependentUpon>ProductEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductWiseStockReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductWiseStockReport.Designer.cs">
+      <DependentUpon>ProductWiseStockReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesEntry.cs">
@@ -145,6 +158,9 @@
     <EmbeddedResource Include="Homeproduct.resx">
       <DependentUpon>Homeproduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeSales.resx">
+      <DependentUpon>HomeSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeStock.resx">
       <DependentUpon>HomeStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductEntry.resx">
       <DependentUpon>ProductEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductWiseStockReport.resx">
+      <DependentUpon>ProductWiseStockReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
