@@ -424,6 +424,140 @@ namespace POS.DAL
                 throw;
             }
         }
+        public IList<BO.Product> GetProductListByName()
+        {
+            try
+            {
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+                da.SelectCommand.CommandText = "[POS_SP_GET_SET_Product]";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                DataTable dt = ds.Tables[0];
+                List<POS.BO.Product> objProductList = new List<POS.BO.Product>();
+                POS.BO.Product obj = null;
+                long productID = 0;
+                // string packSize = "";
+                int index = 1;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (Convert.ToInt64(row["ProductId"]) != productID)
+                    {
+                        productID = Convert.ToInt64(row["ProductId"]);
+                        obj = new BO.Product();
+                        obj.Sln = index++;
+                        obj.ProductId = productID;
+                        obj.ProductName = row["ProductName"].ToString() + "(" + row["ProductCode"].ToString() + ")";
+                        obj.ProductCode = row["ProductCode"].ToString();
+                        obj.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
+                        obj.PackSize = Convert.ToString(row["PackSize"]);
+                        obj.Brand.BrandID = Convert.ToInt32(row["BrandID"]);
+                        obj.BrandName = row["Brand"].ToString();
+                        obj.ProductGeneric.PGenericID = Convert.ToInt32(row["GenericID"]);
+                        obj.GenericName = row["GenericName"].ToString();
+                        obj.ProductCategory.Id = Convert.ToInt32(row["ProductCategoryID"]);
+                        obj.CategoryName = row["CategoryName"].ToString();
+                        obj.ProductPrice.PPID = Convert.ToInt32(row["PPID"]);
+                        obj.PurchesePrice = Convert.ToDecimal(row["PurchesePrice"]);
+                        obj.TradePrice = Convert.ToDecimal(row["TradePrice"]);
+                        obj.Vat = Convert.ToDecimal(row["Vat"]);
+                        obj.MRP = Convert.ToDecimal(row["MRP"]);
+                        obj.ProdPackSize.PPSID = Convert.ToInt64(row["PPSID"]);
+                        //obj.ProductPrice.TradePrice = Convert.ToDecimal(row["TradePrice"]);
+                        //obj.ProductPrice.Vat = Convert.ToDecimal(row["Vat"]);
+                        //obj.ProductPrice.MRP = Convert.ToDecimal(row["MRP"]);
+                        obj.BatchNo = row["BatchNo"].ToString();
+                        obj.Description = row["Description"].ToString();
+                        objProductList.Add(obj);
+                    }
+                }
+                return objProductList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public IList<BO.Product> GetProductListByCode()
+        {
+            try
+            {
+                SqlConnection con = CreateCon();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+                da.SelectCommand.CommandText = "[POS_SP_GET_SET_Product]";
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Connection = con;
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                DataTable dt = ds.Tables[0];
+                List<POS.BO.Product> objProductList = new List<POS.BO.Product>();
+                POS.BO.Product obj = null;
+                long productID = 0;
+                // string packSize = "";
+                int index = 1;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (Convert.ToInt64(row["ProductId"]) != productID)
+                    {
+                        productID = Convert.ToInt64(row["ProductId"]);
+                        obj = new BO.Product();
+                        obj.Sln = index++;
+                        obj.ProductId = productID;
+                        obj.ProductName = row["ProductCode"].ToString() + "(" + row["ProductName"].ToString() + ")";
+                        obj.ProductCode = row["ProductCode"].ToString();
+                        obj.PackSizeID = Convert.ToInt32(row["PackSizeID"]);
+                        obj.PackSize = Convert.ToString(row["PackSize"]);
+                        obj.Brand.BrandID = Convert.ToInt32(row["BrandID"]);
+                        obj.BrandName = row["Brand"].ToString();
+                        obj.ProductGeneric.PGenericID = Convert.ToInt32(row["GenericID"]);
+                        obj.GenericName = row["GenericName"].ToString();
+                        obj.ProductCategory.Id = Convert.ToInt32(row["ProductCategoryID"]);
+                        obj.CategoryName = row["CategoryName"].ToString();
+                        obj.ProductPrice.PPID = Convert.ToInt32(row["PPID"]);
+                        obj.PurchesePrice = Convert.ToDecimal(row["PurchesePrice"]);
+                        obj.TradePrice = Convert.ToDecimal(row["TradePrice"]);
+                        obj.Vat = Convert.ToDecimal(row["Vat"]);
+                        obj.MRP = Convert.ToDecimal(row["MRP"]);
+                        obj.ProdPackSize.PPSID = Convert.ToInt64(row["PPSID"]);
+                        //obj.ProductPrice.TradePrice = Convert.ToDecimal(row["TradePrice"]);
+                        //obj.ProductPrice.Vat = Convert.ToDecimal(row["Vat"]);
+                        //obj.ProductPrice.MRP = Convert.ToDecimal(row["MRP"]);
+                        obj.BatchNo = row["BatchNo"].ToString();
+                        obj.Description = row["Description"].ToString();
+
+
+                        objProductList.Add(obj);
+                    }
+                }
+                return objProductList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public IList<POS.BO.Product> GetProduct(int pageIndex, int pageSize, string orderBy, string sortindex)
         {
             return new List<BO.Product>();

@@ -50,3 +50,18 @@ D:\Zahid PC\GitRepo\BPOS\POS.BLL\bin\Debug\POS.IDAL.pdb
 D:\Zahid PC\GitRepo\BPOS\POS.BLL\obj\Debug\POS.BLL.csprojResolveAssemblyReference.cache
 D:\Zahid PC\GitRepo\BPOS\POS.BLL\obj\Debug\POS.BLL.dll
 D:\Zahid PC\GitRepo\BPOS\POS.BLL\obj\Debug\POS.BLL.pdb
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BLL.dll
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BLL.pdb
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BO.dll
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.COMMON.dll
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.DAL.dll
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.IDAL.dll
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.BO.pdb
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.COMMON.pdb
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.DAL.pdb
+F:\Git_Repository\BPOS\POS.BLL\bin\Debug\POS.IDAL.pdb
+F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csprojAssemblyReference.cache
+F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csproj.CoreCompileInputs.cache
+F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.csproj.CopyComplete
+F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.dll
+F:\Git_Repository\BPOS\POS.BLL\obj\Debug\POS.BLL.pdb

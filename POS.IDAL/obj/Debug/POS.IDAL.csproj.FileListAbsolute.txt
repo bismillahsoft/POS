@@ -26,3 +26,12 @@ D:\Zahid PC\GitRepo\BPOS\POS.IDAL\bin\Debug\POS.BO.pdb
 D:\Zahid PC\GitRepo\BPOS\POS.IDAL\obj\Debug\POS.IDAL.csprojResolveAssemblyReference.cache
 D:\Zahid PC\GitRepo\BPOS\POS.IDAL\obj\Debug\POS.IDAL.dll
 D:\Zahid PC\GitRepo\BPOS\POS.IDAL\obj\Debug\POS.IDAL.pdb
+F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.IDAL.dll
+F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.IDAL.pdb
+F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.BO.dll
+F:\Git_Repository\BPOS\POS.IDAL\bin\Debug\POS.BO.pdb
+F:\Git_Repository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.csprojAssemblyReference.cache
+F:\Git_Repository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.csproj.CoreCompileInputs.cache
+F:\Git_Repository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.csproj.CopyComplete
+F:\Git_Repository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.dll
+F:\Git_Repository\BPOS\POS.IDAL\obj\Debug\POS.IDAL.pdb

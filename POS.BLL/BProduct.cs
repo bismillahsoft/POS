@@ -44,7 +44,14 @@ namespace POS.BLL
         public IList<BO.Product> GetProductList()
         {
             return _iProduct.GetProductList();
-
+        }
+        public IList<BO.Product> GetProductListByName()
+        {
+            return _iProduct.GetProductListByName();
+        }
+        public IList<BO.Product> GetProductListByCode()
+        {
+            return _iProduct.GetProductListByCode();
         }
         public IList<BO.Product> GetProductByOthersList(string columnsString)
         {
