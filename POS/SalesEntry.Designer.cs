@@ -28,11 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // SalesEntry
             // 
-            this.ClientSize = new System.Drawing.Size(791, 510);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(791, 528);
+            this.Controls.Add(this.button1);
             this.Name = "SalesEntry";
             this.ResumeLayout(false);
 
@@ -67,5 +79,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MRP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.Button button1;
     }
 }

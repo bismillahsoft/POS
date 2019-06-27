@@ -41,7 +41,6 @@
             this.txtGenericName = new System.Windows.Forms.TextBox();
             this.lblGenericName = new System.Windows.Forms.Label();
             this.grBox = new System.Windows.Forms.GroupBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.grvGeneric = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +49,7 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnBack = new System.Windows.Forms.Button();
             this.grBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvGeneric)).BeginInit();
             this.SuspendLayout();
@@ -158,17 +158,6 @@
             this.grBox.TabIndex = 15;
             this.grBox.TabStop = false;
             // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(13, 19);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(98, 54);
-            this.btnBack.TabIndex = 6;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // lblMessageBox
             // 
             this.lblMessageBox.AutoSize = true;
@@ -276,6 +265,17 @@
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 64;
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(13, 19);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // GenericEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,12 +305,12 @@
         private System.Windows.Forms.GroupBox grBox;
         private System.Windows.Forms.Label lblMessageBox;
         private System.Windows.Forms.DataGridView grvGeneric;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn GenericName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Button btnBack;
     }
 }

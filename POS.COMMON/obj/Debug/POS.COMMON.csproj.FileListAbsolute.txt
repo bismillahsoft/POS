@@ -15,5 +15,6 @@ D:\Zahid PC\GitRepository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.pdb
 D:\Zahid PC\GitRepository\BPOS\POS.COMMON\obj\Debug\POS.COMMON.csprojResolveAssemblyReference.cache
 D:\Zahid PC\GitRepo\BPOS\POS.COMMON\bin\Debug\POS.COMMON.dll
 D:\Zahid PC\GitRepo\BPOS\POS.COMMON\bin\Debug\POS.COMMON.pdb
+D:\Zahid PC\GitRepo\BPOS\POS.COMMON\obj\Debug\POS.COMMON.csprojResolveAssemblyReference.cache
 D:\Zahid PC\GitRepo\BPOS\POS.COMMON\obj\Debug\POS.COMMON.dll
 D:\Zahid PC\GitRepo\BPOS\POS.COMMON\obj\Debug\POS.COMMON.pdb
