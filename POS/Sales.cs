@@ -89,10 +89,5 @@ namespace POS
         {
             DataGridViewCell dgvcell = (DataGridViewCell)grvProduct[e.ColumnIndex, e.RowIndex];
         }
-
-        private void ddlProductCode_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
     }
 }

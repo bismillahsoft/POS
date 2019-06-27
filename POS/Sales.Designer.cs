@@ -66,6 +66,7 @@
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label1
             // 
@@ -132,6 +133,7 @@
             this.ddlProductName.Name = "ddlProductName";
             this.ddlProductName.Size = new System.Drawing.Size(121, 21);
             this.ddlProductName.TabIndex = 6;
+            this.ddlProductName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ddlProductName_KeyDown);
             // 
             // ddlProductCode
             // 
@@ -140,7 +142,6 @@
             this.ddlProductCode.Name = "ddlProductCode";
             this.ddlProductCode.Size = new System.Drawing.Size(121, 21);
             this.ddlProductCode.TabIndex = 6;
-            this.ddlProductCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ddlProductCode_KeyDown);
             // 
             // label4
             // 
@@ -237,6 +238,9 @@
             this.grvProduct.Name = "grvProduct";
             this.grvProduct.Size = new System.Drawing.Size(706, 150);
             this.grvProduct.TabIndex = 9;
+            this.grvProduct.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvProduct_CellEnter);
+            this.grvProduct.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvProduct_CellLeave);
+            this.grvProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grvProduct_KeyDown);
             // 
             // Sln
             // 
