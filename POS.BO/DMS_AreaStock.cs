@@ -187,7 +187,8 @@ namespace POS.BO
             }
         }
 
-        public int ProductName { get; set; }
+        public string ProductName { get; set; }
+        public string ProductCode { get; set; }
         public string Remarks { get; set; }
 
         public int Strip
@@ -215,6 +216,8 @@ namespace POS.BO
                 _PcsPerStrip = value;
             }
         }
+
+        public string PackSize { get; set; }
 
         private int _AsID;
         private int _AreaID;

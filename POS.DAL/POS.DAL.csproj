@@ -46,6 +46,7 @@
     <Compile Include="DProductCategory.cs" />
     <Compile Include="DProductGeneric.cs" />
     <Compile Include="DProductPackSize.cs" />
+    <Compile Include="DStockReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

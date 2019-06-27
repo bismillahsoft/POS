@@ -46,6 +46,7 @@
     <Compile Include="IProductCategory.cs" />
     <Compile Include="IProductGeneric.cs" />
     <Compile Include="IProductPackSize.cs" />
+    <Compile Include="IStockReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -99,15 +99,6 @@ namespace POS.DAL
         {
             try
             {
-                //string SBG = "";
-                //if (SBGID == 3)
-                //{
-                //    SBG = "1,2";
-                //}
-                //else
-                //{
-                //    SBG = SBGID.ToString();
-                //}
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();

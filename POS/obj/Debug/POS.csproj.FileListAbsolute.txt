@@ -138,12 +138,14 @@ D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.BrandEntry.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.GenericEntry.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.Home.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.Homeproduct.resources
+D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.HomeSales.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.HomeStock.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.Login.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.MsgBox.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.PackSizeEntry.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.ProductCategory.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.ProductEntry.resources
+D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.ProductWiseStockReport.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.Properties.Resources.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.SalesEntry.resources
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.StockEntryPage.resources
@@ -153,4 +155,3 @@ D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\en\POS.resources.dll
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.exe
 D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.pdb
-D:\Zahid PC\GitRepo\BPOS\POS\obj\Debug\POS.HomeSales.resources
