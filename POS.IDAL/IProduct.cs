@@ -15,6 +15,8 @@ namespace POS.IDAL
         IList<BO.Product> GetProductByObject(BO.Product objProduct, int pageIndex, int pageSize, string orderBy, string sortindex);
 
         IList<BO.Product> GetProductList();
+        IList<BO.Product> GetProductListByName();
+        IList<BO.Product> GetProductListByCode();
 
         //BO.Product GetProductByID(long ProductID);
 
