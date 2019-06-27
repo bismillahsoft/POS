@@ -20,6 +20,7 @@ namespace POS
         {
             _iStockReport = new BLL.BStockReport();
             InitializeComponent();
+            GetStock();
         }
 
         private void grvStockReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,6 +38,12 @@ namespace POS
             dms_AreaStock = _iStockReport.GetProductWiseStock().ToList();
             grvStockReport.AutoGenerateColumns = false;
             grvStockReport.DataSource = dms_AreaStock;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new HomeStock().Show();
+            this.Hide();
         }
     }
 }

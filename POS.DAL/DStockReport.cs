@@ -21,7 +21,7 @@ namespace POS.DAL
                 SqlConnection con = CreateCon();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "[POS_SP_GET_GETBrand]";
+                da.SelectCommand.CommandText = "[POS_SP_GET_ProductWiseMDS_Area_Stock]";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Connection = con;
 
@@ -43,14 +43,16 @@ namespace POS.DAL
                 {
                     obj = new BO.DMS_AreaStock();
                     obj.Sln = index++;
-                    obj.AsID = Convert.ToInt32(row["ID"]);
+                    //obj.AsID = Convert.ToInt32(row["ID"]);
                     obj.ProductName =row["ProductName"].ToString();
                     obj.ProductCode = row["ProductCode"].ToString();
-                    obj.PackSize = row["PackSize"].ToString();
+
+                    obj.PackSize = row["PackSizeName"].ToString();
                     obj.PP = Convert.ToDecimal(row["PP"]);
-                    obj.CtnOrPkt =Convert.ToInt32(row["Ctn"]);
+                    obj.CtnOrPkt = Convert.ToInt32(row["CtnOrPkt"]);
                     obj.Pcs = Convert.ToInt32(row["Pcs"]);
                     obj.Qty = Convert.ToInt32(row["Qty"]);
+                    obj.StockDate = Convert.ToDateTime(row["StockDate"]);
                     objStockList.Add(obj);
                 }
                 return objStockList;

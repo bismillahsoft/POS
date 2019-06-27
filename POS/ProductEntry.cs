@@ -258,5 +258,10 @@ namespace POS
                 lblMessageBox.ForeColor = Color.Red;
             }
         }
+
+        private void lblP_Entry_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
