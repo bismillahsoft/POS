@@ -25,7 +25,7 @@ namespace POS
 
         private void btnStockEntry_Click(object sender, EventArgs e)
         {
-            new SalesEntry().Show();
+            new Sales().Show();
             this.Hide();
         }
     }

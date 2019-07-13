@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +51,9 @@
             this.lblTotalProduct = new System.Windows.Forms.Label();
             this.lblTotalProductt = new System.Windows.Forms.Label();
             this.grvProduct = new System.Windows.Forms.DataGridView();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblP_Entry = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Sln = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +66,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(13, 13);
+            this.btnBack.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(98, 54);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -71,160 +78,198 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 102);
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(210, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Invioce No :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(295, 102);
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(513, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(53, 23);
             this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Text = "Date  :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(499, 102);
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(719, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.label3.Text = "Customer :";
             // 
             // txtInvoice
             // 
-            this.txtInvoice.Location = new System.Drawing.Point(145, 99);
+            this.txtInvoice.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoice.Location = new System.Drawing.Point(298, 122);
             this.txtInvoice.Name = "txtInvoice";
-            this.txtInvoice.Size = new System.Drawing.Size(100, 20);
+            this.txtInvoice.Size = new System.Drawing.Size(175, 29);
             this.txtInvoice.TabIndex = 4;
+            this.txtInvoice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtInvoice_KeyUp);
             // 
             // txtCustomer
             // 
-            this.txtCustomer.Location = new System.Drawing.Point(540, 99);
+            this.txtCustomer.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomer.Location = new System.Drawing.Point(806, 122);
             this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomer.TabIndex = 4;
+            this.txtCustomer.Size = new System.Drawing.Size(156, 29);
+            this.txtCustomer.TabIndex = 2;
+            this.txtCustomer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCustomer_KeyUp);
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(347, 99);
+            this.dateTimePicker1.Location = new System.Drawing.Point(567, 122);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(89, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.Size = new System.Drawing.Size(111, 29);
+            this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateTimePicker1_KeyUp);
             // 
             // lblProduct
             // 
             this.lblProduct.AutoSize = true;
-            this.lblProduct.Location = new System.Drawing.Point(69, 176);
+            this.lblProduct.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Location = new System.Drawing.Point(210, 173);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(44, 13);
+            this.lblProduct.Size = new System.Drawing.Size(70, 23);
             this.lblProduct.TabIndex = 1;
-            this.lblProduct.Text = "Product";
+            this.lblProduct.Text = "Product :";
             // 
             // ddlProductName
             // 
+            this.ddlProductName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlProductName.FormattingEnabled = true;
-            this.ddlProductName.Location = new System.Drawing.Point(154, 176);
+            this.ddlProductName.Location = new System.Drawing.Point(293, 171);
             this.ddlProductName.Name = "ddlProductName";
-            this.ddlProductName.Size = new System.Drawing.Size(121, 21);
-            this.ddlProductName.TabIndex = 6;
+            this.ddlProductName.Size = new System.Drawing.Size(199, 31);
+            this.ddlProductName.TabIndex = 3;
             this.ddlProductName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ddlProductName_KeyDown);
             // 
             // ddlProductCode
             // 
+            this.ddlProductCode.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlProductCode.FormattingEnabled = true;
-            this.ddlProductCode.Location = new System.Drawing.Point(337, 176);
+            this.ddlProductCode.Location = new System.Drawing.Point(552, 171);
             this.ddlProductCode.Name = "ddlProductCode";
-            this.ddlProductCode.Size = new System.Drawing.Size(121, 21);
-            this.ddlProductCode.TabIndex = 6;
+            this.ddlProductCode.Size = new System.Drawing.Size(196, 31);
+            this.ddlProductCode.TabIndex = 4;
+            this.ddlProductCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ddlProductCode_KeyDown);
+            this.ddlProductCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ddlProductCode_KeyUp);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(740, 56);
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1118, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.Size = new System.Drawing.Size(125, 21);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Total Invoice";
+            this.label4.Text = "Total Invoice    :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(740, 123);
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1118, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.Size = new System.Drawing.Size(125, 21);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Total Price";
+            this.label5.Text = "Total Price        :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(740, 123);
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1008, 125);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.Size = new System.Drawing.Size(0, 21);
             this.label6.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(740, 159);
+            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(1118, 161);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
+            this.label8.Size = new System.Drawing.Size(126, 21);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Discount";
+            this.label8.Text = "Discount            :";
             // 
             // lblInvoiceTotal
             // 
             this.lblInvoiceTotal.AutoSize = true;
-            this.lblInvoiceTotal.Location = new System.Drawing.Point(825, 56);
+            this.lblInvoiceTotal.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvoiceTotal.Location = new System.Drawing.Point(1257, 58);
             this.lblInvoiceTotal.Name = "lblInvoiceTotal";
-            this.lblInvoiceTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblInvoiceTotal.Size = new System.Drawing.Size(18, 21);
             this.lblInvoiceTotal.TabIndex = 3;
             this.lblInvoiceTotal.Text = "1";
             // 
             // lblTotalDiscount
             // 
             this.lblTotalDiscount.AutoSize = true;
-            this.lblTotalDiscount.Location = new System.Drawing.Point(825, 123);
+            this.lblTotalDiscount.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalDiscount.Location = new System.Drawing.Point(1257, 125);
             this.lblTotalDiscount.Name = "lblTotalDiscount";
-            this.lblTotalDiscount.Size = new System.Drawing.Size(37, 13);
+            this.lblTotalDiscount.Size = new System.Drawing.Size(53, 21);
             this.lblTotalDiscount.TabIndex = 3;
             this.lblTotalDiscount.Text = "550 tk";
             // 
             // lblDiscountTotal
             // 
             this.lblDiscountTotal.AutoSize = true;
-            this.lblDiscountTotal.Location = new System.Drawing.Point(825, 159);
+            this.lblDiscountTotal.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscountTotal.Location = new System.Drawing.Point(1257, 161);
             this.lblDiscountTotal.Name = "lblDiscountTotal";
-            this.lblDiscountTotal.Size = new System.Drawing.Size(25, 13);
+            this.lblDiscountTotal.Size = new System.Drawing.Size(37, 21);
             this.lblDiscountTotal.TabIndex = 3;
             this.lblDiscountTotal.Text = "0 tk";
             // 
             // lblTotalProduct
             // 
             this.lblTotalProduct.AutoSize = true;
-            this.lblTotalProduct.Location = new System.Drawing.Point(825, 87);
+            this.lblTotalProduct.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProduct.Location = new System.Drawing.Point(1257, 89);
             this.lblTotalProduct.Name = "lblTotalProduct";
-            this.lblTotalProduct.Size = new System.Drawing.Size(13, 13);
+            this.lblTotalProduct.Size = new System.Drawing.Size(18, 21);
             this.lblTotalProduct.TabIndex = 7;
             this.lblTotalProduct.Text = "5";
             // 
             // lblTotalProductt
             // 
             this.lblTotalProductt.AutoSize = true;
-            this.lblTotalProductt.Location = new System.Drawing.Point(740, 87);
+            this.lblTotalProductt.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductt.Location = new System.Drawing.Point(1118, 89);
             this.lblTotalProductt.Name = "lblTotalProductt";
-            this.lblTotalProductt.Size = new System.Drawing.Size(71, 13);
+            this.lblTotalProductt.Size = new System.Drawing.Size(126, 21);
             this.lblTotalProductt.TabIndex = 8;
-            this.lblTotalProductt.Text = "Total Product";
+            this.lblTotalProductt.Text = "Total Product   :";
             // 
             // grvProduct
             // 
+            this.grvProduct.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.grvProduct.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grvProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sln,
@@ -234,49 +279,95 @@
             this.Quantity,
             this.TotalPrice,
             this.Delete});
-            this.grvProduct.Location = new System.Drawing.Point(34, 292);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvProduct.DefaultCellStyle = dataGridViewCellStyle3;
+            this.grvProduct.Location = new System.Drawing.Point(214, 261);
             this.grvProduct.Name = "grvProduct";
-            this.grvProduct.Size = new System.Drawing.Size(706, 150);
-            this.grvProduct.TabIndex = 9;
+            this.grvProduct.Size = new System.Drawing.Size(921, 312);
+            this.grvProduct.TabIndex = 5;
             this.grvProduct.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvProduct_CellEnter);
             this.grvProduct.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvProduct_CellLeave);
             this.grvProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grvProduct_KeyDown);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(806, 209);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 34);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // lblP_Entry
+            // 
+            this.lblP_Entry.AutoSize = true;
+            this.lblP_Entry.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblP_Entry.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblP_Entry.Location = new System.Drawing.Point(115, 81);
+            this.lblP_Entry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblP_Entry.Name = "lblP_Entry";
+            this.lblP_Entry.Size = new System.Drawing.Size(173, 28);
+            this.lblP_Entry.TabIndex = 68;
+            this.lblP_Entry.Text = "Sales Entry Page";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(1110, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(207, 174);
+            this.panel1.TabIndex = 69;
             // 
             // Sln
             // 
             this.Sln.DataPropertyName = "Sln";
             this.Sln.HeaderText = "Sln";
             this.Sln.Name = "Sln";
+            this.Sln.Width = 60;
             // 
             // ProductID
             // 
             this.ProductID.DataPropertyName = "ProductID";
-            this.ProductID.HeaderText = "ProductID";
+            this.ProductID.HeaderText = "Product ID";
             this.ProductID.Name = "ProductID";
+            this.ProductID.Width = 117;
             // 
             // ProductName
             // 
             this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.HeaderText = "Product Name";
             this.ProductName.Name = "ProductName";
+            this.ProductName.Width = 142;
             // 
             // MRP
             // 
             this.MRP.DataPropertyName = "MRP";
             this.MRP.HeaderText = "MRP";
             this.MRP.Name = "MRP";
+            this.MRP.Width = 72;
             // 
             // Quantity
             // 
             this.Quantity.DataPropertyName = "Qty";
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 102;
             // 
             // TotalPrice
             // 
             this.TotalPrice.DataPropertyName = "Price";
-            this.TotalPrice.HeaderText = "TotalPrice";
+            this.TotalPrice.HeaderText = "Total Price";
             this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 115;
             // 
             // Delete
             // 
@@ -286,13 +377,16 @@
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Text = "Delete";
+            this.Delete.Width = 83;
             // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(972, 508);
+            this.ClientSize = new System.Drawing.Size(1358, 724);
+            this.Controls.Add(this.lblP_Entry);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grvProduct);
             this.Controls.Add(this.lblTotalProduct);
             this.Controls.Add(this.lblTotalProductt);
@@ -313,8 +407,10 @@
             this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.panel1);
             this.Name = "Sales";
             this.Text = "Sales";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grvProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -343,6 +439,9 @@
         private System.Windows.Forms.Label lblTotalProduct;
         private System.Windows.Forms.Label lblTotalProductt;
         private System.Windows.Forms.DataGridView grvProduct;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblP_Entry;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sln;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;

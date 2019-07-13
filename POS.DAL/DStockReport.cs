@@ -49,9 +49,9 @@ namespace POS.DAL
 
                     obj.PackSize = row["PackSizeName"].ToString();
                     obj.PP = Convert.ToDecimal(row["PP"]);
-                    obj.CtnOrPkt = Convert.ToInt32(row["CtnOrPkt"]);
-                    obj.Pcs = Convert.ToInt32(row["Pcs"]);
-                    obj.Qty = Convert.ToInt32(row["Qty"]);
+                    obj.CtnOrPkt = Convert.ToInt32(row["CtnOrPktStock"]);
+                    obj.Pcs = Convert.ToInt32(row["PcsStock"]);
+                    obj.Qty = Convert.ToInt32(row["Balance"]);
                     obj.StockDate = Convert.ToDateTime(row["StockDate"]);
                     objStockList.Add(obj);
                 }

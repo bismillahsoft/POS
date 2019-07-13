@@ -155,7 +155,7 @@
             this.lblP_Entry.AutoSize = true;
             this.lblP_Entry.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblP_Entry.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblP_Entry.Location = new System.Drawing.Point(204, 72);
+            this.lblP_Entry.Location = new System.Drawing.Point(131, 115);
             this.lblP_Entry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblP_Entry.Name = "lblP_Entry";
             this.lblP_Entry.Size = new System.Drawing.Size(138, 28);
@@ -169,7 +169,7 @@
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(98, 54);
-            this.btnBack.TabIndex = 66;
+            this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);

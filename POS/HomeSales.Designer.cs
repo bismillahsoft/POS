@@ -76,6 +76,7 @@
             this.Controls.Add(this.btnStockEntry);
             this.Name = "HomeSales";
             this.Text = "HomeSales";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
