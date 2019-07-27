@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblInvoiceTotal = new System.Windows.Forms.Label();
-            this.lblTotalDiscount = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.lblDiscountTotal = new System.Windows.Forms.Label();
             this.lblTotalProduct = new System.Windows.Forms.Label();
             this.lblTotalProductt = new System.Windows.Forms.Label();
@@ -61,6 +61,8 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblGrandTotalPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grvProduct)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,17 +213,17 @@
             this.lblInvoiceTotal.Name = "lblInvoiceTotal";
             this.lblInvoiceTotal.Size = new System.Drawing.Size(18, 21);
             this.lblInvoiceTotal.TabIndex = 3;
-            this.lblInvoiceTotal.Text = "1";
+            this.lblInvoiceTotal.Text = "0";
             // 
-            // lblTotalDiscount
+            // lblTotalPrice
             // 
-            this.lblTotalDiscount.AutoSize = true;
-            this.lblTotalDiscount.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDiscount.Location = new System.Drawing.Point(1257, 125);
-            this.lblTotalDiscount.Name = "lblTotalDiscount";
-            this.lblTotalDiscount.Size = new System.Drawing.Size(53, 21);
-            this.lblTotalDiscount.TabIndex = 3;
-            this.lblTotalDiscount.Text = "550 tk";
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(1257, 125);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(53, 21);
+            this.lblTotalPrice.TabIndex = 3;
+            this.lblTotalPrice.Text = "550 tk";
             // 
             // lblDiscountTotal
             // 
@@ -241,7 +243,7 @@
             this.lblTotalProduct.Name = "lblTotalProduct";
             this.lblTotalProduct.Size = new System.Drawing.Size(18, 21);
             this.lblTotalProduct.TabIndex = 7;
-            this.lblTotalProduct.Text = "5";
+            this.lblTotalProduct.Text = "0";
             // 
             // lblTotalProductt
             // 
@@ -256,20 +258,20 @@
             // grvProduct
             // 
             this.grvProduct.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvProduct.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sln,
@@ -279,18 +281,19 @@
             this.Quantity,
             this.TotalPrice,
             this.Delete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grvProduct.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvProduct.DefaultCellStyle = dataGridViewCellStyle6;
             this.grvProduct.Location = new System.Drawing.Point(214, 261);
             this.grvProduct.Name = "grvProduct";
-            this.grvProduct.Size = new System.Drawing.Size(921, 312);
+            this.grvProduct.Size = new System.Drawing.Size(876, 312);
             this.grvProduct.TabIndex = 5;
+            this.grvProduct.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvProduct_CellEndEdit);
             this.grvProduct.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvProduct_CellEnter);
             this.grvProduct.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvProduct_CellLeave);
             this.grvProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grvProduct_KeyDown);
@@ -321,9 +324,9 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(1110, 40);
+            this.panel1.Location = new System.Drawing.Point(1102, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 174);
+            this.panel1.Size = new System.Drawing.Size(244, 174);
             this.panel1.TabIndex = 69;
             // 
             // Sln
@@ -338,6 +341,7 @@
             this.ProductID.DataPropertyName = "ProductID";
             this.ProductID.HeaderText = "Product ID";
             this.ProductID.Name = "ProductID";
+            this.ProductID.ReadOnly = true;
             this.ProductID.Width = 117;
             // 
             // ProductName
@@ -345,6 +349,7 @@
             this.ProductName.DataPropertyName = "ProductName";
             this.ProductName.HeaderText = "Product Name";
             this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
             this.ProductName.Width = 142;
             // 
             // MRP
@@ -352,6 +357,7 @@
             this.MRP.DataPropertyName = "MRP";
             this.MRP.HeaderText = "MRP";
             this.MRP.Name = "MRP";
+            this.MRP.ReadOnly = true;
             this.MRP.Width = 72;
             // 
             // Quantity
@@ -375,9 +381,28 @@
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Text = "Delete";
-            this.Delete.Width = 83;
+            this.Delete.Width = 64;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(650, 580);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 22);
+            this.label7.TabIndex = 70;
+            this.label7.Text = "Total Price :";
+            // 
+            // lblGrandTotalPrice
+            // 
+            this.lblGrandTotalPrice.AutoSize = true;
+            this.lblGrandTotalPrice.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrandTotalPrice.Location = new System.Drawing.Point(752, 581);
+            this.lblGrandTotalPrice.Name = "lblGrandTotalPrice";
+            this.lblGrandTotalPrice.Size = new System.Drawing.Size(18, 22);
+            this.lblGrandTotalPrice.TabIndex = 71;
+            this.lblGrandTotalPrice.Text = "0";
             // 
             // Sales
             // 
@@ -385,6 +410,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1358, 724);
+            this.Controls.Add(this.lblGrandTotalPrice);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.lblP_Entry);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grvProduct);
@@ -398,7 +425,7 @@
             this.Controls.Add(this.lblDiscountTotal);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblTotalDiscount);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblInvoiceTotal);
             this.Controls.Add(this.label4);
@@ -434,7 +461,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblInvoiceTotal;
-        private System.Windows.Forms.Label lblTotalDiscount;
+        private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label lblDiscountTotal;
         private System.Windows.Forms.Label lblTotalProduct;
         private System.Windows.Forms.Label lblTotalProductt;
@@ -449,5 +476,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblGrandTotalPrice;
     }
 }

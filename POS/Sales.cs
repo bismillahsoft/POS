@@ -52,9 +52,11 @@ namespace POS
                 else
                 {
                     objProductInfo.Sln = objProductList.Count + 1;
+                    //lblTotalProduct.Text = objProductInfo.ToString();
                 }
 
                 objProductList.Add(objProductInfo);
+                lblTotalProduct.Text = Convert.ToString(objProductInfo.Sln);
 
                 grvProduct.AutoGenerateColumns = false;
                 if (objProductList.Count > 0)
@@ -144,6 +146,26 @@ namespace POS
         {
             if (e.KeyCode == Keys.Enter)
                 btnSave.Focus();
+        }
+
+        private void grvProduct_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach(var row in grvProduct.Rows)
+            {
+                decimal price = Convert.ToDecimal(grvProduct.Rows[e.RowIndex].Cells["MRP"].Value);
+                decimal quantity = Convert.ToDecimal(grvProduct.Rows[e.RowIndex].Cells["Quantity"].Value);
+                grvProduct.Rows[e.RowIndex].Cells["TotalPrice"].Value = price * quantity;
+            }
+            decimal sum = 0;
+            for (int i = 0; i < grvProduct.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(grvProduct.Rows[i].Cells["TotalPrice"].Value);
+            }
+            //sum =Convert.ToInt32( string.Format("{0:C}"));
+            lblGrandTotalPrice.Text = sum.ToString() + " tk";
+            lblTotalPrice.Text = sum.ToString() + " tk";
+            //string sValue2 = String.Format("{0:C}", lblGrandTotalPrice);
+
         }
     }
 }
